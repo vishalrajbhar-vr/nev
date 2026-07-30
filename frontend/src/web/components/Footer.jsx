@@ -247,7 +247,7 @@ function Footer() {
                   href="#"
                   className="hover:text-[#5BBF43] transition-colors duration-300"
                 >
-                  Khalsa Super DLX
+                 L5 Altra Loader
                 </a>
               </li>
 
@@ -256,7 +256,7 @@ function Footer() {
                   href="#"
                   className="hover:text-[#5BBF43] transition-colors duration-300"
                 >
-                  Khalsa Cargo
+                  L3 Butterfly MS
                 </a>
               </li>
 
@@ -265,7 +265,7 @@ function Footer() {
                   href="#"
                   className="hover:text-[#5BBF43] transition-colors duration-300"
                 >
-                  Grand Lithium
+                  L3 Butterfly SS
                 </a>
               </li>
 

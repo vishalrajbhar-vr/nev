@@ -531,7 +531,7 @@ function ProductDesktopItem({
       {openProduct === product && (
 
         <div
-          className="absolute top-[-3px] left-full w-[190px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
+          className="absolute top-[-3px] left-full w-[230px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
@@ -540,9 +540,8 @@ function ProductDesktopItem({
 
           {product === "l3" && (
             <>
-              <DropdownItem item="L3 Product 1" />
-              <DropdownItem item="L3 Product 2" />
-              <DropdownItem item="L3 Product 3" />
+              <DropdownItem item="L3 Butterfly MS" />
+              <DropdownItem item="L3 Butterfly SS" />
             </>
           )}
 
@@ -551,9 +550,11 @@ function ProductDesktopItem({
 
           {product === "l5" && (
             <>
-              <DropdownItem item="L5 Product 1" />
-              <DropdownItem item="L5 Product 2" />
-              <DropdownItem item="L5 Product 3" />
+              <DropdownItem item="L5 DLX Passenger plus 1" />
+              <DropdownItem item="L5 ECO 6 + 1" />
+              <DropdownItem item="L5 Front Facia" />
+              <DropdownItem item="L5 Butterfly 6 + 1" />
+              <DropdownItem item="L5 Ultra Loader" />
             </>
           )}
 
@@ -562,9 +563,11 @@ function ProductDesktopItem({
 
           {product === "scooty" && (
             <>
-              <DropdownItem item="Scooty Product 1" />
-              <DropdownItem item="Scooty Product 2" />
-              <DropdownItem item="Scooty Product 3" />
+              <DropdownItem item="Single Light" />
+              <DropdownItem item="Double Light" />
+              <DropdownItem item="U Light" />
+              <DropdownItem item="Activa" />
+              <DropdownItem item="N1" />
             </>
           )}
 
