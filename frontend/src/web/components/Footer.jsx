@@ -30,16 +30,9 @@ function Footer() {
               <img
                 src="/nev logo.jpg"
                 alt="NEV Logo"
-                className="
-                w-[75px]
-                sm:w-[85px]
-                md:w-[100px]
-                h-auto
-                object-contain
-                   "
+                className="w-[75px] sm:w-[85px] md:w-[100px] h-auto object-contain"
               />
             </a>
-
 
             {/* Description */}
 
@@ -328,7 +321,7 @@ function Footer() {
                 />
 
                 <span className="text-sm sm:text-base md:text-lg font-semibold break-words">
-                  Toll Free: 18001210259
+                  Toll Free: 1234567890
                 </span>
 
               </a>
@@ -359,7 +352,7 @@ function Footer() {
                 />
 
                 <span className="text-sm sm:text-base md:text-lg font-semibold break-all">
-                  info@nev.com
+                  nev@gmail.com
                 </span>
 
               </a>
@@ -387,7 +380,7 @@ function Footer() {
                 />
 
                 <span className="text-sm sm:text-base md:text-lg font-semibold">
-                  Muzaffarnagar, India
+                  Lucknow
                 </span>
 
               </div>

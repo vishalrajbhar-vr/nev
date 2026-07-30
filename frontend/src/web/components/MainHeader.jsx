@@ -174,7 +174,7 @@ function MainHeader() {
               <button
                 type="button"
                 onClick={() => toggleDropdown("products")}
-                className="flex items-center gap-2 whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
+                className="flex items-center gap-1 whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
               >
 
                 <span>Our Products</span>
@@ -195,7 +195,8 @@ function MainHeader() {
               {openDropdown === "products" && (
 
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[240px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-visible py-1" onMouseEnter={cancelClose}
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[240px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-visible py-1"
+                  onMouseEnter={cancelClose}
                   onMouseLeave={closeMenuWithDelay}
                 >
 
@@ -525,13 +526,12 @@ function ProductDesktopItem({
           }`}
       />
 
-
       {/* ================= SUB MENU ================= */}
 
       {openProduct === product && (
 
         <div
-          className="absolute top-[-3px] left-full w-[245px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
+          className="absolute top-[-3px] left-full w-[190px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
@@ -617,13 +617,10 @@ function DesktopDropdown({
       </button>
 
 
-      {openDropdown === menu && (
 
-        <div
-          className="absolute top-full left-0 w-[195px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
-          onMouseEnter={cancelClose}
-          onMouseLeave={closeMenuWithDelay}
-        >
+
+      {openDropdown === menu && (
+        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[170px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden py-1" onMouseEnter={cancelClose} onMouseLeave={closeMenuWithDelay}>
 
           {/* ================= ABOUT ================= */}
 
@@ -673,7 +670,12 @@ function DropdownItem({ item }) {
 
     <a
       href="#"
-      className="relative block px-6 py-4 text-[15px] font-medium text-[#182438] bg-white overflow-hidden transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[16px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
+      className="
+       relative block px-6 py-4 text-[15px] font-medium text-[#182438]
+       bg-white overflow-hidden transition-all duration-300
+       hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[16px] after:content-[''] 
+       after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43]
+       after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
     >
       {item}
     </a>
@@ -839,7 +841,12 @@ function MobileItem({ item }) {
 
     <a
       href="#"
-      className="relative block px-4 py-3 text-sm font-medium text-gray-600 bg-white overflow-hidden transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[15px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
+      className="
+        relative block px-4 py-3 text-sm font-medium text-gray-600
+       bg-white overflow-hidden transition-all duration-300 
+       hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[15px] after:content-['']
+        after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] 
+        after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
     >
       {item}
     </a>
