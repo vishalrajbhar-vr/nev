@@ -13,13 +13,11 @@ function Footer() {
   return (
     <footer className="w-full bg-[#182438] text-white">
 
-      {/* ================= MAIN FOOTER ================= */}
 
       <div className="w-full px-5 sm:px-8 md:px-10 lg:px-14 xl:px-20 py-10 sm:py-12 lg:py-16">
 
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-10 xl:gap-16">
 
-          {/* ================= COMPANY INFO ================= */}
 
           <div className="sm:col-span-2 lg:col-span-1">
 
@@ -30,15 +28,15 @@ function Footer() {
               className="inline-block mb-6 sm:mb-8"
             >
               <img
-                src="/nev-logo.jpg"
+                src="/nev logo.jpg"
                 alt="NEV Logo"
                 className="
-                  w-[150px]
-                  sm:w-[170px]
-                  md:w-[180px]
-                  h-auto
-                  object-contain
-                "
+                w-[75px]
+                sm:w-[85px]
+                md:w-[100px]
+                h-auto
+                object-contain
+                   "
               />
             </a>
 
@@ -141,7 +139,7 @@ function Footer() {
           </div>
 
 
-          {/* ================= OUR COMPANY ================= */}
+          {/* OUR COMPANY */}
 
           <div>
 
@@ -203,7 +201,7 @@ function Footer() {
           </div>
 
 
-          {/* ================= PRODUCTS ================= */}
+          {/* PRODUCTS */}
 
           <div>
 
@@ -283,7 +281,7 @@ function Footer() {
           </div>
 
 
-          {/* ================= CONTACT INFO ================= */}
+          {/* CONTACT INFO */}
 
           <div>
 
@@ -403,7 +401,7 @@ function Footer() {
       </div>
 
 
-      {/* ================= BOTTOM FOOTER ================= */}
+      {/* BOTTOM FOOTER  */}
 
       <div className="border-t border-white/30">
 
