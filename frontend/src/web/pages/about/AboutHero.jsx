@@ -1,4 +1,3 @@
-import React from "react";
 import { FaHome, FaChevronRight } from "react-icons/fa";
 
 function AboutHero() {

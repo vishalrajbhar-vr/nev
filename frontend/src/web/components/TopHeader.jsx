@@ -1,95 +1,65 @@
-import React from "react";
 import {
-    FaFacebookF,
-    FaYoutube,
-    FaInstagram,
-    FaWhatsapp,
+  FaFacebookF,
+  FaLeaf,
+  FaPhoneAlt,
+  FaYoutube,
+  FaInstagram,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
+const socialLinks = [
+  { label: "Facebook", icon: FaFacebookF },
+  { label: "X", icon: FaXTwitter },
+  { label: "YouTube", icon: FaYoutube },
+  { label: "Instagram", icon: FaInstagram },
+  { label: "WhatsApp", icon: FaWhatsapp },
+];
+
 function TopHeader() {
-    return (
-        <header className="w-full bg-white border-b border-gray-300">
+  return (
+    <header className="relative z-[60] w-full bg-[#071426] text-white">
+      <div className="mx-auto grid min-h-[74px] max-w-[1560px] grid-cols-1 items-center gap-4 px-4 py-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:gap-8 lg:px-10 lg:py-0 xl:px-16">
+        <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+          <span className="text-sm font-semibold sm:text-base">Follow Us:</span>
 
-            <div className="min-h-[52px] sm:min-h-[58px] md:h-[60px] flex flex-col md:flex-row">
+          <div className="flex items-center gap-3">
+            {socialLinks.map(({ label, icon: Icon }) => (
+              <a
+                href="#"
+                key={label}
+                aria-label={label}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[#5BBF43] text-white transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426] sm:h-11 sm:w-11"
+              >
+                <Icon className="text-[15px] sm:text-[16px]" />
+              </a>
+            ))}
+          </div>
+        </div>
 
-                {/* SOCIAL MEDIA SECTION */}
+        <div className="flex items-center justify-center gap-4 text-center">
+          <span className="hidden h-px w-16 bg-[#5BBF43]/45 sm:block" />
+          <p className="flex items-center justify-center gap-2 text-sm font-semibold text-white/90 sm:text-base">
+            <FaLeaf className="text-[#5BBF43]" />
+            Smart Electric Mobility Solutions
+          </p>
+          <span className="hidden h-px w-16 bg-[#5BBF43]/45 sm:block" />
+        </div>
 
-                <div
-                    className=" w-full md:w-[42%] h-[52px] sm:h-[58px] md:h-full flex items-center justify-center gap-2 sm:gap-3 px-3"
-                >
-
-                    {/* Facebook */}
-
-                    <a href="#" aria-label="Facebook"
-                        className=" w-8 h-8 sm:w-9 sm:h-9 rounded-full  bg-[#243B6B]  text-white flex items-center justify-center hover:bg-[#5BBF43]  transition-all  duration-300"
-                    >
-                        <FaFacebookF className="text-[14px] sm:text-[16px]" />
-                    </a>
-
-
-                    {/* X */}
-
-                    <a href="#" aria-label="X" className=" w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#243B6B]  text-white  flex  items-center  justify-center  hover:bg-[#5BBF43]  transition-all  duration-300"
-                    >
-                        <FaXTwitter className="text-[14px] sm:text-[16px]" />
-                    </a>
-
-
-                    {/* YouTube */}
-
-                    <a href="#" aria-label="YouTube" className=" w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#243B6B]  text-white flex items-center justify-center  hover:bg-[#5BBF43]  transition-all  duration-300"
-                    >
-                        <FaYoutube className="text-[14px] sm:text-[16px]" />
-                    </a>
-
-
-                    {/* Instagram */}
-
-                    <a href="#" aria-label="Instagram"
-                        className=" w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#243B6B] text-white flex items-center justify-center  hover:bg-[#5BBF43]  transition-all  duration-300"
-                    >
-                        <FaInstagram className="text-[14px] sm:text-[16px]" />
-                    </a>
-
-
-                    {/* WhatsApp */}
-
-                    <a href="#" aria-label="WhatsApp" className=" w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#243B6B]  text-white  flex  items-center justify-center hover:bg-[#5BBF43] transition-all duration-300"
-                    >
-                        <FaWhatsapp className="text-[15px] sm:text-[17px]" />
-                    </a>
-
-                </div>
-
-                {/* RIGHT DARK SECTION */}
-
-                <div
-                    className=" w-full md:flex-1 h-[48px] sm:h-[52px] md:h-full  bg-[#02091C]  text-white  flex  items-center  justify-center  relative  overflow-hidden px-5 sm:px-8 md:px-10"
-                >
-
-                    {/* DIAGONAL WHITE SHAPE */}
-
-                    <div
-                        className=" absolute  left-[-45px]  sm:left-[-50px]  md:left-[-45px]  top-0  w-[80px]  sm:w-[90px]  md:w-[100px]  h-full  bg-white -skew-x-[32deg]"
-                    ></div>
-
-
-                    {/* TEXT */}
-
-                    <p
-                        className=" relative z-10 text-center text-xs sm:text-sm md:text-base lg:text-lg font-medium tracking-wide leading-5 sm:leading-6 max-w-full
-            "
-                    >
-                        Eco-Friendly Battery Operated E-Vehicle
-                    </p>
-
-                </div>
-
-            </div>
-
-        </header>
-    );
+        <div className="flex items-center justify-center lg:justify-end">
+          <a
+            href="tel:1234567890"
+            className="inline-flex items-center gap-3 text-base font-bold tracking-wide text-white transition-colors duration-300 hover:text-[#5BBF43]"
+          >
+            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#5BBF43] bg-[#10223A] text-[#5BBF43]">
+              <FaPhoneAlt size={17} />
+            </span>
+            <span>1234567890</span>
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 }
 
 export default TopHeader;
