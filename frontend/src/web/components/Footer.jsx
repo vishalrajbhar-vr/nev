@@ -13,13 +13,11 @@ function Footer() {
   return (
     <footer className="w-full bg-[#182438] text-white">
 
-      {/* ================= MAIN FOOTER ================= */}
 
       <div className="w-full px-5 sm:px-8 md:px-10 lg:px-14 xl:px-20 py-10 sm:py-12 lg:py-16">
 
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-10 xl:gap-16">
 
-          {/* ================= COMPANY INFO ================= */}
 
           <div className="sm:col-span-2 lg:col-span-1">
 
@@ -30,18 +28,11 @@ function Footer() {
               className="inline-block mb-6 sm:mb-8"
             >
               <img
-                src="/nev-logo.jpg"
+                src="/nev logo.jpg"
                 alt="NEV Logo"
-                className="
-                  w-[150px]
-                  sm:w-[170px]
-                  md:w-[180px]
-                  h-auto
-                  object-contain
-                "
+                className="w-[75px] sm:w-[85px] md:w-[100px] h-auto object-contain"
               />
             </a>
-
 
             {/* Description */}
 
@@ -141,7 +132,7 @@ function Footer() {
           </div>
 
 
-          {/* ================= OUR COMPANY ================= */}
+          {/* OUR COMPANY */}
 
           <div>
 
@@ -203,7 +194,7 @@ function Footer() {
           </div>
 
 
-          {/* ================= PRODUCTS ================= */}
+          {/* PRODUCTS */}
 
           <div>
 
@@ -256,7 +247,7 @@ function Footer() {
                   href="#"
                   className="hover:text-[#5BBF43] transition-colors duration-300"
                 >
-                  Khalsa Super DLX
+                 L5 Altra Loader
                 </a>
               </li>
 
@@ -265,7 +256,7 @@ function Footer() {
                   href="#"
                   className="hover:text-[#5BBF43] transition-colors duration-300"
                 >
-                  Khalsa Cargo
+                  L3 Butterfly MS
                 </a>
               </li>
 
@@ -274,7 +265,7 @@ function Footer() {
                   href="#"
                   className="hover:text-[#5BBF43] transition-colors duration-300"
                 >
-                  Grand Lithium
+                  L3 Butterfly SS
                 </a>
               </li>
 
@@ -283,7 +274,7 @@ function Footer() {
           </div>
 
 
-          {/* ================= CONTACT INFO ================= */}
+          {/* CONTACT INFO */}
 
           <div>
 
@@ -330,7 +321,7 @@ function Footer() {
                 />
 
                 <span className="text-sm sm:text-base md:text-lg font-semibold break-words">
-                  Toll Free: 18001210259
+                  Toll Free: 1234567890
                 </span>
 
               </a>
@@ -361,7 +352,7 @@ function Footer() {
                 />
 
                 <span className="text-sm sm:text-base md:text-lg font-semibold break-all">
-                  info@nev.com
+                  nev@gmail.com
                 </span>
 
               </a>
@@ -389,7 +380,7 @@ function Footer() {
                 />
 
                 <span className="text-sm sm:text-base md:text-lg font-semibold">
-                  Muzaffarnagar, India
+                  Lucknow
                 </span>
 
               </div>
@@ -403,7 +394,7 @@ function Footer() {
       </div>
 
 
-      {/* ================= BOTTOM FOOTER ================= */}
+      {/* BOTTOM FOOTER  */}
 
       <div className="border-t border-white/30">
 
