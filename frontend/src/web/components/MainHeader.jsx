@@ -1,7 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  FaChevronDown, FaChevronRight, FaPhoneAlt, FaBars, FaTimes,
+  FaChevronDown,
+  FaChevronRight,
+  FaPhoneAlt,
+  FaBars,
+  FaTimes,
 } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 
 function MainHeader() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -39,10 +44,7 @@ function MainHeader() {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (
-        headerRef.current &&
-        !headerRef.current.contains(event.target)
-      ) {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
         clearTimeout(closeTimer.current);
 
         setOpenDropdown(null);
@@ -54,10 +56,7 @@ function MainHeader() {
     document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleOutsideClick
-      );
+      document.removeEventListener("mousedown", handleOutsideClick);
 
       clearTimeout(closeTimer.current);
     };
@@ -106,49 +105,32 @@ function MainHeader() {
   };
 
   return (
-    <header
-      ref={headerRef}
-      className="relative z-50 w-full bg-white shadow-sm"
-    >
-
+    <header ref={headerRef} className="relative z-50 w-full bg-white shadow-sm">
       <div className="min-h-[78px] lg:h-[96px] flex items-center">
-
         {/* LOGO */}
 
         <div
           className=" w-auto lg:w-[28%] h-full flex items-center  px-4 sm:px-6 lg:pl-14 lg:pr-0
           "
         >
-
-          <a
-            href="#"
-            className="flex items-center"
-          >
-
+          <a href="#" className="flex items-center">
             <div className="  w-[110px]  h-[55px]  sm:w-[130px]  sm:h-[62px] lg:w-[145px]  lg:h-[70px]  flex  items-center  justify-center">
-
               <img
                 src="/nev%20logo.jpg"
                 alt="NEV Logo"
                 className="max-w-full max-h-full object-contain"
               />
-
             </div>
-
           </a>
-
         </div>
-
 
         {/*  DESKTOP NAVIGATION */}
 
         <nav className="hidden lg:flex flex-1 h-full items-center justify-center">
-
           <div
             className=" flex items-center gap-5 xl:gap-8 2xl:gap-11 text-[15px] xl:text-[17px] font-semibold
             "
           >
-
             {/*  HOME  */}
 
             <a
@@ -159,7 +141,6 @@ function MainHeader() {
               Home
             </a>
 
-
             {/* OUR PRODUCTS */}
 
             <div
@@ -167,36 +148,27 @@ function MainHeader() {
               onMouseEnter={() => openMenu("products")}
               onMouseLeave={closeMenuWithDelay}
             >
-
               <button
                 type="button"
                 onClick={() => toggleDropdown("products")}
                 className=" flex items-center gap-2 whitespace-nowrap  text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
               >
-
                 Our Products
-
                 <FaChevronDown
                   size={10}
                   className={`
                     transition-transform
                     duration-300
-                    ${openDropdown === "products"
-                      ? "rotate-180"
-                      : ""
-                    }
+                    ${openDropdown === "products" ? "rotate-180" : ""}
                   `}
                 />
-
               </button>
-
 
               {/* =================================================
                   PRODUCTS DROPDOWN
               ================================================= */}
 
               {openDropdown === "products" && (
-
                 <div
                   className="
                     absolute
@@ -212,7 +184,6 @@ function MainHeader() {
                   onMouseEnter={cancelClose}
                   onMouseLeave={closeMenuWithDelay}
                 >
-
                   {/* ================= L3 ================= */}
 
                   <ProductDesktopItem
@@ -223,12 +194,20 @@ function MainHeader() {
                     cancelClose={cancelClose}
                     closeMenuWithDelay={closeMenuWithDelay}
                     items={[
-                      "L3 Product 1",
-                      "L3 Product 2",
-                      "L3 Product 3",
+                      {
+                        name: "Khalsa Super Deluxe",
+                        path: "/products/khalsa-super-deluxe",
+                      },
+                      {
+                        name: "Khalsa Cargo",
+                        path: "/products/khalsa-cargo",
+                      },
+                      {
+                        name: "Khalsa Grand Lithium",
+                        path: "/products/khalsa-grand-lithium",
+                      },
                     ]}
                   />
-
 
                   {/* ================= L5 ================= */}
 
@@ -240,12 +219,11 @@ function MainHeader() {
                     cancelClose={cancelClose}
                     closeMenuWithDelay={closeMenuWithDelay}
                     items={[
-                      "L5 Product 1",
-                      "L5 Product 2",
-                      "L5 Product 3",
+                      {name:"Electric Auto 1", path:""},
+                      {name:"Electric Auto 2", path:""},
+                      {name:"Electric Auto 3", path:""},
                     ]}
                   />
-
 
                   {/* ================= SCOOTY ================= */}
 
@@ -257,18 +235,14 @@ function MainHeader() {
                     cancelClose={cancelClose}
                     closeMenuWithDelay={closeMenuWithDelay}
                     items={[
-                      "Scooty Product 1",
-                      "Scooty Product 2",
-                      "Scooty Product 3",
+                      {name:"scooty 1", path:""},
+                      {name:"scooty 2", path:""},
+                      {name:"scooty 3", path:""},
                     ]}
                   />
-
                 </div>
-
               )}
-
             </div>
-
 
             {/* ABOUT US */}
 
@@ -280,15 +254,15 @@ function MainHeader() {
               toggleDropdown={toggleDropdown}
               closeMenuWithDelay={closeMenuWithDelay}
               cancelClose={cancelClose}
+              items={["About Company", "Our Journey", "Our Team"]}
               items={[
-                "About Company",
-                "Our Journey",
-                "Our Team",
+                {name:"About Company", path:""},
+                {name:"Our Journey", path:""},
+                {name:"Our Team", path:""},
               ]}
             />
 
-
-           {/* GALLERY */}
+            {/* GALLERY */}
 
             <DesktopDropdown
               title="Gallery"
@@ -299,11 +273,10 @@ function MainHeader() {
               closeMenuWithDelay={closeMenuWithDelay}
               cancelClose={cancelClose}
               items={[
-                "Photos",
-                "Videos",
+                {name:"Photos", path:""},
+                {name:"Video", path:""},
               ]}
             />
-
 
             {/* CONTACT */}
 
@@ -316,17 +289,14 @@ function MainHeader() {
               closeMenuWithDelay={closeMenuWithDelay}
               cancelClose={cancelClose}
               items={[
-                "Contact Us",
-                "Enquiry",
+                {name:"Contact Us", path:""},
+                {name:"Enquiry", path:""}
               ]}
             />
-
           </div>
-
         </nav>
 
-
-     {/* DESKTOP PHONE */}
+        {/* DESKTOP PHONE */}
 
         <div
           className="
@@ -344,7 +314,6 @@ function MainHeader() {
             overflow-hidden
           "
         >
-
           {/* Diagonal White */}
 
           <div
@@ -358,7 +327,6 @@ function MainHeader() {
               -skew-x-[32deg]
             "
           ></div>
-
 
           {/* Phone */}
 
@@ -377,17 +345,11 @@ function MainHeader() {
               whitespace-nowrap
             "
           >
-
             <FaPhoneAlt size={14} />
 
-            <span>
-              1234567890
-            </span>
-
+            <span>1234567890</span>
           </a>
-
         </div>
-
 
         {/* =================================================
             MOBILE / TABLET RIGHT SECTION
@@ -405,7 +367,6 @@ function MainHeader() {
             sm:px-6
           "
         >
-
           {/* Phone */}
 
           <a
@@ -419,15 +380,10 @@ function MainHeader() {
               font-semibold
             "
           >
-
             <FaPhoneAlt size={15} />
 
-            <span>
-              1234567890
-            </span>
-
+            <span>1234567890</span>
           </a>
-
 
           {/* Hamburger */}
 
@@ -455,26 +411,16 @@ function MainHeader() {
             "
             aria-label="Toggle Menu"
           >
-
-            {mobileMenu ? (
-              <FaTimes size={19} />
-            ) : (
-              <FaBars size={19} />
-            )}
-
+            {mobileMenu ? <FaTimes size={19} /> : <FaBars size={19} />}
           </button>
-
         </div>
-
       </div>
-
 
       {/* =====================================================
           MOBILE MENU
       ===================================================== */}
 
       {mobileMenu && (
-
         <div
           className="
             lg:hidden
@@ -487,10 +433,7 @@ function MainHeader() {
             shadow-xl
           "
         >
-
           <div className="px-4 sm:px-6 py-3">
-
-
             {/* ================= HOME ================= */}
 
             <a
@@ -510,11 +453,9 @@ function MainHeader() {
               Home
             </a>
 
-
-             {/* MOBILE PRODUCTS */}
+            {/* MOBILE PRODUCTS */}
 
             <div className="border-b border-gray-100">
-
               <button
                 type="button"
                 onClick={() => toggleDropdown("products")}
@@ -529,30 +470,20 @@ function MainHeader() {
                   text-[#182438]
                 "
               >
-
-                <span>
-                  Our Products
-                </span>
+                <span>Our Products</span>
 
                 <FaChevronDown
                   size={12}
                   className={`
                     transition-transform
                     duration-300
-                    ${openDropdown === "products"
-                      ? "rotate-180"
-                      : ""
-                    }
+                    ${openDropdown === "products" ? "rotate-180" : ""}
                   `}
                 />
-
               </button>
 
-
               {openDropdown === "products" && (
-
                 <div className="pb-2 pl-3">
-
                   {/* L3 */}
 
                   <MobileProduct
@@ -560,13 +491,8 @@ function MainHeader() {
                     product="l3"
                     openProduct={openProduct}
                     toggleProduct={toggleProduct}
-                    items={[
-                      "L3 Product 1",
-                      "L3 Product 2",
-                      "L3 Product 3",
-                    ]}
+                    items={["L3 Product 1", "L3 Product 2", "L3 Product 3"]}
                   />
-
 
                   {/* L5 */}
 
@@ -575,13 +501,8 @@ function MainHeader() {
                     product="l5"
                     openProduct={openProduct}
                     toggleProduct={toggleProduct}
-                    items={[
-                      "L5 Product 1",
-                      "L5 Product 2",
-                      "L5 Product 3",
-                    ]}
+                    items={["L5 Product 1", "L5 Product 2", "L5 Product 3"]}
                   />
-
 
                   {/* Scooty */}
 
@@ -596,13 +517,9 @@ function MainHeader() {
                       "Scooty Product 3",
                     ]}
                   />
-
                 </div>
-
               )}
-
             </div>
-
 
             {/* ABOUT */}
 
@@ -611,27 +528,18 @@ function MainHeader() {
               menu="about"
               openDropdown={openDropdown}
               toggleDropdown={toggleDropdown}
-              items={[
-                "About Company",
-                "Our Journey",
-                "Our Team",
-              ]}
+              items={["About Company", "Our Journey", "Our Team"]}
             />
 
-
-             {/* GALLERY */}
+            {/* GALLERY */}
 
             <MobileDropdown
               title="Gallery"
               menu="gallery"
               openDropdown={openDropdown}
               toggleDropdown={toggleDropdown}
-              items={[
-                "Photos",
-                "Videos",
-              ]}
+              items={["Photos", "Videos"]}
             />
-
 
             {/* CONTACT */}
 
@@ -640,12 +548,8 @@ function MainHeader() {
               menu="contact"
               openDropdown={openDropdown}
               toggleDropdown={toggleDropdown}
-              items={[
-                "Contact Us",
-                "Enquiry",
-              ]}
+              items={["Contact Us", "Enquiry"]}
             />
-
 
             {/* MOBILE PHONE */}
 
@@ -666,23 +570,15 @@ function MainHeader() {
                 font-semibold
               "
             >
-
               <FaPhoneAlt size={15} />
-
               1234567890
-
             </a>
-
           </div>
-
         </div>
-
       )}
-
     </header>
   );
 }
-
 
 /* =========================================================
     DESKTOP PRODUCT ITEM
@@ -709,31 +605,20 @@ function ProductDesktopItem({
         cursor-pointer
         transition-colors
         duration-200
-        ${openProduct === product
-          ? "bg-[#F1F5F9]"
-          : "hover:bg-[#F1F5F9]"
-        }
+        ${openProduct === product ? "bg-[#F1F5F9]" : "hover:bg-[#F1F5F9]"}
       `}
       onMouseEnter={() => {
         cancelClose();
         setOpenProduct(product);
       }}
     >
+      <span className="text-[16px] font-medium text-[#182438]">{title}</span>
 
-      <span className="text-[16px] font-medium text-[#182438]">
-        {title}
-      </span>
-
-      <FaChevronRight
-        size={11}
-        className="text-[#182438]"
-      />
-
+      <FaChevronRight size={11} className="text-[#182438]" />
 
       {/* SUBMENU */}
 
       {openProduct === product && (
-
         <div
           className="
             absolute
@@ -748,36 +633,20 @@ function ProductDesktopItem({
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
-
           {items.map((item) => (
-            <a
-              key={item}
-              href="#"
-              className="
-                block
-                px-6
-                py-5
-                text-[15px]
-                font-medium
-                text-[#182438]
-                hover:bg-[#F4FAF2]
-                hover:text-[#5BBF43]
-                transition-colors
-                duration-200
-              "
-            >
-              {item}
-            </a>
-          ))}
-
+  <NavLink
+    key={item.path}
+    to={item.path}
+    className="block px-6 py-5 text-[15px] font-medium text-[#182438] hover:bg-[#F4FAF2] hover:text-[#5BBF43]"
+  >
+    {item.name}
+  </NavLink>
+))}
         </div>
-
       )}
-
     </div>
   );
 }
-
 
 // DESKTOP NORMAL DROPDOWN
 
@@ -797,7 +666,6 @@ function DesktopDropdown({
       onMouseEnter={() => openMenu(menu)}
       onMouseLeave={closeMenuWithDelay}
     >
-
       <button
         type="button"
         onClick={() => toggleDropdown(menu)}
@@ -812,7 +680,6 @@ function DesktopDropdown({
           duration-300
         "
       >
-
         {title}
 
         <FaChevronDown
@@ -820,18 +687,12 @@ function DesktopDropdown({
           className={`
             transition-transform
             duration-300
-            ${openDropdown === menu
-              ? "rotate-180"
-              : ""
-            }
+            ${openDropdown === menu ? "rotate-180" : ""}
           `}
         />
-
       </button>
 
-
       {openDropdown === menu && (
-
         <div
           className="
             absolute
@@ -846,16 +707,16 @@ function DesktopDropdown({
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
-
           {items.map((item) => (
-            <a
-              key={item}
-              href="#"
+            <Link
+              key={item.path}
+              to={item.path}
               className="
                 block
                 px-6
-                py-4
+                py-5
                 text-[15px]
+                font-medium
                 text-[#182438]
                 hover:bg-[#F4FAF2]
                 hover:text-[#5BBF43]
@@ -863,31 +724,20 @@ function DesktopDropdown({
                 duration-200
               "
             >
-              {item}
-            </a>
+              {item.name}
+            </Link>
           ))}
-
         </div>
-
       )}
-
     </div>
   );
 }
 
-
 // MOBILE PRODUCT
 
-function MobileProduct({
-  title,
-  product,
-  openProduct,
-  toggleProduct,
-  items,
-}) {
+function MobileProduct({ title, product, openProduct, toggleProduct, items }) {
   return (
     <div className="border-l-2 border-[#5BBF43]">
-
       <button
         type="button"
         onClick={() => toggleProduct(product)}
@@ -904,32 +754,22 @@ function MobileProduct({
           hover:bg-[#F4FAF2]
         "
       >
-
-        <span>
-          {title}
-        </span>
+        <span>{title}</span>
 
         <FaChevronRight
           size={10}
           className={`
             transition-transform
             duration-300
-            ${openProduct === product
-              ? "rotate-90"
-              : ""
-            }
+            ${openProduct === product ? "rotate-90" : ""}
           `}
         />
-
       </button>
-
 
       {/* INNER PRODUCTS */}
 
       {openProduct === product && (
-
         <div className="ml-3 mb-2">
-
           {items.map((item) => (
             <a
               key={item}
@@ -948,30 +788,19 @@ function MobileProduct({
               {item}
             </a>
           ))}
-
         </div>
-
       )}
-
     </div>
   );
 }
-
 
 /* =========================================================
     MOBILE NORMAL DROPDOWN
 ========================================================= */
 
-function MobileDropdown({
-  title,
-  menu,
-  openDropdown,
-  toggleDropdown,
-  items,
-}) {
+function MobileDropdown({ title, menu, openDropdown, toggleDropdown, items }) {
   return (
     <div className="border-b border-gray-100">
-
       <button
         type="button"
         onClick={() => toggleDropdown(menu)}
@@ -986,30 +815,20 @@ function MobileDropdown({
           text-[#182438]
         "
       >
-
-        <span>
-          {title}
-        </span>
+        <span>{title}</span>
 
         <FaChevronDown
           size={12}
           className={`
             transition-transform
             duration-300
-            ${openDropdown === menu
-              ? "rotate-180"
-              : ""
-            }
+            ${openDropdown === menu ? "rotate-180" : ""}
           `}
         />
-
       </button>
 
-
       {openDropdown === menu && (
-
         <div className="pb-2 pl-3">
-
           {items.map((item) => (
             <a
               key={item}
@@ -1028,11 +847,8 @@ function MobileDropdown({
               {item}
             </a>
           ))}
-
         </div>
-
       )}
-
     </div>
   );
 }
