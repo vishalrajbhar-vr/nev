@@ -1,11 +1,24 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
+  FaBars,
   FaChevronDown,
   FaChevronRight,
-  FaPhoneAlt,
-  FaBars,
   FaTimes,
 } from "react-icons/fa";
+
+const logoSrc = "/nev-logo-cropped.png";
+
+const menuItems = {
+  about: ["About Company", "Our Journey", "Our Team"],
+  gallery: ["Photos", "Videos"],
+  contact: ["Contact Us", "Enquiry"],
+};
+
+const productItems = {
+  l3: ["L3 Product 1", "L3 Product 2", "L3 Product 3"],
+  l5: ["L5 Product 1", "L5 Product 2", "L5 Product 3"],
+  scooty: ["Scooty Product 1", "Scooty Product 2", "Scooty Product 3"],
+};
 
 function MainHeader() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -15,41 +28,46 @@ function MainHeader() {
   const closeTimer = useRef(null);
   const headerRef = useRef(null);
 
-  /* ================= OPEN MENU ================= */
-
   const openMenu = (menu) => {
     clearTimeout(closeTimer.current);
     setOpenDropdown(menu);
     setOpenProduct(null);
   };
 
-  /* ================= CLOSE MENU ================= */
-
   const closeMenuWithDelay = () => {
     clearTimeout(closeTimer.current);
-
     closeTimer.current = setTimeout(() => {
       setOpenDropdown(null);
       setOpenProduct(null);
-    }, 100);
+    }, 120);
   };
-
-  /* ================= CANCEL CLOSE ================= */
 
   const cancelClose = () => {
     clearTimeout(closeTimer.current);
   };
 
-  /* ================= OUTSIDE CLICK ================= */
+  const toggleDropdown = (menu) => {
+    clearTimeout(closeTimer.current);
+
+    if (openDropdown === menu) {
+      setOpenDropdown(null);
+      setOpenProduct(null);
+      return;
+    }
+
+    setOpenDropdown(menu);
+    setOpenProduct(null);
+  };
+
+  const toggleProduct = (product) => {
+    clearTimeout(closeTimer.current);
+    setOpenProduct(openProduct === product ? null : product);
+  };
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (
-        headerRef.current &&
-        !headerRef.current.contains(event.target)
-      ) {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
         clearTimeout(closeTimer.current);
-
         setOpenDropdown(null);
         setOpenProduct(null);
         setMobileMenu(false);
@@ -59,16 +77,10 @@ function MainHeader() {
     document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener(
-        "mousedown",
-        handleOutsideClick
-      );
-
+      document.removeEventListener("mousedown", handleOutsideClick);
       clearTimeout(closeTimer.current);
     };
   }, []);
-
-  /* ================= RESIZE ================= */
 
   useEffect(() => {
     const handleResize = () => {
@@ -78,81 +90,17 @@ function MainHeader() {
     };
 
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  /* ================= TOGGLE DROPDOWN ================= */
-
-  const toggleDropdown = (menu) => {
-    clearTimeout(closeTimer.current);
-
-    if (openDropdown === menu) {
-      setOpenDropdown(null);
-      setOpenProduct(null);
-    } else {
-      setOpenDropdown(menu);
-      setOpenProduct(null);
-    }
-  };
-
-  /* ================= TOGGLE PRODUCT ================= */
-
-  const toggleProduct = (product) => {
-    clearTimeout(closeTimer.current);
-
-    if (openProduct === product) {
-      setOpenProduct(null);
-    } else {
-      setOpenProduct(product);
-    }
-  };
-
   return (
-    <header
-      ref={headerRef}
-      className="relative z-50 w-full bg-white shadow-[0_2px_15px_rgba(24,36,56,0.08)]"
-    >
+    <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-5 sm:px-5 lg:px-7">
+      <div className="relative mx-auto max-w-[1560px]">
+        <span className="absolute left-[-5px] top-3 hidden h-20 w-7 rounded-l-[22px] bg-[#5BBF43] lg:block" />
+        <span className="absolute right-[-5px] top-3 hidden h-20 w-7 rounded-r-[22px] bg-[#5BBF43] lg:block" />
 
-      {/* =====================================================
-          MAIN HEADER
-      ===================================================== */}
-
-      <div className="min-h-[78px] lg:h-[96px] flex items-center">
-
-        {/* ================= LOGO ================= */}
-
-        <div className="w-auto lg:w-[28%] h-full flex items-center px-4 sm:px-6 lg:pl-14 lg:pr-0">
-
-          <a href="#" className="flex items-center">
-
-            <div className="w-[110px] h-[55px] sm:w-[130px] sm:h-[62px] lg:w-[145px] lg:h-[70px] flex items-center justify-center">
-
-              <img
-                src="/nev%20logo.jpg"
-                alt="NEV Logo"
-                className="max-w-full max-h-full object-contain"
-              />
-
-            </div>
-
-          </a>
-
-        </div>
-
-
-        {/* =====================================================
-            DESKTOP NAVIGATION
-        ===================================================== */}
-
-        <nav className="hidden lg:flex flex-1 h-full items-center justify-center">
-
-          <div className="flex items-center gap-5 xl:gap-8 2xl:gap-11 text-[15px] xl:text-[17px] font-semibold">
-
-            {/* ================= HOME ================= */}
-
+        <div className="relative rounded-[16px] border border-white/70 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.18)]">
+          <div className="flex min-h-[78px] items-center px-4 sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
             <a
               href="#"
               className="whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
@@ -174,7 +122,7 @@ function MainHeader() {
               <button
                 type="button"
                 onClick={() => toggleDropdown("products")}
-                className="flex items-center gap-1 whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
+                className="flex items-center gap-2 whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
               >
 
                 <span>Our Products</span>
@@ -195,8 +143,7 @@ function MainHeader() {
               {openDropdown === "products" && (
 
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[240px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-visible py-1"
-                  onMouseEnter={cancelClose}
+                  className="absolute top-full left-1/2 -translate-x-1/2 w-[240px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-visible py-1" onMouseEnter={cancelClose}
                   onMouseLeave={closeMenuWithDelay}
                 >
 
@@ -237,255 +184,115 @@ function MainHeader() {
 
                 </div>
 
-              )}
+                <DesktopDropdown
+                  title="About Us"
+                  menu="about"
+                  openDropdown={openDropdown}
+                  openMenu={openMenu}
+                  toggleDropdown={toggleDropdown}
+                  closeMenuWithDelay={closeMenuWithDelay}
+                  cancelClose={cancelClose}
+                />
 
-            </div>
+                <DesktopDropdown
+                  title="Gallery"
+                  menu="gallery"
+                  openDropdown={openDropdown}
+                  openMenu={openMenu}
+                  toggleDropdown={toggleDropdown}
+                  closeMenuWithDelay={closeMenuWithDelay}
+                  cancelClose={cancelClose}
+                />
 
+                <DesktopDropdown
+                  title="Contact Us"
+                  menu="contact"
+                  openDropdown={openDropdown}
+                  openMenu={openMenu}
+                  toggleDropdown={toggleDropdown}
+                  closeMenuWithDelay={closeMenuWithDelay}
+                  cancelClose={cancelClose}
+                />
+              </div>
+            </nav>
 
-            {/* ================= ABOUT ================= */}
-
-            <DesktopDropdown
-              title="About Us"
-              menu="about"
-              openDropdown={openDropdown}
-              openMenu={openMenu}
-              toggleDropdown={toggleDropdown}
-              closeMenuWithDelay={closeMenuWithDelay}
-              cancelClose={cancelClose}
-            />
-
-
-            {/* ================= GALLERY ================= */}
-
-            <DesktopDropdown
-              title="Gallery"
-              menu="gallery"
-              openDropdown={openDropdown}
-              openMenu={openMenu}
-              toggleDropdown={toggleDropdown}
-              closeMenuWithDelay={closeMenuWithDelay}
-              cancelClose={cancelClose}
-            />
-
-
-            {/* ================= CONTACT ================= */}
-
-            <DesktopDropdown
-              title="Contact Us"
-              menu="contact"
-              openDropdown={openDropdown}
-              openMenu={openMenu}
-              toggleDropdown={toggleDropdown}
-              closeMenuWithDelay={closeMenuWithDelay}
-              cancelClose={cancelClose}
-            />
-
-          </div>
-
-        </nav>
-
-
-        {/* =====================================================
-            DESKTOP PHONE
-        ===================================================== */}
-
-        <div className="hidden lg:flex w-[18%] xl:w-[16%] 2xl:w-[14%] h-full bg-[#293F8F] text-white items-center justify-center relative overflow-hidden">
-
-          <div className="absolute left-[-35px] top-0 w-[70px] h-full bg-white -skew-x-[32deg]" />
-
-          <a
-            href="tel:1234567890"
-            className="relative z-10 flex items-center gap-2 xl:gap-3 text-sm xl:text-base font-semibold whitespace-nowrap"
-          >
-
-            <FaPhoneAlt size={14} />
-
-            <span>1234567890</span>
-
-          </a>
-
-        </div>
-
-
-        {/* =====================================================
-            MOBILE / TABLET RIGHT
-        ===================================================== */}
-
-        <div className="ml-auto flex lg:hidden items-center gap-2 sm:gap-3 px-4 sm:px-6">
-
-          <a
-            href="tel:1234567890"
-            className="hidden sm:flex items-center gap-2 text-[#293F8F] font-semibold"
-          >
-
-            <FaPhoneAlt size={15} />
-
-            <span>1234567890</span>
-
-          </a>
-
-
-          <button
-            type="button"
-            onClick={() => {
-              setMobileMenu(!mobileMenu);
-              setOpenDropdown(null);
-              setOpenProduct(null);
-            }}
-            className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#293F8F] text-white flex items-center justify-center shadow-md hover:bg-[#5BBF43] hover:shadow-lg transition-all duration-300"
-            aria-label="Toggle Menu"
-          >
-
-            {mobileMenu ? (
-              <FaTimes size={19} />
-            ) : (
-              <FaBars size={19} />
-            )}
-
-          </button>
-
-        </div>
-
-      </div>
-
-
-      {/* =====================================================
-          MOBILE MENU
-      ===================================================== */}
-
-      {mobileMenu && (
-
-        <div className="lg:hidden w-full max-h-[calc(100vh-78px)] overflow-y-auto bg-[#FAFCFA] border-t border-gray-200 shadow-[0_15px_35px_rgba(24,36,56,0.12)]">
-
-          <div className="px-4 sm:px-6 py-4">
-
-            {/* ================= HOME ================= */}
-
-            <a
-              href="#"
-              onClick={() => setMobileMenu(false)}
-              className="block py-4 px-3 text-base font-semibold text-[#182438] border-b border-gray-200 hover:text-[#5BBF43] transition-colors duration-300"
-            >
-              Home
-            </a>
-
-
-            {/* ================= MOBILE PRODUCTS ================= */}
-
-            <div className="border-b border-gray-200">
-
+            <div className="ml-auto flex items-center lg:hidden">
               <button
                 type="button"
-                onClick={() => toggleDropdown("products")}
-                className="w-full flex items-center justify-between py-4 px-3 text-base font-semibold text-[#182438]"
+                onClick={() => {
+                  setMobileMenu(!mobileMenu);
+                  setOpenDropdown(null);
+                  setOpenProduct(null);
+                }}
+                className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#10223A] text-white shadow-md transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426]"
+                aria-label="Toggle Menu"
               >
-
-                <span>Our Products</span>
-
-                <span className="w-7 h-7 rounded-full bg-[#F1F6EF] flex items-center justify-center">
-
-                  <FaChevronDown
-                    size={11}
-                    className={`text-[#293F8F] transition-transform duration-300 ${openDropdown === "products"
-                      ? "rotate-180"
-                      : ""
-                      }`}
-                  />
-
-                </span>
-
+                {mobileMenu ? <FaTimes size={19} /> : <FaBars size={19} />}
               </button>
-
-
-              {openDropdown === "products" && (
-
-                <div className="ml-3 mr-1 mb-3 pl-3 border-l-2 border-[#5BBF43]">
-
-                  <MobileProduct
-                    title="L3 (Electric Rickshaw)"
-                    product="l3"
-                    openProduct={openProduct}
-                    toggleProduct={toggleProduct}
-                  />
-
-                  <MobileProduct
-                    title="L5 (Electric Auto)"
-                    product="l5"
-                    openProduct={openProduct}
-                    toggleProduct={toggleProduct}
-                  />
-
-                  <MobileProduct
-                    title="Scooty"
-                    product="scooty"
-                    openProduct={openProduct}
-                    toggleProduct={toggleProduct}
-                  />
-
-                </div>
-
-              )}
-
             </div>
-
-
-            {/* ================= ABOUT ================= */}
-
-            <MobileDropdown
-              title="About Us"
-              menu="about"
-              openDropdown={openDropdown}
-              toggleDropdown={toggleDropdown}
-            />
-
-
-            {/* ================= GALLERY ================= */}
-
-            <MobileDropdown
-              title="Gallery"
-              menu="gallery"
-              openDropdown={openDropdown}
-              toggleDropdown={toggleDropdown}
-            />
-
-
-            {/* ================= CONTACT ================= */}
-
-            <MobileDropdown
-              title="Contact Us"
-              menu="contact"
-              openDropdown={openDropdown}
-              toggleDropdown={toggleDropdown}
-            />
-
-
-            {/* ================= MOBILE PHONE ================= */}
-
-            <a
-              href="tel:1234567890"
-              className="sm:hidden flex items-center justify-center gap-3 mt-5 py-3.5 rounded-xl bg-[#293F8F] text-white font-semibold shadow-md hover:bg-[#5BBF43] transition-all duration-300"
-            >
-
-              <FaPhoneAlt size={15} />
-
-              1234567890
-
-            </a>
-
           </div>
 
+          {mobileMenu && (
+            <div className="lg:hidden border-t border-[#D7DCE4] bg-white px-4 py-4 shadow-[0_15px_35px_rgba(24,36,56,0.12)] sm:px-6">
+              <a
+                href="#"
+                onClick={() => setMobileMenu(false)}
+                className="block border-b border-gray-200 px-3 py-4 text-base font-bold text-[#142033] transition-colors duration-300 hover:text-[#5BBF43]"
+              >
+                Home
+              </a>
+
+              <div className="border-b border-gray-200">
+                <button
+                  type="button"
+                  onClick={() => toggleDropdown("products")}
+                  className="flex w-full items-center justify-between px-3 py-4 text-base font-bold text-[#142033]"
+                >
+                  <span>Our Products</span>
+                  <MobileCircle active={openDropdown === "products"} />
+                </button>
+
+                {openDropdown === "products" && (
+                  <div className="mb-3 ml-3 border-l-2 border-[#5BBF43] pl-3">
+                    <MobileProduct
+                      title="L3 (Electric Rickshaw)"
+                      product="l3"
+                      openProduct={openProduct}
+                      toggleProduct={toggleProduct}
+                    />
+                    <MobileProduct
+                      title="L5 (Electric Auto)"
+                      product="l5"
+                      openProduct={openProduct}
+                      toggleProduct={toggleProduct}
+                    />
+                    <MobileProduct
+                      title="Scooty"
+                      product="scooty"
+                      openProduct={openProduct}
+                      toggleProduct={toggleProduct}
+                    />
+                  </div>
+                )}
+              </div>
+
+              {Object.keys(menuItems).map((menu) => (
+                <MobileDropdown
+                  key={menu}
+                  title={menu === "about" ? "About Us" : menu === "gallery" ? "Gallery" : "Contact Us"}
+                  menu={menu}
+                  openDropdown={openDropdown}
+                  toggleDropdown={toggleDropdown}
+                />
+              ))}
+
+            </div>
+          )}
         </div>
-
-      )}
-
+      </div>
     </header>
   );
 }
-
-
-/* =========================================================
-    DESKTOP PRODUCT ITEM
-========================================================= */
 
 function ProductDesktopItem({
   title,
@@ -495,43 +302,36 @@ function ProductDesktopItem({
   cancelClose,
   closeMenuWithDelay,
 }) {
-  return (
+  const isActive = openProduct === product;
 
+  return (
     <div
-      className={`relative px-7 py-4 flex items-center justify-between cursor-pointer overflow-visible transition-all duration-300 ${openProduct === product
-        ? "bg-[#EAF5E7]"
-        : "bg-white hover:bg-[#EAF5E7]"
-        }`}
+      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${
+        isActive ? "bg-[#EAF5E7]" : "bg-white hover:bg-[#EAF5E7]"
+      }`}
       onMouseEnter={() => {
         cancelClose();
         setOpenProduct(product);
       }}
     >
-
-      <span
-        className={`text-[15px] font-medium transition-all duration-300 ${openProduct === product
-          ? "text-[#5BBF43] text-[16px]"
-          : "text-[#182438]"
-          }`}
-      >
+      <span className={`text-[15px] font-semibold ${isActive ? "text-[#5BBF43]" : "text-[#142033]"}`}>
         {title}
       </span>
 
-
       <FaChevronRight
         size={10}
-        className={`transition-all duration-300 ${openProduct === product
-          ? "text-[#5BBF43] translate-x-1"
-          : "text-[#182438]"
-          }`}
+        className={`transition-all duration-300 ${
+          isActive ? "translate-x-1 text-[#5BBF43]" : "text-[#142033]"
+        }`}
       />
+
 
       {/* ================= SUB MENU ================= */}
 
       {openProduct === product && (
 
         <div
-          className="absolute top-[-3px] left-full w-[230px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
+          className="absolute top-[-3px] left-full w-[245px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
@@ -540,8 +340,9 @@ function ProductDesktopItem({
 
           {product === "l3" && (
             <>
-              <DropdownItem item="L3 Butterfly MS" />
-              <DropdownItem item="L3 Butterfly SS" />
+              <DropdownItem item="L3 Product 1" />
+              <DropdownItem item="L3 Product 2" />
+              <DropdownItem item="L3 Product 3" />
             </>
           )}
 
@@ -550,11 +351,9 @@ function ProductDesktopItem({
 
           {product === "l5" && (
             <>
-              <DropdownItem item="L5 DLX Passenger plus 1" />
-              <DropdownItem item="L5 ECO 6 + 1" />
-              <DropdownItem item="L5 Front Facia" />
-              <DropdownItem item="L5 Butterfly 6 + 1" />
-              <DropdownItem item="L5 Ultra Loader" />
+              <DropdownItem item="L5 Product 1" />
+              <DropdownItem item="L5 Product 2" />
+              <DropdownItem item="L5 Product 3" />
             </>
           )}
 
@@ -563,26 +362,17 @@ function ProductDesktopItem({
 
           {product === "scooty" && (
             <>
-              <DropdownItem item="Single Light" />
-              <DropdownItem item="Double Light" />
-              <DropdownItem item="U Light" />
-              <DropdownItem item="Activa" />
-              <DropdownItem item="N1" />
+              <DropdownItem item="Scooty Product 1" />
+              <DropdownItem item="Scooty Product 2" />
+              <DropdownItem item="Scooty Product 3" />
             </>
           )}
 
         </div>
-
       )}
-
     </div>
   );
 }
-
-
-/* =========================================================
-    DESKTOP NORMAL DROPDOWN
-========================================================= */
 
 function DesktopDropdown({
   title,
@@ -594,36 +384,32 @@ function DesktopDropdown({
   cancelClose,
 }) {
   return (
-
     <div
-      className="relative h-full flex items-center"
+      className="relative flex h-[90px] items-center"
       onMouseEnter={() => openMenu(menu)}
       onMouseLeave={closeMenuWithDelay}
     >
-
       <button
         type="button"
         onClick={() => toggleDropdown(menu)}
-        className="flex items-center gap-2 whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
+        className="flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-[#5BBF43]"
       >
-
         <span>{title}</span>
-
         <FaChevronDown
-          size={10}
-          className={`transition-transform duration-300 ${openDropdown === menu
-            ? "rotate-180"
-            : ""
-            }`}
+          size={12}
+          className={`transition-transform duration-300 ${openDropdown === menu ? "rotate-180" : ""}`}
         />
-
       </button>
 
 
 
-
       {openDropdown === menu && (
-        <div className="absolute top-full left-1/2 -translate-x-1/2 w-[170px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden py-1" onMouseEnter={cancelClose} onMouseLeave={closeMenuWithDelay}>
+
+        <div
+          className="absolute top-full left-0 w-[195px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
+          onMouseEnter={cancelClose}
+          onMouseLeave={closeMenuWithDelay}
+        >
 
           {/* ================= ABOUT ================= */}
 
@@ -656,204 +442,94 @@ function DesktopDropdown({
           )}
 
         </div>
-
       )}
-
     </div>
   );
 }
-
-
-/* =========================================================
-    COMMON DESKTOP DROPDOWN ITEM
-========================================================= */
 
 function DropdownItem({ item }) {
   return (
-
     <a
       href="#"
-      className="
-       relative block px-6 py-4 text-[15px] font-medium text-[#182438]
-       bg-white overflow-hidden transition-all duration-300
-       hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[16px] after:content-[''] 
-       after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43]
-       after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
+      className="relative block px-6 py-4 text-[15px] font-medium text-[#182438] bg-white overflow-hidden transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[16px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
     >
       {item}
     </a>
-
   );
 }
 
-
-/* =========================================================
-    MOBILE PRODUCT
-========================================================= */
-
-function MobileProduct({
-  title,
-  product,
-  openProduct,
-  toggleProduct,
-}) {
+function MobileCircle({ active }) {
   return (
+    <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F1F6EF]">
+      <FaChevronDown
+        size={11}
+        className={`text-[#10223A] transition-transform duration-300 ${active ? "rotate-180" : ""}`}
+      />
+    </span>
+  );
+}
 
+function MobileProduct({ title, product, openProduct, toggleProduct }) {
+  return (
     <div className="mb-1">
-
       <button
         type="button"
         onClick={() => toggleProduct(product)}
-        className="w-full flex items-center justify-between px-3 py-3.5 rounded-lg text-sm font-medium text-[#182438] hover:bg-[#EAF5E7] hover:text-[#5BBF43] transition-all duration-300"
+        className="flex w-full items-center justify-between rounded-lg px-3 py-3.5 text-sm font-semibold text-[#142033] transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43]"
       >
-
         <span>{title}</span>
-
-        <span className="w-6 h-6 rounded-full bg-[#F1F6EF] flex items-center justify-center">
-
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F1F6EF]">
           <FaChevronRight
             size={9}
-            className={`text-[#293F8F] transition-transform duration-300 ${openProduct === product
-              ? "rotate-90"
-              : ""
-              }`}
+            className={`text-[#10223A] transition-transform duration-300 ${
+              openProduct === product ? "rotate-90" : ""
+            }`}
           />
-
         </span>
-
       </button>
 
-
-      {/* ================= MOBILE SUB ITEMS ================= */}
-
       {openProduct === product && (
-
-        <div className="ml-3 mb-2">
-
-          {product === "l3" && (
-            <>
-              <MobileItem item="L3 Product 1" />
-              <MobileItem item="L3 Product 2" />
-              <MobileItem item="L3 Product 3" />
-            </>
-          )}
-
-          {product === "l5" && (
-            <>
-              <MobileItem item="L5 Product 1" />
-              <MobileItem item="L5 Product 2" />
-              <MobileItem item="L5 Product 3" />
-            </>
-          )}
-
-          {product === "scooty" && (
-            <>
-              <MobileItem item="Scooty Product 1" />
-              <MobileItem item="Scooty Product 2" />
-              <MobileItem item="Scooty Product 3" />
-            </>
-          )}
-
+        <div className="mb-2 ml-3">
+          {productItems[product].map((item) => (
+            <MobileItem item={item} key={item} />
+          ))}
         </div>
-
       )}
-
     </div>
   );
 }
 
-
-/* =========================================================
-    MOBILE NORMAL DROPDOWN
-========================================================= */
-
-function MobileDropdown({
-  title,
-  menu,
-  openDropdown,
-  toggleDropdown,
-}) {
+function MobileDropdown({ title, menu, openDropdown, toggleDropdown }) {
   return (
-
     <div className="border-b border-gray-200">
-
       <button
         type="button"
         onClick={() => toggleDropdown(menu)}
-        className="w-full flex items-center justify-between py-4 px-3 text-base font-semibold text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
+        className="flex w-full items-center justify-between px-3 py-4 text-base font-bold text-[#142033] transition-colors duration-300 hover:text-[#5BBF43]"
       >
-
         <span>{title}</span>
-
-        <span className="w-7 h-7 rounded-full bg-[#F1F6EF] flex items-center justify-center">
-
-          <FaChevronDown
-            size={11}
-            className={`text-[#293F8F] transition-transform duration-300 ${openDropdown === menu
-              ? "rotate-180"
-              : ""
-              }`}
-          />
-
-        </span>
-
+        <MobileCircle active={openDropdown === menu} />
       </button>
 
-
       {openDropdown === menu && (
-
         <div className="pb-2 pl-3 pr-1">
-
-          {menu === "about" && (
-            <>
-              <MobileItem item="About Company" />
-              <MobileItem item="Our Journey" />
-              <MobileItem item="Our Team" />
-            </>
-          )}
-
-          {menu === "gallery" && (
-            <>
-              <MobileItem item="Photos" />
-              <MobileItem item="Videos" />
-            </>
-          )}
-
-          {menu === "contact" && (
-            <>
-              <MobileItem item="Contact Us" />
-              <MobileItem item="Enquiry" />
-            </>
-          )}
-
+          {menuItems[menu].map((item) => (
+            <MobileItem item={item} key={item} />
+          ))}
         </div>
-
       )}
-
     </div>
   );
 }
 
-
-/* =========================================================
-    MOBILE ITEM
-========================================================= */
-
 function MobileItem({ item }) {
   return (
-
     <a
       href="#"
-      className="
-        relative block px-4 py-3 text-sm font-medium text-gray-600
-       bg-white overflow-hidden transition-all duration-300 
-       hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[15px] after:content-['']
-        after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] 
-        after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
+      className="relative block px-4 py-3 text-sm font-medium text-gray-600 bg-white overflow-hidden transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[15px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
     >
       {item}
     </a>
-
   );
 }
 
