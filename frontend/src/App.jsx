@@ -7,9 +7,9 @@ import Footer from "./web/components/Footer";
 
 import Home from "./web/pages/Home/Home";
 import AboutHero from "./web/pages/about/AboutHero";
-import KhalsaSuperDlx from "./web/pages/Products/KhalsaSuperDlx";
-import KhalsaCargo from "./web/pages/Products/KhalsaCargo";
-import KhalsaGrandLithium from "./web/pages/Products/KhalsaGrandLithium";
+import L5DLXPassenger from "./web/pages/Products/L5DLXPassenger";
+import Activa from "./web/pages/Products/Activa";
+
 
 function App() {
   return (
@@ -18,14 +18,14 @@ function App() {
       <MainHeader />
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<AboutHero />} />
         <Route
-          path="/products/khalsa-super-deluxe"
-          element={<KhalsaSuperDlx />}
+          path="/"
+          element={<L5DLXPassenger />}
         />
-        <Route path="/products/khalsa-cargo" element={<KhalsaCargo />} />
-        <Route path="/products/khalsa-grand-lithium" element={<KhalsaGrandLithium />} />
+        <Route path="/activa" element={<Activa/>}/>
+        
       </Routes>
 
       <Footer />

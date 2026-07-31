@@ -39,24 +39,30 @@ import {
   HeartHandshake,
   ImageIcon,
   Users,
+  CircleGauge,
+  ChartNoAxesCombined,
 } from "lucide-react";
+
+import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
+
+const GALLERY_IMAGES = [
+  "../../../../public/images/ACTIVA.png",
+  "../../../../public/images/N1.png",
+  "../../../../public/images/NE 1.png",
+  "../../../../public/images/NEA.png",
+  "../../../../public/images/NEO.png",
+];
 
 /* ===================================================================
    SPECS DATA
 =================================================================== */
 const specs = [
-  { icon: <Gauge size={22} />, title: "Engine Power", value: "12 HP" },
-  { icon: <Fuel size={22} />, title: "Fuel Type", value: "Diesel" },
-  { icon: <Droplets size={22} />, title: "Fuel Tank", value: "10 Litres" },
-  { icon: <Cog size={22} />, title: "Transmission", value: "Gear Drive" },
-  {
-    icon: <Settings size={22} />,
-    title: "Cooling System",
-    value: "Water Cooled",
-  },
-  { icon: <Wrench size={22} />, title: "Starting", value: "Self + Manual" },
-  { icon: <Weight size={22} />, title: "Machine Weight", value: "350 Kg" },
-  { icon: <ShieldCheck size={22} />, title: "Warranty", value: "1 Year" },
+
+  { icon: <Fuel size={22} />, title: "Fuel Type", value: "Electric" },
+  { icon: <Droplets size={22} />, title: "Battery", value: "Lithium 60V30AH" },
+  { icon: <Wrench size={22} />, title: "Starting", value: "Self" },
+  { icon: <Weight size={22} />, title: "Machine Weight", value: "118 Kg" },
+  { icon: <ShieldCheck size={22} />, title: "Warranty", value: "1 + 1 Year" },
 ];
 
 /* ===================================================================
@@ -67,7 +73,7 @@ const testimonials = [
     name: "Rajesh Kumar",
     location: "Muzaffarnagar, UP",
     rating: 5,
-    text: "Khalsa Super DLX has transformed my farm operations. The 12 HP engine delivers incredible power, and the water-cooled system ensures it runs smoothly even during long summer days. Highly recommended!",
+    text: "The NEV Activa has completely changed my daily commute. It offers a smooth ride, impressive battery backup, and is very comfortable even on longer journeys. Highly recommended!",
     initials: "RK",
     color: "blue",
   },
@@ -75,7 +81,7 @@ const testimonials = [
     name: "Amit Singh",
     location: "Meerut, UP",
     rating: 5,
-    text: "I've been using this machine for over 6 months now. The fuel efficiency is outstanding — I'm saving nearly 30% on operational costs compared to my old equipment. The dual start feature is a lifesaver.",
+    text: "I've been riding the NEV Activa for over six months now. The charging cost is minimal, the performance is excellent, and maintenance is almost effortless. It's a great investment.",
     initials: "AS",
     color: "green",
   },
@@ -83,7 +89,7 @@ const testimonials = [
     name: "Suresh Patel",
     location: "Saharanpur, UP",
     rating: 4,
-    text: "Built like a tank! The build quality is phenomenal and it handles the toughest jobs with ease. After-sales service has been excellent too. Very happy with my investment in Khalsa Super DLX.",
+    text: "The build quality is solid, and the scooter feels stable on every ride. Its stylish design, comfortable seating, and reliable performance make it perfect for everyday use.",
     initials: "SP",
     color: "amber",
   },
@@ -91,7 +97,7 @@ const testimonials = [
     name: "Vikram Yadav",
     location: "Hapur, UP",
     rating: 5,
-    text: "From the moment I saw the machine at the dealership, I knew it was the right choice. The gear drive transmission is so smooth, and the self-start feature is incredibly convenient. Great value for money.",
+    text: "I chose the NEV Activa because of its modern features and sleek design. The acceleration is smooth, the battery range is impressive, and it's ideal for city commuting. Excellent value for money.",
     initials: "VY",
     color: "purple",
   },
@@ -494,8 +500,10 @@ const ProductAnimation = () => {
     let animId;
     const animate = () => {
       // Smooth interpolation
-      targetRotY.current += (mouseXRef.current * 15 - targetRotY.current) * 0.08;
-      targetRotX.current += (-mouseYRef.current * 15 - targetRotX.current) * 0.08;
+      targetRotY.current +=
+        (mouseXRef.current * 15 - targetRotY.current) * 0.08;
+      targetRotX.current +=
+        (-mouseYRef.current * 15 - targetRotX.current) * 0.08;
       setRotation({ x: targetRotX.current, y: targetRotY.current });
       animId = requestAnimationFrame(animate);
     };
@@ -552,7 +560,10 @@ const ProductAnimation = () => {
             }}
           >
             {/* Main Product Image */}
-            <div className="absolute inset-0 flex items-center justify-center" style={{ transform: "translateZ(40px)" }}>
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ transform: "translateZ(40px)" }}
+            >
               <div className="relative w-[80%] h-[80%] flex items-center justify-center">
                 <img
                   src="https://tse4.mm.bing.net/th/id/OIP.XuDpxrf3i8Q_rja0C4f48wHaEK?r=0&pid=Api&h=220&P=0"
@@ -572,25 +583,6 @@ const ProductAnimation = () => {
               </div>
             </div>
 
-            {/* Floating Feature Badges */}
-            <div
-              className="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"
-              style={{ transform: "translateZ(60px)" }}
-            >
-              <span className="flex items-center gap-1">
-                <FaStar size={10} /> 12 HP
-              </span>
-            </div>
-
-            <div
-              className="absolute bottom-4 left-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"
-              style={{ transform: "translateZ(50px)" }}
-            >
-              <span className="flex items-center gap-1">
-                <FaLeaf size={10} /> Fuel Efficient
-              </span>
-            </div>
-
             {/* Rotating rings */}
             <div
               className="absolute w-[110%] h-[110%] border border-blue-200/30 rounded-full"
@@ -607,17 +599,6 @@ const ProductAnimation = () => {
               }}
             />
           </div>
-        </div>
-
-        {/* Floating Price Tag */}
-        <div
-          className="absolute -bottom-3 -right-3 bg-gradient-to-br from-[#2346b7] to-[#1a3a9e] text-white px-5 py-3 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-default"
-          style={{ transform: "translateZ(80px)" }}
-        >
-          <p className="text-xs opacity-80">Starting from</p>
-          <p className="text-xl font-bold flex items-center gap-1">
-            <FaRupeeSign size={14} /> 1,25,000
-          </p>
         </div>
       </div>
 
@@ -639,7 +620,7 @@ const ProductAnimation = () => {
 /* ===================================================================
    MAIN COMPONENT
 =================================================================== */
-const KhalsaSuperDlx = () => {
+const Activa = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -647,6 +628,18 @@ const KhalsaSuperDlx = () => {
     phone: "",
     message: "",
   });
+
+  /* gallery state now lives inside the component, where hooks belong */
+  const [activeIndex, setActiveIndex] = useState(0);
+  const total = GALLERY_IMAGES.length;
+
+  const goPrev = () => {
+    setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+  };
+
+  const goNext = () => {
+    setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+  };
 
   const handleFormChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -685,31 +678,22 @@ const KhalsaSuperDlx = () => {
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span>Products</span>
                 <FaChevronRight size={10} className="text-gray-300" />
-                <span className="text-[#2346b7] font-semibold">
-                  Khalsa Super DLX
-                </span>
+                <span className="text-[#2346b7] font-semibold">Activa</span>
               </nav>
-
-              {/* Badge */}
-              {/* <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 border border-green-200/50 rounded-full text-green-700 text-sm font-medium mb-6">
-                <Sparkles size={16} />
-                <span>New Launch 2026</span>
-              </div> */}
 
               {/* Title */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
-                Khalsa{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
-                  Super DLX
+                  Activa
                 </span>
               </h1>
 
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power meets performance. The all-new Khalsa Super DLX is
-                engineered to deliver unmatched reliability, efficiency, and
-                durability for the toughest tasks.
+                Power your journey with confidence. The all-new NEV Activa
+                delivers efficient electric performance, smooth handling, and
+                dependable reliability for every road.
               </p>
 
               {/* CTA Buttons */}
@@ -800,43 +784,212 @@ const KhalsaSuperDlx = () => {
             <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#2346b7] text-sm font-semibold rounded-full mb-4">
               Key Highlights
             </span>
+
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
-              Engineered for{" "}
+              Designed for{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
-                Excellence
+                Everyday Mobility
               </span>
             </h2>
+
             <p className="mt-4 text-gray-500 text-lg">
-              Every component is precision-crafted to deliver outstanding
-              performance in the field.
+              Experience smart electric performance, modern design, and
+              dependable comfort with every ride.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Zap size={28} />}
-              title="12 HP Engine"
-              desc="Powerful 12 HP diesel engine built for heavy-duty performance and long-lasting reliability."
+              title="Powerful Electric Motor"
+              desc="Delivers smooth acceleration and reliable performance for effortless city commuting."
               color="blue"
             />
-            <FeatureCard
-              icon={<Thermometer size={28} />}
-              title="Water Cooled"
-              desc="Advanced water-cooling system maintains optimal engine temperature even during extended use."
-              color="green"
-            />
+
             <FeatureCard
               icon={<Battery size={28} />}
-              title="Dual Start"
-              desc="Self-start and manual start options ensure hassle-free operation in any situation."
-              color="amber"
+              title="Long Battery Range"
+              desc="High-performance battery provides extended range with efficient power consumption."
+              color="green"
             />
+
+            <FeatureCard
+              icon={<Thermometer size={28} />}
+              title="Fast Charging"
+              desc="Recharge quickly and get back on the road with minimal waiting time."
+              color="blue"
+            />
+
             <FeatureCard
               icon={<Wind size={28} />}
-              title="Gear Drive"
-              desc="Smooth and efficient gear drive transmission delivers optimal torque and control."
-              color="purple"
+              title="Smooth & Comfortable Ride"
+              desc="Premium suspension and ergonomic seating ensure a stable and comfortable riding experience."
+              color="green"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ============================================================
+          SECTION: PRODUCT GALLERY (dark panel with slider)
+      ============================================================ */}
+      <section className="relative overflow-hidden">
+        {/* ================= AMBIENT GLOW ================= */}
+
+        <div className="absolute -top-32 -left-20 w-72 h-72 bg-[#5BBF43]/10 rounded-full blur-3xl" />
+        <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-[#2346b7]/20 rounded-full blur-3xl" />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
+            {/* =====================================================
+                LEFT — PRODUCT INFO
+            ===================================================== */}
+
+            <div className="text-center lg:text-left">
+              {/* segment badge */}
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full text-md sm:text-sm font-semibold text-gray-500 bg-green-400/10 border border-black/15 backdrop-blur-sm">
+                Scooty
+              </span>
+
+              {/* title */}
+              <h2 className="mt-5 text-2xl sm:text-4xl lg:text-[25px] font-bold leading-tight">
+                <span className="text-black">ACTIVA</span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBF43] to-[#8be27a]">
+                  Built for Comfort, Powered by Innovation
+                </span>
+              </h2>
+
+              {/* description */}
+              <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                Experience next-generation mobility with the NEV Activa — a
+                stylish, high-performance electric scooter designed for everyday
+                commuting. Enjoy smooth rides, exceptional comfort, impressive
+                range, and low maintenance, making every journey efficient,
+                reliable, and eco-friendly.
+              </p>
+
+              {/* highlight tags */}
+              <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
+                {["Navigate Smarter", "Drive Greener", "Choose Super DLX"].map(
+                  (tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:border-green-600/50 hover:text-green-400 transition-colors duration-300"
+                    >
+                      {tag}
+                    </span>
+                  ),
+                )}
+              </div>
+
+              {/* CTA row */}
+              <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
+                <a
+                  href="#quote"
+                  className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0B1220] bg-green-400 hover:bg-green-500 shadow-lg shadow-[#5BBF43]/20 hover:shadow-[#5BBF43]/40 hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <FaPhoneAlt size={13} />
+                  Get Quote
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+                <div className="flex items-center gap-3 w-full border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
+                  <CircleGauge className=" text-green-500" size={25}/>
+                  <div>
+                    <h1 className="text-xl font-bold">60- 80</h1>
+                    <p className="text-md font-semibold">KM Range</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
+                  <ChartNoAxesCombined />
+                  <div>
+                    <h1 className="text-xl font-bold">25 </h1>
+                    <p className="text-md font-semibold">KM/H</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
+                  <Users />
+                  <div>
+                    <h1 className="text-xl font-bold">2</h1>
+                    <p className="text-md font-semibold">SEATER</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* =====================================================
+                RIGHT — IMAGE GALLERY
+            ===================================================== */}
+
+            <div className="border border-gray-400 rounded-3xl px-2 py-3">
+              {/* main viewer */}
+              <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
+                {/* sliding track */}
+                <div
+                  className="flex py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+                >
+                  {GALLERY_IMAGES.map((src, i) => (
+                    <img
+                      key={src}
+                      src={src}
+                      alt={`Activa view ${i + 1}`}
+                      className="w-full h-full  flex-shrink-0 object-contain"
+                    />
+                  ))}
+                </div>
+
+                {/* counter badge */}
+                <span className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold text-white bg-black/40   border border-white/10">
+                  {activeIndex + 1} / {total}
+                </span>
+
+                {/* prev arrow */}
+                <button
+                  type="button"
+                  onClick={goPrev}
+                  aria-label="Previous image"
+                  className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white flex items-center justify-center hover:bg-[#5BBF43] hover:border-[#5BBF43] transition-all duration-300"
+                >
+                  <FaChevronLeft size={14} />
+                </button>
+
+                {/* next arrow */}
+                <button
+                  type="button"
+                  onClick={goNext}
+                  aria-label="Next image"
+                  className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white flex items-center justify-center hover:bg-[#5BBF43] hover:border-[#5BBF43] transition-all duration-300"
+                >
+                  <FaChevronRight size={14} />
+                </button>
+              </div>
+
+              {/* thumbnail strip */}
+              <div className="flex gap-2.5 sm:gap-3 mt-5 sm:mt-5 overflow-x-auto py-2 px-2 pb-1 scrollbar-thin">
+                {GALLERY_IMAGES.map((src, i) => (
+                  <button
+                    key={src}
+                    type="button"
+                    onClick={() => setActiveIndex(i)}
+                    aria-label={`Show image ${i + 1}`}
+                    className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 ${
+                      activeIndex === i
+                        ? "ring-2 ring-[#5BBF43] scale-100 opacity-100"
+                        : "ring-1 ring-white/10 opacity-50 hover:opacity-80"
+                    }`}
+                  >
+                    <img
+                      src={src}
+                      alt={`Thumbnail ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -856,7 +1009,7 @@ const KhalsaSuperDlx = () => {
                 Specifications
               </span>
             </h2>
-            <p className="mt-4 text-gray-500 text-lg">
+            <p className="mt-4 text-gray-600 text-lg">
               Designed with premium quality components to deliver powerful
               performance, durability, and efficiency.
             </p>
@@ -891,7 +1044,7 @@ const KhalsaSuperDlx = () => {
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block px-4 py-1.5 bg-amber-50 text-amber-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4">
               Why Choose Us
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
@@ -913,11 +1066,11 @@ const KhalsaSuperDlx = () => {
                 <FaTrophy size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Superior Durability
+                Stylish & Comfortable
               </h3>
               <p className="text-gray-500 leading-relaxed">
-                Built with high-grade materials and rigorous quality testing to
-                withstand the toughest working conditions year after year.
+                Designed with a modern look, spacious seating, and ergonomic
+                comfort to make every ride smooth and enjoyable.
               </p>
             </div>
 
@@ -928,26 +1081,28 @@ const KhalsaSuperDlx = () => {
                 <FaLeaf size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Fuel Efficient
+                Eco-Friendly Performance
               </h3>
               <p className="text-gray-500 leading-relaxed">
-                Optimized engine design delivers exceptional fuel economy,
-                reducing operational costs while maximizing productivity.
+                Powered by an efficient electric motor that delivers zero
+                emissions, low running costs, and a cleaner, greener ride every
+                day.
               </p>
             </div>
 
             {/* Card 3 */}
             <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-amber-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-amber-300 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-blue-300 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <FaAward size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Trusted Quality
+                Reliable Battery & Range
               </h3>
               <p className="text-gray-500 leading-relaxed">
-                Backed by years of engineering expertise and thousands of
-                satisfied customers across India. Quality you can rely on.
+                Equipped with a dependable battery system that offers excellent
+                range, fast charging support, and consistent performance for
+                daily commuting.
               </p>
             </div>
           </div>
@@ -971,8 +1126,8 @@ const KhalsaSuperDlx = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the farmers and operators who trust Khalsa Super DLX
-              for their toughest jobs.
+              Hear from the farmers and operators who trust Khalsa Super DLX for
+              their toughest jobs.
             </p>
           </div>
 
@@ -1142,4 +1297,4 @@ const KhalsaSuperDlx = () => {
   );
 };
 
-export default KhalsaSuperDlx;
+export default Activa;
