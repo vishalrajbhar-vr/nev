@@ -103,85 +103,77 @@ function MainHeader() {
           <div className="flex min-h-[78px] items-center px-4 sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
             <a
               href="#"
-              className="whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
+              className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
             >
-              Home
+              <span className="block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]">
+                <img
+                  src={logoSrc}
+                  alt="NEV Navgatee"
+                  className="h-full w-full object-contain"
+                />
+              </span>
             </a>
 
-
-            {/* =================================================
-                OUR PRODUCTS
-            ================================================= */}
-
-            <div
-              className="relative h-full flex items-center"
-              onMouseEnter={() => openMenu("products")}
-              onMouseLeave={closeMenuWithDelay}
-            >
-
-              <button
-                type="button"
-                onClick={() => toggleDropdown("products")}
-                className="flex items-center gap-2 whitespace-nowrap text-[#182438] hover:text-[#5BBF43] transition-colors duration-300"
-              >
-
-                <span>Our Products</span>
-
-                <FaChevronDown
-                  size={10}
-                  className={`transition-transform duration-300 ${openDropdown === "products"
-                    ? "rotate-180"
-                    : ""
-                    }`}
-                />
-
-              </button>
-
-
-              {/* ================= PRODUCTS DROPDOWN ================= */}
-
-              {openDropdown === "products" && (
+            <nav className="hidden flex-1 items-center justify-center lg:flex">
+              <div className="flex h-full items-center gap-7 text-[14px] font-bold text-[#142033] xl:gap-11 xl:text-[15px]">
+                <a
+                  href="#"
+                  className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full after:bg-[#5BBF43] hover:text-[#5BBF43]"
+                >
+                  Home
+                </a>
 
                 <div
-                  className="absolute top-full left-1/2 -translate-x-1/2 w-[240px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-visible py-1" onMouseEnter={cancelClose}
+                  className="relative flex h-[90px] items-center"
+                  onMouseEnter={() => openMenu("products")}
                   onMouseLeave={closeMenuWithDelay}
                 >
+                  <button
+                    type="button"
+                    onClick={() => toggleDropdown("products")}
+                    className="flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-[#5BBF43]"
+                  >
+                    <span>Our Products</span>
+                    <FaChevronDown
+                      size={12}
+                      className={`transition-transform duration-300 ${
+                        openDropdown === "products" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
 
-                  {/* ================= L3 ================= */}
-
-                  <ProductDesktopItem
-                    title="L3 (Electric Rickshaw)"
-                    product="l3"
-                    openProduct={openProduct}
-                    setOpenProduct={setOpenProduct}
-                    cancelClose={cancelClose}
-                    closeMenuWithDelay={closeMenuWithDelay}
-                  />
-
-
-                  {/* ================= L5 ================= */}
-
-                  <ProductDesktopItem
-                    title="L5 (Electric Auto)"
-                    product="l5"
-                    openProduct={openProduct}
-                    setOpenProduct={setOpenProduct}
-                    cancelClose={cancelClose}
-                    closeMenuWithDelay={closeMenuWithDelay}
-                  />
-
-
-                  {/* ================= SCOOTY ================= */}
-
-                  <ProductDesktopItem
-                    title="Scooty"
-                    product="scooty"
-                    openProduct={openProduct}
-                    setOpenProduct={setOpenProduct}
-                    cancelClose={cancelClose}
-                    closeMenuWithDelay={closeMenuWithDelay}
-                  />
-
+                  {openDropdown === "products" && (
+                    <div
+                      className="absolute left-1/2 top-full w-[260px] -translate-x-1/2 border-t-[3px] border-[#5BBF43] bg-white py-1 shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
+                      onMouseEnter={cancelClose}
+                      onMouseLeave={closeMenuWithDelay}
+                    >
+                      <ProductDesktopItem
+                        title="L3 (Electric Rickshaw)"
+                        product="l3"
+                        openProduct={openProduct}
+                        setOpenProduct={setOpenProduct}
+                        cancelClose={cancelClose}
+                        closeMenuWithDelay={closeMenuWithDelay}
+                      />
+                      <ProductDesktopItem
+                        title="L5 (Electric Auto)"
+                        product="l5"
+                        openProduct={openProduct}
+                        setOpenProduct={setOpenProduct}
+                        cancelClose={cancelClose}
+                        closeMenuWithDelay={closeMenuWithDelay}
+                      />
+                      <ProductDesktopItem
+                        title="Scooty"
+                        product="scooty"
+                        openProduct={openProduct}
+                        setOpenProduct={setOpenProduct}
+                        cancelClose={cancelClose}
+                        closeMenuWithDelay={closeMenuWithDelay}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <DesktopDropdown
@@ -325,49 +317,15 @@ function ProductDesktopItem({
         }`}
       />
 
-
-      {/* ================= SUB MENU ================= */}
-
-      {openProduct === product && (
-
+      {isActive && (
         <div
-          className="absolute top-[-3px] left-full w-[245px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
+          className="absolute left-full top-[-3px] w-[245px] border-t-[3px] border-[#5BBF43] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
-
-          {/* ================= L3 PRODUCTS ================= */}
-
-          {product === "l3" && (
-            <>
-              <DropdownItem item="L3 Product 1" />
-              <DropdownItem item="L3 Product 2" />
-              <DropdownItem item="L3 Product 3" />
-            </>
-          )}
-
-
-          {/* ================= L5 PRODUCTS ================= */}
-
-          {product === "l5" && (
-            <>
-              <DropdownItem item="L5 Product 1" />
-              <DropdownItem item="L5 Product 2" />
-              <DropdownItem item="L5 Product 3" />
-            </>
-          )}
-
-
-          {/* ================= SCOOTY PRODUCTS ================= */}
-
-          {product === "scooty" && (
-            <>
-              <DropdownItem item="Scooty Product 1" />
-              <DropdownItem item="Scooty Product 2" />
-              <DropdownItem item="Scooty Product 3" />
-            </>
-          )}
-
+          {productItems[product].map((item) => (
+            <DropdownItem item={item} key={item} />
+          ))}
         </div>
       )}
     </div>
@@ -401,46 +359,15 @@ function DesktopDropdown({
         />
       </button>
 
-
-
       {openDropdown === menu && (
-
         <div
-          className="absolute top-full left-0 w-[195px] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.15)] border-t-[3px] border-[#5BBF43] overflow-hidden"
+          className="absolute left-0 top-full w-[210px] border-t-[3px] border-[#5BBF43] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
-
-          {/* ================= ABOUT ================= */}
-
-          {menu === "about" && (
-            <>
-              <DropdownItem item="About Company" />
-              <DropdownItem item="Our Journey" />
-              <DropdownItem item="Our Team" />
-            </>
-          )}
-
-
-          {/* ================= GALLERY ================= */}
-
-          {menu === "gallery" && (
-            <>
-              <DropdownItem item="Photos" />
-              <DropdownItem item="Videos" />
-            </>
-          )}
-
-
-          {/* ================= CONTACT ================= */}
-
-          {menu === "contact" && (
-            <>
-              <DropdownItem item="Contact Us" />
-              <DropdownItem item="Enquiry" />
-            </>
-          )}
-
+          {menuItems[menu].map((item) => (
+            <DropdownItem item={item} key={item} />
+          ))}
         </div>
       )}
     </div>
@@ -451,7 +378,7 @@ function DropdownItem({ item }) {
   return (
     <a
       href="#"
-      className="relative block px-6 py-4 text-[15px] font-medium text-[#182438] bg-white overflow-hidden transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[16px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
+      className="relative block bg-white px-6 py-4 text-[15px] font-semibold text-[#142033] transition-all duration-300 after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:origin-center after:scale-y-0 after:bg-[#5BBF43] after:transition-transform after:duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:after:scale-y-100"
     >
       {item}
     </a>
@@ -526,7 +453,7 @@ function MobileItem({ item }) {
   return (
     <a
       href="#"
-      className="relative block px-4 py-3 text-sm font-medium text-gray-600 bg-white overflow-hidden transition-all duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:text-[15px] after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:bg-[#5BBF43] after:scale-y-0 after:origin-center after:transition-transform after:duration-300 hover:after:scale-y-100"
+      className="relative block bg-white px-4 py-3 text-sm font-semibold text-gray-600 transition-all duration-300 after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:origin-center after:scale-y-0 after:bg-[#5BBF43] after:transition-transform after:duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:after:scale-y-100"
     >
       {item}
     </a>
