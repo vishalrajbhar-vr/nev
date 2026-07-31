@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import TopHeader from "./web/components/TopHeader";
@@ -10,6 +11,9 @@ import AboutHero from "./web/pages/about/AboutHero";
 import KhalsaSuperDlx from "./web/pages/Products/KhalsaSuperDlx";
 import KhalsaCargo from "./web/pages/Products/KhalsaCargo";
 import KhalsaGrandLithium from "./web/pages/Products/KhalsaGrandLithium";
+import Contact from "./web/pages/Contact";
+import Enquiry from "./web/pages/Enquiry";
+
 
 function App() {
   return (
@@ -19,17 +23,16 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutHero />} />
-        <Route
-          path="/products/khalsa-super-deluxe"
-          element={<KhalsaSuperDlx />}
-        />
-        <Route path="/products/khalsa-cargo" element={<KhalsaCargo />} />
-        <Route path="/products/khalsa-grand-lithium" element={<KhalsaGrandLithium />} />
+        <Route path="/about-hero" element={<AboutHero />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/enquiry" element={<Enquiry />} />
+
+
       </Routes>
 
       <Footer />
     </Router>
+
   );
 }
 
