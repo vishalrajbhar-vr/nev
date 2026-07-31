@@ -46,28 +46,27 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "../../../../public/images/ACTIVA.png",
-  "../../../../public/images/N1.png",
-  "../../../../public/images/NE 1.png",
-  "../../../../public/images/NEA.png",
-  "../../../../public/images/NEO.png",
+  "../../../../public/images/MODEL L5.png",
+  "../../../../public/images/MODEL L5.png",
+  "../../../../public/images/MODEL L5.png",
+  "../../../../public/images/MODEL L5.png",
 ];
 
 /* ===================================================================
    SPECS DATA
 =================================================================== */
 const specs = [
-  { icon: <Gauge size={22} />, title: "Engine Power", value: "12 HP" },
-  { icon: <Fuel size={22} />, title: "Fuel Type", value: "Diesel" },
-  { icon: <Droplets size={22} />, title: "Fuel Tank", value: "10 Litres" },
-  { icon: <Cog size={22} />, title: "Transmission", value: "Gear Drive" },
+  { icon: <Gauge size={22} />, title: "Engine Power", value: "6.5 KW Continuous Torque" },
+  { icon: <Fuel size={22} />, title: "Top Speed", value: "48KMPH" },
+  { icon: <Droplets size={22} />, title: "Wheel Base", value: "2274" },
+  { icon: <Cog size={22} />, title: "Ground Crearance", value: "180 MM " },
   {
     icon: <Settings size={22} />,
-    title: "Cooling System",
-    value: "Water Cooled",
+    title: "Tyre Size MM",
+    value: "1840x1425x275",
   },
-  { icon: <Wrench size={22} />, title: "Starting", value: "Self + Manual" },
-  { icon: <Weight size={22} />, title: "Machine Weight", value: "350 Kg" },
+  { icon: <Wrench size={22} />, title: "Charging Time", value: "4 - 5 HR" },
+  { icon: <Weight size={22} />, title: "Battery Make", value: "Eastman" },
   { icon: <ShieldCheck size={22} />, title: "Warranty", value: "1 Year" },
 ];
 
@@ -715,15 +714,15 @@ const L5DLXPassenger = () => {
                 <span>Products</span>
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span className="text-[#2346b7] font-semibold">
-                  Activa
+                  L5 DLX Passenger 3 Plus 1
                 </span>
               </nav>
 
               {/* Title */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
                 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
-                 Activa
+                L5 DLX Passenger 3 Plus 1
                 </span>
               </h1>
 
@@ -880,12 +879,12 @@ const L5DLXPassenger = () => {
             <div className="text-center lg:text-left">
               {/* segment badge */}
               <span className="inline-flex items-center px-4 py-1.5 rounded-full text-md sm:text-sm font-semibold text-gray-500 bg-green-400/10 border border-black/15 backdrop-blur-sm">
-                L3 Segment
+                L5 Segment
               </span>
 
               {/* title */}
               <h2 className="mt-5 text-2xl sm:text-4xl lg:text-[25px] font-bold leading-tight">
-                <span className="text-gray-500">ACTIVA</span>
+                <span className="text-gray-500">L5 DLX Passenger 3 Plus 1</span>
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBF43] to-[#8be27a]">
                   Built for Comfort, Powered by Innovation
@@ -894,11 +893,7 @@ const L5DLXPassenger = () => {
 
               {/* description */}
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Experience next-gen mobility with the Khalsa Super DLX — a
-                durable, high-performance electric rickshaw built for your daily
-                demands. Spacious 4+ seating, premium comfort, and low
-                maintenance combine for reliable mileage and smooth rides on
-                every journey.
+                Experience next-generation mobility with the NEV L5 DLX Passenger 3 Plus 1 — a durable, high-performance electric auto rickshaw designed for comfortable passenger transportation. Featuring spacious 3+1 seating, reliable performance, low maintenance, and excellent battery efficiency, it delivers smooth, safe, and cost-effective rides every day.
               </p>
 
               {/* highlight tags */}

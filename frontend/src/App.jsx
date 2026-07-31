@@ -18,10 +18,10 @@ function App() {
       <MainHeader />
 
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutHero />} />
         <Route
-          path="/"
+          path="/g"
           element={<L5DLXPassenger />}
         />
         <Route path="/activa" element={<Activa/>}/>
