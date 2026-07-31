@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+/* Continuous Drive-In, Pause & Loop Animation */
+@keyframes autoContinuousLoop {
+  0% {
+    transform: translateX(300px) translateY(12px) scale(0.86) rotate(2deg);
+    opacity: 0;
+  }
+  15% {
+    transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  19% {
+    transform: translateX(-8px) translateY(4px) scale(1.015) rotate(-1.5deg);
+    opacity: 1;
+  }
+  23% {
+    transform: translateX(3px) translateY(-1px) scale(1) rotate(0.5deg);
+    opacity: 1;
+  }
+  26%, 68% {
+    transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  71% {
+    transform: translateY(-3px) rotate(0.4deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-24px) translateY(2px) rotate(-0.8deg);
+    opacity: 1;
+  }
+  86% {
+    transform: translateX(-380px) translateY(10px) scale(0.88) rotate(-2.5deg);
+    opacity: 0;
+  }
+  87%, 100% {
+    transform: translateX(300px) translateY(12px) scale(0.86) rotate(2deg);
+    opacity: 0;
+  }
+}
+
+/* Continuous Engine Vibration & Road Bump Motion (for stationary continuous drive) */
+@keyframes autoRoadDrive {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-3px) rotate(0.3deg);
+  }
+  50% {
+    transform: translateY(1px) rotate(-0.2deg);
+  }
+  75% {
+    transform: translateY(-2px) rotate(0.2deg);
+  }
+}
+
+.animate-auto-continuous {
+  animation: autoContinuousLoop 6.5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+.animate-auto-road {
+  animation: autoRoadDrive 2s ease-in-out infinite;
+}

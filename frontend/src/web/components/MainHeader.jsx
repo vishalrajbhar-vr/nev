@@ -5,7 +5,7 @@ import {
   FaChevronRight,
   FaTimes,
 } from "react-icons/fa";
-
+  
 const logoSrc = "/nev-logo-cropped.png";
 
 const menuItems = {
