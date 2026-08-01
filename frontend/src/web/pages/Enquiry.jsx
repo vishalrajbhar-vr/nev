@@ -111,11 +111,10 @@ function Enquiry() {
 
       {/* ================= STEPS SECTION ================= */}
       <section className="bg-[#f5f9f7] py-14 md:py-18">
-
         <div className="max-w-7xl mx-auto px-6">
 
           {/* ================= SECTION HEADER ================= */}
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-16">
 
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-green-200 text-green-600 text-xs font-bold uppercase tracking-wider">
               <span className="w-2 h-2 rounded-full bg-green-500"></span>
@@ -128,139 +127,148 @@ function Enquiry() {
             </h2>
 
             <p className="mt-3 text-sm md:text-base text-gray-500 leading-6">
-              Tell us what you need, and our team will guide you through
-              the process of finding the right electric vehicle.
+              Tell us what you need, and our team will guide you through the process
+              of finding the right electric vehicle.
             </p>
 
           </div>
 
-
           {/* ================= STEPS ================= */}
           <div className="relative">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            {/* Horizontal Connector */}
+            <div className="hidden lg:block absolute top-[42px] left-[12%] right-[12%] h-[4px] bg-[#5BBF43] rounded-full z-0"></div>
+
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
               {/* ================= STEP 1 ================= */}
-              <div className="relative group text-center lg:-translate-y-8">
+              <div className="text-center">
 
-                <div className="relative z-10 w-[84px] h-[84px] mx-auto rounded-2xl bg-white border border-green-200 shadow-sm flex items-center justify-center group-hover:-translate-y-2 group-hover:border-green-400 group-hover:shadow-lg transition-all duration-300">
+                <div className="relative w-fit mx-auto">
 
-                  <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center text-green-600 text-2xl">
-                    <FaGlobe />
+                  <div className="w-[84px] h-[84px] rounded-2xl bg-white border border-green-200 shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+                    <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center text-green-600 text-2xl">
+                      <FaGlobe />
+                    </div>
+
                   </div>
+
+                  <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-green-600 text-white text-xs font-bold flex items-center justify-center">
+                    01
+                  </span>
 
                 </div>
 
-                <span className="absolute top-[-8px] right-[calc(50%-48px)] z-20 w-6 h-6 rounded-full bg-green-600 text-white text-[10px] font-bold flex items-center justify-center">
-                  01
-                </span>
-
-                <h3 className="mt-6 text-lg font-bold text-[#071426]">
+                <h3 className="mt-6 text-xl font-bold text-[#071426]">
                   Share Your Details
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-500 leading-6 max-w-xs mx-auto">
-                  Enter your basic contact information so our EV experts
-                  can get in touch with you.
+                <p className="mt-3 text-gray-500 leading-7">
+                  Enter your basic contact information so our EV experts can get in
+                  touch with you.
                 </p>
 
               </div>
 
-
               {/* ================= STEP 2 ================= */}
-              <div className="relative group text-center lg:translate-y-8">
+              <div className="text-center">
 
-                <div className="relative z-10 w-[84px] h-[84px] mx-auto rounded-2xl bg-white border border-blue-200 shadow-sm flex items-center justify-center group-hover:-translate-y-2 group-hover:border-blue-400 group-hover:shadow-lg transition-all duration-300">
+                <div className="relative w-fit mx-auto">
 
-                  <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl">
-                    <FaMousePointer />
+                  <div className="w-[84px] h-[84px] rounded-2xl bg-white border border-blue-200 shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+                    <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl">
+                      <FaMousePointer />
+                    </div>
+
                   </div>
+
+                  <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">
+                    02
+                  </span>
 
                 </div>
 
-                <span className="absolute top-[-8px] right-[calc(50%-48px)] z-20 w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center">
-                  02
-                </span>
-
-                <h3 className="mt-6 text-lg font-bold text-[#071426]">
+                <h3 className="mt-6 text-xl font-bold text-[#071426]">
                   Choose Your Vehicle
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-500 leading-6 max-w-xs mx-auto">
-                  Tell us whether you are interested in an electric
-                  e-rickshaw, scooty or another EV.
+                <p className="mt-3 text-gray-500 leading-7">
+                  Tell us whether you are interested in an electric e-rickshaw,
+                  scooty or another EV.
                 </p>
 
               </div>
 
-
               {/* ================= STEP 3 ================= */}
-              <div className="relative group text-center lg:-translate-y-8">
+              <div className="text-center">
 
-                <div className="relative z-10 w-[84px] h-[84px] mx-auto rounded-2xl bg-white border border-green-200 shadow-sm flex items-center justify-center group-hover:-translate-y-2 group-hover:border-green-400 group-hover:shadow-lg transition-all duration-300">
+                <div className="relative w-fit mx-auto">
 
-                  <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center text-green-600 text-2xl">
-                    <FaClock />
+                  <div className="w-[84px] h-[84px] rounded-2xl bg-white border border-green-200 shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+                    <div className="w-14 h-14 rounded-xl bg-green-50 flex items-center justify-center text-green-600 text-2xl">
+                      <FaClock />
+                    </div>
+
                   </div>
+
+                  <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-green-600 text-white text-xs font-bold flex items-center justify-center">
+                    03
+                  </span>
 
                 </div>
 
-                <span className="absolute top-[-8px] right-[calc(50%-48px)] z-20 w-6 h-6 rounded-full bg-green-600 text-white text-[10px] font-bold flex items-center justify-center">
-                  03
-                </span>
-
-                <h3 className="mt-6 text-lg font-bold text-[#071426]">
+                <h3 className="mt-6 text-xl font-bold text-[#071426]">
                   Share Requirements
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-500 leading-6 max-w-xs mx-auto">
-                  Let us know your preferred budget, usage and location
-                  to help us suggest a suitable vehicle.
+                <p className="mt-3 text-gray-500 leading-7">
+                  Let us know your preferred budget, usage and location to help us
+                  suggest a suitable vehicle.
                 </p>
 
               </div>
 
-
               {/* ================= STEP 4 ================= */}
-              <div className="relative group text-center lg:translate-y-8">
+              <div className="text-center">
 
-                <div className="relative z-10 w-[84px] h-[84px] mx-auto rounded-2xl bg-white border border-blue-200 shadow-sm flex items-center justify-center group-hover:-translate-y-2 group-hover:border-blue-400 group-hover:shadow-lg transition-all duration-300">
+                <div className="relative w-fit mx-auto">
 
-                  <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl">
-                    <FaBell />
+                  <div className="w-[84px] h-[84px] rounded-2xl bg-white border border-blue-200 shadow-lg flex items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+
+                    <div className="w-14 h-14 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl">
+                      <FaBell />
+                    </div>
+
                   </div>
+
+                  <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">
+                    04
+                  </span>
 
                 </div>
 
-                <span className="absolute top-[-8px] right-[calc(50%-48px)] z-20 w-6 h-6 rounded-full bg-blue-600 text-white text-[10px] font-bold flex items-center justify-center">
-                  04
-                </span>
-
-                <h3 className="mt-6 text-lg font-bold text-[#071426]">
+                <h3 className="mt-6 text-xl font-bold text-[#071426]">
                   Get a Callback
                 </h3>
 
-                <p className="mt-2 text-sm text-gray-500 leading-6 max-w-xs mx-auto">
-                  Our team will contact you with vehicle details,
-                  pricing and further assistance.
+                <p className="mt-3 text-gray-500 leading-7">
+                  Our team will contact you with vehicle details, pricing and
+                  further assistance.
                 </p>
 
               </div>
 
             </div>
-
           </div>
-
         </div>
-
       </section>
-
-
-
 
       {/* ================= EXPLORE ELECTRIC MOBILITY SECTION ================= */}
 
-      <section className="relative bg-[#071426] py-10 md:py-12 overflow-hidden">
+      <section className="relative bg-[#eef7f1] py-10 md:py-12 overflow-hidden">
 
         {/* Decorative Elements */}
         <div className="absolute top-6 left-8 w-20 h-20 border border-green-500/10 rounded-full"></div>
@@ -292,7 +300,7 @@ function Enquiry() {
 
 
             {/* Main Heading */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-black leading-tight">
 
               Explore Electric Mobility
               <span className="block text-green-400">

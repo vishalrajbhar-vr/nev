@@ -221,7 +221,7 @@ function Contact() {
 
               {/* ================= Customer Support Image ================= */}
 
-              <img src="/customer-support.png" alt="Customer Support" className="hidden md:block absolute z-20 md:w-[340px] lg:w-[350px] xl:w-[380px] right-[-70px] bottom-[-20px] drop-shadow-2xl pointer-events-none" />
+              <img src="/customer-support.png" alt="Customer Support" className="hidden md:block absolute z-20 md:w-[340px] lg:w-[350px] xl:w-[380px] right-[-70px] bottom-[0px] drop-shadow-2xl pointer-events-none" />
 
             </div>
 
