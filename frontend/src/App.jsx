@@ -1,4 +1,5 @@
 import React from "react";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import TopHeader from "./web/components/TopHeader";
@@ -21,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutHero />} />
         <Route
-          path="/g"
+          path="/passenger"
           element={<L5DLXPassenger />}
         />
         <Route path="/activa" element={<Activa/>}/>
@@ -30,6 +31,7 @@ function App() {
 
       <Footer />
     </Router>
+
   );
 }
 

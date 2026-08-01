@@ -57,8 +57,6 @@ const GALLERY_IMAGES = [
    SPECS DATA
 =================================================================== */
 const specs = [
-
-  { icon: <Fuel size={22} />, title: "Fuel Type", value: "Electric" },
   { icon: <Droplets size={22} />, title: "Battery", value: "Lithium 60V30AH" },
   { icon: <Wrench size={22} />, title: "Starting", value: "Self" },
   { icon: <Weight size={22} />, title: "Machine Weight", value: "118 Kg" },
@@ -91,7 +89,7 @@ const testimonials = [
     rating: 4,
     text: "The build quality is solid, and the scooter feels stable on every ride. Its stylish design, comfortable seating, and reliable performance make it perfect for everyday use.",
     initials: "SP",
-    color: "amber",
+    color: "blue",
   },
   {
     name: "Vikram Yadav",
@@ -99,7 +97,7 @@ const testimonials = [
     rating: 5,
     text: "I chose the NEV Activa because of its modern features and sleek design. The acceleration is smooth, the battery range is impressive, and it's ideal for city commuting. Excellent value for money.",
     initials: "VY",
-    color: "purple",
+    color: "green",
   },
 ];
 
@@ -108,24 +106,20 @@ const testimonials = [
 =================================================================== */
 const faqData = [
   {
-    q: "What is the engine power of Khalsa Super DLX?",
-    a: "Khalsa Super DLX is equipped with a powerful 12 HP diesel engine, delivering excellent performance for heavy-duty agricultural and industrial applications.",
+    q: "What is the range of the NEV Activa on a full charge?",
+    a: "The NEV Activa delivers a reliable range of 60-80 km on a single full charge, making it ideal for daily city commutes.",
   },
   {
-    q: "What type of fuel does it use?",
-    a: "It runs on diesel fuel and comes with a 10-litre fuel tank capacity, ensuring longer operation times without frequent refueling.",
+    q: "How long does it take to fully charge the battery?",
+    a: "The battery can be fully charged within 4-5 hours using a standard charging setup, ensuring it is ready for your next ride.",
   },
   {
-    q: "Is the cooling system effective for long hours of use?",
-    a: "Yes, the water-cooled cooling system ensures optimal engine temperature even during prolonged use, enhancing durability and performance.",
+    q: "What is the warranty coverage for the Activa?",
+    a: "NEV Activa comes with a 1+1 year warranty on the electric drivetrain and battery, offering confidence in long-term reliability.",
   },
   {
-    q: "What is the warranty period?",
-    a: "Khalsa Super DLX comes with a comprehensive 1-year warranty covering manufacturing defects and providing peace of mind.",
-  },
-  {
-    q: "Can it be started manually if the battery is down?",
-    a: "Absolutely! It features both self-start and manual start options, ensuring reliability in all conditions.",
+    q: "Is the Activa suitable for two passengers?",
+    a: "Yes, the NEV Activa is designed with comfortable seating for two passengers and offers a smooth ride for both the rider and pillion.",
   },
 ];
 
@@ -178,21 +172,26 @@ const StatCard = ({ icon, value, suffix, label }) => {
   return (
     <div
       ref={ref}
-      className="relative group bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/50 hover:border-blue-200/50"
+      className="relative overflow-hidden rounded-[28px] border border-slate-200 bg-gradient-to-br from-white to-slate-50 p-6 sm:p-7 shadow-2xl shadow-slate-200/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
     >
-      <div className="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-blue-100 to-green-100 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#2346b7] via-[#5BBF43] to-[#1a3a9e]" />
       <div className="relative z-10 flex flex-col items-center text-center">
-        <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 text-[#2346b7] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+        <div className="flex items-center justify-center rounded-3xl bg-[#2346b7]/10 p-4 text-[#2346b7] shadow-sm shadow-[#2346b7]/10 transition-transform duration-300 group-hover:scale-105">
           {icon}
         </div>
-        <span className="text-3xl sm:text-4xl font-extrabold text-gray-900 tabular-nums">
-          {count}
-          {suffix}
-        </span>
-        <span className="mt-2 text-sm sm:text-base font-medium text-gray-500">
+        <div className="mt-6 flex items-end gap-2">
+          <span className="text-4xl sm:text-5xl font-extrabold text-slate-900 tabular-nums">
+            {count}
+          </span>
+          <span className="text-lg sm:text-2xl font-semibold text-[#2346b7]">
+            {suffix}
+          </span>
+        </div>
+        <span className="mt-4 text-sm sm:text-base font-medium text-slate-500 max-w-xs">
           {label}
         </span>
       </div>
+      <div className="absolute -bottom-4 left-1/2 h-2 w-24 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#2346b7] to-[#5BBF43] opacity-30 blur-xl" />
     </div>
   );
 };
@@ -212,17 +211,7 @@ const FeatureCard = ({ icon, title, desc, color = "blue" }) => {
       text: "text-green-600",
       border: "border-green-200/30",
     },
-    amber: {
-      bg: "from-amber-50 to-amber-100/50",
-      text: "text-amber-600",
-      border: "border-amber-200/30",
-    },
-    purple: {
-      bg: "from-purple-50 to-purple-100/50",
-      text: "text-purple-600",
-      border: "border-purple-200/30",
-    },
-  };
+  }; 
   const c = colors[color] || colors.blue;
 
   return (
@@ -343,17 +332,7 @@ const TestimonialSlider = () => {
       text: "text-green-600",
       dot: "bg-green-600",
     },
-    amber: {
-      bg: "from-amber-50 to-amber-100/50",
-      text: "text-amber-600",
-      dot: "bg-amber-600",
-    },
-    purple: {
-      bg: "from-purple-50 to-purple-100/50",
-      text: "text-purple-600",
-      dot: "bg-purple-600",
-    },
-  };
+  }; 
   const c = colorMap[t.color] || colorMap.blue;
 
   return (
@@ -394,7 +373,7 @@ const TestimonialSlider = () => {
             <FaStar
               key={star}
               size={18}
-              className={star <= t.rating ? "text-amber-400" : "text-gray-200"}
+              className={star <= t.rating ? "text-[#5BBF43]" : "text-gray-200"}
             />
           ))}
           <span className="ml-3 text-sm font-medium text-gray-400">
@@ -564,10 +543,10 @@ const ProductAnimation = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ transform: "translateZ(40px)" }}
             >
-              <div className="relative w-[80%] h-[80%] flex items-center justify-center">
+              <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
-                  src="https://tse4.mm.bing.net/th/id/OIP.XuDpxrf3i8Q_rja0C4f48wHaEK?r=0&pid=Api&h=220&P=0"
-                  alt="Khalsa Super DLX"
+                  src="../../../../public/images/ACTIVA.png"
+                  alt="NEV Activa Electric Scooter"
                   className="w-full h-full object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
@@ -633,6 +612,14 @@ const Activa = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const total = GALLERY_IMAGES.length;
 
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+    }, 4500);
+
+    return () => clearInterval(autoSlide);
+  }, [total]);
+
   const goPrev = () => {
     setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
   };
@@ -656,16 +643,16 @@ const Activa = () => {
       {/* ============================================================
           SECTION 1: HERO
       ============================================================ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-white to-blue-100/30">
         {/* Decorative blobs */}
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-green-200/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-amber-200/20 to-blue-200/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-[#5BBF43]/10 to-blue-200/20 rounded-full blur-3xl" />
         <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-blue-100/40 rounded-full blur-2xl animate-pulse" />
 
         {/* Geometric shapes */}
         <div className="absolute top-20 right-[15%] w-4 h-4 bg-[#2346b7]/10 rounded-full hidden lg:block" />
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
-        <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-amber-400/10 rounded-full rotate-12 hidden lg:block" />
+        <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-18">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -710,28 +697,12 @@ const Activa = () => {
                   />
                 </a>
                 <a
-                  href="#enquiry"
+                  href="tel:18001210259"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#2346b7] font-semibold rounded-xl border-2 border-blue-100 hover:border-[#2346b7] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={14} />
                   <span>Enquire Now</span>
                 </a>
-              </div>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap items-center gap-6 mt-10 text-sm text-gray-400">
-                <span className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" size={14} />1 Year
-                  Warranty
-                </span>
-                <span className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" size={14} />
-                  Free Installation
-                </span>
-                <span className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" size={14} />
-                  PAN India Service
-                </span>
               </div>
             </div>
 
@@ -746,7 +717,7 @@ const Activa = () => {
       {/* ============================================================
           SECTION 2: STATS COUNTER
       ============================================================ */}
-      <section className="relative -mt-10 sm:-mt-16 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="relative mt-10 sm:mt-10 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <StatCard
             icon={<Truck size={26} />}
@@ -871,7 +842,7 @@ const Activa = () => {
 
               {/* highlight tags */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Navigate Smarter", "Drive Greener", "Choose Super DLX"].map(
+                {["Navigate Smarter", "Drive Greener", "Choose Nev Activa"].map(
                   (tag) => (
                     <span
                       key={tag}
@@ -886,7 +857,7 @@ const Activa = () => {
               {/* CTA row */}
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="#quote"
+                  href="tel:18001210259"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0B1220] bg-green-400 hover:bg-green-500 shadow-lg shadow-[#5BBF43]/20 hover:shadow-[#5BBF43]/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={13} />
@@ -894,24 +865,24 @@ const Activa = () => {
                 </a>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                <div className="flex items-center gap-3 w-full border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <CircleGauge className=" text-green-500" size={25}/>
-                  <div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <div className="flex flex-col sm:flex-row items-center gap-3 w-full border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+                  <CircleGauge className="text-green-500" size={25} />
+                  <div className="w-full sm:w-auto text-center sm:text-left">
                     <h1 className="text-xl font-bold">60- 80</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <ChartNoAxesCombined />
-                  <div>
-                    <h1 className="text-xl font-bold">25 </h1>
+                <div className="flex flex-col sm:flex-row gap-5 items-center gap-3 w-full border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+                  <ChartNoAxesCombined className="text-green-500" size={25} />
+                  <div className="w-full sm:w-auto text-center sm:text-left">
+                    <h1 className="text-xl font-bold">25</h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <Users />
-                  <div>
+                <div className="flex flex-col sm:flex-row gap-5 items-center gap-3 w-full border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+                  <Users className="text-green-500" size={25} />
+                  <div className="w-full sm:w-auto text-center sm:text-left">
                     <h1 className="text-xl font-bold">2</h1>
                     <p className="text-md font-semibold">SEATER</p>
                   </div>
@@ -928,7 +899,7 @@ const Activa = () => {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 {/* sliding track */}
                 <div
-                  className="flex py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex py-2 -mt-18 h-[140%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -1091,7 +1062,7 @@ const Activa = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-amber-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+            <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-blue-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-blue-500 to-blue-300 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-blue-800 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <FaAward size={28} />
@@ -1115,7 +1086,7 @@ const Activa = () => {
       <section className="py-8 sm:py-15 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block px-4 py-1.5 bg-purple-50 text-purple-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-green-50 text-green-600 text-sm font-semibold rounded-full mb-4">
               Testimonials
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
@@ -1178,7 +1149,7 @@ const Activa = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#2346b7] flex items-center justify-center shrink-0">
                     <FaMapMarkerAlt size={18} />
                   </div>
                   <div>

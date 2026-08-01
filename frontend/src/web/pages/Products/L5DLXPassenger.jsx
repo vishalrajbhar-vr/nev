@@ -57,16 +57,16 @@ const GALLERY_IMAGES = [
 =================================================================== */
 const specs = [
   { icon: <Gauge size={22} />, title: "Engine Power", value: "6.5 KW Continuous Torque" },
-  { icon: <Fuel size={22} />, title: "Top Speed", value: "48KMPH" },
-  { icon: <Droplets size={22} />, title: "Wheel Base", value: "2274" },
-  { icon: <Cog size={22} />, title: "Ground Crearance", value: "180 MM " },
+  { icon: <Wind size={22} />, title: "Top Speed", value: "48KMPH" },
+  { icon: <CircleGauge size={22} />, title: "Wheel Base", value: "2274 mm" },
+  { icon: <Settings size={22} />, title: "Ground Clearance", value: "180 mm" },
   {
-    icon: <Settings size={22} />,
+    icon: <Cog size={22} />,
     title: "Tyre Size MM",
     value: "1840x1425x275",
   },
-  { icon: <Wrench size={22} />, title: "Charging Time", value: "4 - 5 HR" },
-  { icon: <Weight size={22} />, title: "Battery Make", value: "Eastman" },
+  { icon: <Clock size={22} />, title: "Charging Time", value: "4 - 5 HR" },
+  { icon: <Battery size={22} />, title: "Battery Make", value: "Eastman" },
   { icon: <ShieldCheck size={22} />, title: "Warranty", value: "1 Year" },
 ];
 
@@ -78,7 +78,7 @@ const testimonials = [
     name: "Rajesh Kumar",
     location: "Muzaffarnagar, UP",
     rating: 5,
-    text: "Khalsa Super DLX has transformed my farm operations. The 12 HP engine delivers incredible power, and the water-cooled system ensures it runs smoothly even during long summer days. Highly recommended!",
+    text: "The L5 DLX Passenger 3 Plus 1 is a reliable companion on long routes. Its strong power delivery and smooth ride make daily passenger service much easier.",
     initials: "RK",
     color: "blue",
   },
@@ -94,9 +94,9 @@ const testimonials = [
     name: "Suresh Patel",
     location: "Saharanpur, UP",
     rating: 4,
-    text: "Built like a tank! The build quality is phenomenal and it handles the toughest jobs with ease. After-sales service has been excellent too. Very happy with my investment in Khalsa Super DLX.",
+    text: "Built like a tank! The build quality is phenomenal and it handles demanding city and rural routes with ease. After-sales service has been excellent too.",
     initials: "SP",
-    color: "amber",
+    color: "blue",
   },
   {
     name: "Vikram Yadav",
@@ -104,7 +104,7 @@ const testimonials = [
     rating: 5,
     text: "From the moment I saw the machine at the dealership, I knew it was the right choice. The gear drive transmission is so smooth, and the self-start feature is incredibly convenient. Great value for money.",
     initials: "VY",
-    color: "purple",
+    color: "green",
   },
 ];
 
@@ -113,12 +113,8 @@ const testimonials = [
 =================================================================== */
 const faqData = [
   {
-    q: "What is the engine power of Khalsa Super DLX?",
-    a: "Khalsa Super DLX is equipped with a powerful 12 HP diesel engine, delivering excellent performance for heavy-duty agricultural and industrial applications.",
-  },
-  {
-    q: "What type of fuel does it use?",
-    a: "It runs on diesel fuel and comes with a 10-litre fuel tank capacity, ensuring longer operation times without frequent refueling.",
+    q: "What is the engine power of L5 DLX Passenger 3 Plus 1?",
+    a: "The L5 DLX Passenger 3 Plus 1 is powered by a 6.8 KW engine designed for efficient passenger operations with reliable low-end torque.",
   },
   {
     q: "Is the cooling system effective for long hours of use?",
@@ -126,7 +122,7 @@ const faqData = [
   },
   {
     q: "What is the warranty period?",
-    a: "Khalsa Super DLX comes with a comprehensive 1-year warranty covering manufacturing defects and providing peace of mind.",
+    a: "L5 DLX Passenger 3 Plus 1 comes with a comprehensive 1-year warranty covering manufacturing defects and ensuring dependable support.",
   },
   {
     q: "Can it be started manually if the battery is down?",
@@ -216,16 +212,6 @@ const FeatureCard = ({ icon, title, desc, color = "blue" }) => {
       bg: "from-green-50 to-green-100/50",
       text: "text-green-600",
       border: "border-green-200/30",
-    },
-    amber: {
-      bg: "from-amber-50 to-amber-100/50",
-      text: "text-amber-600",
-      border: "border-amber-200/30",
-    },
-    purple: {
-      bg: "from-purple-50 to-purple-100/50",
-      text: "text-purple-600",
-      border: "border-purple-200/30",
     },
   };
   const c = colors[color] || colors.blue;
@@ -348,16 +334,6 @@ const TestimonialSlider = () => {
       text: "text-green-600",
       dot: "bg-green-600",
     },
-    amber: {
-      bg: "from-amber-50 to-amber-100/50",
-      text: "text-amber-600",
-      dot: "bg-amber-600",
-    },
-    purple: {
-      bg: "from-purple-50 to-purple-100/50",
-      text: "text-purple-600",
-      dot: "bg-purple-600",
-    },
   };
   const c = colorMap[t.color] || colorMap.blue;
 
@@ -399,7 +375,7 @@ const TestimonialSlider = () => {
             <FaStar
               key={star}
               size={18}
-              className={star <= t.rating ? "text-amber-400" : "text-gray-200"}
+              className={star <= t.rating ? "text-[#5BBF43]" : "text-gray-200"}
             />
           ))}
           <span className="ml-3 text-sm font-medium text-gray-400">
@@ -569,10 +545,10 @@ const ProductAnimation = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ transform: "translateZ(40px)" }}
             >
-              <div className="relative w-[80%] h-[80%] flex items-center justify-center">
+              <div className="relative w-[120%] h-[120%] flex items-center justify-center">
                 <img
-                  src="https://tse4.mm.bing.net/th/id/OIP.XuDpxrf3i8Q_rja0C4f48wHaEK?r=0&pid=Api&h=220&P=0"
-                  alt="Khalsa Super DLX"
+                  src="../../../../public/images/MODEL L5.png"
+                  alt="L5 DLX Passenger 3 Plus 1"
                   className="w-full h-full object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
@@ -590,11 +566,11 @@ const ProductAnimation = () => {
 
             {/* Floating Feature Badges */}
             <div
-              className="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-amber-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"
+              className="absolute top-4 right-4 bg-gradient-to-r from-[#2346b7] to-[#1a3a9e] text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg"
               style={{ transform: "translateZ(60px)" }}
             >
               <span className="flex items-center gap-1">
-                <FaStar size={10} /> 12 HP
+                <FaStar size={10} /> 6.8 KW
               </span>
             </div>
 
@@ -603,7 +579,7 @@ const ProductAnimation = () => {
               style={{ transform: "translateZ(50px)" }}
             >
               <span className="flex items-center gap-1">
-                <FaLeaf size={10} /> Fuel Efficient
+                <FaLeaf size={10} /> Top Speed
               </span>
             </div>
 
@@ -623,17 +599,6 @@ const ProductAnimation = () => {
               }}
             />
           </div>
-        </div>
-
-        {/* Floating Price Tag */}
-        <div
-          className="absolute -bottom-3 -right-3 bg-gradient-to-br from-[#2346b7] to-[#1a3a9e] text-white px-5 py-3 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 cursor-default"
-          style={{ transform: "translateZ(80px)" }}
-        >
-          <p className="text-xs opacity-80">Starting from</p>
-          <p className="text-xl font-bold flex items-center gap-1">
-            <FaRupeeSign size={14} /> 1,25,000
-          </p>
         </div>
       </div>
 
@@ -668,6 +633,14 @@ const L5DLXPassenger = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const total = GALLERY_IMAGES.length;
 
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+    }, 4500);
+
+    return () => clearInterval(autoSlide);
+  }, [total]);
+
   const goPrev = () => {
     setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
   };
@@ -694,13 +667,13 @@ const L5DLXPassenger = () => {
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         {/* Decorative blobs */}
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-green-200/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-amber-200/20 to-blue-200/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-[#5BBF43]/10 to-blue-200/20 rounded-full blur-3xl" />
         <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-blue-100/40 rounded-full blur-2xl animate-pulse" />
 
         {/* Geometric shapes */}
         <div className="absolute top-20 right-[15%] w-4 h-4 bg-[#2346b7]/10 rounded-full hidden lg:block" />
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
-        <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-amber-400/10 rounded-full rotate-12 hidden lg:block" />
+        <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-18">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -729,7 +702,7 @@ const L5DLXPassenger = () => {
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The all-new NEV Activa delivers efficient electric performance, smooth handling, and dependable reliability for every road.
+                Power your journey with confidence. The L5 DLX Passenger 3 Plus 1 delivers smooth passenger mobility, fuel-efficient performance, and dependable comfort for city and rural routes.
               </p>
 
               {/* CTA Buttons */}
@@ -746,28 +719,12 @@ const L5DLXPassenger = () => {
                   />
                 </a>
                 <a
-                  href="#enquiry"
+                  href="tel:18001210259"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#2346b7] font-semibold rounded-xl border-2 border-blue-100 hover:border-[#2346b7] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={14} />
                   <span>Enquire Now</span>
                 </a>
-              </div>
-
-              {/* Trust badges */}
-              <div className="flex flex-wrap items-center gap-6 mt-10 text-sm text-gray-400">
-                <span className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" size={14} />1 Year
-                  Warranty
-                </span>
-                <span className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" size={14} />
-                  Free Installation
-                </span>
-                <span className="flex items-center gap-2">
-                  <FaCheckCircle className="text-green-500" size={14} />
-                  PAN India Service
-                </span>
               </div>
             </div>
 
@@ -782,7 +739,7 @@ const L5DLXPassenger = () => {
       {/* ============================================================
           SECTION 2: STATS COUNTER
       ============================================================ */}
-      <section className="relative -mt-10 sm:-mt-16 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section className="relative mt-10 sm:mt-5 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <StatCard
             icon={<Truck size={26} />}
@@ -835,26 +792,26 @@ const L5DLXPassenger = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Zap size={28} />}
-              title="12 HP Engine"
-              desc="Powerful 12 HP diesel engine built for heavy-duty performance and long-lasting reliability."
+              title="6.8 KW Power"
+              desc="Robust 6.8 KW engine tuned for smooth passenger transport and reliable daily uptime."
               color="blue"
             />
             <FeatureCard
               icon={<Thermometer size={28} />}
-              title="Water Cooled"
-              desc="Advanced water-cooling system maintains optimal engine temperature even during extended use."
+              title="Passenger Comfort"
+              desc="Spacious 3+1 seating with ergonomic design, ensuring comfortable rides for every passenger."
               color="green"
             />
             <FeatureCard
               icon={<Battery size={28} />}
-              title="Dual Start"
-              desc="Self-start and manual start options ensure hassle-free operation in any situation."
+              title="Fuel Efficient"
+              desc="Optimized fuel delivery and cooling for lower running costs and extended operation."
               color="amber"
             />
             <FeatureCard
               icon={<Wind size={28} />}
-              title="Gear Drive"
-              desc="Smooth and efficient gear drive transmission delivers optimal torque and control."
+              title="Durable Build"
+              desc="Heavy-duty chassis and premium components built to withstand demanding urban and rural routes."
               color="purple"
             />
           </div>
@@ -913,7 +870,7 @@ const L5DLXPassenger = () => {
               {/* CTA row */}
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="#quote"
+                  href="tel:18001210259"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0B1220] bg-green-400 hover:bg-green-500 shadow-lg shadow-[#5BBF43]/20 hover:shadow-[#5BBF43]/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={13} />
@@ -923,23 +880,23 @@ const L5DLXPassenger = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
                 <div className="flex items-center justify-between w-full border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <CircleGauge className=" text-green-500" />
+                  <CircleGauge className=" text-green-500" size={25} />
                   <div>
                     <h1 className="text-xl font-bold">60- 80</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <ChartNoAxesCombined />
+                  <ChartNoAxesCombined className=" text-green-500" size={25}/>
                   <div>
                     <h1 className="text-xl font-bold">25 </h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <Users />
+                  <Users className=" text-green-500" size={25}/>
                   <div>
-                    <h1 className="text-xl font-bold">2</h1>
+                    <h1 className="text-xl font-bold">4+</h1>
                     <p className="text-md font-semibold">SEATER</p>
                   </div>
                 </div>
@@ -962,7 +919,7 @@ const L5DLXPassenger = () => {
                     <img
                       key={src}
                       src={src}
-                      alt={`Activa view ${i + 1}`}
+                      alt={`L5 DLX Passenger view ${i + 1}`}
                       className="w-full h-full  flex-shrink-0 object-contain"
                     />
                   ))}
@@ -1081,7 +1038,7 @@ const L5DLXPassenger = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              What sets Khalsa Super DLX apart from the competition.
+              What sets L5 DLX Passenger 3 Plus 1 apart from the competition.
             </p>
           </div>
 
@@ -1117,9 +1074,9 @@ const L5DLXPassenger = () => {
             </div>
 
             {/* Card 3 */}
-            <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-amber-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-amber-500 to-amber-300 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-50 to-amber-100 text-amber-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-blue-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#2346b7] to-blue-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 text-[#2346b7] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <FaAward size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -1151,8 +1108,8 @@ const L5DLXPassenger = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the farmers and operators who trust Khalsa Super DLX for
-              their toughest jobs.
+              Hear from the drivers and operators who trust L5 DLX Passenger 3 Plus 1 for
+              their toughest routes.
             </p>
           </div>
 
@@ -1203,13 +1160,13 @@ const L5DLXPassenger = () => {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#2346b7] flex items-center justify-center shrink-0">
                     <FaMapMarkerAlt size={18} />
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Muzaffarnagar, India
+                      Nirala Nagar , Lucknow
                     </p>
                   </div>
                 </div>
