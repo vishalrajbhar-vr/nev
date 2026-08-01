@@ -11,11 +11,6 @@ import { Link, useNavigate } from "react-router-dom";
 const logoSrc = "/nev-logo-cropped.png";
 
 const menuItems = {
-  // about: [
-  //   { label: "About Company", path: "/about-company" },
-  //   { label: "Our Journey", path: "/about-journey" },
-  //   { label: "Our Team", path: "/our-team" },
-  // ],
 
   gallery: [
     { label: "Photos", path: "/photos" },
@@ -302,15 +297,6 @@ function MainHeader() {
                     About Us
                   </Link>
 
-                  {/* <DesktopDropdown
-                    title="About Us"
-                    menu="about"
-                    openDropdown={openDropdown}
-                    openMenu={openMenu}
-                    toggleDropdown={toggleDropdown}
-                    closeMenuWithDelay={closeMenuWithDelay}
-                    cancelClose={cancelClose}
-                  /> */}
 
                   {/* ================= CONTACT ================= */}
 

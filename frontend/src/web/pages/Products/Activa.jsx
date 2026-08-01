@@ -46,11 +46,11 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "../../../../public/images/ACTIVA.png",
-  "../../../../public/images/N1.png",
-  "../../../../public/images/NE 1.png",
-  "../../../../public/images/NEA.png",
-  "../../../../public/images/NEO.png",
+  "/images/ACTIVA.png",
+  "/images/N1.png",
+  "/images/NE 1.png",
+  "/images/NEA.png",
+  "/images/NEO.png",
 ];
 
 /* ===================================================================
@@ -545,7 +545,7 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
-                  src="../../../../public/images/ACTIVA.png"
+                  src="/images/ACTIVA.png"
                   alt="NEV Activa Electric Scooter"
                   className="w-full h-full object-contain p-4 drop-shadow-2xl"
                   style={{

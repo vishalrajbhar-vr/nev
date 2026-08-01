@@ -46,10 +46,10 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "../../../../public/images/MODEL L5.png",
-  "../../../../public/images/MODEL L5.png",
-  "../../../../public/images/MODEL L5.png",
-  "../../../../public/images/MODEL L5.png",
+  "/images/MODEL L5.png",
+  "/images/MODEL L5.png",
+  "/images/MODEL L5.png",
+  "/images/MODEL L5.png",
 ];
 
 /* ===================================================================
@@ -547,7 +547,7 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[120%] h-[120%] flex items-center justify-center">
                 <img
-                  src="../../../../public/images/MODEL L5.png"
+                  src="/images/MODEL L5.png"
                   alt="L5 DLX Passenger 3 Plus 1"
                   className="w-full h-full object-contain p-4 drop-shadow-2xl"
                   style={{
