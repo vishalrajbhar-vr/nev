@@ -26,8 +26,6 @@ function App() {
         <Route path="/about-hero" element={<AboutHero />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/enquiry" element={<Enquiry />} />
-
-
       </Routes>
 
       <Footer />
