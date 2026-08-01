@@ -6,7 +6,7 @@ import {
   FaPhoneAlt,
   FaTimes,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const logoSrc = "/nev-logo-cropped.png";
 
@@ -54,9 +54,12 @@ function MainHeader() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openProduct, setOpenProduct] = useState(null);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [isLogoFlipping, setIsLogoFlipping] = useState(false);
 
   const closeTimer = useRef(null);
   const headerRef = useRef(null);
+  const logoFlipTimer = useRef(null);
+  const navigate = useNavigate();
 
   const openMenu = (menu) => {
     clearTimeout(closeTimer.current);
@@ -123,8 +126,48 @@ function MainHeader() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    return () => clearTimeout(logoFlipTimer.current);
+  }, []);
+
   return (
     <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-5 sm:px-5 lg:px-7">
+      <style>
+        {`
+          @keyframes logoFlipSpin {
+            0% {
+              transform: rotateY(0deg) scale(1);
+              filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0));
+            }
+            25% {
+              transform: rotateY(90deg) scale(1.08);
+              filter: brightness(1.3) drop-shadow(0 0 10px rgba(91,191,67,0.6));
+            }
+            50% {
+              transform: rotateY(180deg) scale(1.12);
+              filter: brightness(1.6) drop-shadow(0 0 16px rgba(91,191,67,0.85));
+            }
+            75% {
+              transform: rotateY(270deg) scale(1.08);
+              filter: brightness(1.3) drop-shadow(0 0 10px rgba(91,191,67,0.6));
+            }
+            100% {
+              transform: rotateY(360deg) scale(1);
+              filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0));
+            }
+          }
+
+          .logo-flip-wrapper {
+            perspective: 800px;
+          }
+
+          .logo-flip-active {
+            animation: logoFlipSpin 0.65s ease-in-out;
+            transform-style: preserve-3d;
+          }
+        `}
+      </style>
+
       <div className="relative mx-auto max-w-[1560px]">
         <span className="absolute left-[-5px] top-3 hidden h-20 w-7 rounded-l-[22px] bg-[#5BBF43] lg:block" />
         <span className="absolute right-[-5px] top-3 hidden h-20 w-7 rounded-r-[22px] bg-[#5BBF43] lg:block" />
@@ -140,11 +183,25 @@ function MainHeader() {
                 to="/"
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
-                <span className="block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]">
+                <span
+                  className="logo-flip-wrapper block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
+                  onMouseEnter={() => {
+                    if (isLogoFlipping) return;
+                    setIsLogoFlipping(true);
+                    clearTimeout(logoFlipTimer.current);
+                    logoFlipTimer.current = setTimeout(() => {
+                      setIsLogoFlipping(false);
+                    }, 650);
+                  }}
+                  onMouseLeave={() => {
+                    clearTimeout(logoFlipTimer.current);
+                    setIsLogoFlipping(false);
+                  }}
+                >
                   <img
                     src={logoSrc}
                     alt="NEV Navigate"
-                    className="h-full w-full object-contain"
+                    className={`h-full w-full object-contain ${isLogoFlipping ? "logo-flip-active" : ""}`}
                   />
                 </span>
               </Link>

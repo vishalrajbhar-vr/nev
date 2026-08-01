@@ -114,7 +114,7 @@ const testimonials = [
 const faqData = [
   {
     q: "What is the engine power of L5 DLX Passenger 3 Plus 1?",
-    a: "The L5 DLX Passenger 3 Plus 1 is powered by a 6.8 KW engine designed for efficient passenger operations with reliable low-end torque.",
+    a: "The L5 DLX Passenger 3 Plus 1 is powered by a 6.5 KW engine designed for efficient passenger operations with reliable low-end torque.",
   },
   {
     q: "Is the cooling system effective for long hours of use?",
@@ -570,7 +570,7 @@ const ProductAnimation = () => {
               style={{ transform: "translateZ(60px)" }}
             >
               <span className="flex items-center gap-1">
-                <FaStar size={10} /> 6.8 KW
+                <FaStar size={10} /> 6.5 KW
               </span>
             </div>
 
@@ -792,8 +792,8 @@ const L5DLXPassenger = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Zap size={28} />}
-              title="6.8 KW Power"
-              desc="Robust 6.8 KW engine tuned for smooth passenger transport and reliable daily uptime."
+              title="6.5 KW Power"
+              desc="Robust 6.5 KW engine tuned for smooth passenger transport and reliable daily uptime."
               color="blue"
             />
             <FeatureCard
@@ -812,7 +812,7 @@ const L5DLXPassenger = () => {
               icon={<Wind size={28} />}
               title="Durable Build"
               desc="Heavy-duty chassis and premium components built to withstand demanding urban and rural routes."
-              color="purple"
+              color="green"
             />
           </div>
         </div>
@@ -1022,13 +1022,49 @@ const L5DLXPassenger = () => {
         </div>
       </section>
 
+      {/* Responsive specifications table (inserted before WHY CHOOSE) */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 mt-3 mb-8">
+        <div className="overflow-x-auto rounded-2xl shadow-sm border border-gray-100 bg-white">
+          <table className="min-w-full border-collapse">
+            <thead>
+              <tr className="bg-[#042c58] text-white text-sm">
+                <th className="px-4 py-3 font-semibold">MODELS WITH BATTERY AH</th>
+                <th className="px-4 py-3 font-semibold">RANGE KM</th>
+                <th className="px-4 py-3 font-semibold">MOTOR CONTROLLER WARRANTY</th>
+                <th className="px-4 py-3 font-semibold">CHASSIS / PAINT WARRANTY</th>
+                <th className="px-4 py-3 font-semibold">BATTERY CHARGER WARRANTY</th>
+                <th className="px-4 py-3 font-semibold">PRICE INC GST</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className=" text-black text-md">
+                <td className="px-4 py-4">64V 105 AH (6.7 KW)</td>
+                <td className="px-4 py-4">90 – 100</td>
+                <td className="px-4 py-4">2 YEARS</td>
+                <td className="px-4 py-4">2 YEARS</td>
+                <td className="px-4 py-4">3 YEARS</td>
+                <td className="px-4 py-4">—</td>
+              </tr>
+              <tr className=" text-black text-md">
+                <td className="px-4 py-4">64V 132 AH (8.4 KW)</td>
+                <td className="px-4 py-4">120 – 130</td>
+                <td className="px-4 py-4">2 YEARS</td>
+                <td className="px-4 py-4">2 YEARS</td>
+                <td className="px-4 py-4">3 YEARS</td>
+                <td className="px-4 py-4">—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       {/* ============================================================
           SECTION 5: WHY CHOOSE KHALSA SUPER DLX
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block px-4 py-1.5 bg-amber-50 text-amber-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-blue-50 text-blue-600 text-sm font-semibold rounded-full mb-4">
               Why Choose Us
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
@@ -1097,7 +1133,7 @@ const L5DLXPassenger = () => {
       <section className="py-8 sm:py-15 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-block px-4 py-1.5 bg-purple-50 text-purple-600 text-sm font-semibold rounded-full mb-4">
+            <span className="inline-block px-4 py-1.5 bg-green-50 text-green-600 text-sm font-semibold rounded-full mb-4">
               Testimonials
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight">
