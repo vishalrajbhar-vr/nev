@@ -22,22 +22,36 @@ const companyLinks = ["About Us", "Our Journey", "Our Models", "Contact"];
 const productLinks = [
   "L3 Electric Rickshaw",
   "L5 Electric Auto",
+  "L5 Ultra Loader",
+  "L5 Front Facia",
   "Scooty",
-  "Khalsa Super DLX",
-  "Khalsa Cargo",
-  "Grand Lithium",
 ];
 
 function Footer() {
   return (
     <footer className="w-full bg-[#182438] text-white">
+      <style>{`
+        @keyframes logoFlipSpin {
+          0% { transform: rotateY(0deg) scale(1); filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0)); }
+          25% { transform: rotateY(90deg) scale(1.06); filter: brightness(1.3) drop-shadow(0 0 8px rgba(91,191,67,0.5)); }
+          50% { transform: rotateY(180deg) scale(1.08); filter: brightness(1.5) drop-shadow(0 0 12px rgba(91,191,67,0.75)); }
+          75% { transform: rotateY(270deg) scale(1.06); filter: brightness(1.3) drop-shadow(0 0 8px rgba(91,191,67,0.5)); }
+          100% { transform: rotateY(360deg) scale(1); filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0)); }
+        }
+
+        .logo-flip-wrapper { perspective: 800px; display: block; }
+        .logo-flip-wrapper .logo-img { transform-style: preserve-3d; }
+        .logo-flip-wrapper:hover .logo-img { animation: logoFlipSpin 0.65s ease-in-out; }
+      `}</style>
       <div className="mx-auto grid max-w-[1340px] grid-cols-1 gap-11 px-6 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.1fr_1fr_1fr_1.15fr] lg:gap-16 lg:px-10 lg:py-16 xl:px-0">
         <div>
           <a
             href="#"
             className="mb-10 flex h-[150px] w-full max-w-[286px] items-center justify-center rounded-lg border border-white/20 bg-white/5 px-8 py-6 shadow-[inset_0_0_20px_rgba(255,255,255,0.04)]"
           >
-            <img src={logoSrc} alt="NEV Navgatee" className="h-full w-full object-contain" />
+            <span className="logo-flip-wrapper block h-full w-full">
+              <img src={logoSrc} alt="NEV Navgatee" className="logo-img h-full w-full object-contain" />
+            </span>
           </a>
 
           <div className="max-w-[345px]">

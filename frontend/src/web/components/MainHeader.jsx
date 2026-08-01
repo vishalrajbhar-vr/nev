@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   FaBars,
   FaChevronDown,
@@ -6,14 +6,14 @@ import {
   FaPhoneAlt,
   FaTimes,
 } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const logoSrc = "/nev-logo-cropped.png";
 
 const menuItems = {
   about: [
     { label: "About Company", path: "/about-company" },
-    { label: "Our Journey", path: "/our-journey" },
+    { label: "Our Journey", path: "/about-journey" },
     { label: "Our Team", path: "/our-team" },
   ],
 
@@ -54,11 +54,12 @@ function MainHeader() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [openProduct, setOpenProduct] = useState(null);
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [isLogoFlipping, setIsLogoFlipping] = useState(false);
 
   const closeTimer = useRef(null);
   const headerRef = useRef(null);
-
-  /* ================= OPEN MENU ================= */
+  const logoFlipTimer = useRef(null);
+  const navigate = useNavigate();
 
   const openMenu = (menu) => {
     clearTimeout(closeTimer.current);
@@ -66,24 +67,17 @@ function MainHeader() {
     setOpenProduct(null);
   };
 
-  /* ================= CLOSE MENU ================= */
-
   const closeMenuWithDelay = () => {
     clearTimeout(closeTimer.current);
-
     closeTimer.current = setTimeout(() => {
       setOpenDropdown(null);
       setOpenProduct(null);
-    }, 100);
+    }, 120);
   };
-
-  /* ================= CANCEL CLOSE ================= */
 
   const cancelClose = () => {
     clearTimeout(closeTimer.current);
   };
-
-  /* ================= TOGGLE DROPDOWN ================= */
 
   const toggleDropdown = (menu) => {
     clearTimeout(closeTimer.current);
@@ -91,34 +85,22 @@ function MainHeader() {
     if (openDropdown === menu) {
       setOpenDropdown(null);
       setOpenProduct(null);
-    } else {
-      setOpenDropdown(menu);
-      setOpenProduct(null);
+      return;
     }
-  };
 
-  /* ================= TOGGLE PRODUCT ================= */
+    setOpenDropdown(menu);
+    setOpenProduct(null);
+  };
 
   const toggleProduct = (product) => {
     clearTimeout(closeTimer.current);
-
-    if (openProduct === product) {
-      setOpenProduct(null);
-    } else {
-      setOpenProduct(product);
-    }
+    setOpenProduct(openProduct === product ? null : product);
   };
-
-  /* ================= OUTSIDE CLICK ================= */
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (
-        headerRef.current &&
-        !headerRef.current.contains(event.target)
-      ) {
+      if (headerRef.current && !headerRef.current.contains(event.target)) {
         clearTimeout(closeTimer.current);
-
         setOpenDropdown(null);
         setOpenProduct(null);
         setMobileMenu(false);
@@ -133,8 +115,6 @@ function MainHeader() {
     };
   }, []);
 
-  /* ================= RESIZE ================= */
-
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -143,14 +123,51 @@ function MainHeader() {
     };
 
     window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+  useEffect(() => {
+    return () => clearTimeout(logoFlipTimer.current);
   }, []);
 
   return (
     <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-5 sm:px-5 lg:px-7">
+      <style>
+        {`
+          @keyframes logoFlipSpin {
+            0% {
+              transform: rotateY(0deg) scale(1);
+              filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0));
+            }
+            25% {
+              transform: rotateY(90deg) scale(1.08);
+              filter: brightness(1.3) drop-shadow(0 0 10px rgba(91,191,67,0.6));
+            }
+            50% {
+              transform: rotateY(180deg) scale(1.12);
+              filter: brightness(1.6) drop-shadow(0 0 16px rgba(91,191,67,0.85));
+            }
+            75% {
+              transform: rotateY(270deg) scale(1.08);
+              filter: brightness(1.3) drop-shadow(0 0 10px rgba(91,191,67,0.6));
+            }
+            100% {
+              transform: rotateY(360deg) scale(1);
+              filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0));
+            }
+          }
+
+          .logo-flip-wrapper {
+            perspective: 800px;
+          }
+
+          .logo-flip-active {
+            animation: logoFlipSpin 0.65s ease-in-out;
+            transform-style: preserve-3d;
+          }
+        `}
+      </style>
+
       <div className="relative mx-auto max-w-[1560px]">
         <span className="absolute left-[-5px] top-3 hidden h-20 w-7 rounded-l-[22px] bg-[#5BBF43] lg:block" />
         <span className="absolute right-[-5px] top-3 hidden h-20 w-7 rounded-r-[22px] bg-[#5BBF43] lg:block" />
@@ -166,11 +183,25 @@ function MainHeader() {
                 to="/"
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
-                <span className="block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]">
+                <span
+                  className="logo-flip-wrapper block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
+                  onMouseEnter={() => {
+                    if (isLogoFlipping) return;
+                    setIsLogoFlipping(true);
+                    clearTimeout(logoFlipTimer.current);
+                    logoFlipTimer.current = setTimeout(() => {
+                      setIsLogoFlipping(false);
+                    }, 650);
+                  }}
+                  onMouseLeave={() => {
+                    clearTimeout(logoFlipTimer.current);
+                    setIsLogoFlipping(false);
+                  }}
+                >
                   <img
                     src={logoSrc}
                     alt="NEV Navigate"
-                    className="h-full w-full object-contain"
+                    className={`h-full w-full object-contain ${isLogoFlipping ? "logo-flip-active" : ""}`}
                   />
                 </span>
               </Link>
@@ -458,7 +489,6 @@ function ProductDesktopItem({
           ))}
         </div>
       )}
-
     </div>
   );
 }
@@ -478,14 +508,12 @@ function DesktopDropdown({
       onMouseEnter={() => openMenu(menu)}
       onMouseLeave={closeMenuWithDelay}
     >
-
       <button
         type="button"
         onClick={() => toggleDropdown(menu)}
         className="flex items-center gap-2 whitespace-nowrap transition-colors duration-300 hover:text-[#5BBF43]"
       >
         <span>{title}</span>
-
         <FaChevronDown
           size={12}
           className={`transition-transform duration-300 ${openDropdown === menu
@@ -494,8 +522,6 @@ function DesktopDropdown({
             }`}
         />
       </button>
-
-      {/* ================= DROPDOWN ================= */}
 
       {openDropdown === menu && (
         <div
@@ -511,7 +537,6 @@ function DesktopDropdown({
           ))}
         </div>
       )}
-
     </div>
   );
 }
@@ -529,11 +554,6 @@ function DropdownItem({ item }) {
   );
 }
 
-
-/* =========================================================
-   MOBILE CIRCLE
-========================================================= */
-
 function MobileCircle({ active }) {
   return (
     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F1F6EF]">
@@ -546,17 +566,7 @@ function MobileCircle({ active }) {
   );
 }
 
-
-/* =========================================================
-   MOBILE PRODUCT
-========================================================= */
-
-function MobileProduct({
-  title,
-  product,
-  openProduct,
-  toggleProduct,
-}) {
+function MobileProduct({ title, product, openProduct, toggleProduct }) {
   return (
     <div className="mb-1">
       <button
@@ -566,7 +576,6 @@ function MobileProduct({
       >
         <span>{title}</span>
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F1F6EF]">
-
           <FaChevronRight
             size={9}
             className={`text-[#10223A] transition-transform duration-300 ${openProduct === product
@@ -574,14 +583,11 @@ function MobileProduct({
               : ""
               }`}
           />
-
         </span>
-
       </button>
 
       {openProduct === product && (
         <div className="mb-2 ml-3">
-
           {productItems[product].map((item) => (
             <MobileItem
               key={item.path}
@@ -590,7 +596,6 @@ function MobileProduct({
           ))}
         </div>
       )}
-
     </div>
   );
 }
@@ -614,7 +619,6 @@ function MobileDropdown({ title, menu, openDropdown, toggleDropdown }) {
           ))}
         </div>
       )}
-
     </div>
   );
 }

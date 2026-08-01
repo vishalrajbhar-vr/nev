@@ -6,9 +6,26 @@ import TopHeader from "./web/components/TopHeader";
 import MainHeader from "./web/components/MainHeader";
 import Footer from "./web/components/Footer";
 import Home from "./web/pages/Home/Home";
-import AboutHero from "./web/pages/about/AboutHero";
 import Contact from "./web/pages/Contact";
 import Enquiry from "./web/pages/Enquiry";
+import L5DLXPassenger from "./web/pages/Products/L5DLXPassenger";
+import Activa from "./web/pages/Products/Activa";
+import L5ECO from "./web/pages/Products/L5ECO";
+import L5FrontFacia from "./web/pages/Products/L5FrontFacia";
+import L5Butterfly from "./web/pages/Products/L5Butterfly";
+import L5UltraLoader from "./web/pages/Products/L5UltraLoader";
+import L3ButterflyMS from "./web/pages/Products/L3ButterflyMS";
+import L3ButterflySS from "./web/pages/Products/L3ButterflySS";
+import Singlelight from "./web/pages/Products/Singlelight";
+import Doublelight from "./web/pages/Products/Doublelight";
+import ULight from "./web/pages/Products/ULight";
+import N1 from "./web/pages/Products/N1";
+import AboutCompany from "./web/pages/about/AboutCompany";
+import AboutJourney from "./web/pages/about/AboutJourney";
+import OurTeam from "./web/pages/about/OurTeam";
+import Photos from "./web/pages/Gallery/Photos";
+import Videos from "./web/pages/Gallery/Videos";
+
 
 function App() {
   return (
@@ -18,9 +35,27 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about-hero" element={<AboutHero />} />
+        <Route path="/about-company" element={<AboutCompany/>}/>
+        <Route path="/about-journey" element={<AboutJourney/>}/>
+        <Route path="/our-team" element={<OurTeam/>}/>
+        <Route path="/photos" element={<Photos />} />
+        <Route path="/videos" element={<Videos />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/enquiry" element={<Enquiry />} />
+        <Route path="/l5-dlx-passenger-3-plus-1" element={<L5DLXPassenger />} />
+        <Route path="/l5-eco-6-plus-1" element={<L5ECO />} />
+        <Route path="/l5-front-facia" element={<L5FrontFacia />} />
+        <Route path="/l5-butterfly" element={<L5Butterfly />} />
+        <Route path="/l5-ultra-loader" element={<L5UltraLoader />} />
+        <Route path="/butterfly-ms" element={<L3ButterflyMS />} />
+        <Route path="/butterfly-ss" element={<L3ButterflySS />} />
+        <Route path="/single-light" element={<Singlelight />} />
+        <Route path="/double-light" element={<Doublelight />} />
+        <Route path="/u-light" element={<ULight />} />
+        <Route path="/n1" element={<N1 />} />
+        <Route path="/activa" element={<Activa/>} />
+
+        <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
 
       <Footer />
