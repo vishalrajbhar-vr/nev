@@ -46,7 +46,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "../../../../public/images/MODEL L3 BUTTERFLY MS.png",
+  "/images/MODEL L3 BUTTERFLY MS.png",
 ];
 
 /* ===================================================================

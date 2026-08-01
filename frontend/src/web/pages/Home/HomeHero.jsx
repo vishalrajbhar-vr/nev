@@ -165,7 +165,7 @@ function HomeHero() {
                 <img
                   src={vehicleSrc}
                   alt="NEV Electric Rickshaw"
-                  className="h-full w-auto object-contain drop-shadow-[0_24px_38px_rgba(6,21,43,0.25)]"
+                  className="h-[140%] w-[140%] -mt-15 object-contain drop-shadow-[0_24px_38px_rgba(6,21,43,0.25)]"
                 />
               </div>
             </div>

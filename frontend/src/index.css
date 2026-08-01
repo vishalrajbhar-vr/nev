@@ -63,3 +63,89 @@
 .animate-auto-road {
   animation: autoRoadDrive 2s ease-in-out infinite;
 }
+
+
+/* start enquiry css */
+/* ================= LEFT ================= */
+
+@keyframes scootyMove {
+  0% {
+    transform: translateX(-220px);
+    opacity: 0;
+  }
+
+  /* Jaldi Entry */
+  8% {
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Center me rukegi */
+  55% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Center ki taraf aur move karke hide */
+  80% {
+    transform: translateX(90px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(90px);
+    opacity: 0;
+  }
+}
+
+.animate-scooty {
+  animation: scootyMove 6s ease-in-out infinite;
+}
+
+
+
+/* ================= RIGHT ================= */
+
+@keyframes rickshawMove {
+  0% {
+    transform: translateX(220px);
+    opacity: 0;
+  }
+
+  /* Jaldi Entry */
+  8% {
+    opacity: 1;
+  }
+
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Center me rukegi */
+  55% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  /* Center ki taraf aur move karke hide */
+  80% {
+    transform: translateX(-90px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-90px);
+    opacity: 0;
+  }
+}
+
+.animate-rickshaw {
+  animation: rickshawMove 6s ease-in-out infinite;
+}
+
+/* end enquiry css */
