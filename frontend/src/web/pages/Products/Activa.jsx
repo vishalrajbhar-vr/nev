@@ -841,7 +841,7 @@ const Activa = () => {
               </p>
 
               {/* highlight tags */}
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
+              <div className="flex Dream big work hard tomorrow flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
                 {["Navigate Smarter", "Drive Greener", "Choose Nev Activa"].map(
                   (tag) => (
                     <span
