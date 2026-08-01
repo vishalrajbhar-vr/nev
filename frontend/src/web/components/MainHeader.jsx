@@ -11,11 +11,6 @@ import { Link, useNavigate } from "react-router-dom";
 const logoSrc = "/nev-logo-cropped.png";
 
 const menuItems = {
-  about: [
-    { label: "About Company", path: "/about-company" },
-    { label: "Our Journey", path: "/about-journey" },
-    { label: "Our Team", path: "/our-team" },
-  ],
 
   gallery: [
     { label: "Photos", path: "/photos" },
@@ -278,17 +273,7 @@ function MainHeader() {
                     )}
                   </div>
 
-                  {/* ================= ABOUT ================= */}
 
-                  <DesktopDropdown
-                    title="About Us"
-                    menu="about"
-                    openDropdown={openDropdown}
-                    openMenu={openMenu}
-                    toggleDropdown={toggleDropdown}
-                    closeMenuWithDelay={closeMenuWithDelay}
-                    cancelClose={cancelClose}
-                  />
 
                   {/* ================= GALLERY ================= */}
 
@@ -301,6 +286,17 @@ function MainHeader() {
                     closeMenuWithDelay={closeMenuWithDelay}
                     cancelClose={cancelClose}
                   />
+
+
+                  {/* ================= ABOUT ================= */}
+
+                  <Link
+                    to="/about"
+                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full  hover:text-[#5BBF43]"
+                  >
+                    About Us
+                  </Link>
+
 
                   {/* ================= CONTACT ================= */}
 
@@ -395,14 +391,6 @@ function MainHeader() {
 
                 </div>
 
-                {/* ABOUT */}
-
-                <MobileDropdown
-                  title="About Us"
-                  menu="about"
-                  openDropdown={openDropdown}
-                  toggleDropdown={toggleDropdown}
-                />
 
                 {/* GALLERY */}
 
@@ -412,6 +400,16 @@ function MainHeader() {
                   openDropdown={openDropdown}
                   toggleDropdown={toggleDropdown}
                 />
+
+                {/* ABOUT */}
+
+                <Link
+                  to="/about"
+                  onClick={() => setMobileMenu(false)}
+                  className="block border-b border-gray-200 px-3 py-4 text-base font-bold text-[#142033] transition-colors duration-300 hover:text-[#5BBF43]"
+                >
+                  About Us
+                </Link>
 
                 {/* CONTACT */}
 
