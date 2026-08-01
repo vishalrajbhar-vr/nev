@@ -20,11 +20,9 @@ import Singlelight from "./web/pages/Products/Singlelight";
 import Doublelight from "./web/pages/Products/Doublelight";
 import ULight from "./web/pages/Products/ULight";
 import N1 from "./web/pages/Products/N1";
-import AboutCompany from "./web/pages/about/AboutCompany";
-import AboutJourney from "./web/pages/about/AboutJourney";
-import OurTeam from "./web/pages/about/OurTeam";
 import Photos from "./web/pages/Gallery/Photos";
 import Videos from "./web/pages/Gallery/Videos";
+import About from "./web/pages/About";
 
 
 function App() {
@@ -35,9 +33,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about-company" element={<AboutCompany/>}/>
-        <Route path="/about-journey" element={<AboutJourney/>}/>
-        <Route path="/our-team" element={<OurTeam/>}/>
         <Route path="/photos" element={<Photos />} />
         <Route path="/videos" element={<Videos />} />
         <Route path="/contact" element={<Contact />} />
@@ -54,6 +49,7 @@ function App() {
         <Route path="/u-light" element={<ULight />} />
         <Route path="/n1" element={<N1 />} />
         <Route path="/activa" element={<Activa/>} />
+        <Route path="/about" element={<About/>} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
