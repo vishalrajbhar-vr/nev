@@ -63,3 +63,436 @@
 .animate-auto-road {
   animation: autoRoadDrive 2s ease-in-out infinite;
 }
+
+/* Vehicle color transition and entrance */
+.vehicle-filter-transition {
+  transition: filter 450ms ease, transform 450ms ease;
+}
+
+.vehicle-hover-glow:hover {
+  filter: drop-shadow(0 18px 40px rgba(91,191,67,0.14));
+}
+
+/* small slide-in for vehicle on slide change */
+.vehicle-slide-in {
+  transform-origin: center;
+  animation: vehicleSlideIn 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes vehicleSlideIn {
+  0% { transform: translateX(50px) scale(0.92); opacity: 0; }
+  60% { transform: translateX(-8px) scale(1.02); opacity: 1; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+/* Circular orbit motion for vehicle */
+@keyframes orbitMotion {
+  0% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(18px, -10px) rotate(-1deg); }
+  50% { transform: translate(0px, -18px) rotate(0.6deg); }
+  75% { transform: translate(-20px, -8px) rotate(-0.6deg); }
+  100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+.animate-orbit {
+  animation: orbitMotion 6.5s ease-in-out infinite;
+}
+
+/* Hue cycling animation (used optionally) */
+@keyframes hueCycle {
+  0% { filter: hue-rotate(0deg) saturate(1); }
+  25% { filter: hue-rotate(80deg) saturate(1.05); }
+  50% { filter: hue-rotate(160deg) saturate(1.05); }
+  75% { filter: hue-rotate(260deg) saturate(1.05); }
+  100% { filter: hue-rotate(360deg) saturate(1); }
+}
+
+.vehicle-hover-cycle {
+  animation: hueCycle 1.4s linear infinite;
+}
+
+/* Image frame and fade */
+.image-frame {
+  border-radius: 28px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(234,247,231,0.7), rgba(255,255,255,0.6));
+  box-shadow: 0 20px 45px rgba(6,21,43,0.08);
+  border: 4px solid rgba(91,191,67,0.08);
+}
+
+.image-fade {
+  transition: opacity 420ms ease, transform 420ms ease;
+  opacity: 1;
+}
+.image-fade.hidden { opacity: 0; transform: translateY(10px) scale(0.98); }
+
+/* dotted accent */
+.dotted-accent {
+  display: grid;
+  grid-template-columns: repeat(6, 6px);
+  gap: 6px;
+}
+.dotted-accent span { width:6px; height:6px; background:#5BBF43; border-radius:9999px; display:inline-block; }
+
+/* Advanced hero gradient and pedestal styles */
+.hero-gradient {
+  background: linear-gradient(90deg, #f5fbf6 0%, #eaf7ef 30%, #eef6fb 60%, #f9fbfc 100%);
+}
+
+.hero-contrast {
+  background: linear-gradient(180deg, #f3f8fb 0%, #e6f2f9 100%);
+}
+
+.hero-left {
+  padding: 48px 28px;
+}
+
+.hero-ribbon {
+  display: inline-block;
+  background: linear-gradient(90deg,#fff 0%, #f3f8fb 100%);
+  padding: 10px 18px;
+  border-left: 48px solid transparent;
+  border-right: 48px solid rgba(6,21,43,0.06);
+  border-radius: 6px;
+  font-weight: 700;
+  color: #0b2540;
+}
+
+.hero-heading {
+  font-size: 42px;
+  line-height: 1.02;
+  font-weight: 900;
+  color: #06152B;
+}
+
+.hero-subtext { color: #344955; max-width: 640px; }
+
+.pedestal {
+  position: relative;
+  width: 520px;
+  height: 340px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.pedestal::after {
+  content: "";
+  position: absolute;
+  bottom: -36px;
+  width: 340px;
+  height: 80px;
+  background: radial-gradient(ellipse at center, rgba(6,21,43,0.06) 0%, rgba(6,21,43,0.02) 60%, rgba(255,255,255,0) 100%);
+  border-radius: 50%;
+  filter: blur(8px);
+}
+
+.pedestal-plate {
+  position: absolute;
+  bottom: -64px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 520px;
+  height: 120px;
+  background: white;
+  border-radius: 999px;
+  box-shadow: 0 30px 60px rgba(6,21,43,0.08);
+  z-index: 10;
+}
+
+.pedestal img { position: relative; z-index: 20; transform: translateY(-8px); }
+
+.hero-accent-outline {
+  border-radius: 28px;
+  border: 4px solid rgba(91,191,67,0.12);
+  padding: 6px;
+}
+
+/* Angled ribbon (diagonal ends) */
+.angled-ribbon {
+  display: inline-block;
+  position: relative;
+  background: linear-gradient(90deg, #fff 0%, rgba(255,255,255,0.9) 100%);
+  color: #043047;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 6px;
+}
+.angled-ribbon::before,
+.angled-ribbon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 100%;
+  background: inherit;
+  transform: skewX(-25deg);
+}
+.angled-ribbon::before { left: -24px; }
+.angled-ribbon::after { right: -24px; transform: skewX(25deg); }
+
+/* Rotating platform for vehicle */
+@keyframes rotatePlatform {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.rotating-platform {
+  animation: rotatePlatform 20s linear infinite;
+  transform-origin: center center;
+}
+
+.platform-plate {
+  width: 440px;
+  height: 88px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  box-shadow: 0 28px 60px rgba(6,21,43,0.08);
+  position: absolute;
+  bottom: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+.platform-rotor {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* make hero more colorful with brand green accent */
+.hero-gradient {
+  background:
+    radial-gradient(900px 300px at 12% 8%, rgba(91,191,67,0.12), transparent 55%),
+    radial-gradient(800px 260px at 88% 12%, rgba(6,21,43,0.08), transparent 60%),
+    linear-gradient(95deg, #f4fbf7 0%, #eef8f3 34%, #eaf3fb 100%);
+}
+
+.hero-heading { color: #06152B; font-weight: 760; }
+
+.cta-primary { background: #5BBF43; color: white; padding: 12px 18px; border-radius: 8px; font-weight:700; }
+.cta-secondary { background: white; color: #06152B; padding: 10px 16px; border-radius: 8px; border: 1px solid rgba(6,21,43,0.06); }
+
+/* Diagonal slanted background panels to match reference */
+.hero-diagonal { position: relative; overflow: visible; }
+.hero-diagonal .diag-panel-left,
+.hero-diagonal .diag-panel-right {
+  position: absolute; top: 0; bottom: 0; width: 38%; z-index: 0;
+}
+.hero-diagonal .diag-panel-left {
+  left: -8%; transform: skewX(-10deg) translateY(-4%);
+  background: linear-gradient(180deg, rgba(91,191,67,0.05) 0%, rgba(91,191,67,0.01) 100%);
+  border-radius: 40px;
+}
+.hero-diagonal .diag-panel-right {
+  right: -8%; transform: skewX(10deg) translateY(4%);
+  background: linear-gradient(180deg, rgba(6,21,43,0.05) 0%, rgba(6,21,43,0.01) 100%);
+  border-radius: 40px;
+}
+
+/* Slight overlay to gently darken right side like reference */
+.hero-diagonal .diag-overlay {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 42%; z-index: 5;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(6,21,43,0.04) 100%);
+  pointer-events: none;
+}
+
+/* Responsive heading and spacing */
+.hero-heading { font-size: 38px; line-height: 1.08; }
+@media (min-width: 1024px) {
+  .hero-heading { font-size: 50px; }
+}
+@media (max-width: 640px) {
+  .hero-heading { font-size: 28px; }
+  .hero-left { padding: 24px; }
+}
+
+/* pedestal CTA form */
+.pedestal-form {
+  position: absolute; bottom: -46px; left: 50%; transform: translateX(-50%);
+  width: 360px; background: white; border-radius: 14px; padding: 12px; z-index: 50;
+  box-shadow: 0 18px 40px rgba(6,21,43,0.08); border: 1px solid rgba(6,21,43,0.04);
+}
+.pedestal-form input { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid #E6F2EA; margin-bottom:8px }
+.pedestal-form button { width: 100%; padding: 10px 12px; border-radius: 8px; border: none; background: #5BBF43; color: white; font-weight:700 }
+
+/* Brand variables and typography tuning */
+:root {
+  --brand-green: #5BBF43;
+  --brand-dark: #06152B;
+  --hero-accent: rgba(91,191,67,0.08);
+}
+
+body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: var(--brand-dark); }
+.hero-ribbon, .angled-ribbon { color: var(--brand-dark); }
+.angled-ribbon { background: linear-gradient(90deg, #ffffff 0%, rgba(244,249,245,1) 100%); }
+.hero-accent-outline { border: 4px solid rgba(91,191,67,0.12); }
+.cta-primary { background: var(--brand-green); }
+
+.hero-accent-outline {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fcf9 100%);
+  box-shadow: 0 12px 30px rgba(6,21,43,0.08);
+}
+
+/* Multi-color heading tuned to logo palette */
+.hero-heading-multicolor .hero-word-brand {
+  background: linear-gradient(90deg, #5BBF43 0%, #26A55E 30%, #0E3C7A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-heading-multicolor .hero-word-dark {
+  color: #07203F;
+}
+
+.hero-heading-multicolor .hero-word-mix {
+  background: linear-gradient(90deg, #0E3C7A 0%, #2D6BC6 35%, #5BBF43 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Standalone top hero vehicle (no card/box) */
+.hero-vehicle-wrap {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  width: 620px;
+  max-width: 100%;
+}
+
+.hero-vehicle-ground {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 390px;
+  height: 58px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(6,21,43,0.25) 0%, rgba(6,21,43,0.10) 50%, rgba(6,21,43,0) 100%);
+  filter: blur(7px);
+  z-index: 15;
+}
+
+/* Circular platform under top hero vehicle */
+.hero-platform-disk {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 142px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 66%, #eef3fa 100%);
+  box-shadow: inset 0 12px 18px rgba(255,255,255,0.95), inset 0 -8px 16px rgba(198,210,226,0.35);
+  z-index: 10;
+  overflow: hidden;
+}
+
+/* front side thickness to give 3D cylinder feel */
+.hero-platform-side {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 74px;
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(180deg, #e5edf8 0%, #d8e1ee 100%);
+  box-shadow: 0 10px 20px rgba(6,21,43,0.08);
+  z-index: 9;
+}
+
+.hero-platform-rim {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 142px;
+  border-radius: 999px;
+  border: 2px solid rgba(214,224,238,0.96);
+  z-index: 12;
+  pointer-events: none;
+}
+
+.hero-platform-topshine {
+  position: absolute;
+  left: 50%;
+  bottom: 56px;
+  transform: translateX(-50%);
+  width: 430px;
+  height: 42px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0.20) 70%, rgba(255,255,255,0) 100%);
+  z-index: 13;
+  pointer-events: none;
+}
+
+.hero-platform-shadow {
+  position: absolute;
+  left: 50%;
+  bottom: -20px;
+  transform: translateX(-50%);
+  width: 660px;
+  height: 74px;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(6,21,43,0.18) 0%, rgba(6,21,43,0.05) 58%, rgba(6,21,43,0) 100%);
+  filter: blur(13px);
+  z-index: 7;
+}
+
+.cta-primary,
+.cta-secondary {
+  transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+}
+
+.cta-primary:hover,
+.cta-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(6,21,43,0.12);
+}
+
+/* Smooth top hero slider transition */
+@keyframes heroSlideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-slide-fade {
+  animation: heroSlideFadeIn 420ms ease;
+}
+
+/* Mobile responsiveness: hide diagonals, stack hero, full-width form */
+@media (max-width: 900px) {
+  .hero-diagonal .diag-panel-left,
+  .hero-diagonal .diag-panel-right,
+  .hero-diagonal .diag-overlay { display: none; }
+  .hero-gradient { padding: 24px 12px; }
+  .hero-left { padding: 20px; }
+  .pedestal { width: 100% !important; height: auto !important; display: flex; justify-content: center; margin-top: 18px }
+  .hero-accent-outline { width: 92% !important; height: auto !important; padding: 18px; }
+  .hero-vehicle-wrap { width: 100% !important; }
+  .hero-vehicle-ground { width: 300px; height: 44px; bottom: 30px; }
+  .hero-platform-disk { width: 420px; height: 108px; bottom: 10px; }
+  .hero-platform-side { width: 420px; height: 54px; bottom: -8px; }
+  .hero-platform-rim { width: 420px; height: 108px; bottom: 10px; }
+  .hero-platform-topshine { width: 270px; height: 26px; bottom: 34px; }
+  .hero-platform-shadow { width: 460px; height: 48px; bottom: -14px; }
+  .pedestal-form { position: static; transform: none; width: 92%; margin: 12px auto 0; }
+  .hero-heading { font-size: 28px; }
+}
+
+@media (max-width: 420px) {
+  .hero-heading { font-size: 22px; }
+  .pedestal-form { width: 96%; }
+}

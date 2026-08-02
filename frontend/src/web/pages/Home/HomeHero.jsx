@@ -1,17 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   FaBatteryFull,
   FaBolt,
   FaChargingStation,
   FaLeaf,
-  FaPlay,
   FaRupeeSign,
   FaShieldAlt,
   FaTachometerAlt,
 } from "react-icons/fa";
 
-const vehicleSrc = "/full_auto_complete.png";
+const topHeroVehicleSrc = "/full_auto_complete.png";
+const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
 const bgSceneSrc = "/clean_hero_city_bg.jpg";
+
+const topSlide = {
+  ribbon: "DRIVE CHANGE. DRIVE ELECTRIC.",
+  title: ["NEV Electric", "Driving the Future of", "Sustainable Mobility"],
+  description:
+    "NEV Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
+  image: "/full_auto_complete.png",
+  imageClass: "w-[500px] sm:w-[530px] lg:w-[560px]",
+  imageTransform: "translateX(4px) translateY(-14px)",
+};
 
 const featureCards = [
   {
@@ -59,120 +69,127 @@ const mobilityHighlights = [
 ];
 
 function HomeHero() {
-  const [animKey, setAnimKey] = useState(0);
-  const [isDriving, setIsDriving] = useState(true);
-
-  useEffect(() => {
-    setIsDriving(true);
-    const timer = setTimeout(() => {
-      setIsDriving(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, [animKey]);
-
-  const replayDrive = () => {
-    setAnimKey((prev) => prev + 1);
-  };
-
   return (
     <main className="bg-white text-[#06152B] overflow-hidden font-sans">
-      <section className="relative pt-4 pb-12 lg:pt-6 lg:pb-16 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Grid Layout (Tightened spacing between left text and right image) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4 items-center">
-          {/* Left Column (Tagline, Headline, Subtext & 2x2 Feature Cards) */}
-          <div className="z-10 lg:pr-2">
-            {/* Tagline Badge */}
+      <section className="hero-diagonal hero-gradient px-4 py-10 border-b border-[#E6F2EA]">
+        <div className="diag-panel-left" />
+        <div className="diag-panel-right" />
+        <div className="diag-overlay" />
+
+        <div className="max-w-[1320px] mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[620px]">
+            <div className="hero-left">
+              <div className="angled-ribbon mb-6">{topSlide.ribbon}</div>
+
+              <h1 className="hero-heading hero-heading-multicolor">
+                <span className="hero-word-brand">{topSlide.title[0]}</span>
+                <br />
+                <span className="hero-word-dark">{topSlide.title[1]}</span>
+                <br />
+                <span className="hero-word-mix">{topSlide.title[2]}</span>
+              </h1>
+
+              <p className="mt-6 hero-subtext text-base sm:text-lg">
+                {topSlide.description}
+              </p>
+
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <a href="#products" className="cta-primary">View Models</a>
+                <a href="#contact" className="cta-secondary">Request Call</a>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center lg:justify-end">
+              <div className="pedestal" style={{ width: 700, height: 500 }}>
+                <div className="hero-platform-shadow" />
+                <div className="hero-platform-side" />
+                <div className="hero-platform-disk" />
+                <div className="hero-platform-rim" />
+                <div className="hero-platform-topshine" />
+                <div className="hero-vehicle-ground" />
+                <div className="hero-vehicle-wrap" style={{ position: "relative", zIndex: 20 }}>
+                  <img
+                    src={topSlide.image || topHeroVehicleSrc}
+                    alt="NEV Auto"
+                    className={`${
+                      topSlide.imageClass || "w-[540px] sm:w-[570px] lg:w-[600px]"
+                    } max-w-none h-auto object-contain drop-shadow-[0_18px_30px_rgba(6,21,43,0.24)]`}
+                    style={{ transform: topSlide.imageTransform || "translateX(6px) translateY(-16px)" }}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative pt-5 pb-12 lg:pt-8 lg:pb-16 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="order-1 lg:order-1 z-10 lg:pr-4">
             <div className="flex items-center gap-3 mb-4">
               <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#5BBF43] bg-white text-[#5BBF43] shadow-xs shrink-0">
                 <FaBolt size={15} />
-              </span> 
+              </span>
               <p className="text-xs sm:text-sm font-extrabold uppercase tracking-wide">
                 <span className="text-[#5BBF43]">DRIVE CHANGE.</span>{" "}
                 <span className="text-[#06152B]">DRIVE ELECTRIC.</span>
               </p>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-black leading-[1.14] text-[#06152B] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-black leading-[1.14] text-[#06152B] tracking-tight">
               India&apos;s Most Trusted
               <span className="block mt-0.5">
                 <span className="text-[#5BBF43]">Electric Rickshaw</span>{" "}
                 <span className="text-[#06152B]">Brand</span>
               </span>
-            </h1>
+            </h2>
 
-            {/* Subtext Paragraph */}
-            <p className="mt-4 text-sm sm:text-base lg:text-[15px] text-[#4A5568] leading-relaxed max-w-[500px] font-medium">
+            <p className="mt-3.5 text-sm sm:text-[15px] lg:text-[14px] text-[#4A5568] leading-relaxed max-w-[520px] font-medium">
               NEV Vehicles is committed to delivering reliable, high-performance
               electric rickshaws that empower livelihoods and build a cleaner,
               greener tomorrow.
             </p>
 
-            {/* Green Line Accent */}
-            <div className="mt-3.5 mb-6 h-[3px] w-12 rounded-full bg-[#5BBF43]" />
+            <div className="mt-3 mb-5 h-[2.5px] w-10 rounded-full bg-[#5BBF43]" />
 
-            {/* 2x2 Feature Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-[520px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-[500px]">
               {featureCards.map((item) => (
                 <FeatureCard item={item} key={item.title} />
               ))}
             </div>
           </div>
 
-          {/* Right Column (Hero Image Arched Frame - Pulled closer to remove middle gap) */}
-          <div className="relative mt-4 lg:mt-0 flex justify-center lg:justify-start items-center z-10">
-            {/* Hero Image Wrapper */}
-            <div className="relative w-full max-w-[500px] sm:max-w-[560px] lg:max-w-[620px] aspect-[1.38/1] group">
-              {/* Decorative Green Dots (6x4 grid) */}
-              <div className="absolute -top-5 right-2 sm:right-4 z-0 grid grid-cols-6 gap-2 sm:gap-2.5 pointer-events-none">
+          <div className="order-2 lg:order-2 relative mt-6 lg:mt-0 flex justify-center lg:justify-end items-center z-10">
+            <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-[560px] aspect-square">
+              <div className="absolute -top-4 right-3 z-0 grid grid-cols-6 gap-2 pointer-events-none">
                 {Array.from({ length: 24 }).map((_, i) => (
-                  <span
-                    key={i}
-                    className="h-1.5 w-1.5 rounded-full bg-[#5BBF43]"
-                  />
+                  <span key={i} className="h-1.5 w-1.5 rounded-full bg-[#5BBF43]" />
                 ))}
               </div>
 
-              {/* Background Frame (Clipped Outdoor Scene) */}
-              <div className="absolute inset-0 rounded-[32px] sm:rounded-[40px] lg:rounded-l-[260px] lg:rounded-r-[36px] border-[6px] sm:border-[8px] border-white shadow-[0_16px_45px_rgba(6,21,43,0.10)] bg-[#EEF7FC] overflow-hidden z-10">
-                {/* Green Inner Arched Outline Ring Accent */}
-                <div className="absolute inset-0 rounded-[32px] sm:rounded-[40px] lg:rounded-l-[260px] lg:rounded-r-[36px] border-[3px] border-[#5BBF43] z-20 pointer-events-none" />
+              <div className="absolute inset-0 rounded-[20px] border border-[#5BBF43]/50 shadow-[0_16px_40px_rgba(6,21,43,0.14)] bg-[#EEF7FC] overflow-hidden z-10">
+                <div className="absolute inset-0 border-2 border-white/70 rounded-[20px] z-20 pointer-events-none" />
 
-                {/* Photorealistic Clean Outdoor Background */}
                 <img
                   src={bgSceneSrc}
                   alt="Hero Scene Background"
                   className="w-full h-full object-cover object-center"
                 />
-              </div>
 
-              {/* Floating Green Leaf Badge & Motion Indicator */}
-              <div className="absolute top-4 right-5 sm:top-5 sm:right-6 z-40 flex items-center gap-2">
-                <span className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/90 text-[#06152B] text-xs font-bold shadow-md border border-[#5BBF43]/40">
-                  <span className="h-2 w-2 rounded-full bg-[#5BBF43] animate-pulse" />
-                  <span>Live Drive Motion</span>
-                </span>
+                <div className="absolute left-[10%] bottom-[8%] z-20 h-[14%] w-[72%] rounded-[50%] bg-[#06152B]/25 blur-xl pointer-events-none" />
 
-                <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-[#EAF7E7] text-[#5BBF43] border border-[#5BBF43]/40 shadow-md">
-                  <FaLeaf className="text-xl text-[#5BBF43] transform -rotate-12" />
+                <div className="absolute left-[-1%] bottom-[-4%] z-30 h-[103%] w-[102%] origin-bottom-left pointer-events-none select-none lg:[transform:perspective(1200px)_rotateY(-2deg)_rotateX(1deg)]">
+                  <img
+                    src={lowerHeroVehicleSrc}
+                    alt="NEV Electric Rickshaw"
+                    className="h-full w-full object-contain drop-shadow-[0_28px_36px_rgba(6,21,43,0.34)]"
+                  />
                 </div>
-              </div>
-
-              {/* Complete E-Rickshaw Overlay Image - Continuous Infinite Drive & Loop Motion */}
-              <div
-                className="absolute bottom-[-3%] right-[6%] sm:bottom-[-4%] sm:right-[8%] lg:right-[10%] z-30 h-[98%] sm:h-[102%] lg:h-[106%] w-auto max-w-none pointer-events-auto select-none -translate-x-3 sm:-translate-x-6 animate-auto-continuous"
-              >
-                <img
-                  src={vehicleSrc}
-                  alt="NEV Electric Rickshaw"
-                  className="h-full w-auto object-contain drop-shadow-[0_24px_38px_rgba(6,21,43,0.25)]"
-                />
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Floating Feature Strip */}
         <div className="relative z-30 mt-10 lg:mt-8">
           <div className="mx-auto max-w-[1240px] rounded-2xl border border-[#E3EAF1] bg-white p-4 sm:p-5 shadow-[0_12px_32px_rgba(6,21,43,0.06)]">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 md:divide-x md:divide-[#E3EAF1]">
@@ -191,19 +208,19 @@ function FeatureCard({ item }) {
   const Icon = item.icon;
 
   return (
-    <article className="group flex items-start gap-3.5 rounded-2xl border border-[#E3EAF1] bg-white p-4 sm:p-4.5 shadow-[0_4px_16px_rgba(6,21,43,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5BBF43]/50 hover:shadow-[0_8px_24px_rgba(6,21,43,0.08)]">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border-2 border-[#5BBF43] bg-white text-[#5BBF43] transition-colors duration-300 group-hover:bg-[#5BBF43] group-hover:text-white">
-        <Icon size={18} />
+    <article className="group rounded-xl border border-[#E3EAF1] bg-white p-3.5 shadow-[0_3px_12px_rgba(6,21,43,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5BBF43]/50 hover:shadow-[0_8px_20px_rgba(6,21,43,0.08)]">
+      <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#5BBF43] bg-white text-[#5BBF43] transition-colors duration-300 group-hover:bg-[#5BBF43] group-hover:text-white">
+        <Icon size={15} />
       </div>
-      <div className="flex-1 min-w-0">
-        <h3 className="text-sm sm:text-base font-extrabold text-[#06152B] leading-snug">
+      <div className="mt-3 min-w-0">
+        <h3 className="text-sm font-extrabold text-[#06152B] leading-snug">
           {item.title}
         </h3>
-        <p className="mt-1 text-xs sm:text-[13px] font-medium text-[#4A5568] leading-snug whitespace-pre-line">
+        <p className="mt-1 text-xs font-medium text-[#4A5568] leading-relaxed whitespace-pre-line">
           {item.description}
         </p>
         {item.hasBar && (
-          <span className="mt-2.5 block h-[2.5px] w-7 rounded-full bg-[#5BBF43]" />
+          <span className="mt-2 block h-[2px] w-6 rounded-full bg-[#5BBF43]" />
         )}
       </div>
     </article>
