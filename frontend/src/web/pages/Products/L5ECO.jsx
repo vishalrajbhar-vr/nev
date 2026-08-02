@@ -46,7 +46,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/ECO 6+1.png",
+  "/images/l5-eco.png",
 
 ];
 
@@ -541,9 +541,9 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[120%] h-[120%] flex items-center justify-center">
                 <img
-                  src="/images/ECO 6+1.png"
+                  src="/images/l5-eco.png"
                   alt="L5 ECO 6 Plus 1"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="h-[75%] w-[75%] -mt-10 object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -906,7 +906,7 @@ const L5ECO = () => {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 {/* sliding track */}
                 <div
-                  className="flex py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center justify-center py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -914,7 +914,7 @@ const L5ECO = () => {
                       key={src}
                       src={src}
                       alt={`L5 ECO view ${i + 1}`}
-                      className="w-full h-full  flex-shrink-0 object-contain"
+                      className="h-[100%] w-[100%] flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>

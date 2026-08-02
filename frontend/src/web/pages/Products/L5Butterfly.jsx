@@ -46,7 +46,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/MODEL L5 BUTTERFLY 6+1.png",
+  "/images/l5-butterfly.png",
 ];
 
 /* ===================================================================
@@ -547,9 +547,9 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[130%] h-[130%] flex items-center justify-center">
                 <img
-                  src="/images/MODEL L5 BUTTERFLY 6+1.png"
+                  src="/images/l5-butterfly.png"
                   alt="NEV L5 Butterfly 6 Plus 1 Electric Vehicle"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="w-[120%] h-[120%] -mt-15 object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -901,7 +901,7 @@ const L5Butterfly = () => {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 {/* sliding track */}
                 <div
-                  className="flex py-2 -mt-18 h-[140%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center -mt-15 justify-center py-2 h-[130%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -909,7 +909,7 @@ const L5Butterfly = () => {
                       key={src}
                       src={src}
                       alt={`NEV L5 Butterfly 6 Plus 1 view ${i + 1}`}
-                      className="w-full h-full  flex-shrink-0 object-contain"
+                      className="h-[120%] w-[120%] -mt-15 flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>

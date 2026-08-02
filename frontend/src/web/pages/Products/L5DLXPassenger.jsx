@@ -46,10 +46,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/MODEL L5.png",
-  "/images/MODEL L5.png",
-  "/images/MODEL L5.png",
-  "/images/MODEL L5.png",
+  "/images/l5-dlx-passenger.png",
 ];
 
 /* ===================================================================
@@ -551,9 +548,9 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[120%] h-[120%] flex items-center justify-center">
                 <img
-                  src="/images/MODEL L5.png"
+                  src="/images/l5-dlx-passenger.png"
                   alt="L5 DLX Passenger 3 Plus 1"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="h-[90%] w-[90%] object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -930,7 +927,7 @@ const L5DLXPassenger = () => {
                       key={src}
                       src={src}
                       alt={`L5 DLX Passenger view ${i + 1}`}
-                      className="w-full h-full  flex-shrink-0 object-contain"
+                      className="w-full h-full mt-5 flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>

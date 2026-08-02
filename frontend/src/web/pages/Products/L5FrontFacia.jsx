@@ -47,7 +47,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/MODEL L5 FRONT FACIA.png"
+  "/images/l5-front-facia.png"
 ];
 
 /* ===================================================================
@@ -541,11 +541,11 @@ const ProductAnimation = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ transform: "translateZ(40px)" }}
             >
-              <div className="relative w-[140%] h-[140%] -mt-15 flex items-center justify-center">
+              <div className="relative w-[120%] h-[120%]  flex items-center justify-center">
                 <img
-                  src="/images/MODEL L5 FRONT FACIA.png"
+                  src="/images/l5-front-facia.png"
                   alt="L5 Front Facia"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="w-[90%] h-[90%] object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -912,7 +912,7 @@ const L5FrontFacia = () => {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 {/* sliding track */}
                 <div
-                  className="flex py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center justify-center py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -920,7 +920,7 @@ const L5FrontFacia = () => {
                       key={src}
                       src={src}
                       alt={`L5 Front Facia view ${i + 1}`}
-                      className="w-[135%] h-[135%] -mt-20  flex-shrink-0 object-contain"
+                      className="w-[100%] h-[100%] mt-5  flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>

@@ -46,7 +46,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/MODEL L3 BUTTERFLY SS.png",
+  "/images/l3-butterfly-ss.png",
 ];
 
 /* ===================================================================
@@ -544,9 +544,9 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[130%] h-[130%] flex items-center justify-center">
                 <img
-                  src="/images/MODEL L3 BUTTERFLY SS.png"
+                  src="/images/l3-butterfly-ss.png"
                   alt="L3 Butterfly SS"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="w-full h-full -mt-5 object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -1037,7 +1037,7 @@ const L3ButterflySS = () => {
                 <td className="px-4 py-4">1+1 YEARS</td>
                 <td className="px-4 py-4">1+1 YEARS</td>
                 <td className="px-4 py-4">3 YEARS</td>
-                <td className="px-4 py-4">1,30,899.00</td>
+                <td className="px-4 py-4">__</td>
               </tr>
               <tr className=" text-black text-md">
                 <td className="px-4 py-4">60 V 105 AH </td>
@@ -1045,7 +1045,7 @@ const L3ButterflySS = () => {
                 <td className="px-4 py-4">1+1 YEARS</td>
                 <td className="px-4 py-4">1+1 YEARS</td>
                 <td className="px-4 py-4">3 YEARS</td>
-                <td className="px-4 py-4">1,40,772.00</td>
+                <td className="px-4 py-4">__</td>
               </tr>
             </tbody>
           </table>
