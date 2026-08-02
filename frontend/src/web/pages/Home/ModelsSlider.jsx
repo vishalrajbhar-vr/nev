@@ -169,7 +169,7 @@ function ModelCard({ model }) {
           <img
             src={model.image}
             alt={model.name}
-            className="block h-full w-full object-contain object-center drop-shadow-[0_12px_13px_rgba(6,21,43,0.24)] transition-transform duration-300 group-hover:scale-[1.03]"
+            className="block h-full w-full scale-[1.70] object-contain object-center drop-shadow-[0_12px_13px_rgba(6,21,43,0.24)] transition-transform duration-300 group-hover:scale-[1.34]"
           />
         </div>
       </div>
