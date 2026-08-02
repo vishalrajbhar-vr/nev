@@ -11,49 +11,57 @@ function AboutCompany() {
 
           {/* ================= LEFT IMAGE ================= */}
 
-          <div className="relative flex justify-center items-center">
+         <div className="relative flex justify-center items-center py-12 lg:py-0 overflow-hidden">
 
-            {/* Background Glow */}
-            <div className="absolute w-[430px] h-[430px] rounded-full bg-gradient-to-br from-[#5BBF43]/20 to-[#293F8F]/10 blur-3xl"></div>
+  {/* Premium Gradient Glow */}
+  <div className="absolute w-72 h-72 sm:w-96 sm:h-96 lg:w-[520px] lg:h-[520px] rounded-full bg-gradient-to-br from-[#5BBF43]/30 via-white/10 to-[#293F8F]/30 blur-[90px]"></div>
 
-            {/* Decorative Circle */}
-            <div className="absolute w-[360px] h-[360px] border border-[#5BBF43]/20 rounded-full"></div>
+  {/* Decorative Rings */}
+  <div className="absolute w-56 h-56 sm:w-72 sm:h-72 lg:w-[420px] lg:h-[420px] border border-white/20 rounded-full"></div>
 
-            {/* Car Shadow */}
-            <div className="absolute bottom-12 w-60 h-6 bg-black/20 blur-xl rounded-full"></div>
+  <div className="absolute w-64 h-64 sm:w-80 sm:h-80 lg:w-[500px] lg:h-[500px] border border-[#5BBF43]/10 rounded-full"></div>
 
-            {/* Image */}
-            <div className="relative z-20">
+  {/* Car Shadow */}
+  <div className="absolute bottom-8 lg:bottom-12 w-52 sm:w-72 lg:w-80 h-6 bg-black/25 blur-2xl rounded-full"></div>
 
-              <img
-                src="/hero_scene_preview_nobg.png"
-                alt="About NEV"
-                className="w-[620px] hover:scale-105 transition duration-700"
-              />
+  {/* Image */}
+  <div className="relative z-20 group">
+    <img
+      src="/hero_scene_preview_nobg.png"
+      alt="About NEV"
+      className="
+        w-[320px]
+        sm:w-[430px]
+        md:w-[520px]
+        lg:w-[620px]
+        xl:w-[680px]
+        h-auto
+        object-contain
+        drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]
+        transition-all
+        duration-700
+        group-hover:scale-105
+        group-hover:-translate-y-2
+      "
+    />
+  </div>
 
-            </div>
+  {/* Experience Card */}
+  <div className="hidden lg:block absolute bottom-5 left-1/2 -translate-x-1/2 z-30 backdrop-blur-xl bg-white/80 border border-white/40 rounded-2xl px-7 py-4 shadow-[0_15px_40px_rgba(0,0,0,0.2)]">
+    <h2 className="text-4xl font-black text-[#5BBF43] text-center">
+      5+
+    </h2>
+    <p className="text-sm text-gray-600 text-center">
+      Years of Innovation
+    </p>
+  </div>
 
-            {/* Experience Card */}
-            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-30 backdrop-blur-xl bg-white/80 border border-white rounded-2xl px-7 py-4 shadow-2xl">
+  {/* Floating Badge */}
+  <div className="hidden lg:flex absolute top-8 right-0 items-center gap-2 bg-[#071426]/90 backdrop-blur-xl text-white px-5 py-3 rounded-2xl shadow-[0_15px_35px_rgba(0,0,0,0.3)]">
+    ⚡ <span>Next Generation EV</span>
+  </div>
 
-              <h2 className="text-4xl font-black text-[#5BBF43] text-center">
-                5+
-              </h2>
-
-              <p className="text-sm text-gray-600 font-medium text-center">
-                Years of Innovation
-              </p>
-
-            </div>
-
-            {/* Floating Badge */}
-            <div className="absolute top-10 right-4 bg-[#071426] text-white px-5 py-3 rounded-2xl shadow-xl">
-
-              ⚡ Next Generation EV
-
-            </div>
-
-          </div>
+</div>
 
           {/* ================= RIGHT CONTENT ================= */}
 
