@@ -1,309 +1,274 @@
-import { FaHome, FaChevronRight } from "react-icons/fa";
+import React from "react";
+import { motion } from "framer-motion";
+import { FaArrowRight, FaLeaf } from "react-icons/fa";
+import { Link } from "react-router-dom";
+
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
 
 function AboutHero() {
-    return (
-        <section className="relative w-full h-[485px] overflow-hidden bg-[#F5F9FC]">
-            <div className="absolute inset-0">
-
-                <img
-                    src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=1600"
-                    alt="Electric Mobility"
-                    className="absolute inset-0 w-full h-full object-cover opacity-[0.12]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/20"></div>
-            </div>
-
-
-            {/* ---MAIN CONTENT--- */}
-
-            <div className="relative z-20 max-w-[1400px] mx-auto h-full px-6 lg:px-10">
-                <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
-
-                    {/* ----LEFT CONTENT--- */}
-
-                    <div className="flex flex-col justify-center pb-10">
-
-                        <div className="flex items-center gap-4 text-[#245EAA] text-[16px] md:text-[17px] font-medium mb-7">
-
-                            <div className="flex items-center gap-2">
-                                <FaHome
-                                    size={15}
-                                    className="text-[#245EAA]"
-                                />
-                                <span>  Home </span>
-                            </div>
-                            <FaChevronRight
-                                size={12}
-                                className="text-[#5BBF43]"
-                            />
-
-
-                            <span>
-                                Our Company
-                            </span>
-
-
-                            <FaChevronRight
-                                size={12}
-                                className="text-[#5BBF43]"
-                            />
-
-
-                            <span className="text-[#182438]">
-                                About Us
-                            </span>
-
-                        </div>
-
-
-                        {/* Heading */}
-
-                        <h1
-                            className="
-                text-[55px]
-                md:text-[70px]
-                lg:text-[82px]
-                leading-none
-                font-extrabold
-                text-[#245EAA]
-              "
-                        >
-                            About Us
-                        </h1>
-
-
-                        {/* Green Line */}
-
-                        <div className="mt-5 w-[80px] h-[5px] rounded-full bg-[#5BBF43]"></div>
-
-
-                        {/* Subtitle */}
-
-                        <p
-                            className="
-                mt-6
-                text-[18px]
-                md:text-[20px]
-                text-[#182438]
-                font-medium
-              "
-                        >
-                            Discover Our Journey in Electric Mobility Innovation.
-                        </p>
-
-                    </div>
-
-
-                    {/* =================================================
-              RIGHT VEHICLE ANIMATION
-          ================================================= */}
-
-                    <div className="relative h-full overflow-hidden">
-
-
-                        {/* =================================================
-                PARTITION 1
-            ================================================= */}
-
-                        <div
-                            className="
-                absolute
-                top-[55px]
-                right-[300px]
-                w-[285px]
-                h-[395px]
-                overflow-hidden
-
-                animate-[partitionOpen_0.8s_ease-out_0.2s_both]
-              "
-                            style={{
-                                clipPath:
-                                    "polygon(28% 0%, 100% 0%, 72% 100%, 0% 100%)",
-                            }}
-                        >
-
-                            {/* Transparent Partition */}
-
-                            <div className="absolute inset-0 bg-white/25 z-10"></div>
-
-
-                            {/* Image */}
-
-                            <img
-                                src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=900"
-                                alt="Electric Vehicle 1"
-                                className="
-                  absolute
-                  top-0
-                  left-0
-                  w-[285px]
-                  h-full
-                  object-cover
-
-                  opacity-0
-                  animate-[imageReveal_1s_ease-out_1s_both]
-                "
-                            />
-
-                        </div>
-
-
-                        {/* =================================================
-                PARTITION 2
-            ================================================= */}
-
-                        <div
-                            className="
-                absolute
-                top-[55px]
-                right-[90px]
-                w-[285px]
-                h-[395px]
-                overflow-hidden
-
-                animate-[partitionOpen_0.8s_ease-out_0.5s_both]
-              "
-                            style={{
-                                clipPath:
-                                    "polygon(28% 0%, 100% 0%, 72% 100%, 0% 100%)",
-                            }}
-                        >
-
-                            {/* Transparent Partition */}
-
-                            <div className="absolute inset-0 bg-white/25 z-10"></div>
-
-
-                            {/* Image */}
-
-                            <img
-                                src="https://images.unsplash.com/photo-1551830820-330a71b99659?w=900"
-                                alt="Electric Vehicle 2"
-                                className="
-                  absolute
-                  top-0
-                  left-0
-                  w-[285px]
-                  h-full
-                  object-cover
-
-                  opacity-0
-                  animate-[imageReveal_1s_ease-out_1.7s_both]
-                "
-                            />
-
-                        </div>
-
-
-                        {/* =================================================
-                PARTITION 3
-            ================================================= */}
-
-                        <div
-                            className="
-                absolute
-                top-[55px]
-                right-[-120px]
-                w-[285px]
-                h-[395px]
-                overflow-hidden
-
-                animate-[partitionOpen_0.8s_ease-out_0.8s_both]
-              "
-                            style={{
-                                clipPath:
-                                    "polygon(28% 0%, 100% 0%, 72% 100%, 0% 100%)",
-                            }}
-                        >
-
-                            {/* Transparent Partition */}
-
-                            <div className="absolute inset-0 bg-white/25 z-10"></div>
-
-
-                            {/* Image */}
-
-                            <img
-                                src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=900"
-                                alt="Electric Vehicle 3"
-                                className="
-                  absolute
-                  top-0
-                  left-0
-                  w-[285px]
-                  h-full
-                  object-cover
-
-                  opacity-0
-                  animate-[imageReveal_1s_ease-out_2.4s_both]
-                "
-                            />
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            {/* =====================================================
-          ANIMATIONS
-      ===================================================== */}
-
-            <style>
-                {`
-
-          /* ---------------------------------------------
-             TRANSPARENT PARTITION
-             RIGHT → LEFT
-          --------------------------------------------- */
-
-          @keyframes partitionOpen {
-
-            0% {
-              transform: translateX(420px);
-              opacity: 0;
-            }
-
-            100% {
-              transform: translateX(0);
-              opacity: 1;
-            }
-
-          }
-
-
-          /* ---------------------------------------------
-             IMAGE
-             RIGHT → LEFT INSIDE PARTITION
-          --------------------------------------------- */
-
-          @keyframes imageReveal {
-
-            0% {
-              transform: translateX(285px);
-              opacity: 0;
-            }
-
-            20% {
-              opacity: 1;
-            }
-
-            100% {
-              transform: translateX(0);
-              opacity: 1;
-            }
-
-          }
-
-        `}
-            </style>
-
-        </section>
-    );
+  return (
+    <section className="relative overflow-hidden bg-[#071426] py-2 lg:py-4">
+
+      {/* ================= Background Glow ================= */}
+
+      <motion.div
+        animate={{
+          scale: [1, 1.08, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+        }}
+        className="absolute -top-40 -left-32 w-[450px] h-[450px] rounded-full bg-[#5BBF43]/20 blur-[120px]"
+      />
+
+      <motion.div
+        animate={{
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+        }}
+        className="absolute -bottom-44 right-0 w-[500px] h-[500px] rounded-full bg-[#293F8F]/20 blur-[150px]"
+      />
+
+      <div className="max-w-7xl mx-auto px-6">
+
+        <div className="grid lg:grid-cols-2 gap-6 items-center">
+
+          {/* ================= LEFT ================= */}
+
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="show"
+          >
+            <motion.span
+              variants={fadeUp}
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#5BBF43]/20 border border-[#5BBF43]/40 text-[#5BBF43] font-semibold"
+            >
+              <FaLeaf />
+              About NEV
+            </motion.span>
+
+            <motion.h1
+              variants={fadeUp}
+              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white"
+            >
+              Driving The Future Of
+
+              <span className="block text-[#5BBF43] mt-2">
+                Electric Mobility
+              </span>
+            </motion.h1>
+
+            <motion.p
+              variants={fadeUp}
+              className="mt-3 text-gray-300 leading-7 max-w-xl"
+            >
+              NEV is building next-generation electric vehicles with
+              innovation, sustainability and modern technology.
+
+              We believe clean mobility should be affordable,
+              reliable and accessible for everyone.
+            </motion.p>
+
+            <motion.div
+              variants={fadeUp}
+              className="flex gap-4 mt-5 flex-wrap"
+            >
+              <button className="bg-[#5BBF43] hover:bg-[#4ba73a] transition text-white px-7 py-3 rounded-xl flex items-center gap-3 font-semibold">
+                Explore Products
+
+                <FaArrowRight />
+              </button>
+
+              <button className="border border-white/30 hover:bg-white hover:text-[#071426] transition text-white px-7 py-3 rounded-xl font-semibold">
+               
+                <Link to="/contact" >
+                 Contact Us
+                </Link>
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* ================= RIGHT START ================= */}
+
+          <div className="relative flex justify-center items-center h-[380px] lg:h-[420px]">
+
+            {/* Fixed Circle */}
+
+            <div className="absolute w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#5BBF43]/10 border border-[#5BBF43]/20" />
+            {/* ================= Car Shadow ================= */}
+
+            <motion.div
+              animate={{
+                scaleX: [1, 1.08, 1],
+                opacity: [0.3, 0.55, 0.3],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute bottom-14 w-[240px] h-6 bg-black/40 blur-xl rounded-full"
+            />
+
+            {/* ================= Car ================= */}
+
+            <motion.img
+              src="/15_transparent.png"
+              alt="Electric Vehicle"
+              initial={{
+                x: 650,
+                opacity: 0,
+              }}
+              animate={{
+                x: 0,
+                opacity: 1,
+              }}
+              transition={{
+                duration: 2.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              whileHover={{
+                scale: 1.03,
+              }}
+              className="relative z-20 w-[260px] md:w-[320px] lg:w-[370px] cursor-pointer select-none"
+            />
+
+            {/* ================= Headlight Glow ================= */}
+
+            <motion.div
+              animate={{
+                opacity: [0.2, 0.7, 0.2],
+                scale: [1, 1.15, 1],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+              }}
+              className="absolute right-[30px] top-[48%] w-20 h-6 bg-yellow-300/40 blur-xl rounded-full"
+            />
+
+            {/* ================= Floating Label ================= */}
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 30,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 2,
+                duration: .8,
+              }}
+              className="absolute bottom-28 bg-white rounded-xl shadow-xl px-5 py-3"
+            >
+              <h4 className="font-bold text-[#071426]">
+                ⚡ 100% Electric
+              </h4>
+
+              <p className="text-xs text-gray-500 mt-1">
+                Clean • Silent • Powerful
+              </p>
+            </motion.div>
+            {/* ================= Car Shine Effect ================= */}
+
+            <motion.div
+              initial={{ x: -220, opacity: 0 }}
+              animate={{
+                x: [0, 520],
+                opacity: [0, 0.8, 0],
+              }}
+              transition={{
+                duration: 2.5,
+                repeat: Infinity,
+                repeatDelay: 2,
+                ease: "easeInOut",
+              }}
+              className="absolute z-30 w-16 h-[280px] bg-white/20 blur-md rotate-[20deg]"
+            />
+
+            {/* ================= Dust Particles ================= */}
+
+            {Array.from({ length: 8 }).map((_, i) => (
+              <motion.div
+                key={i}
+                initial={{
+                  opacity: 0,
+                  x: 0,
+                  y: 0,
+                }}
+                animate={{
+                  opacity: [0, 0.5, 0],
+                  x: [-10, -70],
+                  y: [0, -20],
+                  scale: [0.5, 2],
+                }}
+                transition={{
+                  duration: 2,
+                  delay: i * 0.2,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+                className="absolute bottom-14 left-12 w-3 h-3 rounded-full bg-white/20 blur-sm"
+              />
+            ))}
+
+            {/* ================= Background Floating Particles ================= */}
+
+            {Array.from({ length: 10 }).map((_, i) => (
+              <motion.div
+                key={`particle-${i}`}
+                animate={{
+                  y: [0, -40, 0],
+                  opacity: [0.2, 0.8, 0.2],
+                }}
+                transition={{
+                  duration: 3 + i,
+                  repeat: Infinity,
+                  delay: i * 0.3,
+                }}
+                className="absolute w-2 h-2 rounded-full bg-[#5BBF43]/50"
+                style={{
+                  left: `${15 + i * 7}%`,
+                  top: `${20 + (i % 4) * 15}%`,
+                }}
+              />
+            ))}
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default AboutHero;
