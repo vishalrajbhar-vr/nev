@@ -8,6 +8,7 @@ import {
   FaShieldAlt,
   FaTachometerAlt,
 } from "react-icons/fa";
+import QuickRequest from "./QuickRequest";
 
 const topHeroVehicleSrc = "/hero_scene_preview_nobg.png";
 const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
@@ -117,6 +118,8 @@ function HomeHero() {
           </div>
         </div>
       </section>
+
+      <QuickRequest />
 
       <section className="relative pt-5 pb-12 lg:pt-8 lg:pb-16 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
