@@ -126,7 +126,7 @@ function MainHeader() {
   }, []);
 
   return (
-    <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-5 sm:px-5 lg:px-7">
+    <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-4 sm:px-5 lg:px-7">
       <style>
         {`
           @keyframes logoFlipSpin {
@@ -423,11 +423,11 @@ function MainHeader() {
                 {/* MOBILE PHONE */}
 
                 <a
-                  href="tel:1234567890"
+                  href="tel:18001210259"
                   className="sm:hidden flex items-center justify-center gap-3 mt-5 py-3.5 rounded-xl bg-[#293F8F] text-white font-semibold shadow-md hover:bg-[#5BBF43] transition-all duration-300"
                 >
                   <FaPhoneAlt size={15} />
-                  1234567890
+                  18001210259
                 </a>
 
               </div>
