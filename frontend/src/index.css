@@ -176,6 +176,20 @@
   justify-content: center;
 }
 
+.pedestal::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 400px;
+  height: 400px;
+  border: 1px solid rgba(91,191,67,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 0 12px rgba(91,191,67,0.025), 0 0 0 28px rgba(91,191,67,0.018);
+  z-index: 1;
+  pointer-events: none;
+}
+
 .pedestal::after {
   content: "";
   position: absolute;
@@ -189,18 +203,57 @@
 
 .pedestal-plate {
   position: absolute;
-  bottom: -64px;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
-  width: 520px;
-  height: 120px;
-  background: white;
+  width: 560px;
+  height: 112px;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #eef8f0 100%);
   border-radius: 999px;
-  box-shadow: 0 30px 60px rgba(6,21,43,0.08);
+  border: 2px solid rgba(91,191,67,0.2);
+  box-shadow: 0 30px 60px rgba(6,21,43,0.12), inset 0 -8px 0 rgba(91,191,67,0.18);
   z-index: 10;
 }
 
 .pedestal img { position: relative; z-index: 20; transform: translateY(-8px); }
+
+.hero-scene-image {
+  display: block;
+  border-radius: 24px;
+  -webkit-mask-image: radial-gradient(ellipse 78% 76% at 50% 50%, #000 54%, rgba(0,0,0,0.92) 70%, transparent 100%);
+  mask-image: radial-gradient(ellipse 78% 76% at 50% 50%, #000 54%, rgba(0,0,0,0.92) 70%, transparent 100%);
+}
+
+@keyframes heroVehicleDriveLoop {
+  0% {
+    opacity: 0;
+    transform: translateX(220px) translateY(-14px) scale(0.88);
+  }
+  16% {
+    opacity: 1;
+    transform: translateX(-8px) translateY(-14px) scale(1.02);
+  }
+  22%, 62% {
+    opacity: 1;
+    transform: translateX(4px) translateY(-14px) scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: translateX(-26px) translateY(-12px) scale(0.99);
+  }
+  86% {
+    opacity: 0;
+    transform: translateX(-300px) translateY(-8px) scale(0.84);
+  }
+  87%, 100% {
+    opacity: 0;
+    transform: translateX(220px) translateY(-14px) scale(0.88);
+  }
+}
+
+.hero-vehicle-drive-loop {
+  animation: heroVehicleDriveLoop 7s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
 
 .hero-accent-outline {
   border-radius: 28px;

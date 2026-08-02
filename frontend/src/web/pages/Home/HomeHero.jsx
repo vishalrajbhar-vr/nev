@@ -9,7 +9,7 @@ import {
   FaTachometerAlt,
 } from "react-icons/fa";
 
-const topHeroVehicleSrc = "/full_auto_complete.png";
+const topHeroVehicleSrc = "/hero_scene_preview_nobg.png";
 const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
 const bgSceneSrc = "/clean_hero_city_bg.jpg";
 
@@ -18,7 +18,7 @@ const topSlide = {
   title: ["NEV Electric", "Driving the Future of", "Sustainable Mobility"],
   description:
     "NEV Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
-  image: "/full_auto_complete.png",
+  image: "/hero_scene_preview_nobg.png",
   imageClass: "w-[500px] sm:w-[530px] lg:w-[560px]",
   imageTransform: "translateX(4px) translateY(-14px)",
 };
@@ -100,20 +100,15 @@ function HomeHero() {
             </div>
 
             <div className="flex items-center justify-center lg:justify-end">
-              <div className="pedestal" style={{ width: 700, height: 500 }}>
-                <div className="hero-platform-shadow" />
-                <div className="hero-platform-side" />
-                <div className="hero-platform-disk" />
-                <div className="hero-platform-rim" />
-                <div className="hero-platform-topshine" />
+              <div className="pedestal" style={{ width: 660, height: 500 }}>
                 <div className="hero-vehicle-ground" />
                 <div className="hero-vehicle-wrap" style={{ position: "relative", zIndex: 20 }}>
                   <img
                     src={topSlide.image || topHeroVehicleSrc}
                     alt="NEV Auto"
                     className={`${
-                      topSlide.imageClass || "w-[540px] sm:w-[570px] lg:w-[600px]"
-                    } max-w-none h-auto object-contain drop-shadow-[0_18px_30px_rgba(6,21,43,0.24)]`}
+                      topSlide.imageClass || "w-[580px] sm:w-[620px] lg:w-[650px]"
+                    } hero-scene-image hero-vehicle-drive-loop max-w-none h-auto object-contain opacity-100 drop-shadow-[0_16px_24px_rgba(6,21,43,0.16)]`}
                     style={{ transform: topSlide.imageTransform || "translateX(6px) translateY(-16px)" }}
                   />
                 </div>
