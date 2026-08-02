@@ -96,7 +96,6 @@ function HomeHero() {
 
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <a href="#products" className="cta-primary">View Models</a>
-                <a href="#contact" className="cta-secondary">Request Call</a>
               </div>
             </div>
 
@@ -121,10 +120,10 @@ function HomeHero() {
 
       <QuickRequest />
 
-      <section className="relative pt-5 pb-12 lg:pt-8 lg:pb-16 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <section className="relative pt-3 pb-8 lg:pt-5 lg:pb-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
           <div className="order-1 lg:order-1 z-10 lg:pr-4">
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-3">
               <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#5BBF43] bg-white text-[#5BBF43] shadow-xs shrink-0">
                 <FaBolt size={15} />
               </span>
@@ -134,7 +133,7 @@ function HomeHero() {
               </p>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-[38px] xl:text-[42px] font-black leading-[1.14] text-[#06152B] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-black leading-[1.1] text-[#06152B] tracking-tight">
               India&apos;s Most Trusted
               <span className="block mt-0.5">
                 <span className="text-[#5BBF43]">Electric Rickshaw</span>{" "}
@@ -142,23 +141,23 @@ function HomeHero() {
               </span>
             </h2>
 
-            <p className="mt-3.5 text-sm sm:text-[15px] lg:text-[14px] text-[#4A5568] leading-relaxed max-w-[520px] font-medium">
+            <p className="mt-3 text-sm sm:text-[15px] lg:text-[14px] text-[#4A5568] leading-relaxed max-w-[520px] font-medium">
               NEV Vehicles is committed to delivering reliable, high-performance
               electric rickshaws that empower livelihoods and build a cleaner,
               greener tomorrow.
             </p>
 
-            <div className="mt-3 mb-5 h-[2.5px] w-10 rounded-full bg-[#5BBF43]" />
+            <div className="mt-3 mb-4 h-[2.5px] w-10 rounded-full bg-[#5BBF43]" />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-[500px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-[500px]">
               {featureCards.map((item) => (
                 <FeatureCard item={item} key={item.title} />
               ))}
             </div>
           </div>
 
-          <div className="order-2 lg:order-2 relative mt-6 lg:mt-0 flex justify-center lg:justify-end items-center z-10">
-            <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-[560px] aspect-square">
+          <div className="order-2 lg:order-2 relative mt-3 lg:mt-0 flex justify-center lg:justify-end items-center z-10">
+            <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-[560px] aspect-[1.14/1]">
               <div className="absolute -top-4 right-3 z-0 grid grid-cols-6 gap-2 pointer-events-none">
                 {Array.from({ length: 24 }).map((_, i) => (
                   <span key={i} className="h-1.5 w-1.5 rounded-full bg-[#5BBF43]" />
@@ -188,9 +187,9 @@ function HomeHero() {
           </div>
         </div>
 
-        <div className="relative z-30 mt-10 lg:mt-8">
-          <div className="mx-auto max-w-[1240px] rounded-2xl border border-[#E3EAF1] bg-white p-4 sm:p-5 shadow-[0_12px_32px_rgba(6,21,43,0.06)]">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-0 md:divide-x md:divide-[#E3EAF1]">
+        <div className="relative z-30 mt-6 lg:mt-5">
+          <div className="mx-auto max-w-[1240px] rounded-2xl border border-[#E3EAF1] bg-white p-3 sm:p-4 shadow-[0_12px_32px_rgba(6,21,43,0.06)]">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0 md:divide-x md:divide-[#E3EAF1]">
               {mobilityHighlights.map((item) => (
                 <MobilityHighlight item={item} key={item.title} />
               ))}
@@ -206,11 +205,11 @@ function FeatureCard({ item }) {
   const Icon = item.icon;
 
   return (
-    <article className="group rounded-xl border border-[#E3EAF1] bg-white p-3.5 shadow-[0_3px_12px_rgba(6,21,43,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5BBF43]/50 hover:shadow-[0_8px_20px_rgba(6,21,43,0.08)]">
-      <div className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-[#5BBF43] bg-white text-[#5BBF43] transition-colors duration-300 group-hover:bg-[#5BBF43] group-hover:text-white">
+    <article className="group rounded-xl border border-[#E3EAF1] bg-white p-3 shadow-[0_3px_12px_rgba(6,21,43,0.04)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[#5BBF43]/50 hover:shadow-[0_8px_20px_rgba(6,21,43,0.08)]">
+      <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#5BBF43] bg-white text-[#5BBF43] transition-colors duration-300 group-hover:bg-[#5BBF43] group-hover:text-white">
         <Icon size={15} />
       </div>
-      <div className="mt-3 min-w-0">
+      <div className="mt-2.5 min-w-0">
         <h3 className="text-sm font-extrabold text-[#06152B] leading-snug">
           {item.title}
         </h3>

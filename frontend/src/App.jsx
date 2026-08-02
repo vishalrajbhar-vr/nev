@@ -31,8 +31,10 @@ import Aboute from "./web/pages/about/About";
 function App() {
   return (
     <Router>
-      <TopHeader />
-      <MainHeader />
+      <div className="sticky top-0 z-[60]">
+        <TopHeader />
+        <MainHeader />
+      </div>
 
       <Routes>
         <Route path="/" element={<Home />} />

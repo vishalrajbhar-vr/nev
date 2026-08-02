@@ -19,7 +19,7 @@ const models = [
     speed: "25 km/h",
     range: "80-100 km",
     charging: "4-5 Hours",
-    href: "#contact",
+    href: "/butterfly-ms",
   },
   {
     name: "L3 Butterfly SS",
@@ -31,7 +31,7 @@ const models = [
     speed: "25 km/h",
     range: "80-100 km",
     charging: "4-5 Hours",
-    href: "#contact",
+    href: "/butterfly-ss",
   },
   {
     name: "L5 Butterfly 6+1",
@@ -43,7 +43,7 @@ const models = [
     speed: "33 km/h",
     range: "110 km Range",
     charging: "4-5 Hours",
-    href: "#contact",
+    href: "/l5-butterfly-6-plus-1",
   },
   {
     name: "L5 Front Facia",
@@ -55,7 +55,7 @@ const models = [
     speed: "33 km/h",
     range: "110-120 km",
     charging: "4-5 Hours",
-    href: "#contact",
+    href: "/l5-front-facia",
   },
   {
     name: "L5 Ultra Loader",
@@ -67,7 +67,7 @@ const models = [
     speed: "48 km/h",
     range: "100-110 km",
     charging: "4-5 Hours",
-    href: "/products/khalsa-cargo",
+    href: "/l5-ultra-loader",
   },
   {
     name: "L5",
@@ -79,7 +79,7 @@ const models = [
     speed: "48 km/h",
     range: "90-100 km",
     charging: "4-5 Hours",
-    href: "#contact",
+    href: "/l5-eco-6-plus-1",
   },
 ];
 
@@ -169,7 +169,7 @@ function ModelCard({ model }) {
           <img
             src={model.image}
             alt={model.name}
-            className="block h-full w-full object-contain object-center drop-shadow-[0_12px_13px_rgba(6,21,43,0.24)] transition-transform duration-300 group-hover:scale-[1.03]"
+            className="block h-full w-full scale-[1.70] object-contain object-center drop-shadow-[0_12px_13px_rgba(6,21,43,0.24)] transition-transform duration-300 group-hover:scale-[1.34]"
           />
         </div>
       </div>
