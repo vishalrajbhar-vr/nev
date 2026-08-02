@@ -100,36 +100,43 @@ function WhyChooseUs() {
 
             <div
               key={item.id}
-              className="group bg-[#f8fbf9] rounded-3xl p-8 border border-transparent hover:border-[#5BBF43] hover:-translate-y-3 hover:shadow-2xl transition-all duration-500"
+              className="group relative overflow-hidden rounded-[30px] border border-gray-100 bg-white p-8 shadow-[0_15px_45px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:border-[#5BBF43]/40 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]"
             >
 
-              {/* Icon */}
+              {/* Background Glow */}
+              <div className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#5BBF43]/10 blur-3xl group-hover:scale-125 transition duration-700"></div>
 
+              {/* Decorative Circle */}
+              <div className="absolute -bottom-10 -left-10 w-28 h-28 rounded-full border border-[#5BBF43]/10 group-hover:scale-125 transition duration-700"></div>
+
+              {/* Animated Top Border */}
+              <div className="absolute left-0 top-0 h-1 w-0 bg-gradient-to-r from-[#5BBF43] to-[#293F8F] transition-all duration-500 group-hover:w-full"></div>
+
+              {/* Icon */}
               <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl ${item.color} group-hover:scale-110 transition duration-300`}
+                className={`relative z-10 w-20 h-20 rounded-3xl flex items-center justify-center text-4xl shadow-lg transition duration-500 group-hover:scale-110 group-hover:rotate-6 ${item.color}`}
               >
                 {item.icon}
               </div>
 
               {/* Title */}
-
-              <h3 className="text-2xl font-bold text-[#071426] mt-6 group-hover:text-[#5BBF43] transition">
-
+              <h3 className="relative z-10 text-2xl font-bold text-[#071426] mt-7 group-hover:text-[#5BBF43] transition">
                 {item.title}
-
               </h3>
 
-              {/* Line */}
-
-              <div className="w-16 h-1 rounded-full bg-[#5BBF43] mt-4"></div>
+              {/* Accent Line */}
+              <div className="relative z-10 w-16 h-1 rounded-full bg-[#5BBF43] mt-4 transition-all duration-500 group-hover:w-28"></div>
 
               {/* Description */}
-
-              <p className="text-gray-600 leading-7 mt-5">
-
+              <p className="relative z-10 text-gray-600 leading-8 mt-5">
                 {item.description}
-
               </p>
+
+              {/* Bottom Accent */}
+              <div className="relative z-10 mt-7 flex items-center gap-3 text-[#5BBF43] font-semibold text-sm">
+                <div className="w-10 h-[2px] bg-[#5BBF43]"></div>
+                Learn More
+              </div>
 
             </div>
 

@@ -38,48 +38,83 @@ function OurMission() {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
 
-          {/* Mission */}
+          {/* ================= Mission ================= */}
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:-translate-y-2 transition duration-300">
+          <div className="group relative overflow-hidden rounded-[30px] border border-green-100 bg-white p-8 shadow-[0_15px_45px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
 
-            <div className="w-16 h-16 rounded-2xl bg-green-100 text-[#5BBF43] flex items-center justify-center text-3xl">
+            {/* Background Glow */}
 
+            <div className="absolute -top-20 -right-20 w-44 h-44 rounded-full bg-[#5BBF43]/10 blur-3xl group-hover:scale-125 transition duration-700"></div>
+
+            {/* Top Line */}
+
+            <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] transition-all duration-500 group-hover:w-full"></div>
+
+            {/* Icon */}
+
+            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#74d75b] text-white text-4xl shadow-lg transition duration-500 group-hover:rotate-6 group-hover:scale-110">
               <FaBullseye />
-
             </div>
 
-            <h3 className="text-3xl font-bold text-[#071426] mt-6">
+            {/* Heading */}
+
+            <h3 className="relative z-10 mt-7 text-3xl font-bold text-[#071426]">
               Our Mission
             </h3>
 
-            <p className="text-gray-600 leading-8 mt-5">
-              To deliver high-performance electric vehicles that inspire confidence through
-              exceptional quality, cutting-edge innovation, and eco-conscious engineering.
-              We are committed to making sustainable mobility accessible while driving positive
-              change for our customers, communities, and the environment.
+            <p className="relative z-10 mt-5 leading-8 text-gray-600">
+              To deliver high-performance electric vehicles that inspire confidence
+              through exceptional quality, cutting-edge innovation and
+              eco-conscious engineering. We are committed to making sustainable
+              mobility accessible while driving positive change for our customers,
+              communities and the environment.
             </p>
+
+            {/* Bottom Accent */}
+
+            <div className="relative z-10 mt-8 flex items-center gap-3 text-[#5BBF43] font-semibold">
+              <div className="h-[2px] w-12 bg-[#5BBF43]"></div>
+              Sustainable Future
+            </div>
 
           </div>
 
-          {/* Vision */}
+          {/* ================= Vision ================= */}
 
-          <div className="bg-white rounded-3xl p-8 shadow-lg hover:-translate-y-2 transition duration-300">
+          <div className="group relative overflow-hidden rounded-[30px] border border-blue-100 bg-white p-8 shadow-[0_15px_45px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
 
-            <div className="w-16 h-16 rounded-2xl bg-blue-100 text-[#293F8F] flex items-center justify-center text-3xl">
+            {/* Background Glow */}
 
+            <div className="absolute -top-20 -right-20 w-44 h-44 rounded-full bg-[#293F8F]/10 blur-3xl group-hover:scale-125 transition duration-700"></div>
+
+            {/* Top Line */}
+
+            <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] transition-all duration-500 group-hover:w-full"></div>
+
+            {/* Icon */}
+
+            <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#5167c7] text-white text-4xl shadow-lg transition duration-500 group-hover:rotate-6 group-hover:scale-110">
               <FaEye />
-
             </div>
 
-            <h3 className="text-3xl font-bold text-[#071426] mt-6">
+            {/* Heading */}
+
+            <h3 className="relative z-10 mt-7 text-3xl font-bold text-[#071426]">
               Our Vision
             </h3>
 
-            <p className="text-gray-600 leading-8 mt-5">
-
-              To shape the future of mobility with innovative electric vehicles that combine superior quality, striking design,
-              and sustainable technology leading to a cleaner, safer, and greener tomorrow.
+            <p className="relative z-10 mt-5 leading-8 text-gray-600">
+              To shape the future of mobility with innovative electric vehicles
+              that combine superior quality, striking design and sustainable
+              technology, leading to a cleaner, safer and greener tomorrow.
             </p>
+
+            {/* Bottom Accent */}
+
+            <div className="relative z-10 mt-8 flex items-center gap-3 text-[#293F8F] font-semibold">
+              <div className="h-[2px] w-12 bg-[#293F8F]"></div>
+              Innovation & Excellence
+            </div>
 
           </div>
 
@@ -87,97 +122,127 @@ function OurMission() {
 
         {/* ================= Core Values ================= */}
 
-        <div>
+       <div>
 
-          <h3 className="text-3xl font-bold text-center text-[#071426] mb-12">
-            Our Core Values
-          </h3>
+  {/* Heading */}
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+  <div className="text-center mb-16">
 
-            {/* Value */}
+    <span className="inline-flex items-center px-5 py-2 rounded-full bg-[#5BBF43]/10 text-[#5BBF43] font-semibold border border-[#5BBF43]/20">
+      Our Foundation
+    </span>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+    <h3 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#071426]">
+      Our Core
+      <span className="text-[#5BBF43]"> Values</span>
+    </h3>
 
-              <div className="w-16 h-16 mx-auto rounded-full bg-green-100 text-[#5BBF43] flex items-center justify-center text-3xl">
+    <p className="mt-5 text-gray-600 max-w-2xl mx-auto leading-8">
+      Every electric vehicle we build is driven by strong values that inspire
+      innovation, sustainability and customer trust.
+    </p>
 
-                <FaLeaf />
+  </div>
 
-              </div>
+  {/* Cards */}
 
-              <h4 className="text-xl font-bold text-[#071426] mt-5">
-                Sustainability
-              </h4>
+  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-              <p className="text-gray-600 mt-3 text-sm leading-7">
-                Promoting clean energy and reducing environmental impact.
-              </p>
+    {/* ================= Card 1 ================= */}
 
-            </div>
+    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
 
-            {/* Value */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#5BBF43]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+      <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 text-[#293F8F] flex items-center justify-center text-3xl">
+      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+        <FaLeaf />
+      </div>
 
-                <FaBolt />
+      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+        Sustainability
+      </h4>
 
-              </div>
+      <p className="relative mt-4 text-gray-600 leading-8">
+        Promoting clean energy while reducing environmental impact for a
+        greener tomorrow.
+      </p>
 
-              <h4 className="text-xl font-bold text-[#071426] mt-5">
-                Innovation
-              </h4>
+    </div>
 
-              <p className="text-gray-600 mt-3 text-sm leading-7">
-                Developing advanced EV technology for better mobility.
-              </p>
+    {/* ================= Card 2 ================= */}
 
-            </div>
+    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
 
-            {/* Value */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#293F8F]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+      <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="w-16 h-16 mx-auto rounded-full bg-green-100 text-[#5BBF43] flex items-center justify-center text-3xl">
+      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+        <FaBolt />
+      </div>
 
-                <FaHandshake />
+      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+        Innovation
+      </h4>
 
-              </div>
+      <p className="relative mt-4 text-gray-600 leading-8">
+        Developing advanced EV technology for smarter, safer and more
+        efficient mobility.
+      </p>
 
-              <h4 className="text-xl font-bold text-[#071426] mt-5">
-                Integrity
-              </h4>
+    </div>
 
-              <p className="text-gray-600 mt-3 text-sm leading-7">
-                Building trust through honesty, quality and transparency.
-              </p>
+    {/* ================= Card 3 ================= */}
 
-            </div>
+    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
 
-            {/* Value */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#5BBF43]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-md hover:shadow-xl hover:-translate-y-2 transition">
+      <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="w-16 h-16 mx-auto rounded-full bg-blue-100 text-[#293F8F] flex items-center justify-center text-3xl">
+      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+        <FaHandshake />
+      </div>
 
-                <FaShieldAlt />
+      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+        Integrity
+      </h4>
 
-              </div>
+      <p className="relative mt-4 text-gray-600 leading-8">
+        Building trust through honesty, transparency and unwavering
+        commitment to quality.
+      </p>
 
-              <h4 className="text-xl font-bold text-[#071426] mt-5">
-                Reliability
-              </h4>
+    </div>
 
-              <p className="text-gray-600 mt-3 text-sm leading-7">
-                Delivering dependable products with long-lasting performance.
-              </p>
+    {/* ================= Card 4 ================= */}
 
-            </div>
+    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
 
-          </div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#293F8F]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-        </div>
+      <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
+
+      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+        <FaShieldAlt />
+      </div>
+
+      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+        Reliability
+      </h4>
+
+      <p className="relative mt-4 text-gray-600 leading-8">
+        Delivering dependable products engineered for long-lasting
+        performance and safety.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
 
       </div>
     </section>

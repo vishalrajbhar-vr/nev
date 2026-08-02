@@ -472,6 +472,7 @@ const ProductAnimation = () => {
     container.addEventListener("mouseenter", handleMouseEnter);
     container.addEventListener("mouseleave", handleMouseLeave);
 
+    
     let animId;
     const animate = () => {
       // Smooth interpolation

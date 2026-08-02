@@ -4,7 +4,6 @@ import {
   FaArrowRight,
   FaBatteryFull,
   FaBolt,
-  FaCarSide,
   FaGaugeHigh,
   FaUsers,
 } from "react-icons/fa6";
@@ -73,22 +72,12 @@ const models = [
 ];
 
 function ModelsSlider() {
-  const [activeCategory, setActiveCategory] = useState("All Models");
   const [firstCard, setFirstCard] = useState(0);
-  const categories = ["All Models", "Passenger", "Cargo"];
-  const visibleModels =
-    activeCategory === "All Models"
-      ? models
-      : models.filter((model) => model.type === activeCategory);
+  const visibleModels = models;
   const displayedModels = Array.from(
     { length: Math.min(4, visibleModels.length) },
     (_, index) => visibleModels[(firstCard + index) % visibleModels.length],
   );
-
-  const changeCategory = (category) => {
-    setActiveCategory(category);
-    setFirstCard(0);
-  };
 
   const moveCards = (direction) => {
     setFirstCard(
@@ -117,24 +106,6 @@ function ModelsSlider() {
           <p className="mt-2 text-sm font-medium text-[#64748B] sm:text-base">
             Explore electric rickshaw models designed for daily earnings and dependable mobility.
           </p>
-        </div>
-
-        <div className="mt-7 flex flex-wrap justify-center gap-3">
-          {categories.map((category) => (
-            <button
-              key={category}
-              type="button"
-              onClick={() => changeCategory(category)}
-              className={`inline-flex min-w-32 items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-extrabold transition-colors ${
-                activeCategory === category
-                  ? "bg-[#169B47] text-white shadow-[0_8px_16px_rgba(22,155,71,0.24)]"
-                  : "bg-white text-[#142033] shadow-[0_4px_14px_rgba(6,21,43,0.08)] hover:bg-[#EFF9F0]"
-              }`}
-            >
-              {category === "Passenger" ? <FaUsers /> : category === "Cargo" ? <FaCarSide /> : <FaBolt />}
-              {category}
-            </button>
-          ))}
         </div>
 
         <div className="mt-8 flex items-center justify-end gap-2">
