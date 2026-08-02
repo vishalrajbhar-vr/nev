@@ -56,7 +56,11 @@ const GALLERY_IMAGES = [
    SPECS DATA
 =================================================================== */
 const specs = [
-  { icon: <Gauge size={22} />, title: "Engine Power", value: "6.5 KW Continuous Torque" },
+  {
+    icon: <Gauge size={22} />,
+    title: "Engine Power",
+    value: "6.5 KW Continuous Torque",
+  },
   { icon: <Wind size={22} />, title: "Top Speed", value: "48KMPH" },
   { icon: <CircleGauge size={22} />, title: "Wheel Base", value: "2274 mm" },
   { icon: <Settings size={22} />, title: "Ground Clearance", value: "180 mm" },
@@ -693,16 +697,17 @@ const L5DLXPassenger = () => {
 
               {/* Title */}
               <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
-                
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
-                L5 DLX Passenger 3 Plus 1
+                  L5 DLX Passenger 3 Plus 1
                 </span>
               </h1>
 
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The L5 DLX Passenger 3 Plus 1 delivers smooth passenger mobility, fuel-efficient performance, and dependable comfort for city and rural routes.
+                Power your journey with confidence. The L5 DLX Passenger 3 Plus
+                1 delivers smooth passenger mobility, fuel-efficient
+                performance, and dependable comfort for city and rural routes.
               </p>
 
               {/* CTA Buttons */}
@@ -850,7 +855,12 @@ const L5DLXPassenger = () => {
 
               {/* description */}
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Experience next-generation mobility with the NEV L5 DLX Passenger 3 Plus 1 — a durable, high-performance electric auto rickshaw designed for comfortable passenger transportation. Featuring spacious 3+1 seating, reliable performance, low maintenance, and excellent battery efficiency, it delivers smooth, safe, and cost-effective rides every day.
+                Experience next-generation mobility with the NEV L5 DLX
+                Passenger 3 Plus 1 — a durable, high-performance electric auto
+                rickshaw designed for comfortable passenger transportation.
+                Featuring spacious 3+1 seating, reliable performance, low
+                maintenance, and excellent battery efficiency, it delivers
+                smooth, safe, and cost-effective rides every day.
               </p>
 
               {/* highlight tags */}
@@ -887,14 +897,14 @@ const L5DLXPassenger = () => {
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <ChartNoAxesCombined className=" text-green-500" size={25}/>
+                  <ChartNoAxesCombined className=" text-green-500" size={25} />
                   <div>
                     <h1 className="text-xl font-bold">25 </h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
-                  <Users className=" text-green-500" size={25}/>
+                  <Users className=" text-green-500" size={25} />
                   <div>
                     <h1 className="text-xl font-bold">4+</h1>
                     <p className="text-md font-semibold">SEATER</p>
@@ -1028,11 +1038,19 @@ const L5DLXPassenger = () => {
           <table className="min-w-full border-collapse">
             <thead>
               <tr className="bg-[#042c58] text-white text-sm">
-                <th className="px-4 py-3 font-semibold">MODELS WITH BATTERY AH</th>
+                <th className="px-4 py-3 font-semibold">
+                  MODELS WITH BATTERY AH
+                </th>
                 <th className="px-4 py-3 font-semibold">RANGE KM</th>
-                <th className="px-4 py-3 font-semibold">MOTOR CONTROLLER WARRANTY</th>
-                <th className="px-4 py-3 font-semibold">CHASSIS / PAINT WARRANTY</th>
-                <th className="px-4 py-3 font-semibold">BATTERY CHARGER WARRANTY</th>
+                <th className="px-4 py-3 font-semibold">
+                  MOTOR CONTROLLER WARRANTY
+                </th>
+                <th className="px-4 py-3 font-semibold">
+                  CHASSIS / PAINT WARRANTY
+                </th>
+                <th className="px-4 py-3 font-semibold">
+                  BATTERY CHARGER WARRANTY
+                </th>
                 <th className="px-4 py-3 font-semibold">PRICE INC GST</th>
               </tr>
             </thead>
@@ -1144,8 +1162,8 @@ const L5DLXPassenger = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the drivers and operators who trust L5 DLX Passenger 3 Plus 1 for
-              their toughest routes.
+              Hear from the drivers and operators who trust L5 DLX Passenger 3
+              Plus 1 for their toughest routes.
             </p>
           </div>
 
