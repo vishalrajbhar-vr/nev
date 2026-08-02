@@ -47,7 +47,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/MODEL L5 ULTRA LOADER.png"
+  "/images/l5-ultra-loader.png"
 ];
 
 /* ===================================================================
@@ -541,9 +541,9 @@ const ProductAnimation = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ transform: "translateZ(40px)" }}
             >
-              <div className="relative w-[120%] h-[120%] -mt-15 flex items-center justify-center">
+              <div className="relative w-[90%] h-[90%] -mt-10 flex items-center justify-center">
                 <img
-                  src="/images/MODEL L5 ULTRA LOADER.png"
+                  src="/images/l5-ultra-loader.png"
                   alt="L5 Ultra Loader"
                   className="w-full h-full object-contain p-4 drop-shadow-2xl"
                   style={{

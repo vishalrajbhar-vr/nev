@@ -46,7 +46,7 @@ import {
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
 const GALLERY_IMAGES = [
-  "/images/single light.png",
+  "/images/single-light.png",
 ];
 
 /* ===================================================================
@@ -539,11 +539,11 @@ const ProductAnimation = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ transform: "translateZ(40px)" }}
             >
-              <div className="relative w-[135%] h-[135%] flex items-center justify-center">
+              <div className="relative w-[130%] h-[130%] flex items-center justify-center">
                 <img
-                  src="/images/single light.png"
+                  src="/images/single-light.png"
                   alt="NEV Singlelight Electric Scooter"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="h-[130%] w-[130%] -mt-15 object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -895,7 +895,7 @@ const Singlelight = () => {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 {/* sliding track */}
                 <div
-                  className="flex py-2 -mt-18 h-[140%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center justify-center -mt-15 py-2  h-[130%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -903,7 +903,7 @@ const Singlelight = () => {
                       key={src}
                       src={src}
                       alt={`Singlelight view ${i + 1}`}
-                      className="w-full h-full  flex-shrink-0 object-contain"
+                      className="w-[120%] h-[120%] -mt-10 flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>
