@@ -3,17 +3,17 @@ import React from "react";
 const galleryImages = [
   {
     id: 1,
-    image: "/images/NEV.png",
+    image: "/1.png",
     title: "NEV Electric Vehicle",
   },
   {
     id: 2,
-    image: "/images/NEA.png",
+    image: "/images/double-light.png",
     title: "Electric Auto",
   },
   {
     id: 3,
-    image: "/images/NEC.png",
+    image: "/3.png",
     title: "Cargo EV",
   },
   {
@@ -23,22 +23,22 @@ const galleryImages = [
   },
   {
     id: 5,
-    image: "/images/MODEL L5.png",
+    image: "/5.png",
     title: "Model L5",
   },
   {
     id: 6,
-    image: "/images/MODEL L3 BUTTERFLY MS.png",
+    image: "/images/u-light.png",
     title: "Butterfly MS",
   },
   {
     id: 7,
-    image: "/images/ECO 6+1.png",
+    image: "/images/single-light.png",
     title: "ECO 6+1",
   },
   {
     id: 8,
-    image: "/images/ACTIVA.png",
+    image: "/hero_scene_preview_nobg.png",
     title: "Activa EV",
   },
 ];
