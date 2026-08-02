@@ -47,7 +47,7 @@ function Enquiry() {
 
         {/* ================= LEFT SCOOTY ================= */}
         <img
-          src="/15_transparent.png"
+          src="/tvs.jpg"
           alt="Electric Scooty"
           className="
           hidden xl:block
@@ -401,7 +401,7 @@ function Enquiry() {
 
       {/* ================= EXPLORE ELECTRIC MOBILITY SECTION ================= */}
 
-      <section className="relative bg-[#071426] py-10 md:py-12 overflow-hidden">
+      <section className="relative bg-white py-10 md:py-12 overflow-hidden">
 
         {/* Decorative Elements */}
         <div className="absolute top-6 left-8 w-20 h-20 border border-green-500/10 rounded-full"></div>
@@ -433,7 +433,7 @@ function Enquiry() {
 
 
             {/* Main Heading */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-black leading-tight">
 
               Explore Electric Mobility
               <span className="block text-green-400">
