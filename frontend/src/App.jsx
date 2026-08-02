@@ -22,6 +22,10 @@ import ULight from "./web/pages/Products/ULight";
 import N1 from "./web/pages/Products/N1";
 import Photos from "./web/pages/Gallery/Photos";
 import Videos from "./web/pages/Gallery/Videos";
+import Aboute from "./web/pages/about/About";
+
+
+
 
 
 function App() {
@@ -48,6 +52,7 @@ function App() {
         <Route path="/u-light" element={<ULight />} />
         <Route path="/n1" element={<N1 />} />
         <Route path="/activa" element={<Activa/>} />
+        <Route path="/about" element={<Aboute/>} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
