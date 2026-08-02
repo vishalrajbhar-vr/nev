@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaArrowRight, FaLeaf } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const container = {
   hidden: {},
@@ -27,7 +28,7 @@ const fadeUp = {
 
 function AboutHero() {
   return (
-   <section className="relative overflow-hidden bg-[#071426] py-2 lg:py-4">
+    <section className="relative overflow-hidden bg-[#071426] py-2 lg:py-4">
 
       {/* ================= Background Glow ================= */}
 
@@ -105,7 +106,10 @@ function AboutHero() {
               </button>
 
               <button className="border border-white/30 hover:bg-white hover:text-[#071426] transition text-white px-7 py-3 rounded-xl font-semibold">
-                Contact Us
+               
+                <Link to="/contact" >
+                 Contact Us
+                </Link>
               </button>
             </motion.div>
           </motion.div>
@@ -116,7 +120,7 @@ function AboutHero() {
 
             {/* Fixed Circle */}
 
-           <div className="absolute w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#5BBF43]/10 border border-[#5BBF43]/20" />
+            <div className="absolute w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#5BBF43]/10 border border-[#5BBF43]/20" />
             {/* ================= Car Shadow ================= */}
 
             <motion.div
@@ -152,7 +156,7 @@ function AboutHero() {
               whileHover={{
                 scale: 1.03,
               }}
-            className="relative z-20 w-[260px] md:w-[320px] lg:w-[370px] cursor-pointer select-none"
+              className="relative z-20 w-[260px] md:w-[320px] lg:w-[370px] cursor-pointer select-none"
             />
 
             {/* ================= Headlight Glow ================= */}
