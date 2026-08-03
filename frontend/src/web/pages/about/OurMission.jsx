@@ -58,11 +58,11 @@ function OurMission() {
 
             {/* Heading */}
 
-            <h3 className="relative z-10 mt-7 text-3xl font-bold text-[#071426]">
+            <h3 className="relative z-10 mt-3 text-3xl font-bold text-[#071426]">
               Our Mission
             </h3>
 
-            <p className="relative z-10 mt-5 leading-8 text-gray-600">
+            <p className="relative z-10 mt-3 leading-8 text-gray-700">
               To deliver high-performance electric vehicles that inspire confidence
               through exceptional quality, cutting-edge innovation and
               eco-conscious engineering. We are committed to making sustainable
@@ -99,11 +99,11 @@ function OurMission() {
 
             {/* Heading */}
 
-            <h3 className="relative z-10 mt-7 text-3xl font-bold text-[#071426]">
+            <h3 className="relative z-10 mt-3 text-3xl font-bold text-[#071426]">
               Our Vision
             </h3>
 
-            <p className="relative z-10 mt-5 leading-8 text-gray-600">
+            <p className="relative z-10 mt-3 leading-8 text-gray-700">
               To shape the future of mobility with innovative electric vehicles
               that combine superior quality, striking design and sustainable
               technology, leading to a cleaner, safer and greener tomorrow.
@@ -156,15 +156,15 @@ function OurMission() {
 
               <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <FaLeaf />
               </div>
 
-              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+              <h4 className="relative mt-3 text-2xl font-bold text-[#071426]">
                 Sustainability
               </h4>
 
-              <p className="relative mt-4 text-gray-600 leading-8">
+              <p className="relative mt-2 text-gray-600 leading-8">
                 Promoting clean energy while reducing environmental impact for a
                 greener tomorrow.
               </p>
@@ -179,15 +179,15 @@ function OurMission() {
 
               <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <FaBolt />
               </div>
 
-              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+              <h4 className="relative mt-3 text-2xl font-bold text-[#071426]">
                 Innovation
               </h4>
 
-              <p className="relative mt-4 text-gray-600 leading-8">
+              <p className="relative mt-2 text-gray-600 leading-8">
                 Developing advanced EV technology for smarter, safer and more
                 efficient mobility.
               </p>
@@ -202,15 +202,15 @@ function OurMission() {
 
               <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <FaHandshake />
               </div>
 
-              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+              <h4 className="relative mt-3 text-2xl font-bold text-[#071426]">
                 Integrity
               </h4>
 
-              <p className="relative mt-4 text-gray-600 leading-8">
+              <p className="relative mt-2 text-gray-600 leading-8">
                 Building trust through honesty, transparency and unwavering
                 commitment to quality.
               </p>
@@ -225,15 +225,15 @@ function OurMission() {
 
               <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
 
-              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+              <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
                 <FaShieldAlt />
               </div>
 
-              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+              <h4 className="relative mt-3 text-2xl font-bold text-[#071426]">
                 Reliability
               </h4>
 
-              <p className="relative mt-4 text-gray-600 leading-8">
+              <p className="relative mt-2 text-gray-600 leading-8">
                 Delivering dependable products engineered for long-lasting
                 performance and safety.
               </p>

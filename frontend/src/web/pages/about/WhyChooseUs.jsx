@@ -100,7 +100,7 @@ function WhyChooseUs() {
 
             <div
               key={item.id}
-              className="group relative overflow-hidden rounded-[30px] border border-gray-100 bg-white p-8 shadow-[0_15px_45px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:border-[#5BBF43]/40 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]"
+              className="group relative overflow-hidden rounded-[30px] border border-gray-100 bg-white p-6 shadow-[0_15px_45px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:border-[#5BBF43]/40 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]"
             >
 
               {/* Background Glow */}
@@ -114,7 +114,7 @@ function WhyChooseUs() {
 
               {/* Icon */}
               <div
-                className={`relative z-10 w-20 h-20 rounded-3xl flex items-center justify-center text-4xl shadow-lg transition duration-500 group-hover:scale-110 group-hover:rotate-6 ${item.color}`}
+                className={`relative z-10 w-16 h-16 rounded-3xl flex items-center justify-center text-4xl shadow-lg transition duration-500 group-hover:scale-110 group-hover:rotate-6 ${item.color}`}
               >
                 {item.icon}
               </div>
@@ -128,12 +128,12 @@ function WhyChooseUs() {
               <div className="relative z-10 w-16 h-1 rounded-full bg-[#5BBF43] mt-4 transition-all duration-500 group-hover:w-28"></div>
 
               {/* Description */}
-              <p className="relative z-10 text-gray-600 leading-8 mt-5">
+              <p className="relative z-10 text-gray-600 leading-8 mt-3">
                 {item.description}
               </p>
 
               {/* Bottom Accent */}
-              <div className="relative z-10 mt-4 flex items-center gap-3 text-[#5BBF43] font-semibold text-sm">
+              <div className="relative z-10 mt-2 flex items-center gap-3 text-[#5BBF43] font-semibold text-sm">
                 <div className="w-10 h-[2px] bg-[#5BBF43]"></div>
                 Learn More
               </div>
