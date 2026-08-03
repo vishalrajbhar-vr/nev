@@ -79,11 +79,6 @@ const buildEmailHtml = (type, data) => {
               </td>
             </tr>
             <tr>
-              <td style="padding:20px 32px 28px">
-                <div style="padding:16px 18px;background:#f1faee;border-left:4px solid #5bbf43;border-radius:6px;color:#31523a;font-size:13px;line-height:1.6">Reply directly to this email to contact the visitor at their submitted email address.</div>
-              </td>
-            </tr>
-            <tr>
               <td style="padding:20px 32px;background:#071426;color:#9eb0c3;text-align:center;font-size:12px;line-height:1.6">
                 <strong style="color:#ffffff">NEV Navgatee</strong><br>
                 Smart Electric Mobility Solutions<br>

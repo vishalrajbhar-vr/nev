@@ -13,7 +13,10 @@ if (process.env.NODE_ENV === "production") {
 
 export const env = {
   port: Number(process.env.PORT || 5000),
-  clientUrl: process.env.CLIENT_URL || "http://localhost:5173",
+  clientUrls: (process.env.CLIENT_URL || "http://localhost:5173")
+    .split(",")
+    .map((url) => url.trim())
+    .filter(Boolean),
   mongoUri: process.env.MONGODB_URI?.trim() || null,
   mongoServerSelectionTimeoutMs: Number(process.env.MONGO_SERVER_SELECTION_TIMEOUT_MS || 10000),
   smtp: {
