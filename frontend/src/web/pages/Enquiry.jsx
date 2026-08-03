@@ -5,6 +5,7 @@ import {
   FaClock,
   FaBell,
 } from "react-icons/fa";
+import { submitForm } from "../api";
 
 function useInView(threshold = 0.15) {
   const ref = useRef(null);
@@ -38,6 +39,22 @@ function useInView(threshold = 0.15) {
 function Enquiry() {
   const { ref: stepsRef, inView: stepsInView } = useInView();
   const { ref: headerRef, inView: headerInView } = useInView();
+  const [status, setStatus] = useState({ type: "idle", message: "" });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus({ type: "loading", message: "Submitting your enquiry..." });
+
+    const formData = Object.fromEntries(new FormData(form));
+    try {
+      await submitForm("dealership", formData);
+      form.reset();
+      setStatus({ type: "success", message: "Thanks. Our EV team will contact you shortly." });
+    } catch (error) {
+      setStatus({ type: "error", message: error.message });
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -616,6 +633,7 @@ function Enquiry() {
         <div className="max-w-7xl mx-auto px-4 md:px-6">
 
           <form
+            onSubmit={handleSubmit}
             className="bg-white border border-gray-200 rounded-2xl p-6 md:p-10 shadow-lg"
           >
 
@@ -659,6 +677,8 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="name"
+                    required
                     placeholder="Enter your full name"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   />
@@ -675,6 +695,8 @@ function Enquiry() {
 
                   <input
                     type="email"
+                    name="email"
+                    required
                     placeholder="your.email@example.com"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
                   />
@@ -691,6 +713,8 @@ function Enquiry() {
 
                   <input
                     type="tel"
+                    name="phone"
+                    required
                     placeholder="Enter your phone number"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   />
@@ -720,6 +744,8 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="company"
+                    required
                     placeholder="Enter your company or firm name"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   />
@@ -735,6 +761,8 @@ function Enquiry() {
                   </label>
 
                   <select
+                    name="businessType"
+                    required
                     defaultValue=""
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
                   >
@@ -762,6 +790,8 @@ function Enquiry() {
                   </label>
 
                   <select
+                    name="yearsInBusiness"
+                    required
                     defaultValue=""
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   >
@@ -790,6 +820,7 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="currentBrands"
                     placeholder="e.g. Brand A, Brand B"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
                   />
@@ -821,6 +852,8 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="city"
+                    required
                     placeholder="Enter your city"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   />
@@ -837,6 +870,8 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="state"
+                    required
                     placeholder="Enter your state"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
                   />
@@ -853,6 +888,8 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="showroomArea"
+                    required
                     placeholder="e.g. 2000 sq.ft"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   />
@@ -869,6 +906,8 @@ function Enquiry() {
                   </label>
 
                   <select
+                    name="workshopFacility"
+                    required
                     defaultValue=""
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
                   >
@@ -895,6 +934,7 @@ function Enquiry() {
 
                   <input
                     type="text"
+                    name="salesTeamSize"
                     placeholder="e.g. 5-10 members"
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition"
                   />
@@ -910,6 +950,7 @@ function Enquiry() {
                   </label>
 
                   <select
+                    name="serviceTeamAvailability"
                     defaultValue=""
                     className="w-full h-13 px-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] outline-none focus:border-blue-600 focus:ring-2 focus:ring-blue-100 transition"
                   >
@@ -935,6 +976,7 @@ function Enquiry() {
                   </label>
 
                   <textarea
+                    name="additionalInformation"
                     rows="3"
                     placeholder="Tell us about your business, location, infrastructure or any other requirements..."
                     className="w-full px-4 py-4 rounded-lg border border-gray-300 bg-[#f8fafc] text-base md:text-lg text-[#071426] placeholder:text-gray-400 outline-none focus:border-green-600 focus:ring-2 focus:ring-green-100 transition resize-y"
@@ -950,11 +992,18 @@ function Enquiry() {
             {/* ================= SUBMIT BUTTON ================= */}
             <button
               type="submit"
+              disabled={status.type === "loading"}
               className="w-full h-14 bg-[#071426] hover:bg-green-600 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:shadow-lg flex items-center justify-center gap-2"
             >
               <span className="text-xl">✉</span>
               Submit Enquiry
             </button>
+
+            {status.type !== "idle" && (
+              <p className={status.type === "error" ? "mt-4 text-center text-red-600" : "mt-4 text-center text-green-600"}>
+                {status.message}
+              </p>
+            )}
 
           </form>
 

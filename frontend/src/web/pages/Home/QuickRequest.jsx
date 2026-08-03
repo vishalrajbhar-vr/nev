@@ -1,12 +1,21 @@
 import { useState } from "react";
 import { FaArrowRight, FaCheckCircle, FaPhoneAlt } from "react-icons/fa";
+import { submitForm } from "../../api";
 
 function QuickRequest() {
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setSubmitted(true);
+    setError("");
+    try {
+      const data = Object.fromEntries(new FormData(event.currentTarget));
+      await submitForm("callback", data);
+      setSubmitted(true);
+    } catch (requestError) {
+      setError(requestError.message);
+    }
   };
 
   return (
@@ -47,21 +56,22 @@ function QuickRequest() {
                 <div className="sm:min-w-[150px]">
                   <p className="mb-2 text-base font-bold italic">Request A Call Back</p>
                   <label className="sr-only" htmlFor="quick-name">Full Name</label>
-                  <input id="quick-name" required placeholder="Full Name" className="w-full border-b border-[#9AA5B5] bg-transparent px-1 py-2 text-sm outline-none placeholder:text-[#6F7A8B] focus:border-[#0AA451]" />
+                  <input id="quick-name" name="name" required placeholder="Full Name" className="w-full border-b border-[#9AA5B5] bg-transparent px-1 py-2 text-sm outline-none placeholder:text-[#6F7A8B] focus:border-[#0AA451]" />
                 </div>
                 <div className="sm:flex-1">
                   <label className="sr-only" htmlFor="quick-email">Email Id</label>
-                  <input id="quick-email" type="email" required placeholder="Email Id" className="w-full border-b border-[#9AA5B5] bg-transparent px-1 py-2 text-sm outline-none placeholder:text-[#6F7A8B] focus:border-[#0AA451]" />
+                  <input id="quick-email" name="email" type="email" required placeholder="Email Id" className="w-full border-b border-[#9AA5B5] bg-transparent px-1 py-2 text-sm outline-none placeholder:text-[#6F7A8B] focus:border-[#0AA451]" />
                 </div>
                 <div className="sm:flex-1">
                   <label className="sr-only" htmlFor="quick-phone">Mobile Number</label>
-                  <input id="quick-phone" type="tel" required placeholder="Mobile Number" className="w-full border-b border-[#9AA5B5] bg-transparent px-1 py-2 text-sm outline-none placeholder:text-[#6F7A8B] focus:border-[#0AA451]" />
+                  <input id="quick-phone" name="phone" type="tel" required placeholder="Mobile Number" className="w-full border-b border-[#9AA5B5] bg-transparent px-1 py-2 text-sm outline-none placeholder:text-[#6F7A8B] focus:border-[#0AA451]" />
                 </div>
                 <button type="submit" className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-sm bg-[#0AA451] px-8 text-sm font-extrabold text-white transition-colors hover:bg-[#078741] sm:w-auto">
                   Submit <FaArrowRight />
                 </button>
               </form>
             )}
+            {error && <p className="mt-2 text-sm font-semibold text-red-600">{error}</p>}
           </div>
         </div>
 

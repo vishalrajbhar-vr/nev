@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { submitForm } from "../../api";
 import {
   FaHome,
   FaChevronRight,
@@ -647,10 +648,15 @@ const L5ECO = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for your enquiry! We will get back to you shortly.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    try {
+      await submitForm("product", { ...formData, product: "L5 ECO" });
+      alert("Thank you for your enquiry! We will get back to you shortly.");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
