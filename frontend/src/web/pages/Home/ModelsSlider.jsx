@@ -99,7 +99,7 @@ function ModelsSlider() {
   };
 
   return (
-    <section id="products" className="relative overflow-hidden bg-[#F8FBFA] py-16 sm:py-20">
+    <section id="products" className="relative overflow-hidden bg-[#F8FBFA] py-10 sm:py-14 lg:py-20">
       <div className="absolute inset-x-0 top-0 h-40 bg-[radial-gradient(ellipse_at_top,rgba(91,191,67,0.12),transparent_65%)]" />
       <div className="absolute right-[8%] top-20 grid grid-cols-5 gap-2 opacity-50">
         {Array.from({ length: 20 }).map((_, index) => (
@@ -112,7 +112,7 @@ function ModelsSlider() {
           <p className="inline-flex items-center gap-2 rounded-full bg-[#169B47] px-4 py-1.5 text-xs font-extrabold uppercase tracking-wide text-white shadow-sm">
             <FaBolt /> Our Top Rated Models
           </p>
-          <h2 className="mt-3 text-3xl font-black leading-tight text-[#06152B] sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 text-2xl font-black leading-tight text-[#06152B] sm:text-4xl lg:text-5xl">
             Built for <span className="text-[#169B47]">Performance.</span> Made for India.
           </h2>
           <p className="mt-2 text-sm font-medium text-[#64748B] sm:text-base">
@@ -120,7 +120,7 @@ function ModelsSlider() {
           </p>
         </div>
 
-        <div className="mt-8 flex items-center justify-end gap-2">
+        <div className="mt-5 flex items-center justify-end gap-2 sm:mt-8">
           <SliderButton label="Previous models" onClick={() => moveCards(-1)} icon={FaArrowLeft} />
           <SliderButton label="Next models" onClick={() => moveCards(1)} icon={FaArrowRight} />
         </div>
@@ -157,7 +157,7 @@ function SliderButton({ label, onClick, icon: Icon }) {
 function ModelCard({ model }) {
   return (
     <article className="group overflow-hidden rounded-xl border border-[#DDE7E0] bg-white shadow-[0_8px_22px_rgba(6,21,43,0.08)] transition-all duration-300 hover:-translate-y-1 hover:border-[#83C992] hover:shadow-[0_16px_30px_rgba(6,21,43,0.12)]">
-      <div className="relative h-52 overflow-hidden border-b border-[#E6EEE9] bg-[#F1F7F2] sm:h-56">
+      <div className="relative h-44 overflow-hidden border-b border-[#E6EEE9] bg-[#F1F7F2] sm:h-56">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(91,191,67,0.2),transparent_58%)]" />
         <span className="absolute left-3 top-3 rounded bg-[#169B47] px-2 py-1 text-[10px] font-extrabold text-white">
           {model.label}
