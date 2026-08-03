@@ -72,7 +72,7 @@ function Contact() {
               </h3>
 
               <p className="text-gray-500 mt-3 leading-7">
-                New Delhi,
+                Nirala Nagar, Lucknow
                 <br />
                 India
               </p>
@@ -114,7 +114,7 @@ function Contact() {
               </h3>
 
               <p className="text-gray-500 mt-3">
-                info@nev.com
+                info.navgatee@gmail.com
               </p>
 
             </div>
@@ -207,7 +207,7 @@ function Contact() {
                       </h4>
 
                       <p className="text-gray-600">
-                        info@nevmotors.com
+                        info.navgatee@gmail.com
                       </p>
                     </div>
 
@@ -227,7 +227,7 @@ function Contact() {
                       </h4>
 
                       <p className="text-gray-600">
-                        New Delhi, India
+                        Nirala Nagar, Lucknow,<br /> India
                       </p>
                     </div>
 
@@ -400,9 +400,14 @@ function Contact() {
 
             <iframe
               title="Google Map - Lucknow"
-              src="https://www.google.com/maps?q=Lucknow,Uttar+Pradesh&output=embed"
-              className="w-full h-[500px]"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14235.408717303832!2d80.93110425140355!3d26.87643717669731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd86eb87f9eb%3A0x98660998b6f18ef6!2sNirala%20Nagar%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1785757951071!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              className="w-full h-[500px]"
             ></iframe>
 
           </div>

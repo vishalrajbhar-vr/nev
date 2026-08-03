@@ -4,17 +4,30 @@ import {
   FaInstagram,
   FaMapMarkerAlt,
   FaPhoneAlt,
+  FaWhatsapp,
   FaYoutube,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const logoSrc = "/images/nev-logo-with-bg.png";
 
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebookF, href: "https://www.facebook.com/nev" },
-  { label: "X", icon: FaXTwitter, href: "https://x.com/nev" },
-  { label: "YouTube", icon: FaYoutube, href: "https://www.youtube.com/nev" },
-  { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/nev" },
+  {
+    label: "Facebook",
+    icon: FaFacebookF,
+    url: "https://www.facebook.com/share/1T7zozZrY3/",
+  },
+  {
+    label: "Instagram",
+    icon: FaInstagram,
+    url: "https://www.instagram.com/navgatee?igsh=dzVyeGZ4azl0bnE0",
+  },
+  {
+    label: "WhatsApp",
+    icon: FaWhatsapp,
+    url: "#",
+  },
 ];
 
 const companyLinks = [
@@ -67,9 +80,9 @@ function Footer() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            {socialLinks.map(({ label, icon: Icon, href }) => (
-              <a
-                href={href}
+            {socialLinks.map(({ label, icon: Icon, url }) => (
+              <Link
+                to={url}
                 key={label}
                 aria-label={label}
                 target="_blank"
@@ -77,7 +90,7 @@ function Footer() {
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/80 text-white transition-all duration-300 hover:border-[#5BBF43] hover:bg-[#5BBF43] hover:text-[#182438]"
               >
                 <Icon size={16} />
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -115,7 +128,7 @@ function Footer() {
         <FooterSection title="Contact Info">
           <div className="space-y-5">
             <ContactCard icon={FaPhoneAlt} value="Toll Free: 18001210259" href="tel:18001210259" />
-            <ContactCard icon={FaEnvelope} value="info@nev.com" href="mailto:info@nev.com" />
+            <ContactCard icon={FaEnvelope} value="info.navgatee@gmail.com" href="mailto:info.navgatee@gmail.com?subject=Inquiry" />
             <ContactCard icon={FaMapMarkerAlt} value="Nirala Nagar, Lucknow," href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
           </div>
         </FooterSection>
