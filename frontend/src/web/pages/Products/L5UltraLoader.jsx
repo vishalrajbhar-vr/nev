@@ -46,9 +46,7 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = [
-  "/images/l5-ultra-loader.png"
-];
+const GALLERY_IMAGES = ["/images/l5-ultra-loader.png"];
 
 /* ===================================================================
    SPECS DATA
@@ -56,13 +54,37 @@ const GALLERY_IMAGES = [
 const specs = [
   { icon: <Zap size={22} />, title: "Power", value: "6.5KW Continuous" },
   { icon: <Wind size={22} />, title: "Top Speed", value: "48KMPH" },
-  { icon: <CircleGauge size={22} />, title: "Gradeability", value: "29% Max, 20% Continuous IP 67 Packaging" },
-  { icon: <Truck size={22} />, title: "Suspension Front", value: "Twin Shock Absorber with Spring" },
-  { icon: <Truck size={22} />, title: "Suspension Rear", value: "Differential 48 Inch" },
-  { icon: <ArrowRight size={22} />, title: "Vehicle Size", value: "L3160 X W1470 X H1880" },
-  { icon: <Thermometer size={22} />, title: "Ground Clearance", value: "180 mm" },
+  {
+    icon: <CircleGauge size={22} />,
+    title: "Gradeability",
+    value: "29% Max, 20% Continuous IP 67 Packaging",
+  },
+  {
+    icon: <Truck size={22} />,
+    title: "Suspension Front",
+    value: "Twin Shock Absorber with Spring",
+  },
+  {
+    icon: <Truck size={22} />,
+    title: "Suspension Rear",
+    value: "Differential 48 Inch",
+  },
+  {
+    icon: <ArrowRight size={22} />,
+    title: "Vehicle Size",
+    value: "L3160 X W1470 X H1880",
+  },
+  {
+    icon: <Thermometer size={22} />,
+    title: "Ground Clearance",
+    value: "180 mm",
+  },
   { icon: <Clock size={22} />, title: "Charging Time", value: "4-5 HR" },
-  { icon: <Battery size={22} />, title: "Battery Make", value: "Eastman, Trontek" },
+  {
+    icon: <Battery size={22} />,
+    title: "Battery Make",
+    value: "Eastman, Trontek",
+  },
   { icon: <Weight size={22} />, title: "Loading Capacity", value: "600 Kg" },
 ];
 
@@ -175,7 +197,7 @@ const StatCard = ({ icon, value, suffix, label }) => {
   return (
     <div
       ref={ref}
-      className="relative group bg-white/80 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/50 hover:border-blue-200/50"
+      className="relative group bg-white/80 backdrop-blur-xl rounded-2xl p-4 sm:p-5 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/50 hover:border-blue-200/50"
     >
       <div className="absolute -top-3 -right-3 w-16 h-16 bg-gradient-to-br from-blue-100 to-green-100 rounded-full blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10 flex flex-col items-center text-center">
@@ -671,7 +693,7 @@ const L5UltraLoader = () => {
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
         <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-18">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="w-full lg:w-[55%]">
@@ -697,9 +719,9 @@ const L5UltraLoader = () => {
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The L5 Ultra Loader
-                delivers smooth hauling performance, efficient operation, and
-                dependable comfort for city and rural routes.
+                Power your journey with confidence. The L5 Ultra Loader delivers
+                smooth hauling performance, efficient operation, and dependable
+                comfort for city and rural routes.
               </p>
 
               {/* CTA Buttons */}
@@ -770,7 +792,7 @@ const L5UltraLoader = () => {
       ============================================================ */}
       <section className="py-8 sm:py-15 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#2346b7] text-sm font-semibold rounded-full mb-4">
               Key Highlights
             </span>
@@ -787,34 +809,34 @@ const L5UltraLoader = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-  <FeatureCard
-    icon={<Zap size={28} />}
-    title="Powerful Electric Motor"
-    desc="High-performance electric motor designed to deliver smooth acceleration and reliable performance for heavy-duty cargo transport."
-    color="blue"
-  />
+            <FeatureCard
+              icon={<Zap size={28} />}
+              title="Powerful Electric Motor"
+              desc="High-performance electric motor designed to deliver smooth acceleration and reliable performance for heavy-duty cargo transport."
+              color="blue"
+            />
 
-  <FeatureCard
-    icon={<Battery size={28} />}
-    title="Long Battery Range"
-    desc="Advanced battery technology provides extended driving range with efficient power consumption for daily commercial operations."
-    color="green"
-  />
+            <FeatureCard
+              icon={<Battery size={28} />}
+              title="Long Battery Range"
+              desc="Advanced battery technology provides extended driving range with efficient power consumption for daily commercial operations."
+              color="green"
+            />
 
-  <FeatureCard
-    icon={<Package size={28} />}
-    title="High Load Capacity"
-    desc="Strong cargo platform with a reinforced chassis, built to carry heavy loads safely and efficiently across urban and rural routes."
-    color="amber"
-  />
+            <FeatureCard
+              icon={<Package size={28} />}
+              title="High Load Capacity"
+              desc="Strong cargo platform with a reinforced chassis, built to carry heavy loads safely and efficiently across urban and rural routes."
+              color="amber"
+            />
 
-  <FeatureCard
-    icon={<ShieldCheck size={28} />}
-    title="Strong & Durable Build"
-    desc="Heavy-duty frame, premium suspension, and durable components ensure long-lasting performance in demanding working conditions."
-    color="green"
-  />
-</div>
+            <FeatureCard
+              icon={<ShieldCheck size={28} />}
+              title="Strong & Durable Build"
+              desc="Heavy-duty frame, premium suspension, and durable components ensure long-lasting performance in demanding working conditions."
+              color="green"
+            />
+          </div>
         </div>
       </section>
 
@@ -827,7 +849,7 @@ const L5UltraLoader = () => {
         <div className="absolute -top-32 -left-20 w-72 h-72 bg-[#5BBF43]/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-[#2346b7]/20 rounded-full blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-10 lg:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
             {/* =====================================================
                 LEFT — PRODUCT INFO
@@ -836,7 +858,7 @@ const L5UltraLoader = () => {
             <div className="text-center lg:text-left">
               {/* segment badge */}
               <span className="inline-flex items-center px-4 py-1.5 rounded-full text-md sm:text-sm font-semibold text-gray-500 bg-green-400/10 border border-black/15 backdrop-blur-sm">
-                L5 Segment 
+                L5 Segment
               </span>
 
               {/* title */}
@@ -850,24 +872,28 @@ const L5UltraLoader = () => {
 
               {/* description */}
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Experience next-generation mobility with the NEV L5 Ultra Loader — a durable,
-                high-performance electric vehicle designed for efficient cargo and load transport.
-                With a rugged chassis, reliable performance, low maintenance, and excellent
-                battery efficiency, it delivers smooth, safe, and cost-effective service every day.
+                Experience next-generation mobility with the NEV L5 Ultra Loader
+                — a durable, high-performance electric vehicle designed for
+                efficient cargo and load transport. With a rugged chassis,
+                reliable performance, low maintenance, and excellent battery
+                efficiency, it delivers smooth, safe, and cost-effective service
+                every day.
               </p>
 
               {/* highlight tags */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Navigate Smarter", "Drive Greener", "Choose Ultra Loader"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:border-green-600/50 hover:text-green-400 transition-colors duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ),
-                )}
+                {[
+                  "Navigate Smarter",
+                  "Drive Greener",
+                  "Choose Ultra Loader",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:border-green-600/50 hover:text-green-400 transition-colors duration-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
               {/* CTA row */}
@@ -881,22 +907,22 @@ const L5UltraLoader = () => {
                 </a>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-                <div className="flex items-center justify-between w-full border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
+                <div className="flex items-center justify-between md:gap-1 gap-7 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <CircleGauge className=" text-green-500" size={25} />
                   <div>
                     <h1 className="text-xl font-bold">100- 110</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
+                <div className="flex items-center justify-between md:gap-5 gap-7 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <ChartNoAxesCombined className=" text-green-500" size={25} />
                   <div>
                     <h1 className="text-xl font-bold">48 </h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
-                <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
+                <div className="flex items-center justify-between md:gap-5 gap-7 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <Users className=" text-green-500" size={25} />
                   <div>
                     <h1 className="text-xl font-bold">600kg</h1>
@@ -986,7 +1012,7 @@ const L5UltraLoader = () => {
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="inline-block px-4 py-1.5 bg-green-50 text-green-600 text-sm font-semibold rounded-full mb-4">
               Specifications
             </span>
@@ -1006,7 +1032,7 @@ const L5UltraLoader = () => {
             {specs.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl border border-gray-100 hover:border-blue-200/50 shadow-sm hover:shadow-xl transition-all duration-500 p-5 sm:p-6 flex items-center justify-between hover:-translate-y-0.5"
+                className="group bg-white rounded-2xl border border-gray-100 hover:border-blue-200/50 shadow-sm hover:shadow-xl transition-all duration-500 p-3 sm:p-2 flex items-center justify-between hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 text-[#2346b7] flex items-center justify-center group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
@@ -1147,7 +1173,8 @@ const L5UltraLoader = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the drivers and operators who trust L5 Ultra Loader for their daily operations for their toughest routes.
+              Hear from the drivers and operators who trust L5 Ultra Loader for
+              their daily operations for their toughest routes.
             </p>
           </div>
 

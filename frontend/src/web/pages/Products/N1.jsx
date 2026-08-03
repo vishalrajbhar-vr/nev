@@ -651,7 +651,7 @@ const N1 = () => {
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
         <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-18">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="w-full lg:w-[55%]">
@@ -748,7 +748,7 @@ const N1 = () => {
       ============================================================ */}
       <section className="py-8 sm:py-15 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="inline-block px-4 py-1.5 bg-blue-50 text-[#2346b7] text-sm font-semibold rounded-full mb-4">
               Key Highlights
             </span>
@@ -807,7 +807,7 @@ const N1 = () => {
         <div className="absolute -top-32 -left-20 w-72 h-72 bg-[#5BBF43]/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-[#2346b7]/20 rounded-full blur-3xl" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-16 lg:py-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-10 lg:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
             {/* =====================================================
                 LEFT — PRODUCT INFO
@@ -862,22 +862,22 @@ const N1 = () => {
                 </a>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                <div className="flex flex-col sm:flex-row items-center gap-3 w-full border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                <div className="flex  sm:flex-row items-center md:gap-3 gap-7 border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <CircleGauge className="text-green-500" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
                     <h1 className="text-xl font-bold">60- 80</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-5 items-center gap-3 w-full border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+                <div className="flex sm:flex-row gap-7 md:gap-5  items-center  border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <ChartNoAxesCombined className="text-green-500" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
                     <h1 className="text-xl font-bold">25</h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-5 items-center gap-3 w-full border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+                <div className="flex sm:flex-row md:gap-5 gap-7 items-center border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <Users className="text-green-500" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
                     <h1 className="text-xl font-bold">2</h1>
@@ -967,7 +967,7 @@ const N1 = () => {
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span className="inline-block px-4 py-1.5 bg-green-50 text-green-600 text-sm font-semibold rounded-full mb-4">
               Specifications
             </span>
@@ -987,7 +987,7 @@ const N1 = () => {
             {specs.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl border border-gray-100 hover:border-blue-200/50 shadow-sm hover:shadow-xl transition-all duration-500 p-5 sm:p-6 flex items-center justify-between hover:-translate-y-0.5"
+                className="group bg-white rounded-2xl border border-gray-100 hover:border-blue-200/50 shadow-sm hover:shadow-xl transition-all duration-500 p-3 sm:p-2 flex items-center justify-between hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100 text-[#2346b7] flex items-center justify-center group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
