@@ -22,7 +22,7 @@ function QuickRequest() {
     <section id="quick-request" className="relative overflow-hidden bg-[#182943] text-white">
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero_rickshaw_fullscene.jpg')" }}
+        style={{ backgroundImage: "url('/images/quick-request -bg.jpeg')" }}
       />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(16,35,65,0.94)_0%,rgba(35,56,88,0.88)_48%,rgba(35,56,88,0.38)_100%)]" />
 

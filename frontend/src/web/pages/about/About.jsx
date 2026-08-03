@@ -3,7 +3,6 @@ import AboutHero from './AboutHero'
 import AboutCompany from './AboutCompany'
 import WhyChooseUs from './WhyChooseUs'
 import OurMission from './OurMission'
-import OurTeam from './OurTeam'
 
 function About() {
   return (
@@ -12,7 +11,6 @@ function About() {
     <AboutCompany/>
     <WhyChooseUs/>
     <OurMission/>
-    <OurTeam/>
     </>
   )
 }
