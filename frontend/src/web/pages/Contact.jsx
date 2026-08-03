@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -6,8 +6,26 @@ import {
   FaClock,
 } from "react-icons/fa";
 import { FaPaperPlane } from "react-icons/fa";
+import { submitForm } from "../api";
 
 function Contact() {
+  const [status, setStatus] = useState({ type: "idle", message: "" });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    setStatus({ type: "loading", message: "Sending your message..." });
+
+    const formData = Object.fromEntries(new FormData(form));
+    try {
+      await submitForm("contact", formData);
+      form.reset();
+      setStatus({ type: "success", message: "Thanks. We will contact you shortly." });
+    } catch (error) {
+      setStatus({ type: "error", message: error.message });
+    }
+  };
+
   return (
     <div className="bg-[#F8FAFC]">
 
@@ -234,7 +252,7 @@ function Contact() {
               </h2>
 
 
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
 
                 {/* ================= Name + Phone ================= */}
 
@@ -247,6 +265,8 @@ function Contact() {
 
                     <input
                       type="text"
+                      name="name"
+                      required
                       placeholder="Your Full Name"
                       className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
@@ -259,6 +279,8 @@ function Contact() {
 
                     <input
                       type="text"
+                      name="phone"
+                      required
                       placeholder="Your Phone Number"
                       className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
@@ -278,6 +300,8 @@ function Contact() {
 
                     <input
                       type="email"
+                      name="email"
+                      required
                       placeholder="your.email@example.com"
                       className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
@@ -293,6 +317,8 @@ function Contact() {
 
                     <input
                       type="text"
+                      name="subject"
+                      required
                       placeholder="What is this regarding?"
                       className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
@@ -310,6 +336,7 @@ function Contact() {
                   </label>
 
                   <select
+                    name="interest"
                     className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base text-gray-700 outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                   >
                     <option>General Information</option>
@@ -330,6 +357,8 @@ function Contact() {
                   </label>
 
                   <textarea
+                    name="message"
+                    required
                     rows="3"
                     placeholder="Tell us more about your enquiry..."
                     className="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-base resize-none outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
@@ -341,11 +370,18 @@ function Contact() {
 
                 <button
                   type="submit"
+                  disabled={status.type === "loading"}
                   className="w-full h-[52px] bg-[#5BBF43] hover:bg-[#4AA336] text-white rounded-full font-bold text-lg transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-3"
                 >
                   <FaPaperPlane />
                   Send Message
                 </button>
+
+                {status.type !== "idle" && (
+                  <p className={status.type === "error" ? "text-center text-red-600" : "text-center text-green-600"}>
+                    {status.message}
+                  </p>
+                )}
 
               </form>
 
