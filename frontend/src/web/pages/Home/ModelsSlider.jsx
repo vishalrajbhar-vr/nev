@@ -38,7 +38,7 @@ const models = [
     segment: "L5 SEGMENT",
     type: "Passenger",
     label: "COMFORT RIDE",
-    image: "/MODEL L5 BUTTERFLY 6+1.png",
+    image: "/images/l5-butterfly.png",
     seats: "6+1 Seats",
     speed: "33 km/h",
     range: "110 km Range",
