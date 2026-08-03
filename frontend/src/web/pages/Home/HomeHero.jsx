@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import QuickRequest from "./QuickRequest";
 
-const topHeroVehicleSrc = "/MODEL L5 BUTTERFLY 6+1.png";
+const topHeroVehicleSrc = "/images/l5-butterfly.png";
 const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
 const bgSceneSrc = "/clean_hero_city_bg.jpg";
 
@@ -106,9 +106,8 @@ function HomeHero() {
                   <img
                     src={topSlide.image || topHeroVehicleSrc}
                     alt="NEV Auto"
-                    className={`${
-                      topSlide.imageClass || "w-[580px] sm:w-[620px] lg:w-[650px]"
-                    } hero-scene-image hero-vehicle-drive-loop max-w-none h-auto object-contain opacity-100 drop-shadow-[0_16px_24px_rgba(6,21,43,0.16)]`}
+                    className={`${topSlide.imageClass || "w-[580px] sm:w-[620px] lg:w-[650px]"
+                      } hero-scene-image hero-vehicle-drive-loop max-w-none h-auto object-contain opacity-100 drop-shadow-[0_16px_24px_rgba(6,21,43,0.16)]`}
                     style={{ transform: topSlide.imageTransform || "translateX(6px) translateY(-16px)" }}
                   />
                 </div>
