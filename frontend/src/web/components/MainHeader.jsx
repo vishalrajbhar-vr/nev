@@ -126,7 +126,7 @@ function MainHeader() {
   }, []);
 
   return (
-    <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-4 sm:px-5 lg:px-7">
+    <header ref={headerRef} className="relative z-50 bg-[#071426] px-2 pb-2 sm:px-5 sm:pb-4 lg:px-7">
       <style>
         {`
           @keyframes logoFlipSpin {
@@ -170,7 +170,7 @@ function MainHeader() {
         <div className="relative mx-auto max-w-[1560px]">
           <div className="relative rounded-[16px] border border-white/70 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.18)]">
 
-            <div className="flex min-h-[78px] items-center px-4 sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
+            <div className="flex min-h-[60px] items-center px-3 sm:min-h-[78px] sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
 
               {/* ================= LOGO ================= */}
 
@@ -179,7 +179,7 @@ function MainHeader() {
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
                 <span
-                  className="logo-flip-wrapper block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
+                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
                   onMouseEnter={() => {
                     if (isLogoFlipping) return;
                     setIsLogoFlipping(true);
@@ -321,7 +321,7 @@ function MainHeader() {
                     setOpenDropdown(null);
                     setOpenProduct(null);
                   }}
-                  className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#10223A] text-white shadow-md transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#10223A] text-white shadow-md transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426] sm:h-11 sm:w-11"
                   aria-label="Toggle Menu"
                 >
                   {mobileMenu ? <FaTimes size={19} /> : <FaBars size={19} />}
