@@ -549,3 +549,98 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", 
   .hero-heading { font-size: 22px; }
   .pedestal-form { width: 96%; }
 }
+
+/* enquiry start */
+
+/* ================= LEFT IMAGE ================= */
+
+.animate-scooty{
+  animation:scootyLoop 5s linear infinite;
+}
+
+@keyframes scootyLoop{
+
+  /* Bahar */
+  0%{
+    transform:translateX(-260px);
+    opacity:0;
+  }
+
+  /* Fast Entry */
+  18%{
+    transform:translateX(0);
+    opacity:1;
+  }
+
+  /* Center pe ruk */
+  38%{
+    transform:translateX(0);
+    opacity:1;
+  }
+
+  /* Thoda aur andar */
+  58%{
+    transform:translateX(70px);
+    opacity:1;
+  }
+
+  /* Fir ruk */
+  75%{
+    transform:translateX(70px);
+    opacity:1;
+  }
+
+  /* Aage badhte hue hide */
+  100%{
+    transform:translateX(150px);
+    opacity:0;
+  }
+
+}
+
+
+/* ================= RIGHT IMAGE ================= */
+
+.animate-rickshaw{
+  animation:rickshawLoop 5s linear infinite;
+}
+
+@keyframes rickshawLoop{
+
+  /* Bahar */
+  0%{
+    transform:translateX(260px);
+    opacity:0;
+  }
+
+  /* Fast Entry */
+  18%{
+    transform:translateX(0);
+    opacity:1;
+  }
+
+  /* Center pe ruk */
+  38%{
+    transform:translateX(0);
+    opacity:1;
+  }
+
+  /* Thoda aur andar */
+  58%{
+    transform:translateX(-70px);
+    opacity:1;
+  }
+
+  /* Fir ruk */
+  75%{
+    transform:translateX(-70px);
+    opacity:1;
+  }
+
+  /* Hide */
+  100%{
+    transform:translateX(-150px);
+    opacity:0;
+  }
+
+}

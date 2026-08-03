@@ -28,7 +28,7 @@ const fadeUp = {
 
 function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-[#071426] py-2 lg:py-4">
+    <section className="relative overflow-hidden bg-white py-2 lg:py-4">
 
       {/* ================= Background Glow ================= */}
 
@@ -75,7 +75,7 @@ function AboutHero() {
 
             <motion.h1
               variants={fadeUp}
-              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white"
+              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-black"
             >
               Driving The Future Of
 
@@ -86,7 +86,7 @@ function AboutHero() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-3 text-gray-300 leading-7 max-w-xl"
+              className="mt-3 text-black leading-7 max-w-xl"
             >
               NEV is building next-generation electric vehicles with
               innovation, sustainability and modern technology.
@@ -106,9 +106,9 @@ function AboutHero() {
               </button>
 
               <button className="border border-white/30 hover:bg-white hover:text-[#071426] transition text-white px-7 py-3 rounded-xl font-semibold">
-               
+
                 <Link to="/contact" >
-                 Contact Us
+                  Contact Us
                 </Link>
               </button>
             </motion.div>
@@ -116,11 +116,11 @@ function AboutHero() {
 
           {/* ================= RIGHT START ================= */}
 
-          <div className="relative flex justify-center items-center h-[380px] lg:h-[420px]">
+          <div className="relative h-[380px] lg:h-[420px] flex items-center justify-center">
 
             {/* Fixed Circle */}
 
-            <div className="absolute w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#5BBF43]/10 border border-[#5BBF43]/20" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[360px] lg:h-[360px] rounded-full bg-[#5BBF43]/10 border border-[#5BBF43]/20" />
             {/* ================= Car Shadow ================= */}
 
             <motion.div
@@ -133,7 +133,7 @@ function AboutHero() {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="absolute bottom-14 w-[240px] h-6 bg-black/40 blur-xl rounded-full"
+              className="absolute bottom-10 lg:bottom-12 w-[240px] h-6 bg-black/40 blur-xl rounded-full z-10"
             />
 
             {/* ================= Car ================= */}
@@ -142,7 +142,7 @@ function AboutHero() {
               src="/15_transparent.png"
               alt="Electric Vehicle"
               initial={{
-                x: 650,
+                x: 220,
                 opacity: 0,
               }}
               animate={{
@@ -155,8 +155,22 @@ function AboutHero() {
               }}
               whileHover={{
                 scale: 1.03,
+                y: -5,
               }}
-              className="relative z-20 w-[260px] md:w-[320px] lg:w-[370px] cursor-pointer select-none"
+              className="
+    absolute
+    top-1/2
+    left-1/2
+    -translate-x-1/2
+    -translate-y-[70%]
+    z-20
+    w-[260px]
+    md:w-[320px]
+    lg:w-[370px]
+    object-contain
+    cursor-pointer
+    select-none
+  "
             />
 
             {/* ================= Headlight Glow ================= */}
@@ -173,31 +187,6 @@ function AboutHero() {
               className="absolute right-[30px] top-[48%] w-20 h-6 bg-yellow-300/40 blur-xl rounded-full"
             />
 
-            {/* ================= Floating Label ================= */}
-
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                delay: 2,
-                duration: .8,
-              }}
-              className="absolute bottom-28 bg-white rounded-xl shadow-xl px-5 py-3"
-            >
-              <h4 className="font-bold text-[#071426]">
-                ⚡ 100% Electric
-              </h4>
-
-              <p className="text-xs text-gray-500 mt-1">
-                Clean • Silent • Powerful
-              </p>
-            </motion.div>
             {/* ================= Car Shine Effect ================= */}
 
             <motion.div

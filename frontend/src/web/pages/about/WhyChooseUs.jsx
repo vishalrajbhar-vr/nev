@@ -61,13 +61,13 @@ const features = [
 
 function WhyChooseUs() {
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className="py-5 bg-white overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8">
 
           <span className="inline-flex items-center px-5 py-2 rounded-full bg-green-100 text-[#5BBF43] font-semibold text-sm">
 
@@ -75,7 +75,7 @@ function WhyChooseUs() {
 
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#071426] mt-5">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#071426] mt-4">
 
             Why Customers
             <span className="text-[#5BBF43]"> Trust NEV</span>
@@ -133,7 +133,7 @@ function WhyChooseUs() {
               </p>
 
               {/* Bottom Accent */}
-              <div className="relative z-10 mt-7 flex items-center gap-3 text-[#5BBF43] font-semibold text-sm">
+              <div className="relative z-10 mt-4 flex items-center gap-3 text-[#5BBF43] font-semibold text-sm">
                 <div className="w-10 h-[2px] bg-[#5BBF43]"></div>
                 Learn More
               </div>
