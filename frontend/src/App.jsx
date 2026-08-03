@@ -24,10 +24,6 @@ import Photos from "./web/pages/Gallery/Photos";
 import Videos from "./web/pages/Gallery/Videos";
 import Aboute from "./web/pages/about/About";
 
-
-
-
-
 function App() {
   return (
     <Router>
@@ -53,15 +49,27 @@ function App() {
         <Route path="/double-light" element={<Doublelight />} />
         <Route path="/u-light" element={<ULight />} />
         <Route path="/n1" element={<N1 />} />
-        <Route path="/activa" element={<Activa/>} />
-        <Route path="/about" element={<Aboute/>} />
+        <Route path="/activa" element={<Activa />} />
+        <Route path="/about" element={<Aboute />} />
 
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
 
       <Footer />
-    </Router>
 
+      <a
+        href="https://wa.me/919876543210"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-10 right-10  z-100"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp"
+          className="w-16 h-16 hover:scale-130 transition-transform duration-300"
+        />
+      </a>
+    </Router>
   );
 }
 

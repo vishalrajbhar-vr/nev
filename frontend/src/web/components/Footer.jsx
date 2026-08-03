@@ -47,7 +47,7 @@ const productLinks = [
 
 function Footer() {
   return (
-    <footer className="w-full bg-[#182438] text-white">
+    <footer className="w-full px-10 bg-[#182438] text-white">
       <style>{`
         @keyframes logoFlipSpin {
           0% { transform: rotateY(0deg) scale(1); filter: brightness(1) drop-shadow(0 0 0px rgba(91,191,67,0)); }
