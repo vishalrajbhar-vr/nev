@@ -7,7 +7,7 @@ function AboutCompany() {
     <section className="py-10 bg-[#f8fbf9] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 items-center">
 
           {/* ================= LEFT IMAGE ================= */}
 
@@ -52,13 +52,9 @@ function AboutCompany() {
 
           {/* ================= RIGHT CONTENT ================= */}
 
-          <div>
+          <div className="max-w-3xl">
 
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-[#5BBF43] text-sm font-semibold">
-              ABOUT COMPANY
-            </span>
-
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-extrabold leading-tight text-[#071426] mt-3">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-extrabold leading-tight text-[#071426] ">
 
               Driving Innovation
 
@@ -76,11 +72,29 @@ function AboutCompany() {
               of customers while contributing to a cleaner and more sustainable future.
             </p>
 
-            <p className="mt-2 text-gray-600 leading-8">
+            <p className="mt-2 text-gray-600 leading-7">
               The company is led by its principal promoter, Mr.
               Manjeet Singh Talwar, a distinguished name in the automobile industry with over 4 decades of
               experience. His extensive knowledge, strategic leadership, and unwavering commitment
               to excellence have been instrumental in building a strong foundation for the organization.
+            </p>
+
+            <p className="mt-2 text-gray-600 leading-7">
+              As part of a diversified automotive group,
+              Navgatee Automobiles operates across multiple segments of the industry,
+              including automobiles, lubricants, spare parts, and mobility solutions.
+              Our business spans both domestic and international markets, with a well-established presence in India,
+              Bangladesh, and Africa, enabling us to serve a broad customer base with trusted products and services.
+
+            </p>
+
+            <p className="mt-2 text-gray-600 leading-7">
+              At Navgatee Automobiles, we believe that progress is
+              powered by innovation and responsibility. By combining
+              advanced technology, superior craftsmanship, and a customer-centric approach,
+              we strive to create mobility solutions that are efficient, dependable,
+              and environmentally conscious. Every step we take reflects our commitment
+              to driving sustainable growth while shaping the future of the automotive industry.
             </p>
 
 

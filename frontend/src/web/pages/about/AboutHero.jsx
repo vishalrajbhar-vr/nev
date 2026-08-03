@@ -105,7 +105,7 @@ function AboutHero() {
                 <FaArrowRight />
               </button>
 
-              <button className="border border-white/30 hover:bg-white hover:text-[#071426] transition text-white px-7 py-3 rounded-xl font-semibold">
+              <button className="border border-blue/30 hover:bg-blue-100 hover:text-[#071426] transition text-black px-7 py-3 rounded-xl font-semibold">
 
                 <Link to="/contact" >
                   Contact Us
