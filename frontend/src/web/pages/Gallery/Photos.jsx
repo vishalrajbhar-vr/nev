@@ -3,43 +3,43 @@ import React from "react";
 const galleryImages = [
   {
     id: 1,
-    image: "/1.png",
-    title: "NEV Electric Vehicle",
+    image: "/images/MODEL L5 ULTRA LOADER.png",
+    title: "L5 Ultra Loader",
   },
   {
     id: 2,
     image: "/images/double-light.png",
-    title: "Electric Auto",
+    title: "Double Light",
   },
   {
     id: 3,
-    image: "/3.png",
-    title: "Cargo EV",
+    image: "/MODEL L5 BUTTERFLY 6+1.png",
+    title: "ECO 6 + 1",
   },
   {
     id: 4,
     image: "/images/N1.png",
-    title: "Electric Scooty",
+    title: "Activa EV",
   },
   {
     id: 5,
-    image: "/5.png",
+    image: "/MODEL L5.png",
     title: "Model L5",
   },
   {
     id: 6,
     image: "/images/u-light.png",
-    title: "Butterfly MS",
+    title: "U Light",
   },
   {
     id: 7,
     image: "/images/single-light.png",
-    title: "ECO 6+1",
+    title: "Single Light",
   },
   {
     id: 8,
-    image: "/hero_scene_preview_nobg.png",
-    title: "Activa EV",
+    image: "/images/l5-butterfly.png",
+    title: "L5 Butterfly",
   },
 ];
 
@@ -72,13 +72,12 @@ const Photos = () => {
           {galleryImages.map((item) => (
             <div
               key={item.id}
-              className="group relative overflow-hidden rounded-2xl shadow-lg bg-white"
+              className="group relative overflow-hidden rounded-2xl shadow-lg bg-white h-72 flex items-center justify-center"
             >
-
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-72 object-cover transition duration-500 group-hover:scale-110"
+                className="max-w-full max-h-full object-contain transition duration-500 group-hover:scale-105"
               />
 
               {/* Overlay */}
@@ -86,15 +85,12 @@ const Photos = () => {
 
               {/* Title */}
               <div className="absolute bottom-0 left-0 w-full p-5 translate-y-full group-hover:translate-y-0 transition duration-500">
-
                 <h3 className="text-white text-xl font-bold">
                   {item.title}
                 </h3>
 
                 <div className="w-14 h-1 bg-[#5BBF43] mt-2 rounded-full"></div>
-
               </div>
-
             </div>
           ))}
 

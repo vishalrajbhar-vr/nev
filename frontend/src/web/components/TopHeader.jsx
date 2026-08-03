@@ -7,13 +7,24 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebookF },
-  { label: "X", icon: FaXTwitter },
-  { label: "YouTube", icon: FaYoutube },
-  { label: "Instagram", icon: FaInstagram },
-  { label: "WhatsApp", icon: FaWhatsapp },
+  {
+    label: "Facebook",
+    icon: FaFacebookF,
+    url: "https://www.facebook.com/share/1T7zozZrY3/",
+  },
+  {
+    label: "Instagram",
+    icon: FaInstagram,
+    url: "https://www.instagram.com/navgatee?igsh=dzVyeGZ4azl0bnE0",
+  },
+  {
+    label: "WhatsApp",
+    icon: FaWhatsapp,
+    url: "#",
+  },
 ];
 
 function TopHeader() {
@@ -21,13 +32,14 @@ function TopHeader() {
     <header className="relative z-[60] w-full bg-[#071426] text-white">
       <div className="mx-auto flex min-h-[48px] max-w-[1560px] items-center justify-between gap-2 px-3 py-2 sm:min-h-[74px] sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6 sm:py-4 lg:grid-cols-[1fr_auto_1fr] lg:gap-8 lg:px-10 lg:py-0 xl:px-16">
         <div className="hidden flex-wrap items-center justify-center gap-3 lg:flex lg:justify-start">
-          <span className="text-sm font-semibold sm:text-base">Follow Us:</span>
 
           <div className="flex items-center gap-3">
-            {socialLinks.map(({ label, icon: Icon }) => (
+            {socialLinks.map(({ label, icon: Icon, url }) => (
               <a
-                href="#"
                 key={label}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-[#5BBF43] text-white transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426] sm:h-11 sm:w-11"
               >
