@@ -191,7 +191,7 @@ function MainHeader() {
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
                 <span
-                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[136px] lg:h-[120px] lg:w-[156px] xl:w-[166px]"
+                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[96px] lg:h-[80px] lg:w-[156px] xl:w-[166px]"
                   onMouseEnter={() => {
                     if (isLogoFlipping) return;
                     setIsLogoFlipping(true);
@@ -208,11 +208,10 @@ function MainHeader() {
                   <img
                     src={logoSrc}
                     alt="NEV Navigate"
-                    className={`h-full w-full object-contain transition-transform duration-300 ${
-                      isLogoFlipping
+                    className={`h-full w-full object-contain transition-transform duration-300 ${isLogoFlipping
                         ? "logo-flip-active scale-150"
                         : "scale-150"
-                    }`}
+                      }`}
                   />
                 </span>
               </Link>
@@ -223,7 +222,7 @@ function MainHeader() {
 
                   <Link
                     to="/"
-                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full after:bg-[#5BBF43] hover:text-[#5BBF43]"
+                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full  hover:text-[#5BBF43]"
                   >
                     Home
                   </Link>
@@ -244,9 +243,8 @@ function MainHeader() {
 
                       <FaChevronDown
                         size={12}
-                        className={`transition-transform duration-300 ${
-                          openDropdown === "products" ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${openDropdown === "products" ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 
@@ -452,9 +450,8 @@ function ProductDesktopItem({
 
   return (
     <div
-      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${
-        isActive ? "bg-[#EAF5E7]" : "bg-white hover:bg-[#EAF5E7]"
-      }`}
+      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${isActive ? "bg-[#EAF5E7]" : "bg-white hover:bg-[#EAF5E7]"
+        }`}
       onMouseEnter={() => {
         cancelClose();
         setOpenProduct(product);
@@ -468,9 +465,8 @@ function ProductDesktopItem({
 
       <FaChevronRight
         size={10}
-        className={`transition-all duration-300 ${
-          isActive ? "translate-x-1 text-[#5BBF43]" : "text-[#142033]"
-        }`}
+        className={`transition-all duration-300 ${isActive ? "translate-x-1 text-[#5BBF43]" : "text-[#142033]"
+          }`}
       />
 
       {isActive && (
@@ -534,9 +530,8 @@ function DesktopDropdown({
         <span>{title}</span>
         <FaChevronDown
           size={12}
-          className={`transition-transform duration-300 ${
-            openDropdown === menu ? "rotate-180" : ""
-          }`}
+          className={`transition-transform duration-300 ${openDropdown === menu ? "rotate-180" : ""
+            }`}
         />
       </button>
 
@@ -574,9 +569,8 @@ function MobileCircle({ active }) {
     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F1F6EF]">
       <FaChevronDown
         size={11}
-        className={`text-[#10223A] transition-transform duration-300 ${
-          active ? "rotate-180" : ""
-        }`}
+        className={`text-[#10223A] transition-transform duration-300 ${active ? "rotate-180" : ""
+          }`}
       />
     </span>
   );
@@ -594,9 +588,8 @@ function MobileProduct({ title, product, openProduct, toggleProduct }) {
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F1F6EF]">
           <FaChevronRight
             size={9}
-            className={`text-[#10223A] transition-transform duration-300 ${
-              openProduct === product ? "rotate-90" : ""
-            }`}
+            className={`text-[#10223A] transition-transform duration-300 ${openProduct === product ? "rotate-90" : ""
+              }`}
           />
         </span>
       </button>
