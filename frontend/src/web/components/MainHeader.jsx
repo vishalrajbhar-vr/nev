@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 
-const logoSrc = "/nev-logo-cropped.png";
+const logoSrc = "/images/nev-logo.png";
 
 const menuItems = {
   gallery: [
@@ -191,7 +191,7 @@ function MainHeader() {
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
                 <span
-                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
+                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[136px] lg:h-[120px] lg:w-[156px] xl:w-[166px]"
                   onMouseEnter={() => {
                     if (isLogoFlipping) return;
                     setIsLogoFlipping(true);
@@ -208,7 +208,11 @@ function MainHeader() {
                   <img
                     src={logoSrc}
                     alt="NEV Navigate"
-                    className={`h-full w-full object-contain ${isLogoFlipping ? "logo-flip-active" : ""}`}
+                    className={`h-full w-full object-contain transition-transform duration-300 ${
+                      isLogoFlipping
+                        ? "logo-flip-active scale-150"
+                        : "scale-150"
+                    }`}
                   />
                 </span>
               </Link>

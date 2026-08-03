@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const logoSrc = "/nev-logo-cropped.png";
+const logoSrc = "/images/nev-logo-with-bg.png";
 
 const socialLinks = [
   { label: "Facebook", icon: FaFacebookF, href: "https://www.facebook.com/nev" },
