@@ -1227,7 +1227,7 @@ const L5UltraLoader = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info@nev.com</p>
+                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

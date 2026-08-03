@@ -1027,7 +1027,7 @@ const Activa = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              What sets Khalsa Super DLX apart from the competition.
+              What Sets Activa Apart from the Competition?
             </p>
           </div>
 
@@ -1147,7 +1147,7 @@ const Activa = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info@nev.com</p>
+                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1157,7 +1157,7 @@ const Activa = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Muzaffarnagar, India
+                      Nirala Nagar, Lucknow
                     </p>
                   </div>
                 </div>

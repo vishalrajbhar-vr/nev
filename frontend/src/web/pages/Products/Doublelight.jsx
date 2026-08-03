@@ -66,7 +66,7 @@ const specs = [
 const testimonials = [
   {
     name: "Rajesh Kumar",
-    location: "Muzaffarnagar, UP",
+    location: ", UP",
     rating: 5,
     text: "The NEV Doublelight has completely changed my daily commute. It offers a smooth ride, impressive battery backup, and is very comfortable even on longer journeys. Highly recommended!",
     initials: "RK",
@@ -1147,7 +1147,7 @@ const Doublelight = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info@nev.com</p>
+                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
