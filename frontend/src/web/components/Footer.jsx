@@ -11,20 +11,25 @@ import { FaXTwitter } from "react-icons/fa6";
 const logoSrc = "/nev-logo-cropped.png";
 
 const socialLinks = [
-  { label: "Facebook", icon: FaFacebookF },
-  { label: "X", icon: FaXTwitter },
-  { label: "YouTube", icon: FaYoutube },
-  { label: "Instagram", icon: FaInstagram },
+  { label: "Facebook", icon: FaFacebookF, href: "https://www.facebook.com/nev" },
+  { label: "X", icon: FaXTwitter, href: "https://x.com/nev" },
+  { label: "YouTube", icon: FaYoutube, href: "https://www.youtube.com/nev" },
+  { label: "Instagram", icon: FaInstagram, href: "https://www.instagram.com/nev" },
 ];
 
-const companyLinks = ["About Us", "Our Journey", "Our Models", "Contact"];
+const companyLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Gallery", href: "/photos" },
+  { label: "Enquiry", href: "/enquiry" },
+];
 
 const productLinks = [
-  "L3 Electric Rickshaw",
-  "L5 Electric Auto",
-  "L5 Ultra Loader",
-  "L5 Front Facia",
-  "Scooty",
+  { label: "L3 Electric Rickshaw", href: "/butterfly-ms" },
+  { label: "L5 Electric Auto", href: "/l5-dlx-passenger-3-plus-1" },
+  { label: "L5 Ultra Loader", href: "/l5-ultra-loader" },
+  { label: "L5 Front Facia", href: "/l5-front-facia" },
+  { label: "Scooty", href: "/activa" },
 ];
 
 function Footer() {
@@ -47,7 +52,7 @@ function Footer() {
         <div>
           <a
             href="#"
-            className="mb-10 flex h-[150px] w-full max-w-[286px] items-center justify-center rounded-lg border border-white/20 bg-white/5 px-8 py-6 shadow-[inset_0_0_20px_rgba(255,255,255,0.04)]"
+            className="mb-7 flex h-[150px] w-full max-w-[286px] items-center justify-center rounded-lg border border-white/20 bg-white/5 px-8 py-6 shadow-[inset_0_0_20px_rgba(255,255,255,0.04)]"
           >
             <span className="logo-flip-wrapper block h-full w-full">
               <img src={logoSrc} alt="NEV Navgatee" className="logo-img h-full w-full object-contain" />
@@ -55,23 +60,20 @@ function Footer() {
           </a>
 
           <div className="max-w-[345px]">
-            <h2 className="text-xl font-extrabold leading-8 text-white">
-              Driving India Towards
-              <span className="block text-[#5BBF43]">A Greener Tomorrow</span>
-            </h2>
-            <span className="mt-3 block h-[3px] w-14 bg-[#5BBF43]" />
-            <p className="mt-6 text-base font-medium leading-8 text-white/95">
-              Leading the electric mobility revolution in India with innovative,
-              sustainable, and affordable electric vehicles.
+            <p className="text-md font-medium leading-7 text-white/95">
+              Driving India Towards <span className="text-[#5BBF43] font-extrabold">A Greener Tomorrow</span> — leading the electric mobility revolution in India with innovative, sustainable, and affordable electric vehicles.
             </p>
+            <span className="mt-3 block h-[3px] w-14 bg-[#5BBF43]" />
           </div>
 
-          <div className="mt-9 flex flex-wrap gap-4">
-            {socialLinks.map(({ label, icon: Icon }) => (
+          <div className="mt-8 flex flex-wrap gap-4">
+            {socialLinks.map(({ label, icon: Icon, href }) => (
               <a
-                href="#"
+                href={href}
                 key={label}
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex h-11 w-11 items-center justify-center rounded-full border border-white/80 text-white transition-all duration-300 hover:border-[#5BBF43] hover:bg-[#5BBF43] hover:text-[#182438]"
               >
                 <Icon size={16} />
@@ -80,15 +82,15 @@ function Footer() {
           </div>
         </div>
 
-        <FooterSection title="Our Company">
+        <FooterSection title="Our Links">
           <ul className="space-y-5">
-            {companyLinks.map((item) => (
-              <li key={item}>
+            {companyLinks.map(({ label, href }) => (
+              <li key={label}>
                 <a
-                  href="#"
+                  href={href}
                   className="text-lg font-medium text-white transition-colors duration-300 hover:text-[#5BBF43]"
                 >
-                  {item}
+                  {label}
                 </a>
               </li>
             ))}
@@ -97,13 +99,13 @@ function Footer() {
 
         <FooterSection title="Products">
           <ul className="space-y-5">
-            {productLinks.map((item) => (
-              <li key={item}>
+            {productLinks.map(({ label, href }) => (
+              <li key={label}>
                 <a
-                  href="#"
+                  href={href}
                   className="text-lg font-medium text-white transition-colors duration-300 hover:text-[#5BBF43]"
                 >
-                  {item}
+                  {label}
                 </a>
               </li>
             ))}
@@ -114,7 +116,7 @@ function Footer() {
           <div className="space-y-5">
             <ContactCard icon={FaPhoneAlt} value="Toll Free: 18001210259" href="tel:18001210259" />
             <ContactCard icon={FaEnvelope} value="info@nev.com" href="mailto:info@nev.com" />
-            <ContactCard icon={FaMapMarkerAlt} value="Muzaffarnagar, India" />
+            <ContactCard icon={FaMapMarkerAlt} value="Nirala Nagar, Lucknow," href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
           </div>
         </FooterSection>
       </div>
@@ -126,13 +128,13 @@ function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-medium">
-            <a href="#" className="transition-colors duration-300 hover:text-[#5BBF43]">
+            <a href="/privacy" className="transition-colors duration-300 hover:text-[#5BBF43]">
               Privacy Policy
             </a>
-            <a href="#" className="transition-colors duration-300 hover:text-[#5BBF43]">
+            <a href="/terms" className="transition-colors duration-300 hover:text-[#5BBF43]">
               Terms of Service
             </a>
-            <a href="#" className="transition-colors duration-300 hover:text-[#5BBF43]">
+            <a href="/support" className="transition-colors duration-300 hover:text-[#5BBF43]">
               Support
             </a>
           </div>

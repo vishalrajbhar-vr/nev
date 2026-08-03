@@ -11,7 +11,6 @@ import { Link, useNavigate } from "react-router-dom";
 const logoSrc = "/nev-logo-cropped.png";
 
 const menuItems = {
-
   gallery: [
     { label: "Photos", path: "/photos" },
     { label: "Videos", path: "/videos" },
@@ -36,13 +35,19 @@ const productItems = {
     { label: "L5 Ultra Loader", path: "/l5-ultra-loader" },
   ],
 
-  scooty: [
-    { label: "Single Light", path: "/single-light" },
-    { label: "Double Light", path: "/double-light" },
-    { label: "U Light", path: "/u-light" },
-    { label: "N1", path: "/n1" },
-    { label: "Activa", path: "/activa" },
-  ],
+  scooty: {
+    indian: [
+      { label: "Single Light", path: "/single-light" },
+      { label: "Double Light", path: "/double-light" },
+      { label: "U Light", path: "/u-light" },
+      { label: "N1", path: "/n1" },
+      { label: "Activa", path: "/activa" },
+    ],
+    china: [
+      { label: "China Model A", path: "/china-model-a" },
+      { label: "China Model B", path: "/china-model-b" },
+    ],
+  },
 };
 
 function MainHeader() {
@@ -55,6 +60,12 @@ function MainHeader() {
   const headerRef = useRef(null);
   const logoFlipTimer = useRef(null);
   const navigate = useNavigate();
+
+  const handleCloseMenu = () => {
+    setOpenDropdown(null);
+    setOpenProduct(null);
+    setMobileMenu(false);
+  };
 
   const openMenu = (menu) => {
     clearTimeout(closeTimer.current);
@@ -126,7 +137,10 @@ function MainHeader() {
   }, []);
 
   return (
-    <header ref={headerRef} className="relative z-50 bg-[#071426] px-3 pb-4 sm:px-5 lg:px-7">
+    <header
+      ref={headerRef}
+      className="relative z-50 bg-[#071426] px-2 pb-2 sm:px-5 sm:pb-4 lg:px-7"
+    >
       <style>
         {`
           @keyframes logoFlipSpin {
@@ -169,9 +183,7 @@ function MainHeader() {
 
         <div className="relative mx-auto max-w-[1560px]">
           <div className="relative rounded-[16px] border border-white/70 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.18)]">
-
-            <div className="flex min-h-[78px] items-center px-4 sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
-
+            <div className="flex min-h-[60px] items-center px-3 sm:min-h-[78px] sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
               {/* ================= LOGO ================= */}
 
               <Link
@@ -179,7 +191,7 @@ function MainHeader() {
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
                 <span
-                  className="logo-flip-wrapper block h-[62px] w-[122px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
+                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[136px] lg:h-[78px] lg:w-[156px] xl:w-[166px]"
                   onMouseEnter={() => {
                     if (isLogoFlipping) return;
                     setIsLogoFlipping(true);
@@ -203,7 +215,6 @@ function MainHeader() {
 
               <nav className="hidden flex-1 items-center justify-center lg:flex">
                 <div className="flex h-full items-center gap-7 text-[14px] font-bold text-[#142033] xl:gap-11 xl:text-[15px]">
-
                   {/* HOME */}
 
                   <Link
@@ -212,7 +223,6 @@ function MainHeader() {
                   >
                     Home
                   </Link>
-
 
                   {/* ================= PRODUCTS ================= */}
 
@@ -230,10 +240,9 @@ function MainHeader() {
 
                       <FaChevronDown
                         size={12}
-                        className={`transition-transform duration-300 ${openDropdown === "products"
-                          ? "rotate-180"
-                          : ""
-                          }`}
+                        className={`transition-transform duration-300 ${
+                          openDropdown === "products" ? "rotate-180" : ""
+                        }`}
                       />
                     </button>
 
@@ -273,8 +282,6 @@ function MainHeader() {
                     )}
                   </div>
 
-
-
                   {/* ================= GALLERY ================= */}
 
                   <DesktopDropdown
@@ -285,8 +292,8 @@ function MainHeader() {
                     toggleDropdown={toggleDropdown}
                     closeMenuWithDelay={closeMenuWithDelay}
                     cancelClose={cancelClose}
+                    onItemClick={handleCloseMenu}
                   />
-
 
                   {/* ================= ABOUT ================= */}
 
@@ -296,7 +303,6 @@ function MainHeader() {
                   >
                     About Us
                   </Link>
-
 
                   {/* ================= CONTACT ================= */}
 
@@ -308,8 +314,8 @@ function MainHeader() {
                     toggleDropdown={toggleDropdown}
                     closeMenuWithDelay={closeMenuWithDelay}
                     cancelClose={cancelClose}
+                    onItemClick={handleCloseMenu}
                   />
-
                 </div>
               </nav>
 
@@ -321,21 +327,18 @@ function MainHeader() {
                     setOpenDropdown(null);
                     setOpenProduct(null);
                   }}
-                  className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#10223A] text-white shadow-md transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426]"
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#10223A] text-white shadow-md transition-all duration-300 hover:bg-[#5BBF43] hover:text-[#071426] sm:h-11 sm:w-11"
                   aria-label="Toggle Menu"
                 >
                   {mobileMenu ? <FaTimes size={19} /> : <FaBars size={19} />}
                 </button>
-
               </div>
-
             </div>
 
             {/* ================= MOBILE MENU ================= */}
 
             {mobileMenu && (
               <div className="lg:hidden border-t border-[#D7DCE4] bg-white px-4 py-4 shadow-[0_15px_35px_rgba(24,36,56,0.12)] sm:px-6">
-
                 {/* HOME */}
 
                 <Link
@@ -349,7 +352,6 @@ function MainHeader() {
                 {/* PRODUCTS */}
 
                 <div className="border-b border-gray-200">
-
                   <button
                     type="button"
                     onClick={() => toggleDropdown("products")}
@@ -357,14 +359,11 @@ function MainHeader() {
                   >
                     <span>Our Products</span>
 
-                    <MobileCircle
-                      active={openDropdown === "products"}
-                    />
+                    <MobileCircle active={openDropdown === "products"} />
                   </button>
 
                   {openDropdown === "products" && (
                     <div className="mb-3 ml-3 border-l-2 border-[#5BBF43] pl-3">
-
                       <MobileProduct
                         title="L3 (Electric Rickshaw)"
                         product="l3"
@@ -385,12 +384,9 @@ function MainHeader() {
                         openProduct={openProduct}
                         toggleProduct={toggleProduct}
                       />
-
                     </div>
                   )}
-
                 </div>
-
 
                 {/* GALLERY */}
 
@@ -399,6 +395,7 @@ function MainHeader() {
                   menu="gallery"
                   openDropdown={openDropdown}
                   toggleDropdown={toggleDropdown}
+                  onItemClick={handleCloseMenu}
                 />
 
                 {/* ABOUT */}
@@ -418,6 +415,7 @@ function MainHeader() {
                   menu="contact"
                   openDropdown={openDropdown}
                   toggleDropdown={toggleDropdown}
+                  onItemClick={handleCloseMenu}
                 />
 
                 {/* MOBILE PHONE */}
@@ -429,10 +427,8 @@ function MainHeader() {
                   <FaPhoneAlt size={15} />
                   18001210259
                 </a>
-
               </div>
             )}
-
           </div>
         </div>
       </div>
@@ -452,39 +448,58 @@ function ProductDesktopItem({
 
   return (
     <div
-      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${isActive
-        ? "bg-[#EAF5E7]"
-        : "bg-white hover:bg-[#EAF5E7]"
-        }`}
+      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${
+        isActive ? "bg-[#EAF5E7]" : "bg-white hover:bg-[#EAF5E7]"
+      }`}
       onMouseEnter={() => {
         cancelClose();
         setOpenProduct(product);
       }}
     >
-      <span className={`text-[15px] font-semibold ${isActive ? "text-[#5BBF43]" : "text-[#142033]"}`}>
+      <span
+        className={`text-[15px] font-semibold ${isActive ? "text-[#5BBF43]" : "text-[#142033]"}`}
+      >
         {title}
       </span>
 
       <FaChevronRight
         size={10}
-        className={`transition-all duration-300 ${isActive
-          ? "translate-x-1 text-[#5BBF43]"
-          : "text-[#142033]"
-          }`}
+        className={`transition-all duration-300 ${
+          isActive ? "translate-x-1 text-[#5BBF43]" : "text-[#142033]"
+        }`}
       />
 
       {isActive && (
         <div
-          className="absolute left-full top-[-3px] w-[245px] border-t-[3px] border-[#5BBF43] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
+          className="absolute left-full top-[-3px] w-[490px] border-t-[3px] border-[#5BBF43] bg-white shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
           onMouseEnter={cancelClose}
           onMouseLeave={closeMenuWithDelay}
         >
-          {productItems[product].map((item) => (
-            <DropdownItem
-              key={item.path}
-              item={item}
-            />
-          ))}
+          {product === "scooty" ? (
+            <div className="flex">
+              <div className="w-1/2 border-r border-gray-200">
+                <div className="px-4 py-3 text-md font-bold text-[#142033]">
+                  Indian Scooty
+                </div>
+                {productItems.scooty.indian.map((item) => (
+                  <DropdownItem key={item.path} item={item} />
+                ))}
+              </div>
+
+              <div className="w-1/2">
+                <div className="px-4 py-3 text-md font-bold text-[#142033]">
+                  China Scooty
+                </div>
+                {productItems.scooty.china.map((item) => (
+                  <DropdownItem key={item.path} item={item} />
+                ))}
+              </div>
+            </div>
+          ) : (
+            productItems[product].map((item) => (
+              <DropdownItem key={item.path} item={item} />
+            ))
+          )}
         </div>
       )}
     </div>
@@ -499,6 +514,7 @@ function DesktopDropdown({
   toggleDropdown,
   closeMenuWithDelay,
   cancelClose,
+  onItemClick,
 }) {
   return (
     <div
@@ -514,10 +530,9 @@ function DesktopDropdown({
         <span>{title}</span>
         <FaChevronDown
           size={12}
-          className={`transition-transform duration-300 ${openDropdown === menu
-            ? "rotate-180"
-            : ""
-            }`}
+          className={`transition-transform duration-300 ${
+            openDropdown === menu ? "rotate-180" : ""
+          }`}
         />
       </button>
 
@@ -528,10 +543,7 @@ function DesktopDropdown({
           onMouseLeave={closeMenuWithDelay}
         >
           {menuItems[menu].map((item) => (
-            <DropdownItem
-              item={item}
-              key={item.path}
-            />
+            <DropdownItem item={item} key={item.path} onClick={onItemClick} />
           ))}
         </div>
       )}
@@ -541,10 +553,11 @@ function DesktopDropdown({
 
 // routing*************************
 
-function DropdownItem({ item }) {
+function DropdownItem({ item, onClick }) {
   return (
     <Link
       to={item.path}
+      onClick={onClick}
       className="relative block bg-white px-6 py-4 text-[15px] font-semibold text-[#142033] transition-all duration-300 after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:origin-center after:scale-y-0 after:bg-[#5BBF43] after:transition-transform after:duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:after:scale-y-100"
     >
       {item.label}
@@ -557,8 +570,9 @@ function MobileCircle({ active }) {
     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F1F6EF]">
       <FaChevronDown
         size={11}
-        className={`text-[#10223A] transition-transform duration-300 ${active ? "rotate-180" : ""
-          }`}
+        className={`text-[#10223A] transition-transform duration-300 ${
+          active ? "rotate-180" : ""
+        }`}
       />
     </span>
   );
@@ -576,29 +590,53 @@ function MobileProduct({ title, product, openProduct, toggleProduct }) {
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F1F6EF]">
           <FaChevronRight
             size={9}
-            className={`text-[#10223A] transition-transform duration-300 ${openProduct === product
-              ? "rotate-90"
-              : ""
-              }`}
+            className={`text-[#10223A] transition-transform duration-300 ${
+              openProduct === product ? "rotate-90" : ""
+            }`}
           />
         </span>
       </button>
 
       {openProduct === product && (
         <div className="mb-2 ml-3">
-          {productItems[product].map((item) => (
-            <MobileItem
-              key={item.path}
-              item={item}
-            />
-          ))}
+          {product === "scooty" ? (
+            <>
+              <div className="mb-2">
+                <div className="mb-1 px-2 text-sm font-semibold">
+                  Indian Scooty
+                </div>
+                {productItems.scooty.indian.map((item) => (
+                  <MobileItem key={item.path} item={item} />
+                ))}
+              </div>
+
+              <div className="mb-2">
+                <div className="mb-1 px-2 text-sm font-semibold">
+                  China Scooty
+                </div>
+                {productItems.scooty.china.map((item) => (
+                  <MobileItem key={item.path} item={item} />
+                ))}
+              </div>
+            </>
+          ) : (
+            productItems[product].map((item) => (
+              <MobileItem key={item.path} item={item} />
+            ))
+          )}
         </div>
       )}
     </div>
   );
 }
 
-function MobileDropdown({ title, menu, openDropdown, toggleDropdown }) {
+function MobileDropdown({
+  title,
+  menu,
+  openDropdown,
+  toggleDropdown,
+  onItemClick,
+}) {
   return (
     <div className="border-b border-gray-200">
       <button
@@ -613,7 +651,7 @@ function MobileDropdown({ title, menu, openDropdown, toggleDropdown }) {
       {openDropdown === menu && (
         <div className="pb-2 pl-3 pr-1">
           {menuItems[menu].map((item) => (
-            <MobileItem item={item} key={item.path} />
+            <MobileItem item={item} key={item.path} onClick={onItemClick} />
           ))}
         </div>
       )}
@@ -622,10 +660,11 @@ function MobileDropdown({ title, menu, openDropdown, toggleDropdown }) {
 }
 
 // routing*************************
-function MobileItem({ item }) {
+function MobileItem({ item, onClick }) {
   return (
     <Link
       to={item.path}
+      onClick={onClick}
       className="relative block bg-white px-4 py-3 text-sm font-semibold text-gray-600 transition-all duration-300 after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:origin-center after:scale-y-0 after:bg-[#5BBF43] after:transition-transform after:duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:after:scale-y-100"
     >
       {item.label}

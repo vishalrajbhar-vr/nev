@@ -10,12 +10,12 @@ import {
 
 function OurMission() {
   return (
-    <section className="py-20 bg-[#f8fbf9] overflow-hidden">
+    <section className="py-10 bg-[#f8fbf9] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* ================= Heading ================= */}
 
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-8">
 
           <span className="inline-flex items-center px-5 py-2 rounded-full bg-green-100 text-[#5BBF43] text-sm font-semibold">
             Our Mission
@@ -72,7 +72,7 @@ function OurMission() {
 
             {/* Bottom Accent */}
 
-            <div className="relative z-10 mt-8 flex items-center gap-3 text-[#5BBF43] font-semibold">
+            <div className="relative z-10 mt-4 flex items-center gap-3 text-[#5BBF43] font-semibold">
               <div className="h-[2px] w-12 bg-[#5BBF43]"></div>
               Sustainable Future
             </div>
@@ -111,7 +111,7 @@ function OurMission() {
 
             {/* Bottom Accent */}
 
-            <div className="relative z-10 mt-8 flex items-center gap-3 text-[#293F8F] font-semibold">
+            <div className="relative z-10 mt-4 flex items-center gap-3 text-[#293F8F] font-semibold">
               <div className="h-[2px] w-12 bg-[#293F8F]"></div>
               Innovation & Excellence
             </div>
@@ -122,127 +122,127 @@ function OurMission() {
 
         {/* ================= Core Values ================= */}
 
-       <div>
+        <div>
 
-  {/* Heading */}
+          {/* Heading */}
 
-  <div className="text-center mb-16">
+          <div className="text-center mb-6">
 
-    <span className="inline-flex items-center px-5 py-2 rounded-full bg-[#5BBF43]/10 text-[#5BBF43] font-semibold border border-[#5BBF43]/20">
-      Our Foundation
-    </span>
+            <span className="inline-flex items-center px-5 py-2 rounded-full bg-[#5BBF43]/10 text-[#5BBF43] font-semibold border border-[#5BBF43]/20">
+              Our Foundation
+            </span>
 
-    <h3 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#071426]">
-      Our Core
-      <span className="text-[#5BBF43]"> Values</span>
-    </h3>
+            <h3 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#071426]">
+              Our Core
+              <span className="text-[#5BBF43]"> Values</span>
+            </h3>
 
-    <p className="mt-5 text-gray-600 max-w-2xl mx-auto leading-8">
-      Every electric vehicle we build is driven by strong values that inspire
-      innovation, sustainability and customer trust.
-    </p>
+            <p className="mt-5 text-gray-600 max-w-2xl mx-auto leading-8">
+              Every electric vehicle we build is driven by strong values that inspire
+              innovation, sustainability and customer trust.
+            </p>
 
-  </div>
+          </div>
 
-  {/* Cards */}
+          {/* Cards */}
 
-  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-    {/* ================= Card 1 ================= */}
+            {/* ================= Card 1 ================= */}
 
-    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
+            <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[#5BBF43]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#5BBF43]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-      <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
 
-      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
-        <FaLeaf />
-      </div>
+              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <FaLeaf />
+              </div>
 
-      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
-        Sustainability
-      </h4>
+              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+                Sustainability
+              </h4>
 
-      <p className="relative mt-4 text-gray-600 leading-8">
-        Promoting clean energy while reducing environmental impact for a
-        greener tomorrow.
-      </p>
+              <p className="relative mt-4 text-gray-600 leading-8">
+                Promoting clean energy while reducing environmental impact for a
+                greener tomorrow.
+              </p>
 
-    </div>
+            </div>
 
-    {/* ================= Card 2 ================= */}
+            {/* ================= Card 2 ================= */}
 
-    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
+            <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[#293F8F]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#293F8F]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-      <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
 
-      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
-        <FaBolt />
-      </div>
+              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <FaBolt />
+              </div>
 
-      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
-        Innovation
-      </h4>
+              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+                Innovation
+              </h4>
 
-      <p className="relative mt-4 text-gray-600 leading-8">
-        Developing advanced EV technology for smarter, safer and more
-        efficient mobility.
-      </p>
+              <p className="relative mt-4 text-gray-600 leading-8">
+                Developing advanced EV technology for smarter, safer and more
+                efficient mobility.
+              </p>
 
-    </div>
+            </div>
 
-    {/* ================= Card 3 ================= */}
+            {/* ================= Card 3 ================= */}
 
-    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
+            <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(91,191,67,.18)]">
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[#5BBF43]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#5BBF43]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-      <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute left-0 top-0 h-1 w-0 bg-[#5BBF43] group-hover:w-full transition-all duration-500"></div>
 
-      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
-        <FaHandshake />
-      </div>
+              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#5BBF43] to-[#6fd85a] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <FaHandshake />
+              </div>
 
-      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
-        Integrity
-      </h4>
+              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+                Integrity
+              </h4>
 
-      <p className="relative mt-4 text-gray-600 leading-8">
-        Building trust through honesty, transparency and unwavering
-        commitment to quality.
-      </p>
+              <p className="relative mt-4 text-gray-600 leading-8">
+                Building trust through honesty, transparency and unwavering
+                commitment to quality.
+              </p>
 
-    </div>
+            </div>
 
-    {/* ================= Card 4 ================= */}
+            {/* ================= Card 4 ================= */}
 
-    <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
+            <div className="group relative overflow-hidden rounded-[28px] bg-white border border-gray-100 p-8 text-center shadow-[0_15px_40px_rgba(0,0,0,.08)] transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_25px_60px_rgba(41,63,143,.18)]">
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[#293F8F]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#293F8F]/5 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-      <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
+              <div className="absolute left-0 top-0 h-1 w-0 bg-[#293F8F] group-hover:w-full transition-all duration-500"></div>
 
-      <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
-        <FaShieldAlt />
-      </div>
+              <div className="relative mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-[#293F8F] to-[#4d66d6] text-white text-4xl shadow-xl transition duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <FaShieldAlt />
+              </div>
 
-      <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
-        Reliability
-      </h4>
+              <h4 className="relative mt-7 text-2xl font-bold text-[#071426]">
+                Reliability
+              </h4>
 
-      <p className="relative mt-4 text-gray-600 leading-8">
-        Delivering dependable products engineered for long-lasting
-        performance and safety.
-      </p>
+              <p className="relative mt-4 text-gray-600 leading-8">
+                Delivering dependable products engineered for long-lasting
+                performance and safety.
+              </p>
 
-    </div>
+            </div>
 
-  </div>
+          </div>
 
-</div>
+        </div>
 
       </div>
     </section>

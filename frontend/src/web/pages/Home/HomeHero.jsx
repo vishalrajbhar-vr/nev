@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import QuickRequest from "./QuickRequest";
 
-const topHeroVehicleSrc = "/hero_scene_preview_nobg.png";
+const topHeroVehicleSrc = "/MODEL L5 BUTTERFLY 6+1.png";
 const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
 const bgSceneSrc = "/clean_hero_city_bg.jpg";
 
@@ -19,9 +19,9 @@ const topSlide = {
   title: ["NEV Electric", "Driving the Future of", "Sustainable Mobility"],
   description:
     "NEV Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
-  image: "/hero_scene_preview_nobg.png",
-  imageClass: "w-[500px] sm:w-[530px] lg:w-[560px]",
-  imageTransform: "translateX(4px) translateY(-14px)",
+  image: "/MODEL L5 BUTTERFLY 6+1.png",
+  imageClass: "w-[360px] sm:w-[400px] lg:w-[440px]",
+  imageTransform: "translateX(4px) translateY(-8px) scaleX(-1)",
 };
 
 const featureCards = [
@@ -72,13 +72,13 @@ const mobilityHighlights = [
 function HomeHero() {
   return (
     <main className="bg-white text-[#06152B] overflow-hidden font-sans">
-      <section className="hero-diagonal hero-gradient px-4 py-10 border-b border-[#E6F2EA]">
+      <section className="hero-diagonal hero-gradient px-4 py-6 sm:py-10 border-b border-[#E6F2EA]">
         <div className="diag-panel-left" />
         <div className="diag-panel-right" />
         <div className="diag-overlay" />
 
         <div className="max-w-[1320px] mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[620px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center min-h-0 lg:min-h-[620px]">
             <div className="hero-left">
               <div className="angled-ribbon mb-6">{topSlide.ribbon}</div>
 

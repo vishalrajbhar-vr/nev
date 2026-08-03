@@ -19,8 +19,8 @@ const socialLinks = [
 function TopHeader() {
   return (
     <header className="relative z-[60] w-full bg-[#071426] text-white">
-      <div className="mx-auto grid min-h-[74px] max-w-[1560px] grid-cols-1 items-center gap-4 px-4 py-4 sm:px-6 lg:grid-cols-[1fr_auto_1fr] lg:gap-8 lg:px-10 lg:py-0 xl:px-16">
-        <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+      <div className="mx-auto flex min-h-[48px] max-w-[1560px] items-center justify-between gap-2 px-3 py-2 sm:min-h-[74px] sm:grid sm:grid-cols-1 sm:gap-4 sm:px-6 sm:py-4 lg:grid-cols-[1fr_auto_1fr] lg:gap-8 lg:px-10 lg:py-0 xl:px-16">
+        <div className="hidden flex-wrap items-center justify-center gap-3 lg:flex lg:justify-start">
           <span className="text-sm font-semibold sm:text-base">Follow Us:</span>
 
           <div className="flex items-center gap-3">
@@ -37,22 +37,22 @@ function TopHeader() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center gap-4 text-center">
+        <div className="flex min-w-0 items-center justify-start gap-2 text-left sm:justify-center sm:text-center">
           <span className="hidden h-px w-16 bg-[#5BBF43]/45 sm:block" />
           <p className="flex items-center justify-center gap-2 text-sm font-semibold text-white/90 sm:text-base">
             <FaLeaf className="text-[#5BBF43]" />
-            Smart Electric Mobility Solutions
+            <span className="truncate">Smart Electric Mobility Solutions</span>
           </p>
           <span className="hidden h-px w-16 bg-[#5BBF43]/45 sm:block" />
         </div>
 
-        <div className="flex items-center justify-center lg:justify-end">
+        <div className="flex shrink-0 items-center justify-center lg:justify-end">
           <a
             href="tel:18001210259"
-            className="inline-flex items-center gap-3 text-base font-bold tracking-wide text-white transition-colors duration-300 hover:text-[#5BBF43]"
+            className="inline-flex items-center gap-2 text-xs font-bold tracking-wide text-white transition-colors duration-300 hover:text-[#5BBF43] sm:gap-3 sm:text-base"
           >
-            <span className="flex h-11 w-11 items-center justify-center rounded-full border border-[#5BBF43] bg-[#10223A] text-[#5BBF43]">
-              <FaPhoneAlt size={17} />
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#5BBF43] bg-[#10223A] text-[#5BBF43] sm:h-11 sm:w-11">
+              <FaPhoneAlt size={14} />
             </span>
             <span>18001210259</span>
           </a>
