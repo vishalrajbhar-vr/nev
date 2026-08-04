@@ -72,7 +72,7 @@ function Contact() {
               </h3>
 
               <p className="text-gray-500 mt-3 leading-7">
-                Nirala Nagar, Lucknow
+                Lucknow, India
                 <br />
                 India
               </p>
@@ -227,7 +227,7 @@ function Contact() {
                       </h4>
 
                       <p className="text-gray-600">
-                        Nirala Nagar, Lucknow,<br /> India
+                        Lucknow, India,<br /> India
                       </p>
                     </div>
 
