@@ -23,6 +23,7 @@ import N1 from "./web/pages/Products/N1";
 import Photos from "./web/pages/Gallery/Photos";
 import Videos from "./web/pages/Gallery/Videos";
 import Aboute from "./web/pages/about/About";
+import NotFound from "./web/pages/NotFound";
 
 function App() {
   return (
@@ -52,7 +53,7 @@ function App() {
         <Route path="/activa" element={<Activa />} />
         <Route path="/about" element={<Aboute />} />
 
-        <Route path="*" element={<h1>404 Not Found</h1>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
 
       <Footer />
