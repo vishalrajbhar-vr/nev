@@ -1,3 +1,4 @@
+import dns from "node:dns";
 import mongoose from "mongoose";
 import { env } from "./env.js";
 
@@ -17,6 +18,11 @@ export async function connectDatabase() {
     const message = "MONGODB_URI is missing or still contains template placeholders. Set it in backend/.env.";
     console.error(`[MongoDB] ${message}`);
     throw new Error(message);
+  }
+
+  if (env.mongoUri.startsWith("mongodb+srv") && env.dnsServers.length > 0) {
+    dns.setServers(env.dnsServers);
+    console.log(`[MongoDB] Using DNS servers: ${env.dnsServers.join(", ")}`);
   }
 
   console.log(`[MongoDB] Connecting to ${redactMongoUri(env.mongoUri)}`);

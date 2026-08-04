@@ -19,6 +19,9 @@ export const env = {
     .filter(Boolean),
   mongoUri: process.env.MONGODB_URI?.trim() || null,
   mongoServerSelectionTimeoutMs: Number(process.env.MONGO_SERVER_SELECTION_TIMEOUT_MS || 10000),
+  dnsServers: process.env.DNS_SERVERS
+    ? process.env.DNS_SERVERS.split(",").map((server) => server.trim()).filter(Boolean)
+    : ["8.8.8.8", "1.1.1.1"],
   smtp: {
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT || 465),
