@@ -24,6 +24,7 @@ import Photos from "./web/pages/Gallery/Photos";
 import Videos from "./web/pages/Gallery/Videos";
 import Aboute from "./web/pages/about/About";
 import NotFound from "./web/pages/NotFound";
+import Nova from "./web/pages/Products/Nova";
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
         <Route path="/n1" element={<N1 />} />
         <Route path="/activa" element={<Activa />} />
         <Route path="/about" element={<Aboute />} />
+        <Route path="/china-scooty/nova" element={<Nova />} />
 
         <Route path="*" element={<NotFound/>} />
       </Routes>

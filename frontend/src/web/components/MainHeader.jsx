@@ -44,7 +44,7 @@ const productItems = {
       { label: "Activa", path: "/activa" },
     ],
     china: [
-      { label: "China Model A", path: "/china-model-a" },
+      { label: "China Model A", path: "/china-scooty/nova" },
       { label: "China Model B", path: "/china-model-b" },
     ],
   },

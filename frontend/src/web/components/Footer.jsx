@@ -129,7 +129,7 @@ function Footer() {
           <div className="space-y-5">
             <ContactCard icon={FaPhoneAlt} value="Toll Free: 18001210259" href="tel:18001210259" />
             <ContactCard icon={FaEnvelope} value="info.navgatee@gmail.com" href="mailto:info.navgatee@gmail.com?subject=Inquiry" />
-            <ContactCard icon={FaMapMarkerAlt} value="Nirala Nagar, Lucknow," href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
+            <ContactCard icon={FaMapMarkerAlt} value="Lucknow, India" href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
           </div>
         </FooterSection>
       </div>
