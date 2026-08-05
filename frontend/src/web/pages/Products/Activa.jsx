@@ -46,7 +46,7 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = ["/images/Nova.png"];
+const GALLERY_IMAGES = ["/images/ACTIVA.png"];
 
 /* ===================================================================
    SPECS DATA
@@ -544,7 +544,7 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
-                  src="/images/Nova.png"
+                  src="/images/ACTIVA.png"
                   alt="NEV Nova Electric Scooter"
                   className="w-[120%] h-[120%] -mt-15 object-contain p-4 drop-shadow-2xl"
                   style={{

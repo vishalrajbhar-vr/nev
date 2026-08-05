@@ -807,7 +807,7 @@ const L5DLXPassenger = () => {
             <FeatureCard
               icon={<Thermometer size={28} />}
               title="Passenger Comfort"
-              desc="Spacious 3+1 seating with ergonomic design, ensuring comfortable rides for every passenger."
+              desc="Spacious 3 Plus 1 seating with ergonomic design, ensuring comfortable rides for every passenger."
               color="green"
             />
             <FeatureCard
@@ -861,7 +861,7 @@ const L5DLXPassenger = () => {
                 Experience next-generation mobility with the NEV L5 DLX
                 Passenger 3 Plus 1 — a durable, high-performance electric auto
                 rickshaw designed for comfortable passenger transportation.
-                Featuring spacious 3+1 seating, reliable performance, low
+                Featuring spacious 3 Plus 1 seating, reliable performance, low
                 maintenance, and excellent battery efficiency, it delivers
                 smooth, safe, and cost-effective rides every day.
               </p>
