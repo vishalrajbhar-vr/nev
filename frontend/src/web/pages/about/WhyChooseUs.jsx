@@ -75,10 +75,10 @@ function WhyChooseUs() {
 
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#071426] mt-4">
+          <h2 className="text-4xl md:text-5xl font-bold hero-heading hero-heading-multicolor mt-4">
 
-            Why Customers
-            <span className="text-[#5BBF43]"> Trust NEV</span>
+           <h1 className="hero-word-dark"> Why Customers
+            <span className="hero-word-mix"> Trust NEV</span></h1>
 
           </h2>
 

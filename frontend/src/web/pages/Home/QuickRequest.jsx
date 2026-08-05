@@ -33,7 +33,7 @@ function QuickRequest() {
           </span>
 
           <h2 className="mt-10 max-w-[500px] text-3xl font-black leading-[1.08] sm:text-4xl lg:text-[46px]">
-            NEV Electric
+            Navgatee Electric
             <span className="block">Driving the Future of</span>
             <span className="block">Sustainable Mobility</span>
           </h2>

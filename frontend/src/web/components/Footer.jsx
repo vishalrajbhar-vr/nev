@@ -136,7 +136,7 @@ function Footer() {
       <div className="border-t border-white/20">
         <div className="mx-auto flex max-w-[1340px] flex-col items-center justify-between gap-4 px-6 py-7 text-sm text-white sm:px-8 md:flex-row lg:px-10 xl:px-0">
           <p className="text-center md:text-left">
-            &copy; 2026 NEV Vehicles Pvt. Ltd. All rights reserved.
+            &copy; 2026 NAVGATEE AUTOMOBILES LLP All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-medium">

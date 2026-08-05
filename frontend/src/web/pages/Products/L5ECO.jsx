@@ -1056,7 +1056,7 @@ const L5ECO = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
+          SECTION 5: WHY CHOOSE Navgatee Electric
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
