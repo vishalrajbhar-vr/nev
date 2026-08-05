@@ -204,9 +204,9 @@ function Enquiry() {
               Simple Process
             </span>
 
-            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold text-[#071426]">
-              Get Your EV in
-              <span className="text-green-600"> 4 Simple Steps</span>
+            <h2 className="mt-4 text-3xl md:text-4xl font-extrabold hero-heading-multicolor ">
+              Get Your
+              <span className="hero-word-brand"> EV  in 4 Simple Steps</span>
             </h2>
 
             <p className="mt-3 text-sm md:text-base text-gray-500 leading-6">
@@ -442,11 +442,11 @@ function Enquiry() {
 
 
             {/* Main Heading */}
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-black leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold  leading-tight hero-heading-multicolor">
 
-              Explore Electric Mobility
-              <span className="block text-green-400">
-                Made for Your Needs
+              Explore Electric
+              <span className="block hero-word-mix">
+                Mobility Made for Your Needs
               </span>
 
             </h2>
