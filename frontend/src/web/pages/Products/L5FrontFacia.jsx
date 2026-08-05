@@ -895,7 +895,7 @@ const L5FrontFacia = () => {
                 <div className="flex items-center justify-between md:gap-5 gap-7 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <ChartNoAxesCombined className=" text-green-500" size={25} />
                   <div>
-                    <h1 className="text-xl font-bold">48 </h1>
+                    <h1 className="text-xl font-bold">45</h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
