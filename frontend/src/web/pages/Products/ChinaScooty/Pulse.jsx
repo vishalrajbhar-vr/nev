@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { submitForm } from "../../api";
+import { submitForm } from "../../../api";
 import {
   FaHome,
   FaChevronRight,
@@ -30,27 +30,31 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const GALLERY_IMAGES = ["/images/NOVA.png"];
+const GALLERY_IMAGES = [
+    "/images/china-pulse.png"
+
+];
 
 /* ===================================================================
    BRAND TOKENS
    Navy   -> headings / primary text accents
-   Red    -> CTA / brand gradient (matches NOVA red body colour)
+   Blue   -> CTA / brand gradient (matches NAVGATEE logo blue)
    Green  -> spec icon accent (matches the spec badge strip in the design)
 =================================================================== */
-const NAVY = "#122A52";
-const NAVY_DARK = "#0B1B36";
-const RED = "#C81E37";
-const RED_DARK = "#7E1220";
-const GREEN = "#3FA34D";
+const NAVY = "#0F2E5C";
+const NAVY_DARK = "#081B38";
+const BLUE = "#1D5FA8";
+const BLUE_DARK = "#123E75";
+const GREEN = "#4CAF3D";
+const GREEN_LIGHT = "#7ED33E";
 
 /* ===================================================================
-   SPECS DATA — pulled from the NOVA spec strip
+   SPECS DATA — pulled from the PULSE spec strip
 =================================================================== */
 const specs = [
   { icon: <Gauge size={22} />, title: "Max Distance", value: "175 KM" },
   { icon: <ChartNoAxesCombined size={22} />, title: "Max Speed", value: "25 KPH" },
-  { icon: <Disc size={22} />, title: "Break System", value: "Front & Rear Disc" },
+  { icon: <Disc size={22} />, title: "Break System", value: "Front Disc" },
   { icon: <Weight size={22} />, title: "Load Capacity", value: "250 Kgs" },
   { icon: <Clock size={22} />, title: "Charging Time (LED)", value: "5-6 Hrs*" },
   { icon: <BatteryCharging size={22} />, title: "1 Battery Charging Time", value: "5 to 6 Hrs*" },
@@ -66,15 +70,15 @@ const testimonials = [
     name: "Rohit Verma",
     location: "Lucknow, UP",
     rating: 5,
-    text: "The NOVA is light, peppy and perfect for my daily office commute. 175 km on a charge means I barely think about charging during the week.",
+    text: "The PULSE is light, peppy and perfect for my daily office commute. 175 km on a charge means I barely think about charging during the week.",
     initials: "RV",
-    color: "red",
+    color: "blue",
   },
   {
     name: "Anjali Mishra",
     location: "Kanpur, UP",
     rating: 5,
-    text: "Braking feels confident with the front and rear disc setup, and the ride is very smooth even on broken roads. Great value electric scooter.",
+    text: "Braking feels confident with the front disc setup, and the ride is very smooth even on broken roads. Great value electric scooter.",
     initials: "AM",
     color: "green",
   },
@@ -84,13 +88,13 @@ const testimonials = [
     rating: 4,
     text: "250 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
     initials: "DC",
-    color: "red",
+    color: "blue",
   },
   {
     name: "Neha Gupta",
     location: "Gorakhpur, UP",
     rating: 5,
-    text: "Loved the styling and the red finish. Motor feels punchy for a 250W setup and the LED battery gives me peace of mind on longer rides.",
+    text: "Loved the styling and the sturdy build. Motor feels punchy for a 250W setup and the LED battery gives me peace of mind on longer rides.",
     initials: "NG",
     color: "green",
   },
@@ -101,24 +105,24 @@ const testimonials = [
 =================================================================== */
 const faqData = [
   {
-    q: "What is the maximum range of the NOVA on a full charge?",
-    a: "The NOVA delivers up to 175 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
+    q: "What is the maximum range of the PULSE on a full charge?",
+    a: "The PULSE delivers up to 175 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
   },
   {
     q: "How long does the battery take to charge?",
     a: "With the LED charging indicator, a full charge takes around 5-6 hours. A single battery pack charges in roughly 5 to 6 hours as well.",
   },
   {
-    q: "What is the top speed of the NOVA?",
-    a: "The NOVA has a top speed of 25 KPH, tuned for safe and efficient city and residential riding.",
+    q: "What is the top speed of the PULSE?",
+    a: "The PULSE has a top speed of 25 KPH, tuned for safe and efficient city and residential riding.",
   },
   {
-    q: "What braking system does the NOVA use?",
-    a: "The NOVA comes equipped with front and rear disc brakes for confident, reliable stopping power in all conditions.",
+    q: "What braking system does the PULSE use?",
+    a: "The PULSE comes equipped with a front disc brake for confident, reliable stopping power in all conditions.",
   },
   {
-    q: "How much load can the NOVA carry?",
-    a: "The NOVA is rated for a total load capacity of 250 kgs, comfortably supporting two riders along with everyday cargo.",
+    q: "How much load can the PULSE carry?",
+    a: "The PULSE is rated for a total load capacity of 250 kgs, comfortably supporting two riders along with everyday cargo.",
   },
 ];
 
@@ -172,7 +176,7 @@ const StatCard = ({ icon, value, suffix, label }) => {
     >
       <div
         className="absolute inset-x-0 top-0 h-1.5"
-        style={{ background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${RED})` }}
+        style={{ background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${BLUE})` }}
       />
       <div className="relative z-10 flex flex-col items-center text-center">
         <div
@@ -185,7 +189,7 @@ const StatCard = ({ icon, value, suffix, label }) => {
           <span className="text-4xl sm:text-5xl font-extrabold text-slate-900 tabular-nums">
             {count}
           </span>
-          <span className="text-lg sm:text-2xl font-semibold" style={{ color: RED }}>
+          <span className="text-lg sm:text-2xl font-semibold" style={{ color: BLUE }}>
             {suffix}
           </span>
         </div>
@@ -195,7 +199,7 @@ const StatCard = ({ icon, value, suffix, label }) => {
       </div>
       <div
         className="absolute -bottom-4 left-1/2 h-2 w-24 -translate-x-1/2 rounded-full opacity-30 blur-xl"
-        style={{ background: `linear-gradient(90deg, ${NAVY}, ${RED})` }}
+        style={{ background: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
       />
     </div>
   );
@@ -204,12 +208,12 @@ const StatCard = ({ icon, value, suffix, label }) => {
 /* ===================================================================
    FEATURE CARD
 =================================================================== */
-const FeatureCard = ({ icon, title, desc, color = "red" }) => {
+const FeatureCard = ({ icon, title, desc, color = "blue" }) => {
   const colors = {
-    red: {
-      bg: "from-red-50 to-red-100/50",
-      text: "text-[#C81E37]",
-      border: "border-red-200/40",
+    blue: {
+      bg: "from-blue-50 to-blue-100/50",
+      text: "text-[#1D5FA8]",
+      border: "border-blue-200/40",
     },
     green: {
       bg: "from-green-50 to-green-100/50",
@@ -217,7 +221,7 @@ const FeatureCard = ({ icon, title, desc, color = "red" }) => {
       border: "border-green-200/30",
     },
   };
-  const c = colors[color] || colors.red;
+  const c = colors[color] || colors.blue;
 
   return (
     <div
@@ -245,7 +249,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
     <div
       className={`group rounded-2xl border transition-all duration-300 cursor-pointer ${
         isOpen
-          ? "border-red-200 bg-gradient-to-r from-red-50/50 to-white shadow-md"
+          ? "border-blue-200 bg-gradient-to-r from-blue-50/50 to-white shadow-md"
           : "border-gray-100 bg-white hover:border-gray-200 hover:shadow-sm"
       }`}
       onClick={onClick}
@@ -259,7 +263,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
           className={`shrink-0 transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}
-          style={{ color: RED }}
+          style={{ color: BLUE }}
         />
       </div>
       <div
@@ -321,10 +325,10 @@ const TestimonialSlider = () => {
 
   const t = testimonials[current];
   const colorMap = {
-    red: { bg: "from-red-50 to-red-100/50", text: "text-[#C81E37]", dot: "bg-[#C81E37]" },
+    blue: { bg: "from-blue-50 to-blue-100/50", text: "text-[#1D5FA8]", dot: "bg-[#1D5FA8]" },
     green: { bg: "from-green-50 to-green-100/50", text: "text-green-600", dot: "bg-green-600" },
   };
-  const c = colorMap[t.color] || colorMap.red;
+  const c = colorMap[t.color] || colorMap.blue;
 
   return (
     <div className="relative max-w-3xl mx-auto">
@@ -379,7 +383,7 @@ const TestimonialSlider = () => {
           onClick={goPrev}
           className="w-10 h-10 rounded-full border border-gray-200 bg-white flex items-center justify-center text-gray-500 hover:shadow-md transition-all duration-300"
           style={{ borderColor: undefined }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = RED)}
+          onMouseEnter={(e) => (e.currentTarget.style.color = BLUE)}
           onMouseLeave={(e) => (e.currentTarget.style.color = "")}
           aria-label="Previous testimonial"
         >
@@ -466,7 +470,7 @@ const ProductAnimation = () => {
 
   return (
     <div className="relative" ref={containerRef}>
-      <div className="absolute -inset-4 bg-gradient-to-br from-red-100/40 to-slate-200/40 rounded-3xl blur-2xl" />
+      <div className="absolute -inset-4 bg-gradient-to-br from-blue-100/40 to-green-100/40 rounded-3xl blur-2xl" />
 
       <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-white/60 shadow-2xl overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -475,7 +479,7 @@ const ProductAnimation = () => {
               key={i}
               className="absolute w-2 h-2 rounded-full opacity-20"
               style={{
-                backgroundColor: i % 2 === 0 ? RED : GREEN,
+                backgroundColor: i % 2 === 0 ? BLUE : GREEN,
                 left: `${15 + i * 18}%`,
                 top: `${10 + (i % 3) * 35}%`,
                 animation: `floatParticle ${3 + i * 0.8}s ease-in-out infinite`,
@@ -486,7 +490,7 @@ const ProductAnimation = () => {
         </div>
 
         <div
-          className="aspect-[4/3] bg-gradient-to-br from-gray-50 via-red-50/30 to-slate-50 rounded-2xl flex items-center justify-center overflow-hidden"
+          className="aspect-[4/3] bg-gradient-to-br from-gray-50 via-blue-50/30 to-green-50/30 rounded-2xl flex items-center justify-center overflow-hidden"
           style={{ perspective: "1000px" }}
         >
           <div
@@ -499,10 +503,10 @@ const ProductAnimation = () => {
             <div className="absolute inset-0 flex items-center justify-center" style={{ transform: "translateZ(40px)" }}>
               <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
-                  src="../../../../public/images/N1.png"
-                  alt="NOVA Electric Scooter"
-                  className="w-[120%] h-[120%] -mt-15 object-contain p-4 drop-shadow-2xl"
-                  style={{ filter: `drop-shadow(0 20px 30px ${RED}40)` }}
+                  src="/images/china-pulse.png"
+                  alt="PULSE Electric Scooter"
+                  className="w-[110%] h-[110%] -mt-10 object-contain p-4 drop-shadow-2xl"
+                  style={{ filter: `drop-shadow(0 20px 30px ${BLUE}40)` }}
                 />
               </div>
             </div>
@@ -523,7 +527,7 @@ const ProductAnimation = () => {
 /* ===================================================================
    MAIN COMPONENT
 =================================================================== */
-const Nova = () => {
+const Pulse = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
 
@@ -545,7 +549,7 @@ const Nova = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await submitForm("product", { ...formData, product: "Nova" });
+      await submitForm("product", { ...formData, product: "Pulse" });
       alert("Thank you for your enquiry! We will get back to you shortly.");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
@@ -558,53 +562,53 @@ const Nova = () => {
       {/* ============================================================
           SECTION 1: HERO
       ============================================================ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-white to-red-50/40">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-red-200/30 to-slate-200/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-300/10 to-red-200/20 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-red-100/40 rounded-full blur-2xl animate-pulse" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-white to-blue-100/30">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-green-200/20 rounded-full blur-3xl" />
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-400/10 to-blue-200/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/3 left-1/4 w-32 h-32 bg-blue-100/40 rounded-full blur-2xl animate-pulse" />
 
         <div className="absolute top-20 right-[15%] w-4 h-4 bg-[#122A52]/10 rounded-full hidden lg:block" />
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
-        <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-red-400/10 rounded-full rotate-12 hidden lg:block" />
+        <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-10">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-5">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="w-full lg:w-[55%]">
-              <nav className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-gray-500 mb-6">
-                <FaHome style={{ color: RED }} size={14} />
+              <nav className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-gray-500 mb-3">
+                <FaHome style={{ color: BLUE }} size={14} />
                 <span>Home</span>
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span>Products</span>
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span>China Scooty</span>
                 <FaChevronRight size={10} className="text-gray-300" />
-                <span className="font-semibold" style={{ color: RED }}>Nova</span>
+                <span className="font-semibold" style={{ color: BLUE }}>Pulse</span>
               </nav>
 
               <h1
-                className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold leading-[1.1] tracking-tight italic"
+                className="text-3xl sm:text-5xl lg:text-5xl xl:text-5xl font-extrabold  tracking-tight italic"
                 style={{ color: NAVY_DARK }}
               >
-                NOVA
+                PULSE
               </h1>
 
               <div
-                className="w-24 h-1.5 rounded-full mt-5 mb-6"
-                style={{ background: `linear-gradient(90deg, ${NAVY}, ${RED})` }}
+                className="w-24 h-1.5 rounded-full mt-3 mb-4"
+                style={{ background: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
               />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Ride further, stop safer. The all-new NOVA delivers a 175 km
-                range, front &amp; rear disc brakes, and a 250 kg load
+                Ride further, stop safer. The all-new PULSE delivers a 175 km
+                range, a responsive front disc brake, and a 250 kg load
                 capacity — built for confident everyday commuting.
               </p>
 
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-5">
                 <a
                   href="#"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-                  style={{ background: `linear-gradient(90deg, ${RED}, ${RED_DARK})`, boxShadow: `0 10px 30px ${RED}33` }}
+                  style={{ background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`, boxShadow: `0 10px 30px ${BLUE}33` }}
                 >
                   <FaDownload size={16} />
                   <span>Download Brochure</span>
@@ -649,7 +653,7 @@ const Nova = () => {
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span
               className="inline-block px-4 py-1.5 text-sm font-semibold rounded-full mb-4"
-              style={{ backgroundColor: `${RED}12`, color: RED }}
+              style={{ backgroundColor: `${BLUE}12`, color: BLUE }}
             >
               Key Highlights
             </span>
@@ -657,13 +661,13 @@ const Nova = () => {
               Built for{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${RED}, ${NAVY})` }}
+                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
               >
                 Everyday Confidence
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Long range, strong stopping power, and a stable ride — the NOVA
+              Long range, strong stopping power, and a stable ride — the PULSE
               is engineered for daily commuting without compromise.
             </p>
           </div>
@@ -673,11 +677,11 @@ const Nova = () => {
               icon={<Gauge size={28} />}
               title="175 km Range"
               desc="Go further between charges with a long-range battery built for daily commutes."
-              color="red"
+              color="blue"
             />
             <FeatureCard
               icon={<Disc size={28} />}
-              title="Front & Rear Disc Brakes"
+              title="Front Disc Brake"
               desc="Confident, reliable stopping power in every riding condition."
               color="green"
             />
@@ -685,7 +689,7 @@ const Nova = () => {
               icon={<Weight size={28} />}
               title="250 kg Load Capacity"
               desc="Ride two-up with luggage and everyday essentials, without strain."
-              color="red"
+              color="blue"
             />
             <FeatureCard
               icon={<Clock size={28} />}
@@ -702,7 +706,7 @@ const Nova = () => {
       ============================================================ */}
       <section className="relative overflow-hidden">
         <div className="absolute -top-32 -left-20 w-72 h-72 bg-green-400/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl" style={{ backgroundColor: `${RED}22` }} />
+        <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl" style={{ backgroundColor: `${BLUE}22` }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-10 lg:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
@@ -713,25 +717,25 @@ const Nova = () => {
               </span>
 
               <h2 className="mt-5 text-2xl sm:text-4xl lg:text-[25px] font-bold leading-tight">
-                <span style={{ color: NAVY_DARK }}>NOVA</span>
+                <span style={{ color: NAVY_DARK }}>PULSE</span>
                 <br />
                 <span
                   className="text-transparent bg-clip-text"
-                  style={{ backgroundImage: `linear-gradient(90deg, ${RED}, #f0576c)` }}
+                  style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${GREEN_LIGHT})` }}
                 >
                   Ride Further, Brake Smarter
                 </span>
               </h2>
 
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Meet the NOVA — a bold, high-range electric scooter designed
-                for everyday commuting. With disc brakes front and rear, a
+                Meet the PULSE — a bold, high-range electric scooter designed
+                for everyday commuting. With a responsive front disc brake, a
                 250 kg load rating, and a 175 km range, every ride is
                 efficient, safe, and dependable.
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Ride Further", "Brake Smarter", "Choose Nova"].map((tag) => (
+                {["Ride Further", "Brake Smarter", "Choose Pulse"].map((tag) => (
                   <span
                     key={tag}
                     className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:text-green-600 hover:border-green-600/50 transition-colors duration-300"
@@ -745,7 +749,7 @@ const Nova = () => {
                 <a
                   href="tel:18001210259"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-white hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
-                  style={{ backgroundColor: RED, boxShadow: `0 10px 25px ${RED}33` }}
+                  style={{ backgroundColor: BLUE, boxShadow: `0 10px 25px ${BLUE}33` }}
                 >
                   <FaPhoneAlt size={13} />
                   Get Quote
@@ -788,8 +792,8 @@ const Nova = () => {
                     <img
                       key={src}
                       src={src}
-                      alt={`Nova view ${i + 1}`}
-                      className="w-[120%] h-[120%] -mt-15 flex-shrink-0 object-contain"
+                      alt={`Pulse view ${i + 1}`}
+                      className="w-[100%] h-[100%] -mt-10 flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>
@@ -803,7 +807,7 @@ const Nova = () => {
                   onClick={goPrev}
                   aria-label="Previous image"
                   className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white flex items-center justify-center transition-all duration-300"
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = RED)}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BLUE)}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
                 >
                   <FaChevronLeft size={14} />
@@ -814,7 +818,7 @@ const Nova = () => {
                   onClick={goNext}
                   aria-label="Next image"
                   className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white flex items-center justify-center transition-all duration-300"
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = RED)}
+                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BLUE)}
                   onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
                 >
                   <FaChevronRight size={14} />
@@ -829,7 +833,7 @@ const Nova = () => {
                     onClick={() => setActiveIndex(i)}
                     aria-label={`Show image ${i + 1}`}
                     className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 ${
-                      activeIndex === i ? "ring-2 ring-[#C81E37] scale-100 opacity-100" : "ring-1 ring-white/10 opacity-50 hover:opacity-80"
+                      activeIndex === i ? "ring-2 ring-[#1D5FA8] scale-100 opacity-100" : "ring-1 ring-white/10 opacity-50 hover:opacity-80"
                     }`}
                   >
                     <img src={src} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover" />
@@ -857,13 +861,13 @@ const Nova = () => {
               Technical{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${RED}, ${NAVY})` }}
+                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
               >
                 Specifications
               </span>
             </h2>
             <p className="mt-4 text-gray-600 text-lg">
-              Every number behind the NOVA — engineered for range, safety,
+              Every number behind the PULSE — engineered for range, safety,
               and everyday reliability.
             </p>
           </div>
@@ -872,7 +876,7 @@ const Nova = () => {
             {specs.map((item, index) => (
               <div
                 key={index}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-4 flex flex-col gap-3 hover:-translate-y-0.5"
+                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-2 flex items-center justify-between gap-3 hover:-translate-y-0.5"
                 style={{ borderColor: undefined }}
               >
                 <div
@@ -886,8 +890,8 @@ const Nova = () => {
                     {item.title}
                   </h3>
                   <p
-                    className="font-bold text-lg sm:text-xl text-transparent bg-clip-text mt-1"
-                    style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${RED})` }}
+                    className="font-semibold text-lg sm:text-lg text-transparent bg-clip-text mt-1"
+                    style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
                   >
                     {item.value}
                   </p>
@@ -914,14 +918,14 @@ const Nova = () => {
               What Our{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${RED}, ${NAVY})` }}
+                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
               >
                 Riders
               </span>{" "}
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Real feedback from NOVA owners riding it every day across the
+              Real feedback from PULSE owners riding it every day across the
               city.
             </p>
           </div>
@@ -947,7 +951,7 @@ const Nova = () => {
                 Have a{" "}
                 <span
                   className="text-transparent bg-clip-text"
-                  style={{ backgroundImage: `linear-gradient(90deg, ${RED}, ${NAVY})` }}
+                  style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
                 >
                   Question?
                 </span>
@@ -962,7 +966,7 @@ const Nova = () => {
                 <div className="flex items-center gap-4">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: `${RED}12`, color: RED }}
+                    style={{ backgroundColor: `${BLUE}12`, color: BLUE }}
                   >
                     <FaPhoneAlt size={18} />
                   </div>
@@ -1050,7 +1054,7 @@ const Nova = () => {
                 <button
                   type="submit"
                   className="w-full py-4 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-                  style={{ background: `linear-gradient(90deg, ${RED}, ${RED_DARK})`, boxShadow: `0 10px 25px ${RED}33` }}
+                  style={{ background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`, boxShadow: `0 10px 25px ${BLUE}33` }}
                 >
                   Send Enquiry
                 </button>
@@ -1076,7 +1080,7 @@ const Nova = () => {
               Frequently Asked{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${RED}, ${NAVY})` }}
+                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
               >
                 Questions
               </span>
@@ -1100,4 +1104,4 @@ const Nova = () => {
   );
 };
 
-export default Nova;
+export default Pulse;

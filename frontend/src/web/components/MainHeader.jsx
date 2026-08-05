@@ -44,8 +44,10 @@ const productItems = {
       { label: "Activa", path: "/activa" },
     ],
     china: [
-      { label: "China Model A", path: "/china-scooty/nova" },
-      { label: "China Model B", path: "/china-model-b" },
+      { label: "Nova", path: "/china-scooty/nova" },
+      { label: "Lumo", path: "/china-scooty/lumo" },
+      { label: "Sonic", path: "/china-scooty/sonic" },
+      { label: "Pulse", path: "/china-scooty/pulse" },
     ],
   },
 };
@@ -183,7 +185,7 @@ function MainHeader() {
 
         <div className="relative mx-auto max-w-[1560px]">
           <div className="relative rounded-[16px] border border-white/70 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.18)]">
-            <div className="flex min-h-[60px] items-center px-3 sm:min-h-[78px] sm:px-6 lg:min-h-[90px] lg:px-9 xl:px-12">
+            <div className="flex  items-center px-3 sm:px-6  lg:px-9 xl:px-12">
               {/* ================= LOGO ================= */}
 
               <Link
@@ -191,7 +193,7 @@ function MainHeader() {
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
                 <span
-                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[68px] sm:w-[136px] lg:h-[120px] lg:w-[156px] xl:w-[166px]"
+                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[60px] sm:w-[136px] lg:h-[70px] lg:w-[156px] xl:w-[166px]"
                   onMouseEnter={() => {
                     if (isLogoFlipping) return;
                     setIsLogoFlipping(true);
@@ -223,7 +225,7 @@ function MainHeader() {
 
                   <Link
                     to="/"
-                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full after:bg-[#5BBF43] hover:text-[#5BBF43]"
+                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 hover:text-[#5BBF43]"
                   >
                     Home
                   </Link>
@@ -252,7 +254,7 @@ function MainHeader() {
 
                     {openDropdown === "products" && (
                       <div
-                        className="absolute left-1/2 top-full w-[260px] -translate-x-1/2 border-t-[3px] border-[#5BBF43] bg-white py-1 shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
+                        className="absolute left-1/2 top-full w-[260px] -translate-x-1/2 border-t-[3px] border-[#5BBF43] bg-white py-0 shadow-[0_15px_40px_rgba(24,36,56,0.18)]"
                         onMouseEnter={cancelClose}
                         onMouseLeave={closeMenuWithDelay}
                       >
@@ -482,7 +484,7 @@ function ProductDesktopItem({
           {product === "scooty" ? (
             <div className="flex">
               <div className="w-1/2 border-r border-gray-200">
-                <div className="px-4 py-3 text-md font-bold text-[#142033]">
+                <div className="px-4 py-2 text-md font-bold text-[#142033]">
                   Indian Scooty
                 </div>
                 {productItems.scooty.indian.map((item) => (
@@ -491,7 +493,7 @@ function ProductDesktopItem({
               </div>
 
               <div className="w-1/2">
-                <div className="px-4 py-3 text-md font-bold text-[#142033]">
+                <div className="px-4 py-2 text-md font-bold text-[#142033]">
                   China Scooty
                 </div>
                 {productItems.scooty.china.map((item) => (
@@ -562,7 +564,7 @@ function DropdownItem({ item, onClick }) {
     <Link
       to={item.path}
       onClick={onClick}
-      className="relative block bg-white px-6 py-4 text-[15px] font-semibold text-[#142033] transition-all duration-300 after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:origin-center after:scale-y-0 after:bg-[#5BBF43] after:transition-transform after:duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:after:scale-y-100"
+      className="relative block bg-white px-6 py-3 text-[15px] font-semibold text-[#142033] transition-all duration-300 after:absolute after:left-0 after:top-0 after:h-full after:w-[3px] after:origin-center after:scale-y-0 after:bg-[#5BBF43] after:transition-transform after:duration-300 hover:bg-[#EAF5E7] hover:text-[#5BBF43] hover:after:scale-y-100"
     >
       {item.label}
     </Link>
