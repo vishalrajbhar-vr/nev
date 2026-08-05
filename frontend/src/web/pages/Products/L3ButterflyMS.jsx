@@ -1202,7 +1202,7 @@ const L3ButterflyMS = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Nirala Nagar , Lucknow
+                      Lucknow, India
                     </p>
                   </div>
                 </div>
