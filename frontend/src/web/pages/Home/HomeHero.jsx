@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import QuickRequest from "./QuickRequest";
 
-const topHeroVehicleSrc = "/images/l5-butterfly.png";
+const topHeroVehicleSrc = "/images/home hero.png";
 const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
 const bgSceneSrc = "/clean_hero_city_bg.jpg";
 
@@ -19,7 +19,7 @@ const topSlide = {
   title: ["NEV Electric", "Driving the Future of", "Sustainable Mobility"],
   description:
     "NEV Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
-  image: "/images/l5-dlx-passenger.png",
+  image: "/images/home hero.png",
   imageClass: "w-[360px] sm:w-[400px] lg:w-[440px]",
   imageTransform: "translateX(4px) translateY(-8px) scaleX(-1)",
 };

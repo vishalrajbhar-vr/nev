@@ -126,12 +126,12 @@ function Enquiry() {
 
             {/* Heading */}
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#071426] leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold hero-heading hero-heading-multicolor leading-tight">
 
-              Find Your Perfect{" "}
+              Find Your{" "}
 
-              <span className="text-green-600">
-                Electric Vehicle
+              <span className="hero-word-mix">
+                Perfect Electric Vehicle
               </span>
 
             </h1>
@@ -195,9 +195,8 @@ function Enquiry() {
           {/* ================= SECTION HEADER ================= */}
           <div
             ref={headerRef}
-            className={`text-center max-w-2xl mx-auto mb-12 transition-all duration-700 ease-out ${
-              headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+            className={`text-center max-w-2xl mx-auto mb-12 transition-all duration-700 ease-out ${headerInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
 
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-green-200 text-green-600 text-xs font-bold uppercase tracking-wider">
@@ -222,72 +221,68 @@ function Enquiry() {
 
             <div ref={stepsRef} className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
 
-            {/* ================= CONNECTOR LINES ================= */}
-            <div
-              className={`hidden lg:block absolute top-[2px] left-[calc(12.5%+33px)] w-[calc(25%-78px)] h-[90px] pointer-events-none transition-opacity duration-1000 ${
-                stepsInView ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ transitionDelay: "300ms" }}
-            >
-              <svg className="w-full h-full overflow-visible" viewBox="0 0 100 90" fill="none">
-                <path
-                  d="M0 8 C35 8 35 72 100 72"
-                  fill="none"
-                  stroke="#5BBF43"
-                  strokeWidth="4"
-                  strokeDasharray="18 18"
-                  strokeLinecap="round"
-                  vectorEffect="non-scaling-stroke"
-                  className="zigzag-line"
-                />
-              </svg>
-            </div>
+              {/* ================= CONNECTOR LINES ================= */}
+              <div
+                className={`hidden lg:block absolute top-[2px] left-[calc(12.5%+33px)] w-[calc(25%-78px)] h-[90px] pointer-events-none transition-opacity duration-1000 ${stepsInView ? "opacity-100" : "opacity-0"
+                  }`}
+                style={{ transitionDelay: "300ms" }}
+              >
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 90" fill="none">
+                  <path
+                    d="M0 8 C35 8 35 72 100 72"
+                    fill="none"
+                    stroke="#5BBF43"
+                    strokeWidth="4"
+                    strokeDasharray="18 18"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                    className="zigzag-line"
+                  />
+                </svg>
+              </div>
 
-            <div
-              className={`hidden lg:block absolute top-[2px] left-[calc(37.5%+39px)] w-[calc(25%-78px)] h-[90px] pointer-events-none transition-opacity duration-1000 ${
-                stepsInView ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ transitionDelay: "450ms" }}
-            >
-              <svg className="w-full h-full overflow-visible" viewBox="0 0 100 90" fill="none">
-                <path
-                  d="M0 72 C35 72 35 8 100 8"
-                  fill="none"
-                  stroke="#5BBF43"
-                  strokeWidth="4"
-                  strokeDasharray="18 18"
-                  strokeLinecap="round"
-                  vectorEffect="non-scaling-stroke"
-                  className="zigzag-line"
-                />
-              </svg>
-            </div>
+              <div
+                className={`hidden lg:block absolute top-[2px] left-[calc(37.5%+39px)] w-[calc(25%-78px)] h-[90px] pointer-events-none transition-opacity duration-1000 ${stepsInView ? "opacity-100" : "opacity-0"
+                  }`}
+                style={{ transitionDelay: "450ms" }}
+              >
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 90" fill="none">
+                  <path
+                    d="M0 72 C35 72 35 8 100 8"
+                    fill="none"
+                    stroke="#5BBF43"
+                    strokeWidth="4"
+                    strokeDasharray="18 18"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                    className="zigzag-line"
+                  />
+                </svg>
+              </div>
 
-            <div
-              className={`hidden lg:block absolute top-[2px] left-[calc(62.5%+45px)] w-[calc(25%-78px)] h-[90px] pointer-events-none transition-opacity duration-1000 ${
-                stepsInView ? "opacity-100" : "opacity-0"
-              }`}
-              style={{ transitionDelay: "600ms" }}
-            >
-              <svg className="w-full h-full overflow-visible" viewBox="0 0 100 90" fill="none">
-                <path
-                  d="M0 8 C35 8 35 72 100 72"
-                  fill="none"
-                  stroke="#5BBF43"
-                  strokeWidth="4"
-                  strokeDasharray="18 18"
-                  strokeLinecap="round"
-                  vectorEffect="non-scaling-stroke"
-                  className="zigzag-line"
-                />
-              </svg>
-            </div>
+              <div
+                className={`hidden lg:block absolute top-[2px] left-[calc(62.5%+45px)] w-[calc(25%-78px)] h-[90px] pointer-events-none transition-opacity duration-1000 ${stepsInView ? "opacity-100" : "opacity-0"
+                  }`}
+                style={{ transitionDelay: "600ms" }}
+              >
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 90" fill="none">
+                  <path
+                    d="M0 8 C35 8 35 72 100 72"
+                    fill="none"
+                    stroke="#5BBF43"
+                    strokeWidth="4"
+                    strokeDasharray="18 18"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                    className="zigzag-line"
+                  />
+                </svg>
+              </div>
 
               {/* ================= STEP 1 ================= */}
               <div
-                className={`relative group text-center lg:-translate-y-8 transition-all duration-700 ease-out ${
-                  stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`relative group text-center lg:-translate-y-8 transition-all duration-700 ease-out ${stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ transitionDelay: "100ms" }}
               >
 
@@ -316,9 +311,8 @@ function Enquiry() {
 
               {/* ================= STEP 2 ================= */}
               <div
-                className={`relative group text-center lg:translate-y-8 transition-all duration-700 ease-out ${
-                  stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`relative group text-center lg:translate-y-8 transition-all duration-700 ease-out ${stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ transitionDelay: "250ms" }}
               >
 
@@ -348,9 +342,8 @@ function Enquiry() {
 
               {/* ================= STEP 3 ================= */}
               <div
-                className={`relative group text-center lg:-translate-y-8 transition-all duration-700 ease-out ${
-                  stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`relative group text-center lg:-translate-y-8 transition-all duration-700 ease-out ${stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ transitionDelay: "400ms" }}
               >
 
@@ -379,9 +372,8 @@ function Enquiry() {
 
               {/* ================= STEP 4 ================= */}
               <div
-                className={`relative group text-center lg:translate-y-8 transition-all duration-700 ease-out ${
-                  stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                }`}
+                className={`relative group text-center lg:translate-y-8 transition-all duration-700 ease-out ${stepsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                  }`}
                 style={{ transitionDelay: "550ms" }}
               >
 
