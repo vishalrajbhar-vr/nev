@@ -26,7 +26,7 @@ const socialLinks = [
   {
     label: "WhatsApp",
     icon: FaWhatsapp,
-    url: "#",
+    url: "https://wa.me/919196598300",
   },
 ];
 
@@ -126,7 +126,7 @@ function Footer() {
 
         <FooterSection title="Contact Info">
           <div className="space-y-5">
-            <ContactCard icon={FaPhoneAlt} value="Toll Free: 18001210259" href="tel:18001210259" />
+            <ContactCard icon={FaPhoneAlt} value="Toll Free:+91 9196598300" href="tel: +91 9196598300" />
             <ContactCard icon={FaEnvelope} value="info.navgatee@gmail.com" href="mailto:info.navgatee@gmail.com?subject=Inquiry" />
             <ContactCard icon={FaMapMarkerAlt} value="Lucknow, India" href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
           </div>

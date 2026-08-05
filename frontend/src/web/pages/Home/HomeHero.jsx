@@ -135,7 +135,7 @@ function HomeHero() {
             <h2 className="text-2xl sm:text-3xl lg:text-[36px] xl:text-[40px] font-black leading-[1.1] text-[#06152B] tracking-tight">
               India&apos;s Most Trusted
               <span className="block mt-0.5">
-                <span className="text-[#5BBF43]">Electric EV</span>{" "}
+                <span className="text-[#5BBF43]"> EV</span>{" "}
                 <span className="text-[#06152B]">Brand</span>
               </span>
             </h2>

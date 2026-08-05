@@ -46,18 +46,20 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = [
-  "/images/ACTIVA.png",
-];
+const GALLERY_IMAGES = ["/images/Nova.png"];
 
 /* ===================================================================
    SPECS DATA
 =================================================================== */
 const specs = [
-  { icon: <Droplets size={22} />, title: "Battery", value: "Lithium 60V30AH" },
-  { icon: <Wrench size={22} />, title: "Starting", value: "Self" },
-  { icon: <Weight size={22} />, title: "Machine Weight", value: "118 Kg" },
-  { icon: <ShieldCheck size={22} />, title: "Warranty", value: "1 + 1 Year" },
+  { icon: <CircleGauge size={22} />, title: "Max Distance", value: "50-120 KM" },
+  { icon: <Gauge size={22} />, title: "MaxSpeed", value: "25 KPH" },
+  { icon: <Cog size={22} />, title: "Break System", value: "Front&Rear Disc" },
+  { icon: <Weight size={22} />, title: "Load Capacity", value: "150 Kgs" },
+  { icon: <Fuel size={22} />, title: "Charging Time Led", value: "5-6 Hrs*" },
+  { icon: <Zap size={22} />, title: "1 battery charging time", value: "5 to 6 Hrs*" },
+  { icon: <Truck size={22} />, title: "Motor", value: "250W" },
+  { icon: <Battery size={22} />, title: "Battery", value: "Led/Lithium" },
 ];
 
 /* ===================================================================
@@ -68,7 +70,7 @@ const testimonials = [
     name: "Rajesh Kumar",
     location: "Muzaffarnagar, UP",
     rating: 5,
-    text: "The NEV Activa has completely changed my daily commute. It offers a smooth ride, impressive battery backup, and is very comfortable even on longer journeys. Highly recommended!",
+    text: "The NEV Nova has completely changed my daily commute. It offers a smooth ride, impressive battery backup, and is very comfortable even on longer journeys. Highly recommended!",
     initials: "RK",
     color: "blue",
   },
@@ -76,7 +78,7 @@ const testimonials = [
     name: "Amit Singh",
     location: "Meerut, UP",
     rating: 5,
-    text: "I've been riding the NEV Activa for over six months now. The charging cost is minimal, the performance is excellent, and maintenance is almost effortless. It's a great investment.",
+    text: "I've been riding the NEV Nova for over six months now. The charging cost is minimal, the performance is excellent, and maintenance is almost effortless. It's a great investment.",
     initials: "AS",
     color: "green",
   },
@@ -92,7 +94,7 @@ const testimonials = [
     name: "Vikram Yadav",
     location: "Hapur, UP",
     rating: 5,
-    text: "I chose the NEV Activa because of its modern features and sleek design. The acceleration is smooth, the battery range is impressive, and it's ideal for city commuting. Excellent value for money.",
+    text: "I chose the NEV Nova because of its modern features and sleek design. The acceleration is smooth, the battery range is impressive, and it's ideal for city commuting. Excellent value for money.",
     initials: "VY",
     color: "green",
   },
@@ -103,20 +105,20 @@ const testimonials = [
 =================================================================== */
 const faqData = [
   {
-    q: "What is the range of the NEV Activa on a full charge?",
-    a: "The NEV Activa delivers a reliable range of 60-80 km on a single full charge, making it ideal for daily city commutes.",
+    q: "What is the range of the NEV Nova on a full charge?",
+    a: "The NEV Nova delivers a reliable range of 60-80 km on a single full charge, making it ideal for daily city commutes.",
   },
   {
     q: "How long does it take to fully charge the battery?",
     a: "The battery can be fully charged within 4-5 hours using a standard charging setup, ensuring it is ready for your next ride.",
   },
   {
-    q: "What is the warranty coverage for the Activa?",
-    a: "NEV Activa comes with a 1+1 year warranty on the electric drivetrain and battery, offering confidence in long-term reliability.",
+    q: "What is the warranty coverage for the Nova?",
+    a: "NEV Nova comes with a 1+1 year warranty on the electric drivetrain and battery, offering confidence in long-term reliability.",
   },
   {
-    q: "Is the Activa suitable for two passengers?",
-    a: "Yes, the NEV Activa is designed with comfortable seating for two passengers and offers a smooth ride for both the rider and pillion.",
+    q: "Is the Nova suitable for two passengers?",
+    a: "Yes, the NEV Nova is designed with comfortable seating for two passengers and offers a smooth ride for both the rider and pillion.",
   },
 ];
 
@@ -208,7 +210,7 @@ const FeatureCard = ({ icon, title, desc, color = "blue" }) => {
       text: "text-green-600",
       border: "border-green-200/30",
     },
-  }; 
+  };
   const c = colors[color] || colors.blue;
 
   return (
@@ -329,7 +331,7 @@ const TestimonialSlider = () => {
       text: "text-green-600",
       dot: "bg-green-600",
     },
-  }; 
+  };
   const c = colorMap[t.color] || colorMap.blue;
 
   return (
@@ -542,8 +544,8 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
-                  src="/images/ACTIVA.png"
-                  alt="NEV Activa Electric Scooter"
+                  src="/images/Nova.png"
+                  alt="NEV Nova Electric Scooter"
                   className="w-[120%] h-[120%] -mt-15 object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
@@ -596,7 +598,7 @@ const ProductAnimation = () => {
 /* ===================================================================
    MAIN COMPONENT
 =================================================================== */
-const Activa = () => {
+const Nova = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -632,7 +634,7 @@ const Activa = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await submitForm("product", { ...formData, product: "Activa" });
+      await submitForm("product", { ...formData, product: "Nova" });
       alert("Thank you for your enquiry! We will get back to you shortly.");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
@@ -667,20 +669,22 @@ const Activa = () => {
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span>Products</span>
                 <FaChevronRight size={10} className="text-gray-300" />
-                <span className="text-[#2346b7] font-semibold">Activa</span>
+                <span>Indian Scooty</span>
+                <FaChevronRight size={10} className="text-gray-300" />
+                <span className="text-[#2346b7] font-semibold">Nova</span>
               </nav>
 
               {/* Title */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
-                  Activa
+                  Nova
                 </span>
               </h1>
 
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The all-new NEV Activa
+                Power your journey with confidence. The all-new NEV Nova
                 delivers efficient electric performance, smooth handling, and
                 dependable reliability for every road.
               </p>
@@ -826,7 +830,7 @@ const Activa = () => {
 
               {/* title */}
               <h2 className="mt-5 text-2xl sm:text-4xl lg:text-[25px] font-bold leading-tight">
-                <span className="text-black">ACTIVA</span>
+                <span className="text-black">Nova</span>
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBF43] to-[#8be27a]">
                   Built for Comfort, Powered by Innovation
@@ -835,7 +839,7 @@ const Activa = () => {
 
               {/* description */}
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Experience next-generation mobility with the NEV Activa — a
+                Experience next-generation mobility with the NEV Nova — a
                 stylish, high-performance electric scooter designed for everyday
                 commuting. Enjoy smooth rides, exceptional comfort, impressive
                 range, and low maintenance, making every journey efficient,
@@ -844,7 +848,7 @@ const Activa = () => {
 
               {/* highlight tags */}
               <div className="flex Dream big work hard tomorrow flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Navigate Smarter", "Drive Greener", "Choose Nev Activa"].map(
+                {["Navigate Smarter", "Drive Greener", "Choose Nev Nova"].map(
                   (tag) => (
                     <span
                       key={tag}
@@ -908,7 +912,7 @@ const Activa = () => {
                     <img
                       key={src}
                       src={src}
-                      alt={`Activa view ${i + 1}`}
+                      alt={`Nova view ${i + 1}`}
                       className="w-[120%] h-[120%] -mt-15 flex-shrink-0 object-contain"
                     />
                   ))}
@@ -1027,7 +1031,7 @@ const Activa = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              What Sets Activa Apart from the Competition?
+              What Sets Nova Apart from the Competition?
             </p>
           </div>
 
@@ -1138,7 +1142,7 @@ const Activa = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Call us</p>
-                    <p className="font-semibold text-gray-800">1800-121-0259</p>
+                    <p className="font-semibold text-gray-800">+91 9196598300</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1147,7 +1151,9 @@ const Activa = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
+                    <p className="font-semibold text-gray-800">
+                      info.navgatee@gmail.com
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1270,4 +1276,4 @@ const Activa = () => {
   );
 };
 
-export default Activa;
+export default Nova;
