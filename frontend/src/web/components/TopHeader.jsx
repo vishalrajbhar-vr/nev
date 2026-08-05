@@ -23,7 +23,7 @@ const socialLinks = [
   {
     label: "WhatsApp",
     icon: FaWhatsapp,
-    url: "#",
+    url: "https://wa.me/919196598300",
   },
 ];
 
@@ -66,7 +66,7 @@ function TopHeader() {
             <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#5BBF43] bg-[#10223A] text-[#5BBF43] sm:h-11 sm:w-11">
               <FaPhoneAlt size={14} />
             </span>
-            <span>18001210259</span>
+            <span>+91 9196598300</span>
           </a>
         </div>
       </div>

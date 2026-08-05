@@ -62,7 +62,7 @@ const specs = [
   { icon: <Cog size={22} />, title: "Tyre Size MM", value: "L 2795 x W 1250 x H" },
   { icon: <Clock size={22} />, title: "Charging Time", value: "4 - 5 HR" },
   { icon: <Battery size={22} />, title: "Battery Make", value: "Eastman, Trontek" },
-  { icon: <Users size={22} />, title: "Passenger Capacity", value: "6 + 1" },
+  { icon: <Users size={22} />, title: "Passenger Capacity", value: "3 + 1" },
 ];
 
 /* ===================================================================
@@ -1180,7 +1180,7 @@ const L5ECO = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Call us</p>
-                    <p className="font-semibold text-gray-800">1800-121-0259</p>
+                    <p className="font-semibold text-gray-800">+91 9196598300</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">

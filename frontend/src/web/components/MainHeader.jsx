@@ -33,11 +33,11 @@ const productItems = {
 
   scooty: {
     indian: [
-      { label: "Single Light", path: "/single-light" },
-      { label: "Double Light", path: "/double-light" },
-      { label: "U Light", path: "/u-light" },
-      { label: "N1", path: "/n1" },
-      { label: "Activa", path: "/activa" },
+      { label: "Volt", path: "/indian-scooty/volt" },
+      { label: "Vybe", path: "/indian-scooty/vybe" },
+      { label: "Lumo", path: "/indian-scooty/lumo" },
+      { label: "Loadstar", path: "/indian-scooty/loadstar" },
+      { label: "Nova", path: "/indian-scooty/nova" },
     ],
     china: [
       { label: "Nova", path: "/china-scooty/nova" },

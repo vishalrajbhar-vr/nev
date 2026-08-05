@@ -47,7 +47,7 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = ["/images/MODEL L5 ULTRA LOADER.png"];
+const GALLERY_IMAGES = ["/images/l5-loader.png"];
 
 /* ===================================================================
    SPECS DATA
@@ -566,7 +566,7 @@ const ProductAnimation = () => {
             >
               <div className="relative w-[110%] h-[110%] -mt-10 flex items-center justify-center">
                 <img
-                  src="/images/MODEL L5 ULTRA LOADER.png"
+                  src="/images/l5-loader.png"
                   alt="L5 Ultra Loader"
                   className="w-[130%] h-[130%] object-contain p-4 drop-shadow-2xl"
                   style={{
@@ -1218,7 +1218,7 @@ const L5UltraLoader = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Call us</p>
-                    <p className="font-semibold text-gray-800">1800-121-0259</p>
+                    <p className="font-semibold text-gray-800">+91 9196598300</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
