@@ -31,7 +31,7 @@ import {
 } from "lucide-react";
 
 const GALLERY_IMAGES = [
-  "/images/ACTIVA.png"
+  "/images/china-nova.png"
 ];
 
 /* ===================================================================
@@ -500,11 +500,11 @@ const ProductAnimation = () => {
             }}
           >
             <div className="absolute inset-0 flex items-center justify-center" style={{ transform: "translateZ(40px)" }}>
-              <div className="relative w-[135%] h-[135%] flex items-center justify-center">
+              <div className="relative w-[115%] h-[115%] flex items-center justify-center">
                 <img
-                  src="/images/ACTIVA.png"
+                  src="/images/china-nova.png"
                   alt="NOVA Electric Scooter"
-                  className="w-[120%] h-[120%] -mt-15 object-contain p-4 drop-shadow-2xl"
+                  className="w-[90%] h-[90%] -mt-5 object-contain p-4 drop-shadow-2xl"
                   style={{ filter: `drop-shadow(0 20px 30px ${BLUE}40)` }}
                 />
               </div>
@@ -784,7 +784,7 @@ const Nova = () => {
             <div className="border border-gray-400 rounded-3xl px-2 py-3">
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 <div
-                  className="flex items-center justify-center py-2 -mt-18 h-[140%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center justify-center py-2 -mt-10 h-[120%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -792,7 +792,7 @@ const Nova = () => {
                       key={src}
                       src={src}
                       alt={`Nova view ${i + 1}`}
-                      className="w-[120%] h-[120%] -mt-15 flex-shrink-0 object-contain"
+                      className="w-[90%] h-[90%] -mt-5 flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>

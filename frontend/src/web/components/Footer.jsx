@@ -38,11 +38,10 @@ const companyLinks = [
 ];
 
 const productLinks = [
-  { label: "L3 Electric Rickshaw", href: "/butterfly-ms" },
+  { label: "Scooty", href: "/activa" },
   { label: "L5 Electric Auto", href: "/l5-dlx-passenger-3-plus-1" },
   { label: "L5 Ultra Loader", href: "/l5-ultra-loader" },
   { label: "L5 Front Facia", href: "/l5-front-facia" },
-  { label: "Scooty", href: "/activa" },
 ];
 
 function Footer() {

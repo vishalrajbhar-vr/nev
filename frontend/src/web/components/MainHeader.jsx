@@ -22,10 +22,6 @@ const menuItems = {
 };
 
 const productItems = {
-  l3: [
-    { label: "L3 Butterfly MS", path: "/butterfly-ms" },
-    { label: "L3 Butterfly SS", path: "/butterfly-ss" },
-  ],
 
   l5: [
     { label: "L5 DLX Passenger 3 Plus 1", path: "/l5-dlx-passenger-3-plus-1" },
@@ -258,14 +254,7 @@ function MainHeader() {
                         onMouseEnter={cancelClose}
                         onMouseLeave={closeMenuWithDelay}
                       >
-                        <ProductDesktopItem
-                          title="L3 (Electric Rickshaw)"
-                          product="l3"
-                          openProduct={openProduct}
-                          setOpenProduct={setOpenProduct}
-                          cancelClose={cancelClose}
-                          closeMenuWithDelay={closeMenuWithDelay}
-                        />
+          
 
                         <ProductDesktopItem
                           title="L5 (Electric Auto)"
@@ -371,8 +360,8 @@ function MainHeader() {
                   {openDropdown === "products" && (
                     <div className="mb-3 ml-3 border-l-2 border-[#5BBF43] pl-3">
                       <MobileProduct
-                        title="L3 (Electric Rickshaw)"
-                        product="l3"
+                        title="Scooty"
+                        product="scooty"
                         openProduct={openProduct}
                         toggleProduct={toggleProduct}
                       />
@@ -384,12 +373,7 @@ function MainHeader() {
                         toggleProduct={toggleProduct}
                       />
 
-                      <MobileProduct
-                        title="Scooty"
-                        product="scooty"
-                        openProduct={openProduct}
-                        toggleProduct={toggleProduct}
-                      />
+                      
                     </div>
                   )}
                 </div>
