@@ -24,7 +24,10 @@ import Photos from "./web/pages/Gallery/Photos";
 import Videos from "./web/pages/Gallery/Videos";
 import Aboute from "./web/pages/about/About";
 import NotFound from "./web/pages/NotFound";
-import Nova from "./web/pages/Products/Nova";
+import Nova from "./web/pages/Products/ChinaScooty/Nova";
+import Lumo from "./web/pages/Products/ChinaScooty/Lumo";
+import Sonic from "./web/pages/Products/ChinaScooty/Sonic";
+import Pulse from "./web/pages/Products/ChinaScooty/Pulse";
 
 function App() {
   return (
@@ -54,6 +57,9 @@ function App() {
         <Route path="/activa" element={<Activa />} />
         <Route path="/about" element={<Aboute />} />
         <Route path="/china-scooty/nova" element={<Nova />} />
+        <Route path="/china-scooty/lumo" element={<Lumo />} />
+        <Route path="/china-scooty/sonic" element={<Sonic />} />
+        <Route path="/china-scooty/pulse" element={<Pulse />} />
 
         <Route path="*" element={<NotFound/>} />
       </Routes>

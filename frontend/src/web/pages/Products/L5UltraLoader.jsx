@@ -47,7 +47,7 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = ["/images/l5-ultra-loader.png"];
+const GALLERY_IMAGES = ["/images/MODEL L5 ULTRA LOADER.png"];
 
 /* ===================================================================
    SPECS DATA
@@ -564,11 +564,11 @@ const ProductAnimation = () => {
               className="absolute inset-0 flex items-center justify-center"
               style={{ transform: "translateZ(40px)" }}
             >
-              <div className="relative w-[90%] h-[90%] -mt-10 flex items-center justify-center">
+              <div className="relative w-[110%] h-[110%] -mt-10 flex items-center justify-center">
                 <img
-                  src="/images/l5-ultra-loader.png"
+                  src="/images/MODEL L5 ULTRA LOADER.png"
                   alt="L5 Ultra Loader"
-                  className="w-full h-full object-contain p-4 drop-shadow-2xl"
+                  className="w-[130%] h-[130%] object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -947,7 +947,7 @@ const L5UltraLoader = () => {
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 {/* sliding track */}
                 <div
-                  className="flex py-2 h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center justify-center h-full -mt-7 py-2 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
@@ -955,7 +955,7 @@ const L5UltraLoader = () => {
                       key={src}
                       src={src}
                       alt={`L5 Ultra Loader view ${i + 1}`}
-                      className="w-full h-full  flex-shrink-0 object-contain"
+                      className="w-[130%] h-[130%] flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>
