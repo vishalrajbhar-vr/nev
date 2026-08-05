@@ -54,11 +54,13 @@ function AboutCompany() {
 
           <div className="max-w-3xl">
 
-            <h2 className="text-3xl md:text-4xl lg:text-4xl font-extrabold leading-tight text-[#071426] ">
+            <h2 className="text-3xl md:text-4xl lg:text-4xl font-extrabold leading-tight hero-heading hero-heading-multicolor ">
 
-              Driving Innovation
+             <h1 className="hero-word-brand">
+                Driving Innovation
+              </h1>
 
-              <span className="block text-[#5BBF43]">
+              <span className="block hero-word-mix mt-2">
                 Through Electric Mobility
               </span>
 

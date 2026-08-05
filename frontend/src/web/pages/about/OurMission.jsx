@@ -21,9 +21,9 @@ function OurMission() {
             Our Mission
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-[#071426] mt-5">
-            Building a
-            <span className="text-[#5BBF43]"> Greener Tomorrow</span>
+          <h2 className="text-4xl md:text-5xl font-bold hero-heading hero-heading-multicolor mt-5">
+           <h1 className="hero-word-dark"> Building a
+            <span className="hero-word-brand"> Greener Tomorrow</span></h1>
           </h2>
 
           <p className="mt-5 text-gray-600 leading-8">
@@ -132,9 +132,9 @@ function OurMission() {
               Our Foundation
             </span>
 
-            <h3 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#071426]">
-              Our Core
-              <span className="text-[#5BBF43]"> Values</span>
+            <h3 className="mt-5 text-4xl md:text-5xl font-extrabold hero-heading hero-heading-multicolor">
+             <h1 className="hero-word-dark"> Our Core
+              <span className="hero-word-brand"> Values</span></h1>
             </h3>
 
             <p className="mt-5 text-gray-600 max-w-2xl mx-auto leading-8">
