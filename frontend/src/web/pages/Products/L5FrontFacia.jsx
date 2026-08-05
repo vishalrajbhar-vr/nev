@@ -902,7 +902,7 @@ const L5FrontFacia = () => {
                 <div className="flex items-center justify-between md:gap-5 gap-8 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <Users className=" text-green-500" size={25} />
                   <div>
-                    <h1 className="text-xl font-bold">3 + 1</h1>
+                    <h1 className="text-xl font-bold">6 + 1</h1>
                     <p className="text-md font-semibold">SEATER</p>
                   </div>
                 </div>

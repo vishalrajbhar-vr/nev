@@ -50,11 +50,11 @@ function App() {
         <Route path="/l5-ultra-loader" element={<L5UltraLoader />} />
         <Route path="/butterfly-ms" element={<L3ButterflyMS />} />
         <Route path="/butterfly-ss" element={<L3ButterflySS />} />
-        <Route path="/single-light" element={<Singlelight />} />
-        <Route path="/double-light" element={<Doublelight />} />
-        <Route path="/u-light" element={<ULight />} />
-        <Route path="/n1" element={<N1 />} />
-        <Route path="/activa" element={<Activa />} />
+        <Route path="/indian-scooty/volt" element={<Singlelight />} />
+        <Route path="/indian-scooty/vybe" element={<Doublelight />} />
+        <Route path="/indian-scooty/lumo" element={<ULight />} />
+        <Route path="/indian-scooty/loadstar" element={<N1 />} />
+        <Route path="/indian-scooty/nova" element={<Activa />} />
         <Route path="/about" element={<Aboute />} />
         <Route path="/china-scooty/nova" element={<Nova />} />
         <Route path="/china-scooty/lumo" element={<Lumo />} />
@@ -67,7 +67,7 @@ function App() {
       <Footer />
 
       <a
-        href="https://wa.me/919876543210"
+        href="https://wa.me/919196598300"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-10 right-10  z-100"

@@ -1183,7 +1183,7 @@ const L3ButterflyMS = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Call us</p>
-                    <p className="font-semibold text-gray-800">1800-121-0259</p>
+                    <p className="font-semibold text-gray-800">+91 9196598300</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
