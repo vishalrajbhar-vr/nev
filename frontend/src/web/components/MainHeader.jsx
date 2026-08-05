@@ -206,11 +206,10 @@ function MainHeader() {
                   <img
                     src={logoSrc}
                     alt="NEV Navigate"
-                    className={`h-full w-full object-contain transition-transform duration-300 ${
-                      isLogoFlipping
+                    className={`h-full w-full object-contain transition-transform duration-300 ${isLogoFlipping
                         ? "logo-flip-active scale-150"
                         : "scale-150"
-                    }`}
+                      }`}
                   />
                 </span>
               </Link>
@@ -242,9 +241,8 @@ function MainHeader() {
 
                       <FaChevronDown
                         size={12}
-                        className={`transition-transform duration-300 ${
-                          openDropdown === "products" ? "rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${openDropdown === "products" ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 
@@ -438,9 +436,8 @@ function ProductDesktopItem({
 
   return (
     <div
-      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${
-        isActive ? "bg-[#EAF5E7]" : "bg-white hover:bg-[#EAF5E7]"
-      }`}
+      className={`relative flex cursor-pointer items-center justify-between px-6 py-4 transition-all duration-300 ${isActive ? "bg-[#EAF5E7]" : "bg-white hover:bg-[#EAF5E7]"
+        }`}
       onMouseEnter={() => {
         cancelClose();
         setOpenProduct(product);
@@ -454,9 +451,8 @@ function ProductDesktopItem({
 
       <FaChevronRight
         size={10}
-        className={`transition-all duration-300 ${
-          isActive ? "translate-x-1 text-[#5BBF43]" : "text-[#142033]"
-        }`}
+        className={`transition-all duration-300 ${isActive ? "translate-x-1 text-[#5BBF43]" : "text-[#142033]"
+          }`}
       />
 
       {isActive && (
@@ -520,9 +516,8 @@ function DesktopDropdown({
         <span>{title}</span>
         <FaChevronDown
           size={12}
-          className={`transition-transform duration-300 ${
-            openDropdown === menu ? "rotate-180" : ""
-          }`}
+          className={`transition-transform duration-300 ${openDropdown === menu ? "rotate-180" : ""
+            }`}
         />
       </button>
 
@@ -560,9 +555,8 @@ function MobileCircle({ active }) {
     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#F1F6EF]">
       <FaChevronDown
         size={11}
-        className={`text-[#10223A] transition-transform duration-300 ${
-          active ? "rotate-180" : ""
-        }`}
+        className={`text-[#10223A] transition-transform duration-300 ${active ? "rotate-180" : ""
+          }`}
       />
     </span>
   );
@@ -580,9 +574,8 @@ function MobileProduct({ title, product, openProduct, toggleProduct }) {
         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#F1F6EF]">
           <FaChevronRight
             size={9}
-            className={`text-[#10223A] transition-transform duration-300 ${
-              openProduct === product ? "rotate-90" : ""
-            }`}
+            className={`text-[#10223A] transition-transform duration-300 ${openProduct === product ? "rotate-90" : ""
+              }`}
           />
         </span>
       </button>
