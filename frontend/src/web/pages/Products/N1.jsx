@@ -1016,7 +1016,7 @@ const Loadstar = () => {
       </section>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
+          SECTION 5: WHY CHOOSE Navgatee Electric
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -1031,7 +1031,7 @@ const Loadstar = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              What sets Khalsa Super DLX apart from the competition.
+              What sets Navgatee Electric apart from the competition.
             </p>
           </div>
 
@@ -1103,7 +1103,7 @@ const Loadstar = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the farmers and operators who trust Khalsa Super DLX for
+              Hear from the farmers and operators who trust Navgatee Electric for
               their toughest jobs.
             </p>
           </div>

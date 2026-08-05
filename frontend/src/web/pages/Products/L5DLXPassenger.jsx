@@ -868,7 +868,7 @@ const L5DLXPassenger = () => {
 
               {/* highlight tags */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Navigate Smarter", "Drive Greener", "Choose Super DLX"].map(
+                {["Navigate Smarter", "Drive Greener", "Choose L5 Passenger DLX"].map(
                   (tag) => (
                     <span
                       key={tag}
@@ -1080,7 +1080,7 @@ const L5DLXPassenger = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
+          SECTION 5: WHY CHOOSE Navgatee Electric
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
