@@ -28,6 +28,13 @@ import {
   ChartNoAxesCombined,
   Wind,
   ShieldCheck,
+  Settings,
+  Key,
+  Ruler,
+  MoveVertical,
+  Mountain,
+  Sun,
+  CircleDot,
 } from "lucide-react";
 
 const GALLERY_IMAGES = [
@@ -51,15 +58,57 @@ const GREEN_LIGHT = "#7ED33E";
 /* ===================================================================
    SPECS DATA — pulled from the PULSE spec strip
 =================================================================== */
-const specs = [
-  { icon: <Gauge size={22} />, title: "Max Distance", value: "175 KM" },
-  { icon: <ChartNoAxesCombined size={22} />, title: "Max Speed", value: "25 KPH" },
-  { icon: <Disc size={22} />, title: "Break System", value: "Front Disc" },
-  { icon: <Weight size={22} />, title: "Load Capacity", value: "250 Kgs" },
-  { icon: <Clock size={22} />, title: "Charging Time (LED)", value: "5-6 Hrs*" },
-  { icon: <BatteryCharging size={22} />, title: "1 Battery Charging Time", value: "5 to 6 Hrs*" },
-  { icon: <Cog size={22} />, title: "Motor", value: "250W" },
-  { icon: <Zap size={22} />, title: "Battery", value: "LED / Lithium" },
+const specGroups = [
+  {
+    category: "Power & Transmission",
+    items: [
+      { icon: <Cog size={20} />, title: "Motor Type", value: "BLDC Hub Motor" },
+      { icon: <Zap size={20} />, title: "Motor Power", value: "250 Watt" },
+      { icon: <BatteryCharging size={20} />, title: "Battery Volt", value: "60V / 72V" },
+      { icon: <Gauge size={20} />, title: "Range", value: "50 - 120 KM*" },
+      { icon: <Settings size={20} />, title: "Transmission", value: "Automatic" },
+      { icon: <Key size={20} />, title: "Start", value: "Keyless Self Start" },
+    ],
+  },
+  {
+    category: "Dimensions & Capacity",
+    items: [
+      { icon: <Weight size={20} />, title: "Net Weight", value: "80 Kgs" },
+      { icon: <Users size={20} />, title: "Carrying Capacity", value: "150 Kg*" },
+      { icon: <Ruler size={20} />, title: "Length x Width x Height", value: "1700 x 650 x 1100 mm" },
+      { icon: <MoveVertical size={20} />, title: "Ground Clearance", value: "175 mm" },
+    ],
+  },
+  {
+    category: "Electricals",
+    items: [
+      { icon: <BatteryCharging size={20} />, title: "Battery Type", value: "Lead-Acid / Lithium" },
+      { icon: <Zap size={20} />, title: "Battery Capacity", value: "KWH*" },
+      { icon: <Mountain size={20} />, title: "Gradeability", value: "12°" },
+      { icon: <Sun size={20} />, title: "Head Lights", value: "LED" },
+      { icon: <ChartNoAxesCombined size={20} />, title: "Top Speed", value: "25 KMPH" },
+    ],
+  },
+  {
+    category: "Tyres & Brakes",
+    items: [
+      { icon: <CircleDot size={20} />, title: "Tyre Size", value: "Front 3.00-12 / Rear 3.00-12" },
+      { icon: <CircleDot size={20} />, title: "Tyre Type", value: "Tubeless" },
+      { icon: <CircleDot size={20} />, title: "Wheel Type", value: "Alloy" },
+      { icon: <Disc size={20} />, title: "Front & Rear Brake", value: "Front Disc & Rear Disc" },
+    ],
+  },
+];
+
+const additionalFeatures = [
+  "Repair Switch",
+  "Parking Mode",
+  "Buzzer",
+  "Reverse Gear",
+  "Foot Mat",
+  "Remote",
+  "Alert",
+  "Chrome Mirror",
 ];
 
 /* ===================================================================
@@ -70,7 +119,7 @@ const testimonials = [
     name: "Rohit Verma",
     location: "Lucknow, UP",
     rating: 5,
-    text: "The PULSE is light, peppy and perfect for my daily office commute. 175 km on a charge means I barely think about charging during the week.",
+    text: "The PULSE is light, peppy and perfect for my daily office commute. 120 km on a charge means I barely think about charging during the week.",
     initials: "RV",
     color: "blue",
   },
@@ -86,7 +135,7 @@ const testimonials = [
     name: "Deepak Chauhan",
     location: "Varanasi, UP",
     rating: 4,
-    text: "250 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
+    text: "150 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
     initials: "DC",
     color: "blue",
   },
@@ -106,7 +155,7 @@ const testimonials = [
 const faqData = [
   {
     q: "What is the maximum range of the PULSE on a full charge?",
-    a: "The PULSE delivers up to 175 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
+    a: "The PULSE delivers up to 120 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
   },
   {
     q: "How long does the battery take to charge?",
@@ -122,7 +171,7 @@ const faqData = [
   },
   {
     q: "How much load can the PULSE carry?",
-    a: "The PULSE is rated for a total load capacity of 250 kgs, comfortably supporting two riders along with everyday cargo.",
+    a: "The PULSE is rated for a total load capacity of 150 kgs, comfortably supporting two riders along with everyday cargo.",
   },
 ];
 
@@ -599,8 +648,8 @@ const Pulse = () => {
               />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Ride further, stop safer. The all-new PULSE delivers a 175 km
-                range, a responsive front disc brake, and a 250 kg load
+                Ride further, stop safer. The all-new PULSE delivers a 120 km
+                range, a responsive front disc brake, and a 150 kg load
                 capacity — built for confident everyday commuting.
               </p>
 
@@ -675,7 +724,7 @@ const Pulse = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Gauge size={28} />}
-              title="175 km Range"
+              title="120 km Range"
               desc="Go further between charges with a long-range battery built for daily commutes."
               color="blue"
             />
@@ -687,7 +736,7 @@ const Pulse = () => {
             />
             <FeatureCard
               icon={<Weight size={28} />}
-              title="250 kg Load Capacity"
+              title="150 kg Load Capacity"
               desc="Ride two-up with luggage and everyday essentials, without strain."
               color="blue"
             />
@@ -730,7 +779,7 @@ const Pulse = () => {
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Meet the PULSE — a bold, high-range electric scooter designed
                 for everyday commuting. With a responsive front disc brake, a
-                250 kg load rating, and a 175 km range, every ride is
+                150 kg load rating, and a 120 km range, every ride is
                 efficient, safe, and dependable.
               </p>
 
@@ -872,33 +921,67 @@ const Pulse = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {specs.map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-2 flex items-center justify-between gap-3 hover:-translate-y-0.5"
-                style={{ borderColor: undefined }}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
-                  style={{ backgroundColor: `${GREEN}16`, color: GREEN }}
-                >
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-500 text-xs sm:text-sm uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-                  <p
-                    className="font-semibold text-lg sm:text-lg text-transparent bg-clip-text mt-1"
-                    style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
-                  >
-                    {item.value}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <div className="space-y-10">
+                      {specGroups.map((group) => (
+                        <div key={group.category}>
+                          <h3
+                            className="text-sm sm:text-base font-bold uppercase tracking-wide mb-4 pl-1"
+                            style={{ color: BLUE }}
+                          >
+                            {group.category}
+                          </h3>
+                          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                            {group.items.map((item, index) => (
+                              <div
+                                key={index}
+                                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-1 flex items-center gap-4 hover:-translate-y-0.5"
+                              >
+                                <div
+                                  className="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
+                                  style={{ backgroundColor: `${GREEN}16`, color: GREEN }}
+                                >
+                                  {item.icon}
+                                </div>
+                                <div>
+                                  <h3 className="font-semibold text-gray-500 text-xs sm:text-sm uppercase tracking-wide">
+                                    {item.title}
+                                  </h3>
+                                  <p
+                                    className="font-semibold text-base sm:text-lg text-transparent bg-clip-text mt-1"
+                                    style={{
+                                      backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})`,
+                                    }}
+                                  >
+                                    {item.value}
+                                  </p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+          
+                      {/* Additional features */}
+                      <div>
+                        <h3
+                          className="text-sm sm:text-base font-bold uppercase tracking-wide mb-4 pl-1"
+                          style={{ color: BLUE }}
+                        >
+                          Additional Features
+                        </h3>
+                        <div className="flex flex-wrap gap-3">
+                          {additionalFeatures.map((feature) => (
+                            <span
+                              key={feature}
+                              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-700 shadow-sm"
+                            >
+                              <ShieldCheck size={16} style={{ color: GREEN }} />
+                              {feature}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
         </div>
       </section>
 
