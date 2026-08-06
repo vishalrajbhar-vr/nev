@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import QuickRequest from "./QuickRequest";
 
-const topHeroVehicleSrc = "/images/home hero.png";
+const topHeroVehicleSrc = "/images/home-hero-images.png";
 const lowerHeroVehicleSrc = "/rickshaw_nobg.png";
 const bgSceneSrc = "/clean_hero_city_bg.jpg";
 
@@ -19,9 +19,9 @@ const topSlide = {
   title: ["Navgatee Electric", "Driving the Future of", "Sustainable Mobility"],
   description:
     "Navgatee Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
-  image: "/images/home hero.png",
+  image: "/images/home-hero-images.png",
   imageClass: "w-[360px] sm:w-[400px] lg:w-[440px]",
-  imageTransform: "translateX(4px) translateY(-8px) scaleX(-1)",
+  imageTransform: "translateX(4px) translateY(-8px)",
 };
 
 const featureCards = [
