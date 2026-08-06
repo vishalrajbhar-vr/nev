@@ -44,12 +44,6 @@ const productItems = {
       { label: "Lumo", path: "/china-scooty/lumo" },
       { label: "Sonic", path: "/china-scooty/sonic" },
       { label: "Pulse", path: "/china-scooty/pulse" },
-      { label: "Flex", path: "/china-scooty/flex" },
-      { label: "Bolt", path: "/china-scooty/bolt" },
-      { label: "Vybe", path: "/china-scooty/vybe" },
-      { label: "Volt", path: "/china-scooty/volt" },
-      { label: "Starlite", path: "/china-scooty/starlite" },
-
     ],
   },
 };
@@ -482,11 +476,9 @@ function ProductDesktopItem({
                 <div className="px-4 py-2 text-md font-bold text-[#142033]">
                   China Scooty
                 </div>
-                <div className="max-h-[300px] overflow-y-auto pr-1">
-                  {productItems.scooty.china.map((item) => (
-                    <DropdownItem key={item.path} item={item} />
-                  ))}
-                </div>
+                {productItems.scooty.china.map((item) => (
+                  <DropdownItem key={item.path} item={item} />
+                ))}
               </div>
             </div>
           ) : (

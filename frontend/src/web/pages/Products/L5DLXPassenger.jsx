@@ -807,7 +807,7 @@ const L5DLXPassenger = () => {
             <FeatureCard
               icon={<Thermometer size={28} />}
               title="Passenger Comfort"
-              desc="Spacious 3 Plus 1 seating with ergonomic design, ensuring comfortable rides for every passenger."
+              desc="Spacious 3+1 seating with ergonomic design, ensuring comfortable rides for every passenger."
               color="green"
             />
             <FeatureCard
@@ -861,14 +861,14 @@ const L5DLXPassenger = () => {
                 Experience next-generation mobility with the NEV L5 DLX
                 Passenger 3 Plus 1 — a durable, high-performance electric auto
                 rickshaw designed for comfortable passenger transportation.
-                Featuring spacious 3 Plus 1 seating, reliable performance, low
+                Featuring spacious 3+1 seating, reliable performance, low
                 maintenance, and excellent battery efficiency, it delivers
                 smooth, safe, and cost-effective rides every day.
               </p>
 
               {/* highlight tags */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Navigate Smarter", "Drive Greener", "Choose L5 Passenger DLX"].map(
+                {["Navigate Smarter", "Drive Greener", "Choose Super DLX"].map(
                   (tag) => (
                     <span
                       key={tag}
@@ -1080,7 +1080,7 @@ const L5DLXPassenger = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE Navgatee Electric
+          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">

@@ -546,7 +546,7 @@ const ProductAnimation = () => {
                 <img
                   src="/images/l5-front-facia.png"
                   alt="L5 Front Facia"
-                  className="w-[120%] h-[120%] -mt-10 object-contain p-4 drop-shadow-2xl"
+                  className="w-[90%] h-[90%] object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
                   }}
@@ -677,7 +677,7 @@ const L5FrontFacia = () => {
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
         <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-5">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="w-full lg:w-[55%]">
@@ -895,7 +895,7 @@ const L5FrontFacia = () => {
                 <div className="flex items-center justify-between md:gap-5 gap-7 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <ChartNoAxesCombined className=" text-green-500" size={25} />
                   <div>
-                    <h1 className="text-xl font-bold">45</h1>
+                    <h1 className="text-xl font-bold">48 </h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
@@ -926,7 +926,7 @@ const L5FrontFacia = () => {
                       key={src}
                       src={src}
                       alt={`L5 Front Facia view ${i + 1}`}
-                      className="w-[130%] h-[130%] -mt-15  flex-shrink-0 object-contain"
+                      className="w-[100%] h-[100%] mt-5  flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>
@@ -1065,7 +1065,7 @@ const L5FrontFacia = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE Navgatee Electric
+          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">

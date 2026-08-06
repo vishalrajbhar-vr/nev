@@ -16,12 +16,12 @@ const bgSceneSrc = "/clean_hero_city_bg.jpg";
 
 const topSlide = {
   ribbon: "DRIVE CHANGE. DRIVE ELECTRIC.",
-  title: ["Navgatee Electric", "Driving the Future of", "Sustainable Mobility"],
+  title: ["NEV Electric", "Driving the Future of", "Sustainable Mobility"],
   description:
-    "Navgatee Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
+    "NEV Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
   image: "/images/home hero.png",
   imageClass: "w-[360px] sm:w-[400px] lg:w-[440px]",
-  imageTransform: "translateX(4px) translateY(-8px) scaleX(-1)",
+  imageTransform: "translateX(4px) translateY(-8px)",
 };
 
 const featureCards = [
@@ -105,7 +105,7 @@ function HomeHero() {
                 <div className="hero-vehicle-wrap" style={{ position: "relative", zIndex: 20 }}>
                   <img
                     src={topSlide.image || topHeroVehicleSrc}
-                    alt="Navgatee Auto"
+                    alt="NEV Auto"
                     className={`${topSlide.imageClass || "w-[580px] sm:w-[620px] lg:w-[650px]"
                       } hero-scene-image hero-vehicle-drive-loop max-w-none h-auto object-contain opacity-100 drop-shadow-[0_16px_24px_rgba(6,21,43,0.16)]`}
                     style={{ transform: topSlide.imageTransform || "translateX(6px) translateY(-16px)" }}
@@ -141,7 +141,7 @@ function HomeHero() {
             </h2>
 
             <p className="mt-3 text-sm sm:text-[15px] lg:text-[14px] text-[#4A5568] leading-relaxed max-w-[520px] font-medium">
-              Navgatee Vehicles is committed to delivering reliable, high-performance
+              NEV Vehicles is committed to delivering reliable, high-performance
               electric rickshaws that empower livelihoods and build a cleaner,
               greener tomorrow.
             </p>
@@ -177,7 +177,7 @@ function HomeHero() {
                 <div className="absolute left-[-1%] bottom-[-4%] z-30 h-[103%] w-[102%] origin-bottom-left pointer-events-none select-none lg:[transform:perspective(1200px)_rotateY(-2deg)_rotateX(1deg)]">
                   <img
                     src={lowerHeroVehicleSrc}
-                    alt="Navgatee Electric Rickshaw"
+                    alt="NEV Electric Rickshaw"
                     className="h-full w-full object-contain drop-shadow-[0_28px_36px_rgba(6,21,43,0.34)]"
                   />
                 </div>

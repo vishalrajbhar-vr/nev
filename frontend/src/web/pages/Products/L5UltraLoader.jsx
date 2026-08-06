@@ -1094,7 +1094,7 @@ const L5UltraLoader = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE Navgatee Electric
+          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">

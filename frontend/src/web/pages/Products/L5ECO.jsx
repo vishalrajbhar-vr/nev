@@ -73,7 +73,7 @@ const testimonials = [
     name: "Rajesh Kumar",
     location: "Muzaffarnagar, UP",
     rating: 5,
-    text: "The L5 ECO 3 Plus 1 is a reliable companion on long routes. Its strong power delivery and smooth ride make daily passenger service much easier.",
+    text: "The L5 ECO 6 Plus 1 is a reliable companion on long routes. Its strong power delivery and smooth ride make daily passenger service much easier.",
     initials: "RK",
     color: "blue",
   },
@@ -108,8 +108,8 @@ const testimonials = [
 =================================================================== */
 const faqData = [
   {
-    q: "What is the engine power of L5 ECO 3 Plus 1?",
-    a: "The L5 ECO 3 Plus 1 is powered by a 4.5 KW motor designed for efficient passenger operations with reliable low-end torque.",
+    q: "What is the engine power of L5 ECO 6 Plus 1?",
+    a: "The L5 ECO 6 Plus 1 is powered by a 4.5 KW motor designed for efficient passenger operations with reliable low-end torque.",
   },
   {
     q: "Is the cooling system effective for long hours of use?",
@@ -117,7 +117,7 @@ const faqData = [
   },
   {
     q: "What is the warranty period?",
-    a: "L5 ECO 3 Plus 1 comes with a comprehensive 1-year warranty covering manufacturing defects and ensuring dependable support.",
+    a: "L5 ECO 6 Plus 1 comes with a comprehensive 1-year warranty covering manufacturing defects and ensuring dependable support.",
   },
   {
     q: "Can it be started manually if the battery is down?",
@@ -543,7 +543,7 @@ const ProductAnimation = () => {
               <div className="relative w-[120%] h-[120%] flex items-center justify-center">
                 <img
                   src="/images/l5-eco.png"
-                  alt="L5 ECO 3 Plus 1"
+                  alt="L5 ECO 6 Plus 1"
                   className="h-[75%] w-[75%] -mt-10 object-contain p-4 drop-shadow-2xl"
                   style={{
                     filter: "drop-shadow(0 20px 30px rgba(35, 70, 183, 0.25))",
@@ -687,7 +687,7 @@ const L5ECO = () => {
                 <span>Products</span>
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span className="text-[#2346b7] font-semibold">
-                  L5 ECO 3 Plus 1
+                  L5 ECO 6 Plus 1
                 </span>
               </nav>
 
@@ -695,14 +695,14 @@ const L5ECO = () => {
               <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
                 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
-                L5 ECO 3 Plus 1
+                L5 ECO 6 Plus 1
                 </span>
               </h1>
 
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The L5 ECO 3 Plus 1 delivers smooth passenger mobility, fuel-efficient performance, and dependable comfort for city and rural routes.
+                Power your journey with confidence. The L5 ECO 6 Plus 1 delivers smooth passenger mobility, fuel-efficient performance, and dependable comfort for city and rural routes.
               </p>
 
               {/* CTA Buttons */}
@@ -799,7 +799,7 @@ const L5ECO = () => {
             <FeatureCard
               icon={<Thermometer size={28} />}
               title="Passenger Comfort"
-              desc="Spacious 3 Plus 1 seating with ergonomic design, ensuring comfortable rides for every passenger."
+              desc="Spacious 6+1 seating with ergonomic design, ensuring comfortable rides for every passenger."
               color="green"
             />
             <FeatureCard
@@ -841,7 +841,7 @@ const L5ECO = () => {
 
               {/* title */}
               <h2 className="mt-5 text-2xl sm:text-4xl lg:text-[25px] font-bold leading-tight">
-                <span className="text-gray-500">L5 ECO 3 Plus 1</span>
+                <span className="text-gray-500">L5 ECO 6 Plus 1</span>
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5BBF43] to-[#8be27a]">
                   Built for Comfort, Powered by Innovation
@@ -850,7 +850,7 @@ const L5ECO = () => {
 
               {/* description */}
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Experience next-generation mobility with the NEV L5 ECO 3 Plus 1 — a durable, high-performance electric auto rickshaw designed for comfortable passenger transportation. Featuring spacious 3 Plus 1 seating, reliable performance, low maintenance, and excellent battery efficiency, it delivers smooth, safe, and cost-effective rides every day.
+                Experience next-generation mobility with the NEV L5 ECO 6 Plus 1 — a durable, high-performance electric auto rickshaw designed for comfortable passenger transportation. Featuring spacious 6+1 seating, reliable performance, low maintenance, and excellent battery efficiency, it delivers smooth, safe, and cost-effective rides every day.
               </p>
 
               {/* highlight tags */}
@@ -889,14 +889,14 @@ const L5ECO = () => {
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <ChartNoAxesCombined className=" text-green-500" size={25}/>
                   <div>
-                    <h1 className="text-xl font-bold">48</h1>
+                    <h1 className="text-xl font-bold">48 </h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <Users className=" text-green-500" size={25}/>
                   <div>
-                    <h1 className="text-xl font-bold">3 + 1</h1>
+                    <h1 className="text-xl font-bold">6 + 1</h1>
                     <p className="text-md font-semibold">SEATER</p>
                   </div>
                 </div>
@@ -1056,7 +1056,7 @@ const L5ECO = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE Navgatee Electric
+          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -1071,7 +1071,7 @@ const L5ECO = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              What sets L5 ECO 3 Plus 1 apart from the competition.
+              What sets L5 ECO 6 Plus 1 apart from the competition.
             </p>
           </div>
 
@@ -1141,7 +1141,7 @@ const L5ECO = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the drivers and operators who trust L5 ECO 3 Plus 1 for
+              Hear from the drivers and operators who trust L5 ECO 6 Plus 1 for
               their toughest routes.
             </p>
           </div>

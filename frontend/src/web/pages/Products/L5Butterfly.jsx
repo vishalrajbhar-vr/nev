@@ -884,7 +884,7 @@ const L5Butterfly = () => {
                 <div className="flex sm:flex-row gap-5 items-center  border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <ChartNoAxesCombined className="text-green-500" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
-                    <h1 className="text-xl font-bold">45</h1>
+                    <h1 className="text-xl font-bold">33</h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
