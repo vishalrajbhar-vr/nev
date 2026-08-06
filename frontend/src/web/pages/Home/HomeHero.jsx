@@ -21,7 +21,7 @@ const topSlide = {
     "NEV Vehicles delivers reliable, high-performance electric rickshaws for urban and commercial use. Our EV range offers low running cost, strong build quality, and dependable battery performance for daily earnings.",
   image: "/images/home hero.png",
   imageClass: "w-[360px] sm:w-[400px] lg:w-[440px]",
-  imageTransform: "translateX(4px) translateY(-8px) scaleX(-1)",
+  imageTransform: "translateX(4px) translateY(-8px)",
 };
 
 const featureCards = [

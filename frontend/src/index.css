@@ -227,27 +227,27 @@
 @keyframes heroVehicleDriveLoop {
   0% {
     opacity: 0;
-    transform: translateX(220px) translateY(-14px) scale(0.88) scaleX(-1);
+    transform: translateX(220px) translateY(-14px) scale(0.88);
   }
   16% {
     opacity: 1;
-    transform: translateX(-8px) translateY(-14px) scale(1.02) scaleX(-1);
+    transform: translateX(-8px) translateY(-14px) scale(1.02);
   }
   22%, 62% {
     opacity: 1;
-    transform: translateX(4px) translateY(-14px) scale(1) scaleX(-1);
+    transform: translateX(4px) translateY(-14px) scale(1);
   }
   70% {
     opacity: 1;
-    transform: translateX(-26px) translateY(-12px) scale(0.99) scaleX(-1);
+    transform: translateX(-26px) translateY(-12px) scale(0.99);
   }
   86% {
     opacity: 0;
-    transform: translateX(-300px) translateY(-8px) scale(0.84) scaleX(-1);
+    transform: translateX(-300px) translateY(-8px) scale(0.84);
   }
   87%, 100% {
     opacity: 0;
-    transform: translateX(220px) translateY(-14px) scale(0.88) scaleX(-1);
+    transform: translateX(220px) translateY(-14px) scale(0.88);
   }
 }
 
