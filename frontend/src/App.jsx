@@ -28,6 +28,11 @@ import Nova from "./web/pages/Products/ChinaScooty/Nova";
 import Lumo from "./web/pages/Products/ChinaScooty/Lumo";
 import Sonic from "./web/pages/Products/ChinaScooty/Sonic";
 import Pulse from "./web/pages/Products/ChinaScooty/Pulse";
+import Bolt from "./web/pages/Products/ChinaScooty/Bolt";
+import Flex from "./web/pages/Products/ChinaScooty/Flex";
+import Vybe from "./web/pages/Products/ChinaScooty/Vybe";
+import Volt from "./web/pages/Products/ChinaScooty/Volt";
+import Starlite from "./web/pages/Products/ChinaScooty/Starlite";
 
 function App() {
   return (
@@ -60,6 +65,11 @@ function App() {
         <Route path="/china-scooty/lumo" element={<Lumo />} />
         <Route path="/china-scooty/sonic" element={<Sonic />} />
         <Route path="/china-scooty/pulse" element={<Pulse />} />
+        <Route path="/china-scooty/bolt" element={<Bolt />} />
+        <Route path="/china-scooty/flex" element={<Flex />} />
+        <Route path="/china-scooty/vybe" element={<Vybe />} />
+        <Route path="/china-scooty/volt" element={<Volt />} />
+        <Route path="/china-scooty/starlite" element={<Starlite />} />
 
         <Route path="*" element={<NotFound/>} />
       </Routes>

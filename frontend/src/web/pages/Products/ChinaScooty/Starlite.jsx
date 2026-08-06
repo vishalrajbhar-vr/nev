@@ -28,25 +28,21 @@ import {
   ChartNoAxesCombined,
   Wind,
   ShieldCheck,
-  Ruler,
-  Key,
-  Sun,
-  Mountain,
-  CircleDot,
   Settings,
+  Key,
+  Ruler,
   MoveVertical,
+  Mountain,
+  Sun,
+  CircleDot,
 } from "lucide-react";
 
 const GALLERY_IMAGES = [
-  "/images/china-nova.png"
+//   "/images/china-flex.png",
+  "/images/china-starlite.png",
+
 ];
 
-/* ===================================================================
-   BRAND TOKENS
-   Navy   -> headings / primary text accents
-   Blue   -> CTA / brand gradient (matches NAVGATEE logo blue)
-   Green  -> spec icon accent (matches the spec badge strip in the design)
-=================================================================== */
 const NAVY = "#0F2E5C";
 const NAVY_DARK = "#081B38";
 const BLUE = "#1D5FA8";
@@ -55,9 +51,7 @@ const GREEN = "#4CAF3D";
 const GREEN_LIGHT = "#7ED33E";
 
 /* ===================================================================
-   SPECS DATA — grouped to match the full NOVA technical specification
-   sheet (Power & Transmission / Dimensions & Capacity / Electricals /
-   Tyres & Brakes), plus the standalone feature list.
+   SPECS DATA — pulled from the STARLITE spec strip
 =================================================================== */
 const specGroups = [
   {
@@ -112,8 +106,6 @@ const additionalFeatures = [
   "Chrome Mirror",
 ];
 
-/* * indicates the value depends on the battery variant fitted. */
-
 /* ===================================================================
    TESTIMONIALS DATA
 =================================================================== */
@@ -122,7 +114,7 @@ const testimonials = [
     name: "Rohit Verma",
     location: "Lucknow, UP",
     rating: 5,
-    text: "The NOVA is light, peppy and perfect for my daily office commute. Great range on a charge means I barely think about charging during the week.",
+    text: "The STARLITE is light, peppy and perfect for my daily office commute. 120 km on a charge means I barely think about charging during the week.",
     initials: "RV",
     color: "blue",
   },
@@ -146,7 +138,7 @@ const testimonials = [
     name: "Neha Gupta",
     location: "Gorakhpur, UP",
     rating: 5,
-    text: "Loved the styling and the sturdy build. Motor feels punchy for a 250W BLDC hub motor and the keyless start gives me peace of mind on longer rides.",
+    text: "Loved the styling and the sturdy build. Motor feels punchy for a 250W setup and the LED battery gives me peace of mind on longer rides.",
     initials: "NG",
     color: "green",
   },
@@ -157,34 +149,27 @@ const testimonials = [
 =================================================================== */
 const faqData = [
   {
-    q: "What is the maximum range of the NOVA on a full charge?",
-    a: "The NOVA delivers 50-120 km on a single full charge depending on the battery variant fitted, making it a flexible choice for daily commuting.",
+    q: "What is the maximum range of the STARLITE on a full charge?",
+    a: "The STARLITE delivers up to 120 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
   },
   {
     q: "How long does the battery take to charge?",
     a: "With the LED charging indicator, a full charge takes around 5-6 hours. A single battery pack charges in roughly 5 to 6 hours as well.",
   },
   {
-    q: "What is the top speed of the NOVA?",
-    a: "The NOVA has a top speed of 25 KMPH, tuned for safe and efficient city and residential riding.",
+    q: "What is the top speed of the STARLITE?",
+    a: "The STARLITE has a top speed of 25 KPH, tuned for safe and efficient city and residential riding.",
   },
   {
-    q: "What braking system does the NOVA use?",
-    a: "The NOVA comes equipped with front and rear disc brakes for confident, reliable stopping power in all conditions.",
+    q: "What braking system does the STARLITE use?",
+    a: "The STARLITE comes equipped with front and rear disc brakes for confident, reliable stopping power in all conditions.",
   },
   {
-    q: "How much load can the NOVA carry?",
-    a: "The NOVA is rated for a carrying capacity of 150 kg on smooth roads, comfortably supporting two riders along with everyday cargo.",
-  },
-  {
-    q: "What motor and battery does the NOVA use?",
-    a: "The NOVA is powered by a 250W BLDC hub motor running on a 60V/72V system, with a choice of Lead-Acid or Lithium batteries.",
+    q: "How much load can the STARLITE carry?",
+    a: "The STARLITE is rated for a total load capacity of 150 kgs, comfortably supporting two riders along with everyday cargo.",
   },
 ];
 
-/* ===================================================================
-   COUNTER HOOK
-=================================================================== */
 const useCountUp = (end, duration = 2000, startOnView = false) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
@@ -220,9 +205,6 @@ const useCountUp = (end, duration = 2000, startOnView = false) => {
   return [count, ref];
 };
 
-/* ===================================================================
-   STAT CARD
-=================================================================== */
 const StatCard = ({ icon, value, suffix, label }) => {
   const [count, ref] = useCountUp(value, 2200, true);
   return (
@@ -261,9 +243,6 @@ const StatCard = ({ icon, value, suffix, label }) => {
   );
 };
 
-/* ===================================================================
-   FEATURE CARD
-=================================================================== */
 const FeatureCard = ({ icon, title, desc, color = "blue" }) => {
   const colors = {
     blue: {
@@ -297,9 +276,6 @@ const FeatureCard = ({ icon, title, desc, color = "blue" }) => {
   );
 };
 
-/* ===================================================================
-   FAQ ACCORDION ITEM
-=================================================================== */
 const FaqItem = ({ question, answer, isOpen, onClick }) => {
   return (
     <div
@@ -333,9 +309,6 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
   );
 };
 
-/* ===================================================================
-   TESTIMONIAL SLIDER
-=================================================================== */
 const TestimonialSlider = () => {
   const [current, setCurrent] = useState(0);
   const [slideDir, setSlideDir] = useState("right");
@@ -471,9 +444,6 @@ const TestimonialSlider = () => {
   );
 };
 
-/* ===================================================================
-   PRODUCT ANIMATION — 3D interactive showcase
-=================================================================== */
 const ProductAnimation = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
@@ -557,11 +527,11 @@ const ProductAnimation = () => {
             }}
           >
             <div className="absolute inset-0 flex items-center justify-center" style={{ transform: "translateZ(40px)" }}>
-              <div className="relative w-[115%] h-[115%] flex items-center justify-center">
+              <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
-                  src="/images/china-nova.png"
-                  alt="NOVA Electric Scooter"
-                  className="w-[90%] h-[90%] -mt-5 object-contain p-4 drop-shadow-2xl"
+                  src="/images/china-starlite.png"
+                  alt="STARLITE Electric Scooter"
+                  className="w-[130%] h-[130%] -mt-15 object-contain p-4 drop-shadow-2xl"
                   style={{ filter: `drop-shadow(0 20px 30px ${BLUE}40)` }}
                 />
               </div>
@@ -580,10 +550,7 @@ const ProductAnimation = () => {
   );
 };
 
-/* ===================================================================
-   MAIN COMPONENT
-=================================================================== */
-const Nova = () => {
+const Starlite = () => {
   const [openFaq, setOpenFaq] = useState(null);
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
 
@@ -605,7 +572,7 @@ const Nova = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
-      await submitForm("product", { ...formData, product: "Nova" });
+      await submitForm("product", { ...formData, product: "Starlite" });
       alert("Thank you for your enquiry! We will get back to you shortly.");
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
@@ -615,9 +582,6 @@ const Nova = () => {
 
   return (
     <>
-      {/* ============================================================
-          SECTION 1: HERO
-      ============================================================ */}
       <section className="relative overflow-hidden bg-gradient-to-br from-slate-100 via-white to-blue-100/30">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-200/30 to-green-200/20 rounded-full blur-3xl" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-green-400/10 to-blue-200/20 rounded-full blur-3xl" />
@@ -629,7 +593,6 @@ const Nova = () => {
 
         <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-5">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-            {/* Left Content */}
             <div className="w-full lg:w-[55%]">
               <nav className="flex flex-wrap items-center gap-2 text-sm sm:text-base text-gray-500 mb-6">
                 <FaHome style={{ color: BLUE }} size={14} />
@@ -639,14 +602,14 @@ const Nova = () => {
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span>China Scooty</span>
                 <FaChevronRight size={10} className="text-gray-300" />
-                <span className="font-semibold" style={{ color: BLUE }}>Nova</span>
+                <span className="font-semibold" style={{ color: BLUE }}>Starlite</span>
               </nav>
 
               <h1
-                className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-extrabold  tracking-tight italic"
+                className="text-3xl sm:text-4xl lg:text-5xl xl:text-5xl font-extrabold leading-[1.1] tracking-tight italic"
                 style={{ color: NAVY_DARK }}
               >
-                NOVA
+                STARLITE
               </h1>
 
               <div
@@ -655,9 +618,9 @@ const Nova = () => {
               />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Ride further, stop safer. The all-new NOVA delivers up to
-                120 km range, front &amp; rear disc brakes, and a keyless
-                BLDC hub motor — built for confident everyday commuting.
+                Ride further, stop safer. The all-new STARLITE delivers a 120 km
+                range, front &amp; rear disc brakes, and a 150 kg load
+                capacity — built for confident everyday commuting.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-4">
@@ -681,7 +644,6 @@ const Nova = () => {
               </div>
             </div>
 
-            {/* Right — Product Visual */}
             <div className="w-full lg:w-[45%] relative">
               <ProductAnimation />
             </div>
@@ -689,9 +651,6 @@ const Nova = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 2: STATS COUNTER
-      ============================================================ */}
       <section className="relative mt-10 sm:mt-10 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           <StatCard icon={<Truck size={26} />} value={500} suffix="+" label="Units Sold" />
@@ -701,9 +660,6 @@ const Nova = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 3: KEY HIGHLIGHTS / FEATURES
-      ============================================================ */}
       <section className="py-8 sm:py-15 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -723,7 +679,7 @@ const Nova = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Long range, strong stopping power, and a stable ride — the NOVA
+              Long range, strong stopping power, and a stable ride — the STARLITE
               is engineered for daily commuting without compromise.
             </p>
           </div>
@@ -731,8 +687,8 @@ const Nova = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Gauge size={28} />}
-              title="Up to 120 km Range"
-              desc="Go further between charges with a battery pack built for daily commutes."
+              title="120 km Range"
+              desc="Go further between charges with a long-range battery built for daily commutes."
               color="blue"
             />
             <FeatureCard
@@ -748,32 +704,28 @@ const Nova = () => {
               color="blue"
             />
             <FeatureCard
-              icon={<Key size={28} />}
-              title="Keyless Self Start"
-              desc="BLDC hub motor with keyless start and automatic transmission for a smooth ride."
+              icon={<Clock size={28} />}
+              title="Fast 5-6 Hr Charging"
+              desc="LED charge indicator and quick charging get you back on the road sooner."
               color="green"
             />
           </div>
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION: PRODUCT GALLERY
-      ============================================================ */}
       <section className="relative overflow-hidden">
         <div className="absolute -top-32 -left-20 w-72 h-72 bg-green-400/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl" style={{ backgroundColor: `${BLUE}22` }} />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-10 lg:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
-            {/* Left — Product Info */}
             <div className="text-center lg:text-left">
               <span className="inline-flex items-center px-4 py-1.5 rounded-full text-md sm:text-sm font-semibold text-gray-500 bg-green-400/10 border border-black/15 backdrop-blur-sm">
                 Scooty
               </span>
 
               <h2 className="mt-5 text-2xl sm:text-4xl lg:text-[25px] font-bold leading-tight">
-                <span style={{ color: NAVY_DARK }}>NOVA</span>
+                <span style={{ color: NAVY_DARK }}>STARLITE</span>
                 <br />
                 <span
                   className="text-transparent bg-clip-text"
@@ -784,14 +736,14 @@ const Nova = () => {
               </h2>
 
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Meet the NOVA — a bold electric scooter designed for everyday
-                commuting. With disc brakes front and rear, a 150 kg load
-                rating, and up to 120 km range depending on the battery
-                fitted, every ride is efficient, safe, and dependable.
+                Meet the STARLITE — a bold, high-range electric scooter designed
+                for everyday commuting. With disc brakes front and rear, a
+                150 kg load rating, and a 120 km range, every ride is
+                efficient, safe, and dependable.
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Ride Further", "Brake Smarter", "Choose Nova"].map((tag) => (
+                {["Ride Further", "Brake Smarter", "Choose Starlite"].map((tag) => (
                   <span
                     key={tag}
                     className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:text-green-600 hover:border-green-600/50 transition-colors duration-300"
@@ -817,7 +769,7 @@ const Nova = () => {
                   <CircleGauge className="text-green-600" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
                     <h1 className="text-xl font-bold">120</h1>
-                    <p className="text-md font-semibold">KM Range*</p>
+                    <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
                 <div className="flex gap-5 items-center border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
@@ -837,19 +789,18 @@ const Nova = () => {
               </div>
             </div>
 
-            {/* Right — Image Gallery */}
             <div className="border border-gray-400 rounded-3xl px-2 py-3">
               <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-white/[0.06] to-white/[0.02] border border-white/10 aspect-[4/3] sm:aspect-[16/11]">
                 <div
-                  className="flex items-center justify-center py-2 -mt-10 h-[120%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                  className="flex items-center justify-center py-2 -mt-18 h-[140%] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{ transform: `translateX(-${activeIndex * 100}%)` }}
                 >
                   {GALLERY_IMAGES.map((src, i) => (
                     <img
                       key={src}
                       src={src}
-                      alt={`Nova view ${i + 1}`}
-                      className="w-[90%] h-[90%] -mt-5 flex-shrink-0 object-contain"
+                      alt={`Flex view ${i + 1}`}
+                      className="w-[110%] h-[110%] -mt-15 flex-shrink-0 object-contain"
                     />
                   ))}
                 </div>
@@ -901,12 +852,6 @@ const Nova = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 4: TECHNICAL SPECIFICATIONS
-          Grouped by category to match the full NOVA spec sheet:
-          Power & Transmission / Dimensions & Capacity / Electricals /
-          Tyres & Brakes, plus an additional-features chip list.
-      ============================================================ */}
       <section className="py-8 sm:py-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-8">
@@ -926,7 +871,7 @@ const Nova = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-600 text-lg">
-              Every number behind the NOVA — engineered for range, safety,
+              Every number behind the FLEX — engineered for range, safety,
               and everyday reliability.
             </p>
           </div>
@@ -958,7 +903,9 @@ const Nova = () => {
                         </h3>
                         <p
                           className="font-semibold text-base sm:text-lg text-transparent bg-clip-text mt-1"
-                          style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
+                          style={{
+                            backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})`,
+                          }}
                         >
                           {item.value}
                         </p>
@@ -993,12 +940,9 @@ const Nova = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 6: TESTIMONIALS
-      ============================================================ */}
       <section className="py-8 sm:py-15 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="text-center max-w-3xl mx-auto mb-10">
             <span
               className="inline-block px-4 py-1.5 text-sm font-semibold rounded-full mb-4"
               style={{ backgroundColor: `${GREEN}14`, color: GREEN }}
@@ -1016,7 +960,7 @@ const Nova = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Real feedback from NOVA owners riding it every day across the
+              Real feedback from STARLITE owners riding it every day across the
               city.
             </p>
           </div>
@@ -1025,9 +969,6 @@ const Nova = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 8: ENQUIRY FORM
-      ============================================================ */}
       <section id="enquiry" className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -1155,9 +1096,6 @@ const Nova = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          SECTION 9: FAQ
-      ============================================================ */}
       <section className="py-20 sm:py-15 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-14">
@@ -1195,4 +1133,4 @@ const Nova = () => {
   );
 };
 
-export default Nova;
+export default Starlite;
