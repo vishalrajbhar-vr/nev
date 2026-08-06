@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopHeader from "./web/components/TopHeader";
 import MainHeader from "./web/components/MainHeader";
 import Footer from "./web/components/Footer";
-import Home from "./web/pages/home/Home";
+import Home from "./web/pages/Home/Home";
 import Contact from "./web/pages/Contact";
 import Enquiry from "./web/pages/Enquiry";
 import L5DLXPassenger from "./web/pages/Products/L5DLXPassenger";
