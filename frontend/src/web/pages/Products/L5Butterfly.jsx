@@ -55,7 +55,7 @@ const GALLERY_IMAGES = [
 =================================================================== */
 const specs = [
   { icon: <Zap size={22} />, title: "Power", value: "1.5 kW Peak Power" },
-  { icon: <Gauge size={22} />, title: "Top Speed", value: "33 KMPH" },
+  { icon: <Gauge size={22} />, title: "Top Speed", value: "45 KMPH" },
   { icon: <Cog size={22} />, title: "Gradeability", value: "29% Max, 20% Continuous" },
   { icon: <Truck size={22} />, title: "Suspension Front", value: "32 inch Shocker" },
   { icon: <Truck size={22} />, title: "Suspension Rear", value: "38 inch Differential" },
@@ -694,7 +694,8 @@ const L5Butterfly = () => {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
-                  href="#"
+                  href="/images/Navgatee 3 Wheeler.pdf"
+                  target="_blank"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#2346b7] to-[#1a3a9e] text-white font-semibold rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaDownload size={16} />
@@ -705,7 +706,7 @@ const L5Butterfly = () => {
                   />
                 </a>
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#2346b7] font-semibold rounded-xl border-2 border-blue-100 hover:border-[#2346b7] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={14} />
@@ -865,7 +866,7 @@ const L5Butterfly = () => {
               {/* CTA row */}
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0B1220] bg-green-400 hover:bg-green-500 shadow-lg shadow-[#5BBF43]/20 hover:shadow-[#5BBF43]/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={13} />
@@ -1199,7 +1200,7 @@ const L5Butterfly = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Lucknow, India.
+                      B-1/204 Nirala Nagar, Lucknow 226020.
                     </p>
                   </div>
                 </div>
