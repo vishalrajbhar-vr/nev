@@ -28,6 +28,13 @@ import {
   ChartNoAxesCombined,
   Wind,
   ShieldCheck,
+  Ruler,
+  Key,
+  Sun,
+  Mountain,
+  CircleDot,
+  Settings,
+  MoveVertical,
 } from "lucide-react";
 
 const GALLERY_IMAGES = [
@@ -41,18 +48,57 @@ const BLUE_DARK = "#123E75";
 const GREEN = "#4CAF3D";
 const GREEN_LIGHT = "#7ED33E";
 
-/* ===================================================================
-   SPECS DATA — pulled from the LUMO spec strip
-=================================================================== */
-const specs = [
-  { icon: <Gauge size={22} />, title: "Max Distance", value: "175 KM" },
-  { icon: <ChartNoAxesCombined size={22} />, title: "Max Speed", value: "25 KPH" },
-  { icon: <Disc size={22} />, title: "Break System", value: "Front & Rear Disc" },
-  { icon: <Weight size={22} />, title: "Load Capacity", value: "250 Kgs" },
-  { icon: <Clock size={22} />, title: "Charging Time (LED)", value: "5-6 Hrs*" },
-  { icon: <BatteryCharging size={22} />, title: "1 Battery Charging Time", value: "5 to 6 Hrs*" },
-  { icon: <Cog size={22} />, title: "Motor", value: "250W" },
-  { icon: <Zap size={22} />, title: "Battery", value: "LED / Lithium" },
+const specGroups = [
+  {
+    category: "Power & Transmission",
+    items: [
+      { icon: <Cog size={20} />, title: "Motor Type", value: "BLDC Hub Motor" },
+      { icon: <Zap size={20} />, title: "Motor Power", value: "250 Watt" },
+      { icon: <BatteryCharging size={20} />, title: "Battery Volt", value: "60V / 72V" },
+      { icon: <Gauge size={20} />, title: "Range", value: "50 - 120 KM*" },
+      { icon: <Settings size={20} />, title: "Transmission", value: "Automatic" },
+      { icon: <Key size={20} />, title: "Start", value: "Keyless Self Start" },
+    ],
+  },
+  {
+    category: "Dimensions & Capacity",
+    items: [
+      { icon: <Weight size={20} />, title: "Net Weight", value: "80 Kgs" },
+      { icon: <Users size={20} />, title: "Carrying Capacity", value: "150 Kg*" },
+      { icon: <Ruler size={20} />, title: "Length x Width x Height", value: "1700 x 650 x 1100 mm" },
+      { icon: <MoveVertical size={20} />, title: "Ground Clearance", value: "175 mm" },
+    ],
+  },
+  {
+    category: "Electricals",
+    items: [
+      { icon: <BatteryCharging size={20} />, title: "Battery Type", value: "Lead-Acid / Lithium" },
+      { icon: <Zap size={20} />, title: "Battery Capacity", value: "KWH*" },
+      { icon: <Mountain size={20} />, title: "Gradeability", value: "12°" },
+      { icon: <Sun size={20} />, title: "Head Lights", value: "LED" },
+      { icon: <ChartNoAxesCombined size={20} />, title: "Top Speed", value: "25 KMPH" },
+    ],
+  },
+  {
+    category: "Tyres & Brakes",
+    items: [
+      { icon: <CircleDot size={20} />, title: "Tyre Size", value: "Front 3.00-12 / Rear 3.00-12" },
+      { icon: <CircleDot size={20} />, title: "Tyre Type", value: "Tubeless" },
+      { icon: <CircleDot size={20} />, title: "Wheel Type", value: "Alloy" },
+      { icon: <Disc size={20} />, title: "Front & Rear Brake", value: "Front Disc & Rear Disc" },
+    ],
+  },
+];
+
+const additionalFeatures = [
+  "Repair Switch",
+  "Parking Mode",
+  "Buzzer",
+  "Reverse Gear",
+  "Foot Mat",
+  "Remote",
+  "Alert",
+  "Chrome Mirror",
 ];
 
 /* ===================================================================
@@ -63,7 +109,7 @@ const testimonials = [
     name: "Rohit Verma",
     location: "Lucknow, UP",
     rating: 5,
-    text: "The LUMO is light, peppy and perfect for my daily office commute. 175 km on a charge means I barely think about charging during the week.",
+    text: "The LUMO is light, peppy and perfect for my daily office commute. Great range on a charge means I barely think about charging during the week.",
     initials: "RV",
     color: "blue",
   },
@@ -79,7 +125,7 @@ const testimonials = [
     name: "Deepak Chauhan",
     location: "Varanasi, UP",
     rating: 4,
-    text: "250 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
+    text: "150 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
     initials: "DC",
     color: "blue",
   },
@@ -87,7 +133,7 @@ const testimonials = [
     name: "Neha Gupta",
     location: "Gorakhpur, UP",
     rating: 5,
-    text: "Loved the styling and the sturdy build. Motor feels punchy for a 250W setup and the LED battery gives me peace of mind on longer rides.",
+    text: "Loved the styling and the sturdy build. Motor feels punchy for a 250W BLDC hub motor and the keyless start gives me peace of mind on longer rides.",
     initials: "NG",
     color: "green",
   },
@@ -99,7 +145,7 @@ const testimonials = [
 const faqData = [
   {
     q: "What is the maximum range of the LUMO on a full charge?",
-    a: "The LUMO delivers up to 175 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
+    a: "The LUMO delivers 50-120 km on a single full charge depending on the battery variant fitted, making it a flexible choice for daily commuting.",
   },
   {
     q: "How long does the battery take to charge?",
@@ -107,7 +153,7 @@ const faqData = [
   },
   {
     q: "What is the top speed of the LUMO?",
-    a: "The LUMO has a top speed of 25 KPH, tuned for safe and efficient city and residential riding.",
+    a: "The LUMO has a top speed of 25 KMPH, tuned for safe and efficient city and residential riding.",
   },
   {
     q: "What braking system does the LUMO use?",
@@ -115,7 +161,11 @@ const faqData = [
   },
   {
     q: "How much load can the LUMO carry?",
-    a: "The LUMO is rated for a total load capacity of 250 kgs, comfortably supporting two riders along with everyday cargo.",
+    a: "The LUMO is rated for a carrying capacity of 150 kg on smooth roads, comfortably supporting two riders along with everyday cargo.",
+  },
+  {
+    q: "What motor and battery does the LUMO use?",
+    a: "The LUMO is powered by a 250W BLDC hub motor running on a 60V/72V system, with a choice of Lead-Acid or Lithium batteries.",
   },
 ];
 
@@ -592,14 +642,15 @@ const Lumo = () => {
               />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Ride further, stop safer. The all-new LUMO delivers a 175 km
-                range, front &amp; rear disc brakes, and a 250 kg load
-                capacity — built for confident everyday commuting.
+                Ride further, stop safer. The all-new LUMO delivers up to
+                120 km range, front &amp; rear disc brakes, and a keyless
+                BLDC hub motor — built for confident everyday commuting.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-4">
                 <a
-                  href="#"
+                  href="/images/Navgatee Chinese Scooty.pdf"
+                  target="_blank"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                   style={{ background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`, boxShadow: `0 10px 30px ${BLUE}33` }}
                 >
@@ -608,7 +659,7 @@ const Lumo = () => {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white font-semibold rounded-xl border-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                   style={{ color: NAVY, borderColor: `${NAVY}22` }}
                 >
@@ -668,8 +719,8 @@ const Lumo = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Gauge size={28} />}
-              title="175 km Range"
-              desc="Go further between charges with a long-range battery built for daily commutes."
+              title="Up to 120 km Range"
+              desc="Go further between charges with a battery pack built for daily commutes."
               color="blue"
             />
             <FeatureCard
@@ -680,14 +731,14 @@ const Lumo = () => {
             />
             <FeatureCard
               icon={<Weight size={28} />}
-              title="250 kg Load Capacity"
+              title="150 kg Load Capacity"
               desc="Ride two-up with luggage and everyday essentials, without strain."
               color="blue"
             />
             <FeatureCard
-              icon={<Clock size={28} />}
-              title="Fast 5-6 Hr Charging"
-              desc="LED charge indicator and quick charging get you back on the road sooner."
+              icon={<Key size={28} />}
+              title="Keyless Self Start"
+              desc="BLDC hub motor with keyless start and automatic transmission for a smooth ride."
               color="green"
             />
           </div>
@@ -721,10 +772,10 @@ const Lumo = () => {
               </h2>
 
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Meet the LUMO — a bold, high-range electric scooter designed
-                for everyday commuting. With disc brakes front and rear, a
-                250 kg load rating, and a 175 km range, every ride is
-                efficient, safe, and dependable.
+                Meet the LUMO — a bold electric scooter designed for everyday
+                commuting. With disc brakes front and rear, a 150 kg load
+                rating, and up to 120 km range depending on the battery
+                fitted, every ride is efficient, safe, and dependable.
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
@@ -740,7 +791,7 @@ const Lumo = () => {
 
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-white hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
                   style={{ backgroundColor: BLUE, boxShadow: `0 10px 25px ${BLUE}33` }}
                 >
@@ -753,8 +804,8 @@ const Lumo = () => {
                 <div className="flex items-center gap-3 border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <CircleGauge className="text-green-600" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
-                    <h1 className="text-xl font-bold">175</h1>
-                    <p className="text-md font-semibold">KM Range</p>
+                    <h1 className="text-xl font-bold">120</h1>
+                    <p className="text-md font-semibold">KM Range*</p>
                   </div>
                 </div>
                 <div className="flex gap-5 items-center border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
@@ -840,6 +891,9 @@ const Lumo = () => {
 
       {/* ============================================================
           SECTION 4: TECHNICAL SPECIFICATIONS
+          Grouped by category to match the full LUMO spec sheet:
+          Power & Transmission / Dimensions & Capacity / Electricals /
+          Tyres & Brakes, plus an additional-features chip list.
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -865,32 +919,64 @@ const Lumo = () => {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {specs.map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-2 flex items-center justify-between hover:-translate-y-0.5"
-                style={{ borderColor: undefined }}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
-                  style={{ backgroundColor: `${GREEN}16`, color: GREEN }}
+          <div className="space-y-10">
+            {specGroups.map((group) => (
+              <div key={group.category}>
+                <h3
+                  className="text-sm sm:text-base font-bold uppercase tracking-wide mb-4 pl-1"
+                  style={{ color: BLUE }}
                 >
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-500 text-xs sm:text-sm uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-                  <p
-                    className="font-semibold text-lg sm:text-lg text-transparent bg-clip-text mt-1"
-                    style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
-                  >
-                    {item.value}
-                  </p>
+                  {group.category}
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {group.items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-1 flex items-center gap-4 hover:-translate-y-0.5"
+                    >
+                      <div
+                        className="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
+                        style={{ backgroundColor: `${GREEN}16`, color: GREEN }}
+                      >
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-500 text-xs sm:text-sm uppercase tracking-wide">
+                          {item.title}
+                        </h3>
+                        <p
+                          className="font-semibold text-base sm:text-lg text-transparent bg-clip-text mt-1"
+                          style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
+                        >
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
+
+            {/* Additional features */}
+            <div>
+              <h3
+                className="text-sm sm:text-base font-bold uppercase tracking-wide mb-4 pl-1"
+                style={{ color: BLUE }}
+              >
+                Additional Features
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {additionalFeatures.map((feature) => (
+                  <span
+                    key={feature}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-700 shadow-sm"
+                  >
+                    <ShieldCheck size={16} style={{ color: GREEN }} />
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -986,7 +1072,7 @@ const Lumo = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
-                    <p className="font-semibold text-gray-800">Lucknow, India</p>
+                    <p className="font-semibold text-gray-800">B-1/204 Nirala Nagar, Lucknow 226020</p>
                   </div>
                 </div>
               </div>

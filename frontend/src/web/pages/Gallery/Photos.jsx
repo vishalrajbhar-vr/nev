@@ -3,7 +3,7 @@ import React from "react";
 const galleryImages = [
   {
     id: 1,
-    image: "/images/MODEL L5 ULTRA LOADER.png",
+    image: "/images/l5-loader.png",
     title: "L5 Ultra Loader",
   },
   {

@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
 export const env = {
   port: Number(process.env.PORT || 5000),
-  clientUrls: (process.env.CLIENT_URL || "http://localhost:5173")
+  clientUrls: (process.env.CLIENT_URL || "http://localhost:5173,http://localhost:5174")
     .split(",")
     .map((url) => url.trim())
     .filter(Boolean),

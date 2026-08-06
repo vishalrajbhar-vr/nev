@@ -28,13 +28,16 @@ import {
   ChartNoAxesCombined,
   Wind,
   ShieldCheck,
+  Settings,
+  Key,
+  Ruler,
+  MoveVertical,
+  Mountain,
+  Sun,
+  CircleDot,
 } from "lucide-react";
 
-const GALLERY_IMAGES = [
-    "/images/china-sonic.png"
-
-];
-
+const GALLERY_IMAGES = ["/images/china-sonic.png"];
 
 const NAVY = "#0F2E5C";
 const NAVY_DARK = "#081B38";
@@ -46,15 +49,93 @@ const GREEN_LIGHT = "#7ED33E";
 /* ===================================================================
    SPECS DATA — pulled from the SONIC spec strip
 =================================================================== */
-const specs = [
-  { icon: <Gauge size={22} />, title: "Max Distance", value: "175 KM" },
-  { icon: <ChartNoAxesCombined size={22} />, title: "Max Speed", value: "25 KPH" },
-  { icon: <Disc size={22} />, title: "Break System", value: "Front & Rear Disc" },
-  { icon: <Weight size={22} />, title: "Load Capacity", value: "250 Kgs" },
-  { icon: <Clock size={22} />, title: "Charging Time (LED)", value: "5-6 Hrs*" },
-  { icon: <BatteryCharging size={22} />, title: "1 Battery Charging Time", value: "5 to 6 Hrs*" },
-  { icon: <Cog size={22} />, title: "Motor", value: "250W" },
-  { icon: <Zap size={22} />, title: "Battery", value: "LED / Lithium" },
+const specGroups = [
+  {
+    category: "Power & Transmission",
+    items: [
+      { icon: <Cog size={20} />, title: "Motor Type", value: "BLDC Hub Motor" },
+      { icon: <Zap size={20} />, title: "Motor Power", value: "250 Watt" },
+      {
+        icon: <BatteryCharging size={20} />,
+        title: "Battery Volt",
+        value: "60V / 72V",
+      },
+      { icon: <Gauge size={20} />, title: "Range", value: "50 - 120 KM*" },
+      {
+        icon: <Settings size={20} />,
+        title: "Transmission",
+        value: "Automatic",
+      },
+      { icon: <Key size={20} />, title: "Start", value: "Keyless Self Start" },
+    ],
+  },
+  {
+    category: "Dimensions & Capacity",
+    items: [
+      { icon: <Weight size={20} />, title: "Net Weight", value: "80 Kgs" },
+      {
+        icon: <Users size={20} />,
+        title: "Carrying Capacity",
+        value: "150 Kg*",
+      },
+      {
+        icon: <Ruler size={20} />,
+        title: "Length x Width x Height",
+        value: "1700 x 650 x 1100 mm",
+      },
+      {
+        icon: <MoveVertical size={20} />,
+        title: "Ground Clearance",
+        value: "175 mm",
+      },
+    ],
+  },
+  {
+    category: "Electricals",
+    items: [
+      {
+        icon: <BatteryCharging size={20} />,
+        title: "Battery Type",
+        value: "Lead-Acid / Lithium",
+      },
+      { icon: <Zap size={20} />, title: "Battery Capacity", value: "KWH*" },
+      { icon: <Mountain size={20} />, title: "Gradeability", value: "12°" },
+      { icon: <Sun size={20} />, title: "Head Lights", value: "LED" },
+      {
+        icon: <ChartNoAxesCombined size={20} />,
+        title: "Top Speed",
+        value: "25 KMPH",
+      },
+    ],
+  },
+  {
+    category: "Tyres & Brakes",
+    items: [
+      {
+        icon: <CircleDot size={20} />,
+        title: "Tyre Size",
+        value: "Front 3.00-12 / Rear 3.00-12",
+      },
+      { icon: <CircleDot size={20} />, title: "Tyre Type", value: "Tubeless" },
+      { icon: <CircleDot size={20} />, title: "Wheel Type", value: "Alloy" },
+      {
+        icon: <Disc size={20} />,
+        title: "Front & Rear Brake",
+        value: "Front Disc & Rear Disc",
+      },
+    ],
+  },
+];
+
+const additionalFeatures = [
+  "Repair Switch",
+  "Parking Mode",
+  "Buzzer",
+  "Reverse Gear",
+  "Foot Mat",
+  "Remote",
+  "Alert",
+  "Chrome Mirror",
 ];
 
 /* ===================================================================
@@ -65,7 +146,7 @@ const testimonials = [
     name: "Rohit Verma",
     location: "Lucknow, UP",
     rating: 5,
-    text: "The SONIC is light, peppy and perfect for my daily office commute. 175 km on a charge means I barely think about charging during the week.",
+    text: "The SONIC is light, peppy and perfect for my daily office commute. 120 km on a charge means I barely think about charging during the week.",
     initials: "RV",
     color: "blue",
   },
@@ -81,7 +162,7 @@ const testimonials = [
     name: "Deepak Chauhan",
     location: "Varanasi, UP",
     rating: 4,
-    text: "250 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
+    text: "150 kg load capacity is impressive — I ride two-up with grocery bags without any fuss. Charging is quick too, ready in about 5 hours.",
     initials: "DC",
     color: "blue",
   },
@@ -101,7 +182,7 @@ const testimonials = [
 const faqData = [
   {
     q: "What is the maximum range of the SONIC on a full charge?",
-    a: "The SONIC delivers up to 175 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
+    a: "The SONIC delivers up to 120 km on a single full charge, making it one of the longest-range scooters in its segment for daily commuting.",
   },
   {
     q: "How long does the battery take to charge?",
@@ -117,7 +198,7 @@ const faqData = [
   },
   {
     q: "How much load can the SONIC carry?",
-    a: "The SONIC is rated for a total load capacity of 250 kgs, comfortably supporting two riders along with everyday cargo.",
+    a: "The SONIC is rated for a total load capacity of 150 kgs, comfortably supporting two riders along with everyday cargo.",
   },
 ];
 
@@ -171,7 +252,9 @@ const StatCard = ({ icon, value, suffix, label }) => {
     >
       <div
         className="absolute inset-x-0 top-0 h-1.5"
-        style={{ background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${BLUE})` }}
+        style={{
+          background: `linear-gradient(90deg, ${NAVY}, ${GREEN}, ${BLUE})`,
+        }}
       />
       <div className="relative z-10 flex flex-col items-center text-center">
         <div
@@ -184,7 +267,10 @@ const StatCard = ({ icon, value, suffix, label }) => {
           <span className="text-4xl sm:text-5xl font-extrabold text-slate-900 tabular-nums">
             {count}
           </span>
-          <span className="text-lg sm:text-2xl font-semibold" style={{ color: BLUE }}>
+          <span
+            className="text-lg sm:text-2xl font-semibold"
+            style={{ color: BLUE }}
+          >
             {suffix}
           </span>
         </div>
@@ -308,7 +394,9 @@ const TestimonialSlider = () => {
   const goPrev = () => {
     stopAutoSlide();
     setSlideDir("left");
-    setCurrent((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrent(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
     startAutoSlide();
   };
   const goNext = () => {
@@ -320,8 +408,16 @@ const TestimonialSlider = () => {
 
   const t = testimonials[current];
   const colorMap = {
-    blue: { bg: "from-blue-50 to-blue-100/50", text: "text-[#1D5FA8]", dot: "bg-[#1D5FA8]" },
-    green: { bg: "from-green-50 to-green-100/50", text: "text-green-600", dot: "bg-green-600" },
+    blue: {
+      bg: "from-blue-50 to-blue-100/50",
+      text: "text-[#1D5FA8]",
+      dot: "bg-[#1D5FA8]",
+    },
+    green: {
+      bg: "from-green-50 to-green-100/50",
+      text: "text-green-600",
+      dot: "bg-green-600",
+    },
   };
   const c = colorMap[t.color] || colorMap.blue;
 
@@ -353,7 +449,9 @@ const TestimonialSlider = () => {
               style={star <= t.rating ? { color: GREEN } : {}}
             />
           ))}
-          <span className="ml-3 text-sm font-medium text-gray-400">{t.rating}.0</span>
+          <span className="ml-3 text-sm font-medium text-gray-400">
+            {t.rating}.0
+          </span>
         </div>
 
         <p className="text-gray-600 text-base sm:text-lg leading-relaxed relative z-10 mb-8">
@@ -391,7 +489,9 @@ const TestimonialSlider = () => {
               key={idx}
               onClick={() => goTo(idx)}
               className={`transition-all duration-500 rounded-full ${
-                idx === current ? `${c.dot} w-8 h-2.5` : "bg-gray-200 w-2.5 h-2.5 hover:bg-gray-400"
+                idx === current
+                  ? `${c.dot} w-8 h-2.5`
+                  : "bg-gray-200 w-2.5 h-2.5 hover:bg-gray-400"
               }`}
               aria-label={`Go to testimonial ${idx + 1}`}
             />
@@ -446,8 +546,10 @@ const ProductAnimation = () => {
 
     let animId;
     const animate = () => {
-      targetRotY.current += (mouseXRef.current * 15 - targetRotY.current) * 0.08;
-      targetRotX.current += (-mouseYRef.current * 15 - targetRotX.current) * 0.08;
+      targetRotY.current +=
+        (mouseXRef.current * 15 - targetRotY.current) * 0.08;
+      targetRotX.current +=
+        (-mouseYRef.current * 15 - targetRotX.current) * 0.08;
       setRotation({ x: targetRotX.current, y: targetRotY.current });
       animId = requestAnimationFrame(animate);
     };
@@ -495,7 +597,10 @@ const ProductAnimation = () => {
               transformStyle: "preserve-3d",
             }}
           >
-            <div className="absolute inset-0 flex items-center justify-center" style={{ transform: "translateZ(40px)" }}>
+            <div
+              className="absolute inset-0 flex items-center justify-center"
+              style={{ transform: "translateZ(40px)" }}
+            >
               <div className="relative w-[135%] h-[135%] flex items-center justify-center">
                 <img
                   src="/images/china-sonic.png"
@@ -524,7 +629,12 @@ const ProductAnimation = () => {
 =================================================================== */
 const Sonic = () => {
   const [openFaq, setOpenFaq] = useState(null);
-  const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   const [activeIndex, setActiveIndex] = useState(0);
   const total = GALLERY_IMAGES.length;
@@ -536,10 +646,13 @@ const Sonic = () => {
     return () => clearInterval(autoSlide);
   }, [total]);
 
-  const goPrev = () => setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
-  const goNext = () => setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
+  const goPrev = () =>
+    setActiveIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
+  const goNext = () =>
+    setActiveIndex((prev) => (prev === total - 1 ? 0 : prev + 1));
 
-  const handleFormChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleFormChange = (e) =>
+    setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -578,7 +691,9 @@ const Sonic = () => {
                 <FaChevronRight size={10} className="text-gray-300" />
                 <span>China Scooty</span>
                 <FaChevronRight size={10} className="text-gray-300" />
-                <span className="font-semibold" style={{ color: BLUE }}>Sonic</span>
+                <span className="font-semibold" style={{ color: BLUE }}>
+                  Sonic
+                </span>
               </nav>
 
               <h1
@@ -590,27 +705,36 @@ const Sonic = () => {
 
               <div
                 className="w-24 h-1.5 rounded-full mt-3 mb-4"
-                style={{ background: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
+                style={{
+                  background: `linear-gradient(90deg, ${NAVY}, ${BLUE})`,
+                }}
               />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Ride further, stop safer. The all-new SONIC delivers a 175 km
-                range, front &amp; rear disc brakes, and a 250 kg load
-                capacity — built for confident everyday commuting.
+                Ride further, stop safer. The all-new SONIC delivers a 120 km
+                range, front &amp; rear disc brakes, and a 150 kg load capacity
+                — built for confident everyday commuting.
               </p>
 
               <div className="flex flex-wrap gap-4 mt-5">
                 <a
-                  href="#"
+                  href="/images/Navgatee Chinese Scooty.pdf"
+                  target="_blank"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-                  style={{ background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`, boxShadow: `0 10px 30px ${BLUE}33` }}
+                  style={{
+                    background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`,
+                    boxShadow: `0 10px 30px ${BLUE}33`,
+                  }}
                 >
                   <FaDownload size={16} />
                   <span>Download Brochure</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform"
+                  />
                 </a>
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white font-semibold rounded-xl border-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                   style={{ color: NAVY, borderColor: `${NAVY}22` }}
                 >
@@ -633,10 +757,30 @@ const Sonic = () => {
       ============================================================ */}
       <section className="relative mt-10 sm:mt-10 z-20 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          <StatCard icon={<Truck size={26} />} value={500} suffix="+" label="Units Sold" />
-          <StatCard icon={<FaStar size={24} />} value={98} suffix="%" label="Satisfaction Rate" />
-          <StatCard icon={<FaShieldAlt size={22} />} value={1} suffix=" Year" label="Warranty" />
-          <StatCard icon={<FaHeadset size={22} />} value={50} suffix="+" label="Service Centers" />
+          <StatCard
+            icon={<Truck size={26} />}
+            value={500}
+            suffix="+"
+            label="Units Sold"
+          />
+          <StatCard
+            icon={<FaStar size={24} />}
+            value={98}
+            suffix="%"
+            label="Satisfaction Rate"
+          />
+          <StatCard
+            icon={<FaShieldAlt size={22} />}
+            value={1}
+            suffix=" Year"
+            label="Warranty"
+          />
+          <StatCard
+            icon={<FaHeadset size={22} />}
+            value={50}
+            suffix="+"
+            label="Service Centers"
+          />
         </div>
       </section>
 
@@ -652,11 +796,16 @@ const Sonic = () => {
             >
               Key Highlights
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: NAVY_DARK }}>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+              style={{ color: NAVY_DARK }}
+            >
               Built for{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
+                style={{
+                  backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})`,
+                }}
               >
                 Everyday Confidence
               </span>
@@ -670,7 +819,7 @@ const Sonic = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
               icon={<Gauge size={28} />}
-              title="175 km Range"
+              title="120 km Range"
               desc="Go further between charges with a long-range battery built for daily commutes."
               color="blue"
             />
@@ -682,7 +831,7 @@ const Sonic = () => {
             />
             <FeatureCard
               icon={<Weight size={28} />}
-              title="250 kg Load Capacity"
+              title="150 kg Load Capacity"
               desc="Ride two-up with luggage and everyday essentials, without strain."
               color="blue"
             />
@@ -701,7 +850,10 @@ const Sonic = () => {
       ============================================================ */}
       <section className="relative overflow-hidden">
         <div className="absolute -top-32 -left-20 w-72 h-72 bg-green-400/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl" style={{ backgroundColor: `${BLUE}22` }} />
+        <div
+          className="absolute -bottom-24 -right-24 w-80 h-80 rounded-full blur-3xl"
+          style={{ backgroundColor: `${BLUE}22` }}
+        />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-12 sm:py-10 lg:py-10">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-10 lg:gap-14 items-center">
@@ -716,7 +868,9 @@ const Sonic = () => {
                 <br />
                 <span
                   className="text-transparent bg-clip-text"
-                  style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${GREEN_LIGHT})` }}
+                  style={{
+                    backgroundImage: `linear-gradient(90deg, ${BLUE}, ${GREEN_LIGHT})`,
+                  }}
                 >
                   Ride Further, Brake Smarter
                 </span>
@@ -724,27 +878,32 @@ const Sonic = () => {
 
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Meet the SONIC — a bold, high-range electric scooter designed
-                for everyday commuting. With disc brakes front and rear, a
-                250 kg load rating, and a 175 km range, every ride is
-                efficient, safe, and dependable.
+                for everyday commuting. With disc brakes front and rear, a 150
+                kg load rating, and a 120 km range, every ride is efficient,
+                safe, and dependable.
               </p>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Ride Further", "Brake Smarter", "Choose Sonic"].map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:text-green-600 hover:border-green-600/50 transition-colors duration-300"
-                  >
-                    {tag}
-                  </span>
-                ))}
+                {["Ride Further", "Brake Smarter", "Choose Sonic"].map(
+                  (tag) => (
+                    <span
+                      key={tag}
+                      className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:text-green-600 hover:border-green-600/50 transition-colors duration-300"
+                    >
+                      {tag}
+                    </span>
+                  ),
+                )}
               </div>
 
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-white hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
-                  style={{ backgroundColor: BLUE, boxShadow: `0 10px 25px ${BLUE}33` }}
+                  style={{
+                    backgroundColor: BLUE,
+                    boxShadow: `0 10px 25px ${BLUE}33`,
+                  }}
                 >
                   <FaPhoneAlt size={13} />
                   Get Quote
@@ -755,7 +914,7 @@ const Sonic = () => {
                 <div className="flex items-center gap-3 border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <CircleGauge className="text-green-600" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
-                    <h1 className="text-xl font-bold">175</h1>
+                    <h1 className="text-xl font-bold">50 -120</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
@@ -802,8 +961,12 @@ const Sonic = () => {
                   onClick={goPrev}
                   aria-label="Previous image"
                   className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white flex items-center justify-center transition-all duration-300"
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BLUE)}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = BLUE)
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.backgroundColor = "")
+                  }
                 >
                   <FaChevronLeft size={14} />
                 </button>
@@ -813,8 +976,12 @@ const Sonic = () => {
                   onClick={goNext}
                   aria-label="Next image"
                   className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-black/40 backdrop-blur-sm border border-white/15 text-white flex items-center justify-center transition-all duration-300"
-                  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = BLUE)}
-                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "")}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = BLUE)
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.backgroundColor = "")
+                  }
                 >
                   <FaChevronRight size={14} />
                 </button>
@@ -828,10 +995,16 @@ const Sonic = () => {
                     onClick={() => setActiveIndex(i)}
                     aria-label={`Show image ${i + 1}`}
                     className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden transition-all duration-300 ${
-                      activeIndex === i ? "ring-2 ring-[#1D5FA8] scale-100 opacity-100" : "ring-1 ring-white/10 opacity-50 hover:opacity-80"
+                      activeIndex === i
+                        ? "ring-2 ring-[#1D5FA8] scale-100 opacity-100"
+                        : "ring-1 ring-white/10 opacity-50 hover:opacity-80"
                     }`}
                   >
-                    <img src={src} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover" />
+                    <img
+                      src={src}
+                      alt={`Thumbnail ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
                   </button>
                 ))}
               </div>
@@ -852,47 +1025,86 @@ const Sonic = () => {
             >
               Specifications
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: NAVY_DARK }}>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+              style={{ color: NAVY_DARK }}
+            >
               Technical{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
+                style={{
+                  backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})`,
+                }}
               >
                 Specifications
               </span>
             </h2>
             <p className="mt-4 text-gray-600 text-lg">
-              Every number behind the SONIC — engineered for range, safety,
-              and everyday reliability.
+              Every number behind the SONIC — engineered for range, safety, and
+              everyday reliability.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {specs.map((item, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-2 flex items-center justify-between gap-3 hover:-translate-y-0.5"
-                style={{ borderColor: undefined }}
-              >
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
-                  style={{ backgroundColor: `${GREEN}16`, color: GREEN }}
+          <div className="space-y-10">
+            {specGroups.map((group) => (
+              <div key={group.category}>
+                <h3
+                  className="text-sm sm:text-base font-bold uppercase tracking-wide mb-4 pl-1"
+                  style={{ color: BLUE }}
                 >
-                  {item.icon}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-500 text-xs sm:text-sm uppercase tracking-wide">
-                    {item.title}
-                  </h3>
-                  <p
-                    className="font-semibold text-lg sm:text-lg text-transparent bg-clip-text mt-1"
-                    style={{ backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})` }}
-                  >
-                    {item.value}
-                  </p>
+                  {group.category}
+                </h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {group.items.map((item, index) => (
+                    <div
+                      key={index}
+                      className="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-500 p-1 flex items-center gap-4 hover:-translate-y-0.5"
+                    >
+                      <div
+                        className="w-12 h-12 shrink-0 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300"
+                        style={{ backgroundColor: `${GREEN}16`, color: GREEN }}
+                      >
+                        {item.icon}
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-500 text-xs sm:text-sm uppercase tracking-wide">
+                          {item.title}
+                        </h3>
+                        <p
+                          className="font-semibold text-base sm:text-lg text-transparent bg-clip-text mt-1"
+                          style={{
+                            backgroundImage: `linear-gradient(90deg, ${NAVY}, ${BLUE})`,
+                          }}
+                        >
+                          {item.value}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
+
+            {/* Additional features */}
+            <div>
+              <h3
+                className="text-sm sm:text-base font-bold uppercase tracking-wide mb-4 pl-1"
+                style={{ color: BLUE }}
+              >
+                Additional Features
+              </h3>
+              <div className="flex flex-wrap gap-3">
+                {additionalFeatures.map((feature) => (
+                  <span
+                    key={feature}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-700 shadow-sm"
+                  >
+                    <ShieldCheck size={16} style={{ color: GREEN }} />
+                    {feature}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -909,11 +1121,16 @@ const Sonic = () => {
             >
               Testimonials
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: NAVY_DARK }}>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+              style={{ color: NAVY_DARK }}
+            >
               What Our{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
+                style={{
+                  backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})`,
+                }}
               >
                 Riders
               </span>{" "}
@@ -942,19 +1159,24 @@ const Sonic = () => {
               >
                 Get in Touch
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: NAVY_DARK }}>
+              <h2
+                className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+                style={{ color: NAVY_DARK }}
+              >
                 Have a{" "}
                 <span
                   className="text-transparent bg-clip-text"
-                  style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
+                  style={{
+                    backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})`,
+                  }}
                 >
                   Question?
                 </span>
               </h2>
               <p className="mt-4 text-gray-500 text-lg leading-relaxed">
-                Our team is ready to help you find the perfect solution for
-                your needs. Fill out the form and we'll get back to you
-                within 24 hours.
+                Our team is ready to help you find the perfect solution for your
+                needs. Fill out the form and we'll get back to you within 24
+                hours.
               </p>
 
               <div className="space-y-5 mt-10">
@@ -967,7 +1189,9 @@ const Sonic = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Call us</p>
-                    <p className="font-semibold text-gray-800">+91 9196598300</p>
+                    <p className="font-semibold text-gray-800">
+                      +91 9196598300
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -976,7 +1200,9 @@ const Sonic = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
+                    <p className="font-semibold text-gray-800">
+                      info.navgatee@gmail.com
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -988,7 +1214,9 @@ const Sonic = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
-                    <p className="font-semibold text-gray-800">Lucknow, India</p>
+                    <p className="font-semibold text-gray-800">
+                      B-1/204 Nirala Nagar, Lucknow 226020
+                    </p>
                   </div>
                 </div>
               </div>
@@ -997,7 +1225,9 @@ const Sonic = () => {
             <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-6 sm:p-8 border border-gray-100 shadow-xl">
               <form onSubmit={handleFormSubmit} className="space-y-5">
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Full Name *
+                  </label>
                   <input
                     type="text"
                     name="name"
@@ -1011,7 +1241,9 @@ const Sonic = () => {
                 </div>
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email *
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -1023,7 +1255,9 @@ const Sonic = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Phone *</label>
+                    <label className="block text-sm font-semibold text-gray-700 mb-2">
+                      Phone *
+                    </label>
                     <input
                       type="tel"
                       name="phone"
@@ -1036,7 +1270,9 @@ const Sonic = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Message
+                  </label>
                   <textarea
                     name="message"
                     value={formData.message}
@@ -1049,7 +1285,10 @@ const Sonic = () => {
                 <button
                   type="submit"
                   className="w-full py-4 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-                  style={{ background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`, boxShadow: `0 10px 25px ${BLUE}33` }}
+                  style={{
+                    background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`,
+                    boxShadow: `0 10px 25px ${BLUE}33`,
+                  }}
                 >
                   Send Enquiry
                 </button>
@@ -1071,11 +1310,16 @@ const Sonic = () => {
             >
               FAQ
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight" style={{ color: NAVY_DARK }}>
+            <h2
+              className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"
+              style={{ color: NAVY_DARK }}
+            >
               Frequently Asked{" "}
               <span
                 className="text-transparent bg-clip-text"
-                style={{ backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})` }}
+                style={{
+                  backgroundImage: `linear-gradient(90deg, ${BLUE}, ${NAVY})`,
+                }}
               >
                 Questions
               </span>

@@ -46,9 +46,7 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = [
-  "/images/l5-dlx-passenger.png",
-];
+const GALLERY_IMAGES = ["/images/l5-dlx-passenger.png"];
 
 /* ===================================================================
    SPECS DATA
@@ -59,7 +57,7 @@ const specs = [
     title: "Engine Power",
     value: "6.5 KW Continuous Torque",
   },
-  { icon: <Wind size={22} />, title: "Top Speed", value: "48KMPH" },
+  { icon: <Wind size={22} />, title: "Top Speed", value: "45KMPH" },
   { icon: <CircleGauge size={22} />, title: "Wheel Base", value: "2274 mm" },
   { icon: <Settings size={22} />, title: "Ground Clearance", value: "180 mm" },
   {
@@ -716,7 +714,8 @@ const L5DLXPassenger = () => {
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
-                  href="#"
+                  href="/images/Navgatee 3 Wheeler.pdf"
+                  target="_blank"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#2346b7] to-[#1a3a9e] text-white font-semibold rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaDownload size={16} />
@@ -727,7 +726,7 @@ const L5DLXPassenger = () => {
                   />
                 </a>
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#2346b7] font-semibold rounded-xl border-2 border-blue-100 hover:border-[#2346b7] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={14} />
@@ -807,13 +806,13 @@ const L5DLXPassenger = () => {
             <FeatureCard
               icon={<Thermometer size={28} />}
               title="Passenger Comfort"
-              desc="Spacious 3+1 seating with ergonomic design, ensuring comfortable rides for every passenger."
+              desc="Spacious 3 Plus 1 seating with ergonomic design, ensuring comfortable rides for every passenger."
               color="green"
             />
             <FeatureCard
               icon={<Battery size={28} />}
-              title="Fuel Efficient"
-              desc="Optimized fuel delivery and cooling for lower running costs and extended operation."
+              title="Long Battery Life"
+              desc="High-capacity battery delivers extended driving range with reliable performance for daily operations."
               color="amber"
             />
             <FeatureCard
@@ -861,29 +860,31 @@ const L5DLXPassenger = () => {
                 Experience next-generation mobility with the NEV L5 DLX
                 Passenger 3 Plus 1 — a durable, high-performance electric auto
                 rickshaw designed for comfortable passenger transportation.
-                Featuring spacious 3+1 seating, reliable performance, low
+                Featuring spacious 3 Plus 1 seating, reliable performance, low
                 maintenance, and excellent battery efficiency, it delivers
                 smooth, safe, and cost-effective rides every day.
               </p>
 
               {/* highlight tags */}
               <div className="flex flex-wrap justify-center lg:justify-start gap-2.5 mt-6">
-                {["Navigate Smarter", "Drive Greener", "Choose Super DLX"].map(
-                  (tag) => (
-                    <span
-                      key={tag}
-                      className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:border-green-600/50 hover:text-green-400 transition-colors duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ),
-                )}
+                {[
+                  "Navigate Smarter",
+                  "Drive Greener",
+                  "Choose L5 Passenger DLX",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium text-gray-600 bg-white/5 border border-gray-400 hover:border-green-600/50 hover:text-green-400 transition-colors duration-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
 
               {/* CTA row */}
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0B1220] bg-green-400 hover:bg-green-500 shadow-lg shadow-[#5BBF43]/20 hover:shadow-[#5BBF43]/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={13} />
@@ -1080,7 +1081,7 @@ const L5DLXPassenger = () => {
       </div>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
+          SECTION 5: WHY CHOOSE Navgatee Electric
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -1119,14 +1120,15 @@ const L5DLXPassenger = () => {
             <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-green-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#5BBF43] to-green-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 text-green-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <FaLeaf size={28} />
+                <FaTools size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Fuel Efficient
+                Low Maintenance
               </h3>
               <p className="text-gray-500 leading-relaxed">
-                Optimized engine design delivers exceptional fuel economy,
-                reducing operational costs while maximizing productivity.
+                Engineered with reliable components that require minimal
+                maintenance, helping reduce downtime and keep your vehicle on
+                the road longer.
               </p>
             </div>
 
@@ -1204,7 +1206,9 @@ const L5DLXPassenger = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Call us</p>
-                    <p className="font-semibold text-gray-800">+91 9196598300</p>
+                    <p className="font-semibold text-gray-800">
+                      +91 9196598300
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1213,7 +1217,9 @@ const L5DLXPassenger = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
+                    <p className="font-semibold text-gray-800">
+                      info.navgatee@gmail.com
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1223,7 +1229,7 @@ const L5DLXPassenger = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Lucknow, India
+                      B-1/204 Nirala Nagar, Lucknow 226020
                     </p>
                   </div>
                 </div>

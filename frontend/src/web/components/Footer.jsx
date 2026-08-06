@@ -128,7 +128,7 @@ function Footer() {
           <div className="space-y-5">
             <ContactCard icon={FaPhoneAlt} value="Toll Free:+91 9196598300" href="tel: +91 9196598300" />
             <ContactCard icon={FaEnvelope} value="info.navgatee@gmail.com" href="mailto:info.navgatee@gmail.com?subject=Inquiry" />
-            <ContactCard icon={FaMapMarkerAlt} value="Lucknow, India" href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
+            <ContactCard icon={FaMapMarkerAlt} value="B-1/204 Nirala Nagar, Lucknow 226020" href="https://maps.app.goo.gl/zts3bmbHYFLUdTWF6" />
           </div>
         </FooterSection>
       </div>
@@ -136,7 +136,7 @@ function Footer() {
       <div className="border-t border-white/20">
         <div className="mx-auto flex max-w-[1340px] flex-col items-center justify-between gap-4 px-6 py-7 text-sm text-white sm:px-8 md:flex-row lg:px-10 xl:px-0">
           <p className="text-center md:text-left">
-            &copy; 2026 NEV Vehicles Pvt. Ltd. All rights reserved.
+            &copy; 2026 NAVGATEE AUTOMOBILES LLP All rights reserved.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 font-medium">
