@@ -1214,7 +1214,7 @@ const Vybe = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Lucknow, India.
+                      B-1/204 Nirala Nagar, Lucknow 226020.
                     </p>
                   </div>
                 </div>

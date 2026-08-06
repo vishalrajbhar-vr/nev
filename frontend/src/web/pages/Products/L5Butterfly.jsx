@@ -55,7 +55,7 @@ const GALLERY_IMAGES = [
 =================================================================== */
 const specs = [
   { icon: <Zap size={22} />, title: "Power", value: "1.5 kW Peak Power" },
-  { icon: <Gauge size={22} />, title: "Top Speed", value: "33 KMPH" },
+  { icon: <Gauge size={22} />, title: "Top Speed", value: "45 KMPH" },
   { icon: <Cog size={22} />, title: "Gradeability", value: "29% Max, 20% Continuous" },
   { icon: <Truck size={22} />, title: "Suspension Front", value: "32 inch Shocker" },
   { icon: <Truck size={22} />, title: "Suspension Rear", value: "38 inch Differential" },
@@ -1199,7 +1199,7 @@ const L5Butterfly = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Lucknow, India.
+                      B-1/204 Nirala Nagar, Lucknow 226020.
                     </p>
                   </div>
                 </div>

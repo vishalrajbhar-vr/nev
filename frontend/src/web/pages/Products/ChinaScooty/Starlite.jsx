@@ -768,7 +768,7 @@ const Starlite = () => {
                 <div className="flex items-center gap-3 border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <CircleGauge className="text-green-600" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
-                    <h1 className="text-xl font-bold">120</h1>
+                    <h1 className="text-xl font-bold">50 - 120</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
@@ -1025,7 +1025,7 @@ const Starlite = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
-                    <p className="font-semibold text-gray-800">Lucknow, India</p>
+                    <p className="font-semibold text-gray-800">B-1/204 Nirala Nagar, Lucknow 226020</p>
                   </div>
                 </div>
               </div>

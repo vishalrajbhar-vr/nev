@@ -56,7 +56,7 @@ const GALLERY_IMAGES = [
 =================================================================== */
 const specs = [
   { icon: <Gauge size={22} />, title: "Power", value: "4.5 KW Continuous" },
-  { icon: <Wind size={22} />, title: "Top Speed", value: "48 KMPH" },
+  { icon: <Wind size={22} />, title: "Top Speed", value: "45 KMPH" },
   { icon: <CircleGauge size={22} />, title: "Wheel Base", value: "2150 mm" },
   { icon: <Settings size={22} />, title: "Ground Clearance", value: "180 mm" },
   { icon: <Cog size={22} />, title: "Tyre Size MM", value: "L 2795 x W 1250 x H" },
@@ -803,11 +803,11 @@ const L5ECO = () => {
               color="green"
             />
             <FeatureCard
-              icon={<Battery size={28} />}
-              title="Fuel Efficient"
-              desc="Optimized fuel delivery and cooling for lower running costs and extended operation."
-              color="amber"
-            />
+  icon={<Battery size={28} />}
+  title="Long Battery Life"
+  desc="High-capacity battery delivers extended driving range with reliable performance for daily operations."
+  color="amber"
+/>
             <FeatureCard
               icon={<Wind size={28} />}
               title="Durable Build"
@@ -889,7 +889,7 @@ const L5ECO = () => {
                 <div className="flex items-center justify-between gap-5 border border-gray-400 rounded-xl py-3 px-6 mt-8 w-fit mx-auto lg:mx-0">
                   <ChartNoAxesCombined className=" text-green-500" size={25}/>
                   <div>
-                    <h1 className="text-xl font-bold">48</h1>
+                    <h1 className="text-xl font-bold">45</h1>
                     <p className="text-md font-semibold">KM/H</p>
                   </div>
                 </div>
@@ -1093,18 +1093,19 @@ const L5ECO = () => {
 
             {/* Card 2 */}
             <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-green-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#5BBF43] to-green-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 text-green-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <FaLeaf size={28} />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Fuel Efficient
-              </h3>
-              <p className="text-gray-500 leading-relaxed">
-                Optimized engine design delivers exceptional fuel economy,
-                reducing operational costs while maximizing productivity.
-              </p>
-            </div>
+                          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#5BBF43] to-green-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 text-green-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <FaTools size={28} />
+                          </div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-3">
+                            Low Maintenance
+                          </h3>
+                          <p className="text-gray-500 leading-relaxed">
+                            Engineered with reliable components that require minimal
+                            maintenance, helping reduce downtime and keep your vehicle on
+                            the road longer.
+                          </p>
+                        </div>
 
             {/* Card 3 */}
             <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-blue-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
@@ -1199,7 +1200,7 @@ const L5ECO = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Lucknow, India
+                      B-1/204 Nirala Nagar, Lucknow 226020
                     </p>
                   </div>
                 </div>
