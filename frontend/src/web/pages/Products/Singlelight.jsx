@@ -42,6 +42,13 @@ import {
   Users,
   CircleGauge,
   ChartNoAxesCombined,
+  Key,
+  Ruler,
+  MoveVertical,
+  Mountain,
+  Sun,
+  CircleDot,
+  BatteryCharging,
   Disc,
 } from "lucide-react";
 
@@ -55,14 +62,53 @@ const GALLERY_IMAGES = [
    SPECS DATA
 =================================================================== */
 const specs = [
-  { icon: <CircleGauge size={22} />, title: "Max Distance", value: "50-120 KM" },
-  { icon: <Gauge size={22} />, title: "Max Speed", value: "25 KPH" },
-  { icon: <Disc size={22} />, title: "Brake System", value: "Front & Rear Disc" },
-  { icon: <Weight size={22} />, title: "Load Capacity", value: "150 Kgs" },
-  { icon: <Clock size={22} />, title: "Charging Time", value: "5-6 Hrs*" },
-  { icon: <Battery size={22} />, title: "1 Battery Charging Time", value: "5 to 6 Hrs*" },
-  { icon: <Zap size={22} />, title: "Motor", value: "250W" },
-  { icon: <Battery size={22} />, title: "Battery", value: "LED / Lithium" },
+  { icon: <Cog size={20} />, title: "Motor Type", value: "BLDC Hub Motor" },
+  { icon: <Zap size={20} />, title: "Motor Power", value: "250 Watt" },
+  {
+    icon: <BatteryCharging size={20} />,
+    title: "Battery Volt",
+    value: "48V / 60V",
+  },
+  { icon: <Gauge size={20} />, title: "Range", value: "50 - 120 KM*" },
+  { icon: <Settings size={20} />, title: "Transmission", value: "Automatic" },
+  { icon: <Key size={20} />, title: "Start", value: "Keyless Self Start" },
+  { icon: <Weight size={20} />, title: "Net Weight", value: "80 Kgs" },
+  { icon: <Users size={20} />, title: "Carrying Capacity", value: "150 Kg*" },
+  {
+    icon: <Ruler size={20} />,
+    title: "Length x Width x Height",
+    value: "1700 x 650 x 1100 mm",
+  },
+  {
+    icon: <MoveVertical size={20} />,
+    title: "Ground Clearance",
+    value: "175 mm",
+  },
+  {
+    icon: <BatteryCharging size={20} />,
+    title: "Battery Type",
+    value: "Lead-Acid / Lithium",
+  },
+  { icon: <Zap size={20} />, title: "Battery Capacity", value: "KWH*" },
+  { icon: <Mountain size={20} />, title: "Gradeability", value: "12°" },
+  { icon: <Sun size={20} />, title: "Head Lights", value: "LED" },
+  {
+    icon: <ChartNoAxesCombined size={20} />,
+    title: "Top Speed",
+    value: "25 KMPH",
+  },
+  {
+    icon: <CircleDot size={20} />,
+    title: "Tyre Size",
+    value: "Front 3.00-12 / Rear 3.00-12",
+  },
+  { icon: <CircleDot size={20} />, title: "Tyre Type", value: "Tubeless" },
+  { icon: <CircleDot size={20} />, title: "Wheel Type", value: "Alloy" },
+  {
+    icon: <Disc size={20} />,
+    title: "Front & Rear Brake",
+    value: "Front Disc & Rear Disc",
+  },
 ];
 
 /* ===================================================================
@@ -875,10 +921,10 @@ const Volt = () => {
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-                <div className="flex sm:flex-row items-center gap-5 border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
+                <div className="flex sm:flex-row items-center md:gap-3 gap-1 border border-gray-400 rounded-xl py-4 px-5 mt-8 mx-auto lg:mx-0">
                   <CircleGauge className="text-green-500" size={25} />
                   <div className="w-full sm:w-auto text-center sm:text-left">
-                    <h1 className="text-xl font-bold">60- 80</h1>
+                    <h1 className="text-xl font-bold">50 - 120</h1>
                     <p className="text-md font-semibold">KM Range</p>
                   </div>
                 </div>
@@ -1019,7 +1065,7 @@ const Volt = () => {
       </section>
 
       {/* ============================================================
-          SECTION 5: WHY CHOOSE KHALSA SUPER DLX
+          SECTION 5: WHY CHOOSE Navgatee Electric
       ============================================================ */}
       <section className="py-8 sm:py-4 bg-white">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -1034,7 +1080,7 @@ const Volt = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              What sets Khalsa Super DLX apart from the competition.
+              What sets Navgatee Electric apart from the competition.
             </p>
           </div>
 
@@ -1106,7 +1152,7 @@ const Volt = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the farmers and operators who trust Khalsa Super DLX for
+              Hear from the farmers and operators who trust Navgatee Electric for
               their toughest jobs.
             </p>
           </div>
