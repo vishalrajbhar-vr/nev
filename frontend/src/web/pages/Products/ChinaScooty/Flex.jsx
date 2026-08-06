@@ -625,7 +625,8 @@ const Flex = () => {
 
               <div className="flex flex-wrap gap-4 mt-4">
                 <a
-                  href="#"
+                  href="/images/Navgatee Chinese Scooty.pdf"
+                  target="_blank"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                   style={{ background: `linear-gradient(90deg, ${BLUE}, ${BLUE_DARK})`, boxShadow: `0 10px 30px ${BLUE}33` }}
                 >
@@ -634,7 +635,7 @@ const Flex = () => {
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white font-semibold rounded-xl border-2 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                   style={{ color: NAVY, borderColor: `${NAVY}22` }}
                 >
@@ -755,7 +756,7 @@ const Flex = () => {
 
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-white hover:-translate-y-0.5 transition-all duration-300 shadow-lg"
                   style={{ backgroundColor: BLUE, boxShadow: `0 10px 25px ${BLUE}33` }}
                 >
