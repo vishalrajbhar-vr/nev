@@ -32,17 +32,17 @@ function Contact() {
       {/* ================= HERO ================= */}
 
       <section className="bg-[#071426] py-24">
-        <div className="max-w-7xl mx-auto px-5 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
           <p className="text-[#5BBF43] uppercase tracking-[4px] font-semibold">
             Contact Us
           </p>
 
-          <h1 className="text-5xl md:text-6xl font-bold text-white mt-5">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mt-5 leading-tight">
             Let's Connect
           </h1>
 
-          <p className="max-w-3xl mx-auto mt-6 text-gray-300 leading-8">
+          <p className="max-w-3xl mx-auto mt-6 px-2 text-base sm:text-lg text-gray-300 leading-7 sm:leading-8">
             We'd love to hear from you. Contact our team for dealership,
             support, electric vehicle enquiries or any business discussion.
           </p>
@@ -53,13 +53,13 @@ function Contact() {
       {/* ================= CONTACT CARDS ================= */}
 
       <section className="-mt-16 pb-16">
-        <div className="max-w-7xl mx-auto px-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-7">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             {/* Card */}
 
-            <div className="bg-white rounded-3xl shadow-xl p-8 text-center hover:-translate-y-2 duration-300">
+            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 text-center hover:-translate-y-2 duration-300">
 
               <div className="w-16 h-16 rounded-full bg-[#5BBF43] flex items-center justify-center text-white text-2xl mx-auto">
 
@@ -81,7 +81,7 @@ function Contact() {
 
             {/* Card */}
 
-            <div className="bg-white rounded-3xl shadow-xl p-8 text-center hover:-translate-y-2 duration-300">
+            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 text-center hover:-translate-y-2 duration-300">
 
               <div className="w-16 h-16 rounded-full bg-[#293F8F] flex items-center justify-center text-white text-2xl mx-auto">
 
@@ -101,7 +101,7 @@ function Contact() {
 
             {/* Card */}
 
-            <div className="bg-white rounded-3xl shadow-xl p-8 text-center hover:-translate-y-2 duration-300">
+            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 text-center hover:-translate-y-2 duration-300">
 
               <div className="w-16 h-16 rounded-full bg-[#5BBF43] flex items-center justify-center text-white text-2xl mx-auto">
 
@@ -121,7 +121,7 @@ function Contact() {
 
             {/* Card */}
 
-            <div className="bg-white rounded-3xl shadow-xl p-8 text-center hover:-translate-y-2 duration-300">
+            <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 text-center hover:-translate-y-2 duration-300">
 
               <div className="w-16 h-16 rounded-full bg-[#293F8F] flex items-center justify-center text-white text-2xl mx-auto">
 
@@ -148,8 +148,8 @@ function Contact() {
 
       {/*  form section */}
       <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-7xl mx-auto px-5">
-          <div className="grid lg:grid-cols-12 gap-10 items-stretch">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
 
             {/* ================= Chat Card + Image ================= */}
 
@@ -157,11 +157,11 @@ function Contact() {
 
               {/* ================= Chat Card ================= */}
 
-              <div className="bg-white rounded-3xl shadow-xl p-8 pr-24 relative overflow-visible h-full min-h-[500px]">
+              <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-8 lg:pr-24 relative overflow-visible h-full min-h-[500px]">
 
                 <span className="absolute top-0 left-0 w-full h-2 bg-[#5BBF43] rounded-t-3xl"></span>
 
-                <h2 className="text-3xl font-bold text-[#071426] mb-4">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#071426] mb-4">
                   Let's Chat
                 </h2>
 
@@ -206,7 +206,7 @@ function Contact() {
                         Email
                       </h4>
 
-                      <p className="text-gray-600">
+                      <p className="text-gray-600 text-sm sm:text-base break-all">
                         info.navgatee@gmail.com
                       </p>
                     </div>
@@ -239,15 +239,15 @@ function Contact() {
 
               {/* ================= Customer Support Image ================= */}
 
-              <img src="/customer-support.png" alt="Customer Support" className="hidden md:block absolute z-20 md:w-[340px] lg:w-[350px] xl:w-[380px] right-[-70px] bottom-[0px] drop-shadow-2xl pointer-events-none" />
+              <img src="/customer-support.png" alt="Customer Support" className="hidden lg:block absolute z-20 w-[260px] xl:w-[340px] 2xl:w-[380px] right-[-40px] xl:right-[-70px] bottom-0 drop-shadow-2xl pointer-events-none" />
 
             </div>
 
             {/* ================= Contact Form ================= */}
 
-            <div className="lg:col-span-7 bg-white rounded-3xl shadow-xl p-8 min-h-[500px] h-full">
+            <div className="lg:col-span-7 bg-white rounded-3xl shadow-xl p-6 sm:p-8 min-h-[500px] h-full">
 
-              <h2 className="text-3xl font-bold text-[#071426] mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#071426] mb-8">
                 Send us a Message
               </h2>
 
@@ -259,7 +259,7 @@ function Contact() {
                 <div className="grid md:grid-cols-2 gap-6">
 
                   <div>
-                    <label className="block text-lg font-semibold text-[#071426] mb-2">
+                    <label className="block text-base sm:text-lg font-semibold text-[#071426] mb-2">
                       Full Name <span className="text-red-500">*</span>
                     </label>
 
@@ -268,12 +268,12 @@ function Contact() {
                       name="name"
                       required
                       placeholder="Your Full Name"
-                      className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
+                      className="w-full h-12 sm:h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-4 sm:px-6 lg:px-8 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-lg font-semibold text-[#071426] mb-2">
+                    <label className="block text-base sm:text-lg font-semibold text-[#071426] mb-2">
                       Your Phone Number <span className="text-red-500">*</span>
                     </label>
 
@@ -282,7 +282,7 @@ function Contact() {
                       name="phone"
                       required
                       placeholder="Your Phone Number"
-                      className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
+                      className="w-full h-12 sm:h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-4 sm:px-6 lg:px-8 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
                   </div>
 
@@ -294,7 +294,7 @@ function Contact() {
                   {/* ================= Email ================= */}
 
                   <div>
-                    <label className="block text-lg font-semibold text-[#071426] mb-2">
+                    <label className="block text-base sm:text-lg font-semibold text-[#071426] mb-2">
                       Your Email Address <span className="text-red-500">*</span>
                     </label>
 
@@ -303,7 +303,7 @@ function Contact() {
                       name="email"
                       required
                       placeholder="your.email@example.com"
-                      className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
+                      className="w-full h-12 sm:h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-4 sm:px-6 lg:px-8 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
                   </div>
 
@@ -311,7 +311,7 @@ function Contact() {
                   {/* ================= Subject ================= */}
 
                   <div>
-                    <label className="block text-lg font-semibold text-[#071426] mb-2">
+                    <label className="block text-base sm:text-lg font-semibold text-[#071426] mb-2">
                       Subject <span className="text-red-500">*</span>
                     </label>
 
@@ -320,7 +320,7 @@ function Contact() {
                       name="subject"
                       required
                       placeholder="What is this regarding?"
-                      className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
+                      className="w-full h-12 sm:h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-4 sm:px-6 lg:px-8 text-base outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                     />
                   </div>
 
@@ -331,13 +331,13 @@ function Contact() {
                 {/* ================= Interested In ================= */}
 
                 <div>
-                  <label className="block text-lg font-semibold text-[#071426] mb-2">
+                  <label className="block text-base sm:text-lg font-semibold text-[#071426] mb-2">
                     I'm interested in:
                   </label>
 
                   <select
                     name="interest"
-                    className="w-full h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 text-base text-gray-700 outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
+                    className="w-full h-12 sm:h-[52px] bg-[#F8FAFC] border border-gray-200 rounded-xl px-4 sm:px-6 lg:px-8 text-base text-gray-700 outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                   >
                     <option>General Information</option>
                     <option>Electric Vehicles</option>
@@ -352,7 +352,7 @@ function Contact() {
                 {/* ================= Message ================= */}
 
                 <div>
-                  <label className="block text-lg font-semibold text-[#071426] mb-2">
+                  <label className="block text-base sm:text-lg font-semibold text-[#071426] mb-2">
                     Message <span className="text-red-500">*</span>
                   </label>
 
@@ -361,7 +361,7 @@ function Contact() {
                     required
                     rows="3"
                     placeholder="Tell us more about your enquiry..."
-                    className="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-5 py-4 text-base resize-none outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
+                    className="w-full bg-[#F8FAFC] border border-gray-200 rounded-xl px-4 sm:px-6 lg:px-8 py-4 text-base resize-none outline-none focus:border-[#5BBF43] focus:ring-1 focus:ring-[#5BBF43] transition"
                   ></textarea>
                 </div>
 
@@ -371,7 +371,7 @@ function Contact() {
                 <button
                   type="submit"
                   disabled={status.type === "loading"}
-                  className="w-full h-[52px] bg-[#5BBF43] hover:bg-[#4AA336] text-white rounded-full font-bold text-lg transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-3"
+                  className="w-full h-12 sm:h-[52px] bg-[#5BBF43] hover:bg-[#4AA336] text-white rounded-full font-bold text-lg transition duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-3"
                 >
                   <FaPaperPlane />
                   Send Message
@@ -394,7 +394,7 @@ function Contact() {
       {/* map section */}
       <section className="pb-20 bg-[#F8FAFC]">
 
-        <div className="max-w-7xl mx-auto px-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="overflow-hidden rounded-3xl shadow-2xl">
 
@@ -407,7 +407,7 @@ function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="strict-origin-when-cross-origin"
-              className="w-full h-[500px]"
+              className="w-full h-[320px] sm:h-[400px] lg:h-[500px]"
             ></iframe>
 
           </div>
@@ -420,13 +420,13 @@ function Contact() {
 
       <section className="bg-[#071426] py-20">
 
-        <div className="max-w-7xl mx-auto px-5 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
 
           <span className="text-[#5BBF43] uppercase tracking-[3px] font-semibold">
             Need Any Help?
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-white mt-5">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mt-5">
             We Are Always Ready
             <br />
             To Help You
@@ -447,8 +447,10 @@ function Contact() {
       hover:bg-white
       hover:text-[#071426]
       text-white
-      px-10
-      py-4
+      px-8
+      sm:px-10
+      py-3
+      sm:py-4
       rounded-full
       font-semibold
       transition-all

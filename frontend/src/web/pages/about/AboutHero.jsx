@@ -75,8 +75,9 @@ function AboutHero() {
 
             <motion.h1
               variants={fadeUp}
-              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-tight hero-heading-multicolohero-headingr"
+              className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black leading-tight hero-heading hero-heading-multicolor"
             >
+              
              <h1 className="hero-word-brand">
                 Driving The Future Of
               </h1>

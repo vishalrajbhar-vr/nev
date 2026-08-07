@@ -64,14 +64,14 @@ function Enquiry() {
 
         {/* ================= LEFT SCOOTY ================= */}
         <img
-          src="/tvs.jpg"
-          alt="Electric Scooty"
+          src="/images/l5-butterfly.png"
+          alt="Electric Rickshaw"
           className="
           hidden xl:block
           absolute
           left-[40px]
           bottom-0
-          w-[300px]
+          w-[270px]
           animate-scooty
           -z-0
           pointer-events-none
@@ -80,8 +80,8 @@ function Enquiry() {
 
         {/* ================= RIGHT E-RICKSHAW ================= */}
         <img
-          src="/15_transparent.png"
-          alt="Electric Rickshaw"
+          src="/images/single-light.png"
+          alt="Electric Scooty"
           className="
           hidden xl:block
           absolute
@@ -467,8 +467,7 @@ function Enquiry() {
 
 
             {/* ================= E-RICKSHAW ================= */}
-            <div className="group relative bg-[#0d1d32] border border-gray-700/60 rounded-2xl p-5 hover:border-green-500/60 hover:-translate-y-2 transition-all duration-300">
-
+            <div className="bg-white rounded-3xl shadow-xl p-8  hover:-translate-y-2 duration-300">
               <div className="flex items-center justify-between mb-5">
 
                 <div className="w-11 h-11 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-lg">
@@ -482,11 +481,11 @@ function Enquiry() {
               </div>
 
 
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-black mb-2">
                 Electric E-Rickshaws
               </h3>
 
-              <p className="text-sm text-gray-400 leading-6">
+              <p className="text-sm text-gray-700 leading-6">
                 Explore reliable electric e-rickshaws designed for
                 passenger transportation and commercial use.
               </p>
@@ -494,7 +493,7 @@ function Enquiry() {
 
               <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-green-400">
 
-                <span className="w-5 h-[2px] bg-green-500 group-hover:w-9 transition-all duration-300"></span>
+                <span className="w-5 h-[2px] bg-green-700 group-hover:w-9 transition-all duration-300"></span>
 
                 Passenger & Commercial
 
@@ -504,8 +503,7 @@ function Enquiry() {
 
 
             {/* ================= SCOOTERS ================= */}
-            <div className="group relative bg-[#0d1d32] border border-gray-700/60 rounded-2xl p-5 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-300">
-
+            <div className="bg-white rounded-3xl shadow-xl p-8  hover:-translate-y-2 duration-300">
               <div className="flex items-center justify-between mb-5">
 
                 <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-lg">
@@ -519,11 +517,11 @@ function Enquiry() {
               </div>
 
 
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-black mb-2">
                 Electric Scooters
               </h3>
 
-              <p className="text-sm text-gray-400 leading-6">
+              <p className="text-sm text-gray-700 leading-6">
                 Discover efficient electric scooters made for everyday
                 commuting and convenient city travel.
               </p>
@@ -541,8 +539,7 @@ function Enquiry() {
 
 
             {/* ================= COMMERCIAL EV ================= */}
-            <div className="group relative bg-[#0d1d32] border border-gray-700/60 rounded-2xl p-5 hover:border-green-500/60 hover:-translate-y-2 transition-all duration-300">
-
+            <div className="bg-white rounded-3xl shadow-xl p-8  hover:-translate-y-2 duration-300">
               <div className="flex items-center justify-between mb-5">
 
                 <div className="w-11 h-11 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center text-lg">
@@ -556,11 +553,11 @@ function Enquiry() {
               </div>
 
 
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-black mb-2">
                 Commercial EVs
               </h3>
 
-              <p className="text-sm text-gray-400 leading-6">
+              <p className="text-sm text-gray-700 leading-6">
                 Choose practical electric vehicles built for delivery,
                 transportation and growing business needs.
               </p>
@@ -578,8 +575,7 @@ function Enquiry() {
 
 
             {/* ================= EV SUPPORT ================= */}
-            <div className="group relative bg-[#0d1d32] border border-gray-700/60 rounded-2xl p-5 hover:border-blue-500/60 hover:-translate-y-2 transition-all duration-300">
-
+            <div className="bg-white rounded-3xl shadow-xl p-8  hover:-translate-y-2 duration-300">
               <div className="flex items-center justify-between mb-5">
 
                 <div className="w-11 h-11 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-lg">
@@ -593,11 +589,11 @@ function Enquiry() {
               </div>
 
 
-              <h3 className="text-lg font-bold text-white mb-2">
+              <h3 className="text-lg font-bold text-black mb-2">
                 EV Support
               </h3>
 
-              <p className="text-sm text-gray-400 leading-6">
+              <p className="text-sm text-gray-700 leading-6">
                 Get expert assistance with vehicle selection, features,
                 pricing, availability and your EV requirements.
               </p>
