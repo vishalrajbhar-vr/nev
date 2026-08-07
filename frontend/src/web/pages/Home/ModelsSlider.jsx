@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   FaArrowLeft,
   FaArrowRight,
@@ -16,8 +16,8 @@ const models = [
     label: "L5 MODEL",
     image: "/images/l5-loader.png",
     seats: "Closed Body",
-    speed: "25 km/h",
-    range: "80-100 km",
+    speed: "45 km/h",
+    range: "100-110 km",
     charging: "4-5 Hours",
     href: "/l5-ultra-loader",
   },
@@ -28,44 +28,44 @@ const models = [
     label: "L5 MODEL",
     image: "/images/l5-front-facia.png",
     seats: "6+1 Seats",
-    speed: "25 km/h",
-    range: "80-100 km",
+    speed: "45 km/h",
+    range: "100-110 km",
     charging: "4-5 Hours",
     href: "/l5-front-facia",
   },
   {
     name: "Vybe",
-    segment: "Activa",
+    segment: "Scooty",
     type: "Passenger",
     label: "COMFORT RIDE",
     image: "/images/double-light.png",
     seats: "2 Seats",
-    speed: "80 km/h",
-    range: "102 -120 km",
+    speed: "25 km/h",
+    range: "50 -120 km",
     charging: "4-5 Hours",
     href: "/indian-scooty/vybe",
   },
   {
     name: "Volt",
-    segment: "Activa",
+    segment: "Scooty",
     type: "Passenger",
     label: "NEW MODEL",
     image: "/images/single-light.png",
     seats: "2 Seats",
-    speed: "95 km/h",
-    range: "110-120 km",
+    speed: "25 km/h",
+    range: "50-120 km",
     charging: "4-5 Hours",
     href: "/indian-scooty/volt",
   },
   {
     name: "Lumo",
-    segment: "L5 CARGO",
+    segment: "Scooty",
     type: "Cargo",
     label: "COMFORT RIDE",
     image: "/images/u-light.png",
     seats: "2 Seats",
-    speed: "80 km/h",
-    range: "100-110 km",
+    speed: "25 km/h",
+    range: "50-120 km",
     charging: "4-5 Hours",
     href: "/indian-scooty/lumo",
   },
@@ -76,7 +76,7 @@ const models = [
     label: "L5 MODEL",
     image: "/MODEL L5.png",
     seats: "3+1 Seats",
-    speed: "48 km/h",
+    speed: "45 km/h",
     range: "90-100 km",
     charging: "4-5 Hours",
     href: "/l5-eco-6-plus-1",
@@ -85,9 +85,24 @@ const models = [
 
 function ModelsSlider() {
   const [firstCard, setFirstCard] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
+
+  useEffect(() => {
+    const updateCount = () => {
+      const width = window.innerWidth;
+      if (width >= 1280) setVisibleCount(4);
+      else if (width >= 640) setVisibleCount(2);
+      else setVisibleCount(1);
+    };
+
+    updateCount();
+    window.addEventListener("resize", updateCount);
+    return () => window.removeEventListener("resize", updateCount);
+  }, []);
+
   const visibleModels = models;
   const displayedModels = Array.from(
-    { length: Math.min(4, visibleModels.length) },
+    { length: Math.min(visibleCount, visibleModels.length) },
     (_, index) => visibleModels[(firstCard + index) % visibleModels.length],
   );
 

@@ -47,22 +47,52 @@ import {
 
 import { FaChevronLeft, FaShareAlt } from "react-icons/fa";
 
-const GALLERY_IMAGES = [
-  "/images/l5-front-facia.png"
-];
+const GALLERY_IMAGES = ["/images/l5-front-facia.png"];
 
 /* ===================================================================
    SPECS DATA
 =================================================================== */
 const specs = [
-  { icon: <Sparkles size={22} />, title: "Finish", value: "Premium High-Gloss Paint" },
-  { icon: <ShieldCheck size={22} />, title: "Material", value: "Impact-Resistant ABS Composite" },
-  { icon: <Package size={22} />, title: "Fitment", value: "Direct OEM Mounting for L5" },
-  { icon: <Wind size={22} />, title: "Aerodynamics", value: "Optimized Front Flow" },
-  { icon: <Wrench size={22} />, title: "Installation", value: "Quick Bolt-On System" },
-  { icon: <Cog size={22} />, title: "Compatibility", value: "L5 Series Models" },
-  { icon: <Thermometer size={22} />, title: "Durability", value: "UV & Weather Resistant" },
-  { icon: <CheckCircle2 size={22} />, title: "Warranty", value: "1 Year Premium Cover" },
+  {
+    icon: <Sparkles size={22} />,
+    title: "Finish",
+    value: "Premium High-Gloss Paint",
+  },
+  {
+    icon: <ShieldCheck size={22} />,
+    title: "Material",
+    value: "Impact-Resistant ABS Composite",
+  },
+  {
+    icon: <Package size={22} />,
+    title: "Fitment",
+    value: "Direct OEM Mounting for L5",
+  },
+  {
+    icon: <Wind size={22} />,
+    title: "Aerodynamics",
+    value: "Optimized Front Flow",
+  },
+  {
+    icon: <Wrench size={22} />,
+    title: "Installation",
+    value: "Quick Bolt-On System",
+  },
+  {
+    icon: <Cog size={22} />,
+    title: "Compatibility",
+    value: "L5 Series Models",
+  },
+  {
+    icon: <Thermometer size={22} />,
+    title: "Durability",
+    value: "UV & Weather Resistant",
+  },
+  {
+    icon: <CheckCircle2 size={22} />,
+    title: "Warranty",
+    value: "1 Year Premium Cover",
+  },
   { icon: <FaLeaf size={22} />, title: "Efficiency", value: "No Added Drag" },
   { icon: <Weight size={22} />, title: "Weight", value: "Lightweight Build" },
 ];
@@ -703,15 +733,16 @@ const L5FrontFacia = () => {
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Give your L5 series vehicle a premium look with the L5 Front Facia.
-                This precision-fit, impact-resistant upgrade enhances styling,
-                airflow, and front-end protection.
+                Give your L5 series vehicle a premium look with the L5 Front
+                Facia. This precision-fit, impact-resistant upgrade enhances
+                styling, airflow, and front-end protection.
               </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
-                  href="#"
+                  href="/images/Navgatee 3 Wheeler.pdf"
+                  target="_blank"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-[#2346b7] to-[#1a3a9e] text-white font-semibold rounded-xl shadow-lg shadow-blue-200 hover:shadow-xl hover:shadow-blue-300 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaDownload size={16} />
@@ -722,7 +753,7 @@ const L5FrontFacia = () => {
                   />
                 </a>
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="group inline-flex items-center gap-2 px-6 py-3.5 bg-white text-[#2346b7] font-semibold rounded-xl border-2 border-blue-100 hover:border-[#2346b7] hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={14} />
@@ -787,40 +818,41 @@ const L5FrontFacia = () => {
               </span>
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Every detail is crafted to deliver premium styling, reliable fitment, and strong front protection.
+              Every detail is crafted to deliver premium styling, reliable
+              fitment, and strong front protection.
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-  <FeatureCard
-    icon={<Sparkles size={28} />}
-    title="Premium Front Styling"
-    desc="A clean, modern fascia design that upgrades the visual appeal of your L5 vehicle instantly."
-    color="blue"
-  />
+            <FeatureCard
+              icon={<Sparkles size={28} />}
+              title="Premium Front Styling"
+              desc="A clean, modern fascia design that upgrades the visual appeal of your L5 vehicle instantly."
+              color="blue"
+            />
 
-  <FeatureCard
-    icon={<ShieldCheck size={28} />}
-    title="Impact-Resistant Composite"
-    desc="Durable material protects the front end while maintaining a lightweight structure for better handling."
-    color="green"
-  />
+            <FeatureCard
+              icon={<ShieldCheck size={28} />}
+              title="Impact-Resistant Composite"
+              desc="Durable material protects the front end while maintaining a lightweight structure for better handling."
+              color="green"
+            />
 
-  <FeatureCard
-    icon={<Wind size={28} />}
-    title="Aerodynamic Flow"
-    desc="Optimized contouring improves front airflow and supports better vehicle efficiency on the road."
-    color="amber"
-  />
+            <FeatureCard
+              icon={<Wind size={28} />}
+              title="Aerodynamic Flow"
+              desc="Optimized contouring improves front airflow and supports better vehicle efficiency on the road."
+              color="amber"
+            />
 
-  <FeatureCard
-    icon={<Wrench size={28} />}
-    title="Quick Installation"
-    desc="Bolt-on fitment makes service and replacement fast, with minimal downtime for your vehicle.
+            <FeatureCard
+              icon={<Wrench size={28} />}
+              title="Quick Installation"
+              desc="Bolt-on fitment makes service and replacement fast, with minimal downtime for your vehicle.
     "
-    color="green"
-  />
-</div>
+              color="green"
+            />
+          </div>
         </div>
       </section>
 
@@ -856,9 +888,10 @@ const L5FrontFacia = () => {
 
               {/* description */}
               <p className="mt-5 text-sm sm:text-base text-slate-500 leading-relaxed max-w-xl mx-auto lg:mx-0">
-                Transform your L5 series vehicle with the NEV L5 Front Facia. Its premium finish,
-                direct fitment, and reinforced composite construction give your ride stronger road
-                presence, improved airflow, and reliable impact protection.
+                Transform your L5 series vehicle with the NEV L5 Front Facia.
+                Its premium finish, direct fitment, and reinforced composite
+                construction give your ride stronger road presence, improved
+                airflow, and reliable impact protection.
               </p>
 
               {/* highlight tags */}
@@ -876,7 +909,7 @@ const L5FrontFacia = () => {
               {/* CTA row */}
               <div className="flex flex-col xs:flex-row flex-wrap justify-center lg:justify-start items-center gap-3 mt-8">
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm sm:text-base text-[#0B1220] bg-green-400 hover:bg-green-500 shadow-lg shadow-[#5BBF43]/20 hover:shadow-[#5BBF43]/40 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <FaPhoneAlt size={13} />
@@ -1034,16 +1067,10 @@ const L5FrontFacia = () => {
           <table className="min-w-full border-collapse">
             <thead>
               <tr className="bg-[#042c58] text-white text-sm">
-                <th className="px-4 py-3 font-semibold">
-                  PRODUCT OPTION
-                </th>
+                <th className="px-4 py-3 font-semibold">PRODUCT OPTION</th>
                 <th className="px-4 py-3 font-semibold">FITMENT</th>
-                <th className="px-4 py-3 font-semibold">
-                  MATERIAL
-                </th>
-                <th className="px-4 py-3 font-semibold">
-                  FINISH WARRANTY
-                </th>
+                <th className="px-4 py-3 font-semibold">MATERIAL</th>
+                <th className="px-4 py-3 font-semibold">FINISH WARRANTY</th>
                 <th className="px-4 py-3 font-semibold">
                   INSTALLATION SUPPORT
                 </th>
@@ -1104,14 +1131,15 @@ const L5FrontFacia = () => {
             <div className="group relative bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 border border-gray-100 hover:border-green-200/30 shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#5BBF43] to-green-400 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-50 to-green-100 text-green-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <FaLeaf size={28} />
+                <FaTools size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Fuel Efficient
+                Low Maintenance
               </h3>
               <p className="text-gray-500 leading-relaxed">
-                Optimized engine design delivers exceptional fuel economy,
-                reducing operational costs while maximizing productivity.
+                Engineered with reliable components that require minimal
+                maintenance, helping reduce downtime and keep your vehicle on
+                the road longer.
               </p>
             </div>
 
@@ -1150,7 +1178,8 @@ const L5FrontFacia = () => {
               Say
             </h2>
             <p className="mt-4 text-gray-500 text-lg">
-              Hear from the operators and workshop owners who trust L5 Front Facia for their premium L5 upgrades.
+              Hear from the operators and workshop owners who trust L5 Front
+              Facia for their premium L5 upgrades.
             </p>
           </div>
 
@@ -1197,7 +1226,9 @@ const L5FrontFacia = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Email</p>
-                    <p className="font-semibold text-gray-800">info.navgatee@gmail.com</p>
+                    <p className="font-semibold text-gray-800">
+                      info.navgatee@gmail.com
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -1207,7 +1238,7 @@ const L5FrontFacia = () => {
                   <div>
                     <p className="text-sm text-gray-400">Visit us</p>
                     <p className="font-semibold text-gray-800">
-                      Lucknow, India
+                      B-1/204 Nirala Nagar, Lucknow 226020
                     </p>
                   </div>
                 </div>

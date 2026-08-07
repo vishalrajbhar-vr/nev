@@ -72,9 +72,9 @@ function Contact() {
               </h3>
 
               <p className="text-gray-500 mt-3 leading-7">
-                Lucknow, India
+                B-1/204 Nirala Nagar,
                 <br />
-                India
+                 Lucknow 226020
               </p>
 
             </div>
@@ -94,7 +94,7 @@ function Contact() {
               </h3>
 
               <p className="text-gray-500 mt-3">
-                +91 98765 43210
+                +91 9196598300
               </p>
 
             </div>
@@ -187,7 +187,7 @@ function Contact() {
                       </h4>
 
                       <p className="text-gray-600">
-                        +91 98765 43210
+                        +91 9196598300
                       </p>
                     </div>
 
@@ -227,7 +227,9 @@ function Contact() {
                       </h4>
 
                       <p className="text-gray-600">
-                        Lucknow, India,<br /> India
+                        B-1/204 Nirala Nagar,
+                <br />
+                 Lucknow 226020
                       </p>
                     </div>
 

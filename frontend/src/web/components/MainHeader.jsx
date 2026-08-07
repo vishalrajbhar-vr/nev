@@ -6,7 +6,7 @@ import {
   FaPhoneAlt,
   FaTimes,
 } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const logoSrc = "/images/nev-logo.png";
 
@@ -63,7 +63,6 @@ function MainHeader() {
   const closeTimer = useRef(null);
   const headerRef = useRef(null);
   const logoFlipTimer = useRef(null);
-  const navigate = useNavigate();
 
   const handleCloseMenu = () => {
     setOpenDropdown(null);
@@ -143,7 +142,7 @@ function MainHeader() {
   return (
     <header
       ref={headerRef}
-      className="relative z-50 bg-[#071426] px-2 pb-2 sm:px-5 sm:pb-4 lg:px-7"
+      className="relative z-50 bg-[#071426] px-2 pb-2 sm:px-5 sm:pb-3 lg:px-7"
     >
       <style>
         {`
@@ -182,8 +181,8 @@ function MainHeader() {
       </style>
 
       <div className="relative mx-auto max-w-[1560px]">
-        <span className="absolute left-[-5px] top-3 hidden h-20 w-7 rounded-l-[22px] bg-[#5BBF43] lg:block" />
-        <span className="absolute right-[-5px] top-3 hidden h-20 w-7 rounded-r-[22px] bg-[#5BBF43] lg:block" />
+        <span className="absolute left-[-5px] top-2 hidden h-14 w-6 rounded-l-[18px] bg-[#5BBF43] lg:block" />
+        <span className="absolute right-[-5px] top-2 hidden h-14 w-6 rounded-r-[18px] bg-[#5BBF43] lg:block" />
 
         <div className="relative mx-auto max-w-[1560px]">
           <div className="relative rounded-[16px] border border-white/70 bg-white shadow-[0_14px_32px_rgba(0,0,0,0.18)]">
@@ -195,7 +194,7 @@ function MainHeader() {
                 className="flex min-w-0 items-center pr-4 sm:pr-6 lg:w-[20%] lg:border-r lg:border-[#D7DCE4] lg:pr-8"
               >
                 <span
-                  className="logo-flip-wrapper block h-[48px] w-[98px] sm:h-[60px] sm:w-[136px] lg:h-[70px] lg:w-[156px] xl:w-[166px]"
+                  className="logo-flip-wrapper block h-[38px] w-[86px] sm:h-[50px] sm:w-[104px] lg:h-[70px] lg:w-[118px] xl:w-[128px]"
                   onMouseEnter={() => {
                     if (isLogoFlipping) return;
                     setIsLogoFlipping(true);
@@ -226,7 +225,7 @@ function MainHeader() {
 
                   <Link
                     to="/"
-                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 hover:text-[#5BBF43]"
+                    className="relative flex h-[60px] items-center text-[#142033] transition-colors duration-300 hover:text-[#5BBF43]"
                   >
                     Home
                   </Link>
@@ -234,7 +233,7 @@ function MainHeader() {
                   {/* ================= PRODUCTS ================= */}
 
                   <div
-                    className="relative flex h-[90px] items-center"
+                    className="relative flex h-[60px] items-center"
                     onMouseEnter={() => openMenu("products")}
                     onMouseLeave={closeMenuWithDelay}
                   >
@@ -267,6 +266,7 @@ function MainHeader() {
                           setOpenProduct={setOpenProduct}
                           cancelClose={cancelClose}
                           closeMenuWithDelay={closeMenuWithDelay}
+                          closeMenu={handleCloseMenu}
                         />
 
                         <ProductDesktopItem
@@ -276,6 +276,7 @@ function MainHeader() {
                           setOpenProduct={setOpenProduct}
                           cancelClose={cancelClose}
                           closeMenuWithDelay={closeMenuWithDelay}
+                          closeMenu={handleCloseMenu}
                         />
                       </div>
                     )}
@@ -298,7 +299,7 @@ function MainHeader() {
 
                   <Link
                     to="/about"
-                    className="relative flex h-[90px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full  hover:text-[#5BBF43]"
+                    className="relative flex h-[60px] items-center text-[#142033] transition-colors duration-300 after:absolute after:bottom-1 after:left-0 after:h-[3px] after:w-full  hover:text-[#5BBF43]"
                   >
                     About Us
                   </Link>
@@ -337,7 +338,7 @@ function MainHeader() {
             {/* ================= MOBILE MENU ================= */}
 
             {mobileMenu && (
-              <div className="lg:hidden border-t border-[#D7DCE4] bg-white px-4 py-4 shadow-[0_15px_35px_rgba(24,36,56,0.12)] sm:px-6">
+              <div className="lg:hidden max-h-[calc(100dvh-115px)] overflow-y-auto overscroll-contain border-t border-[#D7DCE4] bg-white px-4 py-4 shadow-[0_15px_35px_rgba(24,36,56,0.12)] sm:max-h-[calc(100dvh-155px)] sm:px-6">
                 {/* HOME */}
 
                 <Link
@@ -368,6 +369,7 @@ function MainHeader() {
                         product="scooty"
                         openProduct={openProduct}
                         toggleProduct={toggleProduct}
+                        onItemClick={handleCloseMenu}
                       />
 
                       <MobileProduct
@@ -375,6 +377,7 @@ function MainHeader() {
                         product="l5"
                         openProduct={openProduct}
                         toggleProduct={toggleProduct}
+                        onItemClick={handleCloseMenu}
                       />
 
                       
@@ -415,11 +418,11 @@ function MainHeader() {
                 {/* MOBILE PHONE */}
 
                 <a
-                  href="tel:18001210259"
+                  href="tel:+91 9196598300"
                   className="sm:hidden flex items-center justify-center gap-3 mt-5 py-3.5 rounded-xl bg-[#293F8F] text-white font-semibold shadow-md hover:bg-[#5BBF43] transition-all duration-300"
                 >
                   <FaPhoneAlt size={15} />
-                  18001210259
+                  +91 9196598300
                 </a>
               </div>
             )}
@@ -437,6 +440,7 @@ function ProductDesktopItem({
   setOpenProduct,
   cancelClose,
   closeMenuWithDelay,
+  closeMenu,
 }) {
   const isActive = openProduct === product;
 
@@ -474,7 +478,7 @@ function ProductDesktopItem({
                   Indian Scooty
                 </div>
                 {productItems.scooty.indian.map((item) => (
-                  <DropdownItem key={item.path} item={item} />
+                  <DropdownItem key={item.path} item={item} onClick={closeMenu} />
                 ))}
               </div>
 
@@ -484,14 +488,14 @@ function ProductDesktopItem({
                 </div>
                 <div className="max-h-[300px] overflow-y-auto pr-1">
                   {productItems.scooty.china.map((item) => (
-                    <DropdownItem key={item.path} item={item} />
+                    <DropdownItem key={item.path} item={item} onClick={closeMenu} />
                   ))}
                 </div>
               </div>
             </div>
           ) : (
             productItems[product].map((item) => (
-              <DropdownItem key={item.path} item={item} />
+              <DropdownItem key={item.path} item={item} onClick={closeMenu} />
             ))
           )}
         </div>
@@ -512,7 +516,7 @@ function DesktopDropdown({
 }) {
   return (
     <div
-      className="relative flex h-[90px] items-center"
+      className="relative flex h-[60px] items-center"
       onMouseEnter={() => openMenu(menu)}
       onMouseLeave={closeMenuWithDelay}
     >
@@ -570,7 +574,7 @@ function MobileCircle({ active }) {
   );
 }
 
-function MobileProduct({ title, product, openProduct, toggleProduct }) {
+function MobileProduct({ title, product, openProduct, toggleProduct, onItemClick }) {
   return (
     <div className="mb-1">
       <button
@@ -597,7 +601,7 @@ function MobileProduct({ title, product, openProduct, toggleProduct }) {
                   Indian Scooty
                 </div>
                 {productItems.scooty.indian.map((item) => (
-                  <MobileItem key={item.path} item={item} />
+                  <MobileItem key={item.path} item={item} onClick={onItemClick} />
                 ))}
               </div>
 
@@ -606,13 +610,13 @@ function MobileProduct({ title, product, openProduct, toggleProduct }) {
                   China Scooty
                 </div>
                 {productItems.scooty.china.map((item) => (
-                  <MobileItem key={item.path} item={item} />
+                  <MobileItem key={item.path} item={item} onClick={onItemClick} />
                 ))}
               </div>
             </>
           ) : (
             productItems[product].map((item) => (
-              <MobileItem key={item.path} item={item} />
+              <MobileItem key={item.path} item={item} onClick={onItemClick} />
             ))
           )}
         </div>
