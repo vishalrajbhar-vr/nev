@@ -706,9 +706,7 @@ const L5DLXPassenger = () => {
               <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The L5 DLX Passenger 3 Plus
-                1 delivers smooth passenger mobility, fuel-efficient
-                performance, and dependable comfort for city and rural routes.
+                Power your journey with confidence. The L5 DLX Passenger 3 Plus 1 delivers smooth passenger mobility, reliable electric performance, and dependable comfort for city and rural routes.
               </p>
 
               {/* CTA Buttons */}
