@@ -25,9 +25,9 @@ const productItems = {
 
   l5: [
     { label: "L5 DLX Passenger 3 Plus 1", path: "/l5-dlx-passenger-3-plus-1" },
-    { label: "L5 ECO 6 + 1", path: "/l5-eco-6-plus-1" },
+    { label: "L5 ECO 3 Plus 1", path: "/l5-eco-3-plus-1" },
     { label: "L5 Front Facia", path: "/l5-front-facia" },
-    { label: "L5 Butterfly 6 + 1", path: "/l5-butterfly-6-plus-1" },
+    { label: "L5 Butterfly 6 Plus 1", path: "/l5-butterfly-6-plus-1" },
     { label: "L5 Ultra Loader", path: "/l5-ultra-loader" },
   ],
 

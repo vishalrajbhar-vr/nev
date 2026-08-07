@@ -675,7 +675,7 @@ const L5ECO = () => {
         <div className="absolute bottom-32 left-[10%] w-6 h-6 bg-green-400/10 rounded-lg rotate-45 hidden lg:block" />
         <div className="absolute top-1/2 right-[8%] w-3 h-16 bg-green-400/10 rounded-full rotate-12 hidden lg:block" />
 
-        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-10">
+        <div className="relative max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-5">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
             {/* Left Content */}
             <div className="w-full lg:w-[55%]">
@@ -692,21 +692,21 @@ const L5ECO = () => {
               </nav>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900  tracking-tight">
                 
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
                 L5 ECO 3 Plus 1
                 </span>
               </h1>
 
-              <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-3 mb-4" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
-                Power your journey with confidence. The L5 ECO 3 Plus 1 delivers smooth passenger mobility, fuel-efficient performance, and dependable comfort for city and rural routes.
+                Power your journey with confidence. The L5 ECO 3 Plus 1 delivers smooth passenger mobility, reliable electric performance, and dependable comfort for city and rural routes.
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-5">
                 <a
                   href="/images/Navgatee 3 Wheeler.pdf"
                   target="_blank"

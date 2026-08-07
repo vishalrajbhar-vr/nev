@@ -49,7 +49,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/enquiry" element={<Enquiry />} />
         <Route path="/l5-dlx-passenger-3-plus-1" element={<L5DLXPassenger />} />
-        <Route path="/l5-eco-6-plus-1" element={<L5ECO />} />
+        <Route path="/l5-eco-3-plus-1" element={<L5ECO />} />
         <Route path="/l5-front-facia" element={<L5FrontFacia />} />
         <Route path="/l5-butterfly-6-plus-1" element={<L5Butterfly />} />
         <Route path="/l5-ultra-loader" element={<L5UltraLoader />} />

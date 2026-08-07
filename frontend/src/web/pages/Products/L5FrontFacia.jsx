@@ -724,13 +724,13 @@ const L5FrontFacia = () => {
               </nav>
 
               {/* Title */}
-              <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-gray-900 tracking-tight">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2346b7] to-[#5BBF43]">
                   L5 Front Facia
                 </span>
               </h1>
 
-              <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-5 mb-6" />
+              <div className="w-24 h-1.5 bg-gradient-to-r from-[#2346b7] to-[#5BBF43] rounded-full mt-3 mb-4" />
 
               <p className="text-lg sm:text-xl text-gray-600 max-w-xl leading-relaxed">
                 Give your L5 series vehicle a premium look with the L5 Front
@@ -739,7 +739,7 @@ const L5FrontFacia = () => {
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-4 mt-5">
                 <a
                   href="/images/Navgatee 3 Wheeler.pdf"
                   target="_blank"
@@ -825,31 +825,30 @@ const L5FrontFacia = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <FeatureCard
-              icon={<Sparkles size={28} />}
-              title="Premium Front Styling"
-              desc="A clean, modern fascia design that upgrades the visual appeal of your L5 vehicle instantly."
+              icon={<Zap size={28} />}
+              title="Powerful Electric Motor"
+              desc="Delivers smooth acceleration and reliable performance for effortless city commuting."
               color="blue"
             />
 
             <FeatureCard
-              icon={<ShieldCheck size={28} />}
-              title="Impact-Resistant Composite"
-              desc="Durable material protects the front end while maintaining a lightweight structure for better handling."
+              icon={<Battery size={28} />}
+              title="Long Battery Range"
+              desc="High-performance battery provides extended range with efficient power consumption."
               color="green"
             />
 
             <FeatureCard
-              icon={<Wind size={28} />}
-              title="Aerodynamic Flow"
-              desc="Optimized contouring improves front airflow and supports better vehicle efficiency on the road."
-              color="amber"
+              icon={<Thermometer size={28} />}
+              title="Fast Charging"
+              desc="Recharge quickly and get back on the road with minimal waiting time."
+              color="blue"
             />
 
             <FeatureCard
-              icon={<Wrench size={28} />}
-              title="Quick Installation"
-              desc="Bolt-on fitment makes service and replacement fast, with minimal downtime for your vehicle.
-    "
+              icon={<Wind size={28} />}
+              title="Smooth & Comfortable"
+              desc="Premium suspension and ergonomic seating ensure a stable and comfortable riding experience."
               color="green"
             />
           </div>
